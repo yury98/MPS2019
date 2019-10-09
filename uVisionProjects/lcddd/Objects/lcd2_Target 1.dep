@@ -1,0 +1,10 @@
+Dependencies for Project 'lcd2', Target 'Target 1': (DO NOT MODIFY !)
+F (.\main.c)(0x5801E267)(-c --cpu Cortex-M3 -g -O0 --apcs=interwork --split_sections-I E:\Studying\DS\Миландр\Garbage\lcddd\RTE-I E:\Studying\DS\Миландр\Garbage\lcddd\RTE\Device\MDR1986BE91-I C:\Keil_v5\ARM\PACK\Keil\MDR1986BExx\1.4\Config-I C:\Keil_v5\ARM\PACK\Keil\MDR1986BExx\1.4\Libraries\CMSIS\CM3\CoreSupport-I C:\Keil_v5\ARM\PACK\Keil\MDR1986BExx\1.4\Libraries\CMSIS\CM3\DeviceSupport\MDR32F9Qx\inc-I C:\Keil_v5\ARM\PACK\Keil\MDR1986BExx\1.4\Libraries\MDR32F9Qx_StdPeriph_Driver\inc-I C:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="520" -D_RTE_ -DUSE_MDR32F9Q1_Rev1-o .\objects\main.o --omf_browse .\objects\main.crf --depend .\objects\main.d)
+F (.\font.h)(0x4CF4D516)()
+F (.\mlt_lcd.c)(0x57FDFDC4)()
+F (.\mlt_lcd.h)(0x57FE11FB)()
+F (RTE\Device\MDR1986BE91\startup_MDR32F9Qx.s)(0x559E835E)()
+F (RTE\Device\MDR1986BE91\system_MDR32F9Qx.c)(0x559E835E)()
+F (RTE\Device\MDR1986BE91\system_MDR32F9Qx.h)(0x559E835E)()
+F (C:\Users\Yurez\AppData\Local\Arm\Packs\Keil\MDR1986BExx\1.5.2\Libraries\MDR32F9Qx_StdPeriph_Driver\src\MDR32F9Qx_port.c)(0x5C540CCC)()
+F (C:\Users\Yurez\AppData\Local\Arm\Packs\Keil\MDR1986BExx\1.5.2\Libraries\MDR32F9Qx_StdPeriph_Driver\src\MDR32F9Qx_rst_clk.c)(0x5C540CD8)()

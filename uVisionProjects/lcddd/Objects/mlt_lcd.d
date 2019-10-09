@@ -1,0 +1,11 @@
+.\objects\mlt_lcd.o: mlt_lcd.c
+.\objects\mlt_lcd.o: mlt_lcd.h
+.\objects\mlt_lcd.o: C:\Keil_v5\ARM\PACK\Keil\MDR1986BExx\1.4\Libraries\CMSIS\CM3\DeviceSupport\MDR32F9Qx\inc\MDR32Fx.h
+.\objects\mlt_lcd.o: C:\Keil_v5\ARM\PACK\Keil\MDR1986BExx\1.4\Libraries\CMSIS\CM3\CoreSupport\core_cm3.h
+.\objects\mlt_lcd.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+.\objects\mlt_lcd.o: C:\Keil_v5\ARM\PACK\Keil\MDR1986BExx\1.4\Libraries\CMSIS\CM3\CoreSupport\core_cmInstr.h
+.\objects\mlt_lcd.o: C:\Keil_v5\ARM\PACK\Keil\MDR1986BExx\1.4\Libraries\CMSIS\CM3\CoreSupport\core_cmFunc.h
+.\objects\mlt_lcd.o: E:\Studying\DS\Миландр\Garbage\lcddd\RTE\Device\MDR1986BE91\system_MDR32F9Qx.h
+.\objects\mlt_lcd.o: C:\Keil_v5\ARM\PACK\Keil\MDR1986BExx\1.4\Libraries\MDR32F9Qx_StdPeriph_Driver\inc\MDR32F9Qx_port.h
+.\objects\mlt_lcd.o: C:\Keil_v5\ARM\PACK\Keil\MDR1986BExx\1.4\Config\MDR32F9Qx_config.h
+.\objects\mlt_lcd.o: C:\Keil_v5\ARM\PACK\Keil\MDR1986BExx\1.4\Libraries\MDR32F9Qx_StdPeriph_Driver\inc\MDR32F9Qx_lib.h

@@ -1,0 +1,29 @@
+*** Creating Trace Output File '.\output\EV1986Test.tra' Ok.
+### Preparing for ADS-LD.
+### Creating ADS-LD Command Line
+### List of Objects: adding '".\output\main.o"'
+### List of Objects: adding '".\output\system_1986be9x.o"'
+### List of Objects: adding '".\output\startup_1986be9x.o"'
+### List of Objects: adding '".\output\1986be9x_uart.o"'
+### List of Objects: adding '".\output\1986be9x_dma.o"'
+### List of Objects: adding '".\output\1986be9x_eeprom.o"'
+### List of Objects: adding '".\output\1986be9x_port.o"'
+### List of Objects: adding '".\output\1986be9x_rst_clk.o"'
+### List of Objects: adding '".\output\1986be9x_it.o"'
+### List of Objects: adding '".\output\mlt_lcd.o"'
+### List of Objects: adding '".\output\milflash.o"'
+### ADS-LD Command completed:
+--cpu Cortex-M3 ".\output\main.o" ".\output\system_1986be9x.o" ".\output\startup_1986be9x.o" ".\output\1986be9x_uart.o" ".\output\1986be9x_dma.o" ".\output\1986be9x_eeprom.o" ".\output\1986be9x_port.o" ".\output\1986be9x_rst_clk.o" ".\output\1986be9x_it.o" ".\output\mlt_lcd.o" ".\output\milflash.o" --strict --scatter ".\output\EV1986Test.sct" 
+--summary_stderr --info summarysizes --map --xref --callgraph --symbols 
+--info sizes --info totals --info unused --info veneers 
+ --list ".\listing\EV1986Test.map" -o ".\output\EV1986Test.axf"### Preparing Environment (PrepEnvAds)
+### ADS-LD Output File: '.\output\EV1986Test.axf'
+### ADS-LD Command File: '.\output\EV1986Test.lnp'
+### Checking for dirty Components...
+### Creating CmdFile '.\output\EV1986Test.lnp', Handle=0x00000410
+### Writing '.lnp' file
+### ADS-LD Command file '.\output\EV1986Test.lnp' is ready.
+### ADS-LD: About to start ADS-LD Thread.
+### ADS-LD: executed with 0 errors
+### Updating obj list
+### LDADS_file() completed.

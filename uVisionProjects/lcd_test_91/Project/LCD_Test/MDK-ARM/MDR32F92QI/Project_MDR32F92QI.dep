@@ -1,0 +1,40 @@
+Dependencies for Project 'Project', Target 'MDR32F92QI': (DO NOT MODIFY !)
+F (..\main.c)(0x5804D1A4)(-c --cpu Cortex-M3 -D__EVAL -D__MICROLIB -g -O0 --apcs=interwork -I ..\ -I ..\..\..\Libraries\CMSIS\CM3\CoreSupport -I ..\..\..\Libraries\CMSIS\CM3\DeviceSupport\MDR32F9Qx\inc -I ..\..\..\Libraries\CMSIS\CM3\DeviceSupport\MDR32F9Qx\startup\arm -I ..\..\..\Libraries\MDR32F9Qx_StdPeriph_Driver\inc -I ..\MLT-IC:\Keil_v5\ARM\RV31\INC-IC:\Keil_v5\ARM\CMSIS\Include-IC:\Keil_v5\ARM\INC\Milandr\MDR32F9x-D__UVISION_VERSION="528" -DUSE_STDPERIPH_DRIVER -DSTM32L1XX_MD -DUSE_STM32L152_EVAL-o .\mdr32f92qi\main.o --omf_browse .\mdr32f92qi\main.crf --depend .\mdr32f92qi\main.d)
+I (..\main.h)(0x5804D10D)
+I (..\common.h)(0x5804DBF3)
+F (..\MDR32F9Qx_it.c)(0x5804D15A)(-c --cpu Cortex-M3 -D__EVAL -D__MICROLIB -g -O0 --apcs=interwork -I ..\ -I ..\..\..\Libraries\CMSIS\CM3\CoreSupport -I ..\..\..\Libraries\CMSIS\CM3\DeviceSupport\MDR32F9Qx\inc -I ..\..\..\Libraries\CMSIS\CM3\DeviceSupport\MDR32F9Qx\startup\arm -I ..\..\..\Libraries\MDR32F9Qx_StdPeriph_Driver\inc -I ..\MLT-IC:\Keil_v5\ARM\RV31\INC-IC:\Keil_v5\ARM\CMSIS\Include-IC:\Keil_v5\ARM\INC\Milandr\MDR32F9x-D__UVISION_VERSION="528" -DUSE_STDPERIPH_DRIVER -DSTM32L1XX_MD -DUSE_STM32L152_EVAL-o .\mdr32f92qi\mdr32f9qx_it.o --omf_browse .\mdr32f92qi\mdr32f9qx_it.crf --depend .\mdr32f92qi\mdr32f9qx_it.d)
+I (..\MDR32F9Qx_it.h)(0x5804D15E)
+I (..\common.h)(0x5804DBF3)
+F (..\rst.c)(0x5804D10D)(-c --cpu Cortex-M3 -D__EVAL -D__MICROLIB -g -O0 --apcs=interwork -I ..\ -I ..\..\..\Libraries\CMSIS\CM3\CoreSupport -I ..\..\..\Libraries\CMSIS\CM3\DeviceSupport\MDR32F9Qx\inc -I ..\..\..\Libraries\CMSIS\CM3\DeviceSupport\MDR32F9Qx\startup\arm -I ..\..\..\Libraries\MDR32F9Qx_StdPeriph_Driver\inc -I ..\MLT-IC:\Keil_v5\ARM\RV31\INC-IC:\Keil_v5\ARM\CMSIS\Include-IC:\Keil_v5\ARM\INC\Milandr\MDR32F9x-D__UVISION_VERSION="528" -DUSE_STDPERIPH_DRIVER -DSTM32L1XX_MD -DUSE_STM32L152_EVAL-o .\mdr32f92qi\rst.o --omf_browse .\mdr32f92qi\rst.crf --depend .\mdr32f92qi\rst.d)
+I (..\rst.h)(0x5406E713)
+I (..\common.h)(0x5804DBF3)
+F (..\lcd.c)(0x5804D6C4)(-c --cpu Cortex-M3 -D__EVAL -D__MICROLIB -g -O0 --apcs=interwork -I ..\ -I ..\..\..\Libraries\CMSIS\CM3\CoreSupport -I ..\..\..\Libraries\CMSIS\CM3\DeviceSupport\MDR32F9Qx\inc -I ..\..\..\Libraries\CMSIS\CM3\DeviceSupport\MDR32F9Qx\startup\arm -I ..\..\..\Libraries\MDR32F9Qx_StdPeriph_Driver\inc -I ..\MLT-IC:\Keil_v5\ARM\RV31\INC-IC:\Keil_v5\ARM\CMSIS\Include-IC:\Keil_v5\ARM\INC\Milandr\MDR32F9x-D__UVISION_VERSION="528" -DUSE_STDPERIPH_DRIVER -DSTM32L1XX_MD -DUSE_STM32L152_EVAL-o .\mdr32f92qi\lcd.o --omf_browse .\mdr32f92qi\lcd.crf --depend .\mdr32f92qi\lcd.d)
+I (..\lcd.h)(0x5804D175)
+I (..\common.h)(0x5804DBF3)
+F (..\..\..\Libraries\MDR32F9Qx_StdPeriph_Driver\src\MDR32F9Qx_port.c)(0x54B81016)(-c --cpu Cortex-M3 -D__EVAL -D__MICROLIB -g -O0 --apcs=interwork -I ..\ -I ..\..\..\Libraries\CMSIS\CM3\CoreSupport -I ..\..\..\Libraries\CMSIS\CM3\DeviceSupport\MDR32F9Qx\inc -I ..\..\..\Libraries\CMSIS\CM3\DeviceSupport\MDR32F9Qx\startup\arm -I ..\..\..\Libraries\MDR32F9Qx_StdPeriph_Driver\inc -I ..\MLT-IC:\Keil_v5\ARM\RV31\INC-IC:\Keil_v5\ARM\CMSIS\Include-IC:\Keil_v5\ARM\INC\Milandr\MDR32F9x-D__UVISION_VERSION="528" -DUSE_STDPERIPH_DRIVER -DSTM32L1XX_MD -DUSE_STM32L152_EVAL-o .\mdr32f92qi\mdr32f9qx_port.o --omf_browse .\mdr32f92qi\mdr32f9qx_port.crf --depend .\mdr32f92qi\mdr32f9qx_port.d)
+I (..\MDR32F9Qx_config.h)(0x5406F4C0)
+I (..\..\..\Libraries\MDR32F9Qx_StdPeriph_Driver\inc\MDR32F9Qx_lib.h)(0x5295EB5A)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5CEBC032)
+I (..\..\..\Libraries\CMSIS\CM3\DeviceSupport\MDR32F9Qx\inc\MDR32Fx.h)(0x5295EB5A)
+I (..\..\..\Libraries\CMSIS\CM3\CoreSupport\core_cm3.h)(0x5295EB5A)
+I (..\..\..\Libraries\CMSIS\CM3\DeviceSupport\MDR32F9Qx\startup\arm\system_MDR32F9Qx.h)(0x5295EB5A)
+I (..\..\..\Libraries\MDR32F9Qx_StdPeriph_Driver\inc\MDR32F9Qx_port.h)(0x5295EB5A)
+F (..\..\..\Libraries\MDR32F9Qx_StdPeriph_Driver\src\MDR32F9Qx_rst_clk.c)(0x5295EB5A)(-c --cpu Cortex-M3 -D__EVAL -D__MICROLIB -g -O0 --apcs=interwork -I ..\ -I ..\..\..\Libraries\CMSIS\CM3\CoreSupport -I ..\..\..\Libraries\CMSIS\CM3\DeviceSupport\MDR32F9Qx\inc -I ..\..\..\Libraries\CMSIS\CM3\DeviceSupport\MDR32F9Qx\startup\arm -I ..\..\..\Libraries\MDR32F9Qx_StdPeriph_Driver\inc -I ..\MLT-IC:\Keil_v5\ARM\RV31\INC-IC:\Keil_v5\ARM\CMSIS\Include-IC:\Keil_v5\ARM\INC\Milandr\MDR32F9x-D__UVISION_VERSION="528" -DUSE_STDPERIPH_DRIVER -DSTM32L1XX_MD -DUSE_STM32L152_EVAL-o .\mdr32f92qi\mdr32f9qx_rst_clk.o --omf_browse .\mdr32f92qi\mdr32f9qx_rst_clk.crf --depend .\mdr32f92qi\mdr32f9qx_rst_clk.d)
+I (..\MDR32F9Qx_config.h)(0x5406F4C0)
+I (..\..\..\Libraries\MDR32F9Qx_StdPeriph_Driver\inc\MDR32F9Qx_lib.h)(0x5295EB5A)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5CEBC032)
+I (..\..\..\Libraries\CMSIS\CM3\DeviceSupport\MDR32F9Qx\inc\MDR32Fx.h)(0x5295EB5A)
+I (..\..\..\Libraries\CMSIS\CM3\CoreSupport\core_cm3.h)(0x5295EB5A)
+I (..\..\..\Libraries\CMSIS\CM3\DeviceSupport\MDR32F9Qx\startup\arm\system_MDR32F9Qx.h)(0x5295EB5A)
+I (..\..\..\Libraries\MDR32F9Qx_StdPeriph_Driver\inc\MDR32F9Qx_rst_clk.h)(0x5295EB5A)
+F (..\startup_MDR32F9Qx.s)(0x4DBA977C)(--cpu Cortex-M3 --pd "__EVAL SETA 1" -g --apcs=interwork --pd "__MICROLIB SETA 1"-IC:\Keil_v5\ARM\RV31\INC-IC:\Keil_v5\ARM\CMSIS\Include-IC:\Keil_v5\ARM\INC\Milandr\MDR32F9x--pd "__UVISION_VERSION SETA 528"--list .\mdr32f92qi\startup_mdr32f9qx.lst --xref -o .\mdr32f92qi\startup_mdr32f9qx.o --depend .\mdr32f92qi\startup_mdr32f9qx.d)
+F (..\Retarget.c)(0x4F759855)(-c --cpu Cortex-M3 -D__EVAL -D__MICROLIB -g -O0 --apcs=interwork -I ..\ -I ..\..\..\Libraries\CMSIS\CM3\CoreSupport -I ..\..\..\Libraries\CMSIS\CM3\DeviceSupport\MDR32F9Qx\inc -I ..\..\..\Libraries\CMSIS\CM3\DeviceSupport\MDR32F9Qx\startup\arm -I ..\..\..\Libraries\MDR32F9Qx_StdPeriph_Driver\inc -I ..\MLT-IC:\Keil_v5\ARM\RV31\INC-IC:\Keil_v5\ARM\CMSIS\Include-IC:\Keil_v5\ARM\INC\Milandr\MDR32F9x-D__UVISION_VERSION="528" -DUSE_STDPERIPH_DRIVER -DSTM32L1XX_MD -DUSE_STM32L152_EVAL-o .\mdr32f92qi\retarget.o --omf_browse .\mdr32f92qi\retarget.crf --depend .\mdr32f92qi\retarget.d)
+I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x5CEBC032)
+I (C:\Keil_v5\ARM\ARMCC\include\time.h)(0x5CEBC026)
+I (C:\Keil_v5\ARM\ARMCC\include\rt_misc.h)(0x5CEBC026)
+I (C:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x5CEBC032)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5CEBC032)
+F (..\RTX_Conf_CM.c)(0x57FE5DC8)(-c --cpu Cortex-M3 -D__EVAL -D__MICROLIB -g -O0 --apcs=interwork -I ..\ -I ..\..\..\Libraries\CMSIS\CM3\CoreSupport -I ..\..\..\Libraries\CMSIS\CM3\DeviceSupport\MDR32F9Qx\inc -I ..\..\..\Libraries\CMSIS\CM3\DeviceSupport\MDR32F9Qx\startup\arm -I ..\..\..\Libraries\MDR32F9Qx_StdPeriph_Driver\inc -I ..\MLT-IC:\Keil_v5\ARM\RV31\INC-IC:\Keil_v5\ARM\CMSIS\Include-IC:\Keil_v5\ARM\INC\Milandr\MDR32F9x-D__UVISION_VERSION="528" -DUSE_STDPERIPH_DRIVER -DSTM32L1XX_MD -DUSE_STM32L152_EVAL-o .\mdr32f92qi\rtx_conf_cm.o --omf_browse .\mdr32f92qi\rtx_conf_cm.crf --depend .\mdr32f92qi\rtx_conf_cm.d)
+F (..\MLT\mlt_lcd.c)(0x5804D257)(-c --cpu Cortex-M3 -D__EVAL -D__MICROLIB -g -O0 --apcs=interwork -I ..\ -I ..\..\..\Libraries\CMSIS\CM3\CoreSupport -I ..\..\..\Libraries\CMSIS\CM3\DeviceSupport\MDR32F9Qx\inc -I ..\..\..\Libraries\CMSIS\CM3\DeviceSupport\MDR32F9Qx\startup\arm -I ..\..\..\Libraries\MDR32F9Qx_StdPeriph_Driver\inc -I ..\MLT-IC:\Keil_v5\ARM\RV31\INC-IC:\Keil_v5\ARM\CMSIS\Include-IC:\Keil_v5\ARM\INC\Milandr\MDR32F9x-D__UVISION_VERSION="528" -DUSE_STDPERIPH_DRIVER -DSTM32L1XX_MD -DUSE_STM32L152_EVAL-o .\mdr32f92qi\mlt_lcd.o --omf_browse .\mdr32f92qi\mlt_lcd.crf --depend .\mdr32f92qi\mlt_lcd.d)
+I (..\MLT\mlt_lcd.h)(0x5804D101)
+I (..\common.h)(0x5804DBF3)
