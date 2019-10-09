@@ -1,0 +1,16 @@
+--cpu Cortex-M3
+".\output\main.o"
+".\output\system_1986be9x.o"
+".\output\startup_1986be9x.o"
+".\output\1986be9x_uart.o"
+".\output\1986be9x_dma.o"
+".\output\1986be9x_eeprom.o"
+".\output\1986be9x_port.o"
+".\output\1986be9x_rst_clk.o"
+".\output\1986be9x_it.o"
+".\output\mlt_lcd.o"
+".\output\milflash.o"
+--library_type=microlib --strict --scatter ".\output\EV1986Test.sct"
+--summary_stderr --info summarysizes --map --load_addr_map_info --xref --callgraph --symbols
+--info sizes --info totals --info unused --info veneers
+--list ".\listing\EV1986Test.map" -o .\output\EV1986Test.axf
