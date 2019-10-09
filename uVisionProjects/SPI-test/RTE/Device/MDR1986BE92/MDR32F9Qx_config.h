@@ -67,8 +67,8 @@
 /* Uncomment the line(s) below to define used JTAG port(s). Leave all commented
  * if there is no JTAG ports */
 #if (((!defined(USE_MDR1986VE3)) || (!defined(USE_MDR1986VE1T))) && (defined(USE_MDR1986VE9x)))
-/* #define USE_JTAG_A */
- #define USE_JTAG_B 
+ #define USE_JTAG_A 
+ /*#define USE_JTAG_B */
 #endif
 
 /* Target system parameters */
