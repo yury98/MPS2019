@@ -94,14 +94,26 @@ int main (void)
 {
 RST_CLK_LSEconfig(RST_CLK_LSE_ON);
     // Включение тактирования
-    RST_CLK_LSEconfig(RST_CLK_LSE_ON);
+	RST_CLK_LSEconfig(RST_CLK_LSE_ON);
     while (RST_CLK_LSEstatus() != SUCCESS);
     
-    RST_CLK_HSEconfig(RST_CLK_HSE_ON);
+	RST_CLK_HSEconfig(RST_CLK_HSE_ON);
     while (RST_CLK_HSEstatus() != SUCCESS);
-    
-    RST_CLK_PCLKcmd(RST_CLK_PCLK_PORTC, ENABLE);
+
+	/* Enables the clock on PORTA */
+	RST_CLK_PCLKcmd(RST_CLK_PCLK_PORTA, ENABLE);
+	/* Enables the clock on PORTB */
+	RST_CLK_PCLKcmd(RST_CLK_PCLK_PORTB, ENABLE);	
+    /* Enables the clock on PORTC */
+	RST_CLK_PCLKcmd(RST_CLK_PCLK_PORTC, ENABLE);
+	/* Enables the clock on PORTD */
+	RST_CLK_PCLKcmd(RST_CLK_PCLK_PORTD, ENABLE);
+	/* Enables the clock on PORTE */
+	RST_CLK_PCLKcmd(RST_CLK_PCLK_PORTE, ENABLE);
+	/* Enables the HSI clock on PORTF */
     RST_CLK_PCLKcmd(RST_CLK_PCLK_PORTF, ENABLE);
+	/* Enables the HSI clock on ExtBus */
+    RST_CLK_PCLKcmd(RST_CLK_PCLK_EBC, ENABLE);
     
     SetupPortsForDiods();
     

@@ -11,4 +11,3 @@
 .\objects\main.o: C:\Users\Yurez\AppData\Local\Arm\Packs\Keil\MDR1986BExx\1.5.2\Libraries\MDR32F9Qx_StdPeriph_Driver\inc\MDR32F9Qx_uart.h
 .\objects\main.o: C:\Users\Yurez\AppData\Local\Arm\Packs\Keil\MDR1986BExx\1.5.2\Libraries\MDR32F9Qx_StdPeriph_Driver\inc\MDR32F9Qx_port.h
 .\objects\main.o: C:\Users\Yurez\AppData\Local\Arm\Packs\Keil\MDR1986BExx\1.5.2\Libraries\MDR32F9Qx_StdPeriph_Driver\inc\MDR32F9Qx_rst_clk.h
-.\objects\main.o: Interrupt\MDR32F9Qx_it.h
