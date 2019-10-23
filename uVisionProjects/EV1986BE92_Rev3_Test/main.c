@@ -321,13 +321,13 @@ DataH = 0x55555555;
    	 
 	while(1)
 	{
-		do
+		/*do
 		{
 			if (PORT_ReadInputDataBit(PORTE,PORT_Pin_3) == 0)
 			{
 				goto exitC1;
 			}
-		} while ((CAN1->BUF_02_DLC & 0x00000008) != 0x00000008);
+		} while ((CAN1->BUF_02_DLC & 0x00000008) != 0x00000008);*/
 		DataL = CAN1->BUF_02_DATAL;
 		DataH = CAN1->BUF_02_DATAH;
 	    //clear RX buf
