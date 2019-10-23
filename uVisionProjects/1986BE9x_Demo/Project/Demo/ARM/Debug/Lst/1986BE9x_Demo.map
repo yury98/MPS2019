@@ -1,0 +1,1488 @@
+Component: ARM Compiler 5.06 update 6 (build 750) Tool: armlink [4d35ed]
+
+==============================================================================
+
+Section Cross References
+
+    1986be9x_wwdg.o(.text) refers to 1986be9x_rst_clk.o(.text) for RST_CLK_PCLKcmd
+    1986be9x_dma.o(.text) refers to 1986be9x_dma.o(.bss) for .bss
+    1986be9x_uart.o(.text) refers to 1986be9x_rst_clk.o(.text) for RST_CLK_GetClocksFreq
+    1986be9x_usb_device.o(.text) refers to 1986be9x_usb.o(.text) for USB_SetSEPxCTRL
+    1986be9x_usb_device.o(.text) refers to 1986be9x_usb_device.o(.bss) for .bss
+    1986be9x_usb_device.o(.text) refers to 1986be9x_usb_cdc.o(.text) for USB_CDC_GetDescriptor
+    1986be9x_usb_device.o(.text) refers to 1986be9x_usb_device.o(.data) for .data
+    1986be9x_usb_cdc.o(.text) refers to menu_vcom.o(.text) for USB_CDC_RecieveData
+    1986be9x_usb_cdc.o(.text) refers to 1986be9x_usb_device.o(.text) for USB_EP_doDataOut
+    1986be9x_usb_cdc.o(.text) refers to 1986be9x_usb_cdc.o(.bss) for .bss
+    1986be9x_usb_cdc.o(.text) refers to 1986be9x_usb_cdc.o(.data) for .data
+    1986be9x_usb_cdc.o(.text) refers to 1986be9x_usb_device.o(.data) for USB_CurrentSetupPacket
+    font_12x16.o(.data) refers to font_12x16.o(.constdata) for Font_12x16_Data
+    font_6x8.o(.data) refers to font_6x8.o(.constdata) for Font_6x8_Data
+    font_7x10_bold.o(.data) refers to font_7x10_bold.o(.constdata) for Font_7x10_bold_Data
+    font_7x10_thin.o(.data) refers to font_7x10_thin.o(.constdata) for Font_7x10_thin_Data
+    system_1986be9x.o(.text) refers to system_1986be9x.o(.data) for .data
+    startup_1986be9x.o(STACK) refers (Special) to heapauxi.o(.text) for __use_two_region_memory
+    startup_1986be9x.o(HEAP) refers (Special) to heapauxi.o(.text) for __use_two_region_memory
+    startup_1986be9x.o(RESET) refers (Special) to heapauxi.o(.text) for __use_two_region_memory
+    startup_1986be9x.o(RESET) refers to startup_1986be9x.o(STACK) for __initial_sp
+    startup_1986be9x.o(RESET) refers to startup_1986be9x.o(.text) for Reset_Handler
+    startup_1986be9x.o(RESET) refers to 1986be9x_it.o(.text) for SysTick_Handler
+    startup_1986be9x.o(RESET) refers to 1986be9x_usb_device.o(.text) for USB_IRQHandler
+    startup_1986be9x.o(.text) refers (Special) to heapauxi.o(.text) for __use_two_region_memory
+    startup_1986be9x.o(.text) refers to system_1986be9x.o(.text) for SystemInit
+    startup_1986be9x.o(.text) refers to __main.o(!!!main) for __main
+    startup_1986be9x.o(.text) refers to startup_1986be9x.o(HEAP) for Heap_Mem
+    startup_1986be9x.o(.text) refers to startup_1986be9x.o(STACK) for Stack_Mem
+    text.o(.text) refers to lcd_1986be91.o(.text) for SetCrystal
+    text.o(.text) refers to 1986be9x_adc.o(.text) for ADC1_GetResult
+    text.o(.text) refers to systick.o(.text) for SysTickDelay
+    text.o(.text) refers to strlen.o(.text) for strlen
+    text.o(.text) refers to lcd_1986be91.o(.data) for CurrentMethod
+    text.o(.text) refers to text.o(.data) for .data
+    text.o(.data) refers to font_6x8.o(.data) for Font_6x8
+    1986be9x_it.o(.text) refers to 1986be9x_adc.o(.text) for ADC1_ITConfig
+    1986be9x_it.o(.text) refers to 1986be9x_bkp.o(.text) for BKP_RTC_GetFlagStatus
+    1986be9x_it.o(.text) refers to 1986be9x_port.o(.text) for PORT_SetBits
+    1986be9x_it.o(.text) refers to menu_time.o(.text) for Date_Update
+    1986be9x_it.o(.text) refers to 1986be9x_it.o(.data) for .data
+    adc.o(.text) refers to 1986be9x_rst_clk.o(.text) for RST_CLK_PCLKcmd
+    adc.o(.text) refers to 1986be9x_adc.o(.text) for ADC_DeInit
+    adc.o(.text) refers to adc.o(.bss) for .bss
+    demo_init_1986be91.o(.text) refers to 1986be9x_rst_clk.o(.text) for RST_CLK_PCLKcmd
+    demo_init_1986be91.o(.text) refers to 1986be9x_ext_bus.o(.text) for EXT_BUS_StructInit
+    demo_init_1986be91.o(.text) refers to 1986be9x_port.o(.text) for PORT_Init
+    demo_init_1986be91.o(.text) refers to lcd_1986be91.o(.text) for LCD_INIT
+    demo_init_1986be91.o(.text) refers to demo_init_1986be91.o(.bss) for .bss
+    gl.o(.text) refers to lcd_1986be91.o(.text) for SetCrystal
+    gl.o(.text) refers to lcd_1986be91.o(.data) for CurrentMethod
+    joystick.o(.text) refers to 1986be9x_port.o(.text) for PORT_ReadInputDataBit
+    joystick.o(.text) refers to joystick.o(.data) for .data
+    lcd_1986be91.o(.text) refers to 1986be9x_port.o(.text) for PORT_SetBits
+    lcd_1986be91.o(.text) refers to lcd_1986be91.o(.constdata) for .constdata
+    lcd_1986be91.o(.text) refers to lcd_1986be91.o(.data) for .data
+    leds.o(.text) refers to 1986be9x_port.o(.text) for PORT_ReadInputData
+    leds.o(.text) refers to leds.o(.data) for .data
+    main.o(.text) refers to demo_init_1986be91.o(.text) for Demo_Init
+    main.o(.text) refers to menu_time.o(.text) for Calendar_Init
+    main.o(.text) refers to menu.o(.text) for Menu_Init
+    main.o(.text) refers to menu_lowpower.o(.text) for LowPower_Init
+    menu.o(.text) refers to text.o(.text) for LCD_PUTS
+    menu.o(.text) refers to strlen.o(.text) for strlen
+    menu.o(.text) refers to gl.o(.text) for LCD_Line
+    menu.o(.text) refers to lcd_1986be91.o(.text) for LCD_CLS
+    menu.o(.text) refers to joystick.o(.text) for GetKey
+    menu.o(.text) refers to text.o(.data) for CurrentFont
+    menu.o(.text) refers to lcd_1986be91.o(.data) for CurrentMethod
+    menu.o(.text) refers to font_6x8.o(.data) for Font_6x8
+    menu.o(.text) refers to menu.o(.data) for .data
+    menu.o(.text) refers to menu.o(.bss) for .bss
+    menu.o(.data) refers to menu.o(.conststring) for .conststring
+    menu.o(.data) refers to menu.o(.text) for IdleFunc
+    menu.o(.data) refers to menu.o(.data) for LCDMenu
+    menu.o(.data) refers to menu.o(.data) for DevMenu
+    menu.o(.data) refers to menu_text.o(.text) for AboutFunc
+    menu.o(.data) refers to menu.o(.conststring) for .conststring
+    menu.o(.data) refers to menu_time.o(.text) for TimeAdjustFunc
+    menu.o(.data) refers to menu.o(.text) for ReturnFunc
+    menu.o(.data) refers to menu.o(.conststring) for .conststring
+    menu.o(.data) refers to menu.o(.data) for TimeMenuItems
+    menu.o(.data) refers to menu.o(.conststring) for .conststring
+    menu.o(.data) refers to menu_time.o(.text) for DateAdjustFunc
+    menu.o(.data) refers to menu.o(.text) for ReturnFunc
+    menu.o(.data) refers to menu.o(.conststring) for .conststring
+    menu.o(.data) refers to menu.o(.data) for DateMenuItems
+    menu.o(.data) refers to menu.o(.conststring) for .conststring
+    menu.o(.data) refers to menu_time.o(.text) for AlarmAdjustFunc
+    menu.o(.data) refers to menu.o(.text) for ReturnFunc
+    menu.o(.data) refers to menu.o(.conststring) for .conststring
+    menu.o(.data) refers to menu.o(.data) for AlarmMenuItems
+    menu.o(.data) refers to menu.o(.conststring) for .conststring
+    menu.o(.data) refers to menu_lowpower.o(.text) for STOPMode_RTCAlarm
+    menu.o(.data) refers to menu.o(.text) for ReturnFunc
+    menu.o(.data) refers to menu.o(.conststring) for .conststring
+    menu.o(.data) refers to menu.o(.data) for STOPMenuItems
+    menu.o(.data) refers to menu.o(.conststring) for .conststring
+    menu.o(.data) refers to menu_lowpower.o(.text) for STANDBYMode_WAKEUP
+    menu.o(.data) refers to menu.o(.text) for ReturnFunc
+    menu.o(.data) refers to menu.o(.conststring) for .conststring
+    menu.o(.data) refers to menu.o(.data) for STANDBYMenuItems
+    menu.o(.data) refers to menu.o(.conststring) for .conststring
+    menu.o(.data) refers to menu_uart.o(.text) for UARTwFIFOFunc
+    menu.o(.data) refers to menu.o(.text) for ReturnFunc
+    menu.o(.data) refers to menu.o(.conststring) for .conststring
+    menu.o(.data) refers to menu.o(.data) for UARTMenuItems
+    menu.o(.data) refers to menu.o(.conststring) for .conststring
+    menu.o(.data) refers to menu.o(.text) for IdleFunc
+    menu.o(.data) refers to menu.o(.data) for TimeMenu
+    menu.o(.data) refers to menu.o(.data) for DateMenu
+    menu.o(.data) refers to menu.o(.data) for AlarmMenu
+    menu.o(.data) refers to menu.o(.conststring) for .conststring
+    menu.o(.data) refers to menu.o(.data) for RTCMenuItems
+    menu.o(.data) refers to menu.o(.conststring) for .conststring
+    menu.o(.data) refers to menu.o(.text) for IdleFunc
+    menu.o(.data) refers to menu.o(.data) for STOPMenu
+    menu.o(.data) refers to menu.o(.data) for STANDBYMenu
+    menu.o(.data) refers to menu.o(.conststring) for .conststring
+    menu.o(.data) refers to menu.o(.data) for LowPowerMenuItems
+    menu.o(.data) refers to menu.o(.conststring) for .conststring
+    menu.o(.data) refers to menu_text.o(.text) for FontFunc
+    menu.o(.data) refers to menu.o(.text) for ReturnFunc
+    menu.o(.data) refers to menu.o(.conststring) for .conststring
+    menu.o(.data) refers to menu.o(.data) for TextMenuItems
+    menu.o(.data) refers to menu.o(.conststring) for .conststring
+    menu.o(.data) refers to menu_gl.o(.text) for ElementsFunc
+    menu.o(.data) refers to menu.o(.text) for ReturnFunc
+    menu.o(.data) refers to menu.o(.conststring) for .conststring
+    menu.o(.data) refers to menu.o(.data) for GraphicMenuItems
+    menu.o(.data) refers to menu.o(.conststring) for .conststring
+    menu.o(.data) refers to menu_leds.o(.text) for LightsOnFunc
+    menu.o(.data) refers to menu.o(.text) for ReturnFunc
+    menu.o(.data) refers to menu.o(.conststring) for .conststring
+    menu.o(.data) refers to menu.o(.data) for LEDsMenuItems
+    menu.o(.data) refers to menu.o(.conststring) for .conststring
+    menu.o(.data) refers to menu.o(.text) for IdleFunc
+    menu.o(.data) refers to menu.o(.data) for UARTMenu
+    menu.o(.data) refers to menu_vcom.o(.text) for VCOMFunc
+    menu.o(.data) refers to menu.o(.conststring) for .conststring
+    menu.o(.data) refers to menu.o(.data) for CommMenuItems
+    menu.o(.data) refers to menu.o(.conststring) for .conststring
+    menu.o(.data) refers to menu_tsensor.o(.text) for TSENSORFunc
+    menu.o(.data) refers to menu.o(.text) for IdleFunc
+    menu.o(.data) refers to menu.o(.data) for RTCMenu
+    menu.o(.data) refers to menu.o(.data) for LowPowerMenu
+    menu.o(.data) refers to menu.o(.conststring) for .conststring
+    menu.o(.data) refers to menu.o(.data) for OtherMenuItems
+    menu.o(.data) refers to menu.o(.conststring) for .conststring
+    menu.o(.data) refers to menu.o(.text) for IdleFunc
+    menu.o(.data) refers to menu.o(.data) for TextMenu
+    menu.o(.data) refers to menu.o(.data) for GraphicMenu
+    menu.o(.data) refers to menu.o(.data) for LEDsMenu
+    menu.o(.data) refers to menu.o(.conststring) for .conststring
+    menu.o(.data) refers to menu.o(.data) for LCDMenuItems
+    menu.o(.data) refers to menu.o(.conststring) for .conststring
+    menu.o(.data) refers to menu.o(.text) for IdleFunc
+    menu.o(.data) refers to menu.o(.data) for CommMenu
+    menu.o(.data) refers to menu.o(.data) for OtherMenu
+    menu.o(.data) refers to menu.o(.conststring) for .conststring
+    menu.o(.data) refers to menu.o(.data) for DevMenuItems
+    menu_gl.o(.text) refers to gl.o(.text) for LCD_Circle
+    menu_gl.o(.text) refers to lcd_1986be91.o(.text) for LCD_CLS
+    menu_gl.o(.text) refers to menu.o(.text) for DisplayMenuTitle
+    menu_gl.o(.text) refers to joystick.o(.text) for GetKey
+    menu_gl.o(.text) refers to text.o(.text) for LCD_PUTS
+    menu_gl.o(.text) refers to adc.o(.text) for ADC_Config
+    menu_gl.o(.text) refers to 1986be9x_adc.o(.text) for ADC1_Cmd
+    menu_gl.o(.text) refers to systick.o(.text) for SysTickDelay
+    menu_gl.o(.text) refers to lcd_1986be91.o(.data) for CurrentMethod
+    menu_gl.o(.text) refers to text.o(.data) for CurrentFont
+    menu_gl.o(.text) refers to font_6x8.o(.data) for Font_6x8
+    menu_leds.o(.text) refers to lcd_1986be91.o(.text) for LCD_CLS
+    menu_leds.o(.text) refers to text.o(.text) for LCD_PUTS
+    menu_leds.o(.text) refers to joystick.o(.text) for GetKey
+    menu_leds.o(.text) refers to 1986be9x_port.o(.text) for PORT_ResetBits
+    menu_leds.o(.text) refers to leds.o(.text) for ShiftLights
+    menu_leds.o(.text) refers to menu.o(.text) for DisplayMenu
+    menu_leds.o(.text) refers to lcd_1986be91.o(.data) for CurrentMethod
+    menu_leds.o(.text) refers to font_6x8.o(.data) for Font_6x8
+    menu_leds.o(.text) refers to text.o(.data) for CurrentFont
+    menu_leds.o(.text) refers to leds.o(.data) for CurrentLights
+    menu_text.o(.text) refers to lcd_1986be91.o(.text) for LCD_CLS
+    menu_text.o(.text) refers to menu.o(.text) for DisplayMenuTitle
+    menu_text.o(.text) refers to joystick.o(.text) for GetKey
+    menu_text.o(.text) refers to text.o(.text) for LCD_PUTS
+    menu_text.o(.text) refers to adc.o(.text) for ADC_Config
+    menu_text.o(.text) refers to 1986be9x_adc.o(.text) for ADC1_Cmd
+    menu_text.o(.text) refers to text.o(.data) for CurrentFont
+    menu_text.o(.text) refers to lcd_1986be91.o(.data) for CurrentMethod
+    menu_text.o(.text) refers to font_6x8.o(.data) for Font_6x8
+    menu_text.o(.text) refers to font_12x16.o(.data) for Font_12x16
+    menu_text.o(.text) refers to font_7x10_thin.o(.data) for Font_7x10_thin
+    menu_text.o(.text) refers to font_7x10_bold.o(.data) for Font_7x10_bold
+    menu_text.o(.text) refers to menu_text.o(.data) for .data
+    menu_time.o(.text) refers to 1986be9x_rst_clk.o(.text) for RST_CLK_LSEconfig
+    menu_time.o(.text) refers to 1986be9x_bkp.o(.text) for BKP_RTCclkSource
+    menu_time.o(.text) refers to text.o(.text) for LCD_PUTC
+    menu_time.o(.text) refers to joystick.o(.text) for GetKey
+    menu_time.o(.text) refers to lcd_1986be91.o(.text) for LCD_CLS
+    menu_time.o(.text) refers to menu.o(.text) for DisplayMenuTitle
+    menu_time.o(.text) refers to lcd_1986be91.o(.data) for CurrentMethod
+    menu_time.o(.text) refers to menu_time.o(.data) for .data
+    menu_time.o(.text) refers to text.o(.data) for CurrentFont
+    menu_time.o(.text) refers to font_6x8.o(.data) for Font_6x8
+    menu_time.o(.text) refers to systick.o(.text) for SysTickDelay
+    menu_time.o(.text) refers to 1986be9x_it.o(.data) for AlarmSetStatus
+    menu_tsensor.o(.text) refers to lcd_1986be91.o(.text) for LCD_CLS
+    menu_tsensor.o(.text) refers to menu.o(.text) for DisplayMenuTitle
+    menu_tsensor.o(.text) refers to joystick.o(.text) for GetKey
+    menu_tsensor.o(.text) refers to adc.o(.text) for ADC_Temp_Sensor_Config
+    menu_tsensor.o(.text) refers to 1986be9x_adc.o(.text) for ADC1_Cmd
+    menu_tsensor.o(.text) refers to text.o(.text) for LCD_PUTS
+    menu_tsensor.o(.text) refers to text.o(.data) for CurrentFont
+    menu_tsensor.o(.text) refers to lcd_1986be91.o(.data) for CurrentMethod
+    menu_tsensor.o(.text) refers to font_6x8.o(.data) for Font_6x8
+    menu_tsensor.o(.text) refers to 1986be9x_it.o(.data) for ADC1_Value
+    menu_tsensor.o(.text) refers to menu_tsensor.o(.data) for .data
+    menu_uart.o(.text) refers to 1986be9x_rst_clk.o(.text) for RST_CLK_PCLKcmd
+    menu_uart.o(.text) refers to 1986be9x_uart.o(.text) for UART_BRGInit
+    menu_uart.o(.text) refers to lcd_1986be91.o(.text) for LCD_CLS
+    menu_uart.o(.text) refers to text.o(.text) for LCD_PUTS
+    menu_uart.o(.text) refers to joystick.o(.text) for GetKey
+    menu_uart.o(.text) refers to menu.o(.text) for DisplayMenu
+    menu_uart.o(.text) refers to lcd_1986be91.o(.data) for CurrentMethod
+    menu_uart.o(.text) refers to font_6x8.o(.data) for Font_6x8
+    menu_uart.o(.text) refers to text.o(.data) for CurrentFont
+    menu_uart.o(.text) refers to menu_uart.o(.data) for .data
+    menu_uart.o(.text) refers to menu_uart.o(.bss) for .bss
+    menu_uart.o(.text) refers to 1986be9x_it.o(.data) for pfUARTReceiverFunc
+    menu_uart.o(.data) refers to menu_uart.o(.conststring) for .conststring
+    menu_vcom.o(.text) refers to 1986be9x_uart.o(.text) for UART_SendData
+    menu_vcom.o(.text) refers to lcd_1986be91.o(.text) for LCD_CLS
+    menu_vcom.o(.text) refers to menu.o(.text) for DisplayMenuTitle
+    menu_vcom.o(.text) refers to joystick.o(.text) for GetKey
+    menu_vcom.o(.text) refers to text.o(.text) for LCD_PUTS
+    menu_vcom.o(.text) refers to 1986be9x_usb_cdc.o(.text) for USB_CDC_SendData
+    menu_vcom.o(.text) refers to 1986be9x_rst_clk.o(.text) for RST_CLK_HSEconfig
+    menu_vcom.o(.text) refers to 1986be9x_port.o(.text) for PORT_Init
+    menu_vcom.o(.text) refers to 1986be9x_usb_device.o(.text) for USB_DeviceInit
+    menu_vcom.o(.text) refers to 1986be9x_usb.o(.text) for USB_SetSIM
+    menu_vcom.o(.text) refers to menu_vcom.o(.data) for .data
+    menu_vcom.o(.text) refers to menu_vcom.o(.bss) for .bss
+    menu_vcom.o(.text) refers to text.o(.data) for CurrentFont
+    menu_vcom.o(.text) refers to lcd_1986be91.o(.data) for CurrentMethod
+    menu_vcom.o(.text) refers to font_6x8.o(.data) for Font_6x8
+    menu_vcom.o(.text) refers to 1986be9x_it.o(.data) for pfUARTReceiverFunc
+    menu_lowpower.o(.text) refers to 1986be9x_rst_clk.o(.text) for RST_CLK_PCLKcmd
+    menu_lowpower.o(.text) refers to 1986be9x_port.o(.text) for PORT_DeInit
+    menu_lowpower.o(.text) refers to lcd_1986be91.o(.text) for LCD_CLS
+    menu_lowpower.o(.text) refers to menu.o(.text) for DisplayMenuTitle
+    menu_lowpower.o(.text) refers to joystick.o(.text) for GetKey
+    menu_lowpower.o(.text) refers to text.o(.text) for LCD_PUTS
+    menu_lowpower.o(.text) refers to 1986be9x_power.o(.text) for POWER_EnterSTANDBYMode
+    menu_lowpower.o(.text) refers to menu_lowpower.o(.bss) for .bss
+    menu_lowpower.o(.text) refers to lcd_1986be91.o(.data) for CurrentMethod
+    menu_lowpower.o(.text) refers to font_6x8.o(.data) for Font_6x8
+    menu_lowpower.o(.text) refers to text.o(.data) for CurrentFont
+    menu_lowpower.o(.text) refers to 1986be9x_it.o(.data) for STOPModeStatus
+    systick.o(.text) refers to 1986be9x_it.o(.data) for TimerCounter
+    __main.o(!!!main) refers to __rtentry.o(.ARM.Collect$$rtentry$$00000000) for __rt_entry
+    __rtentry.o(.ARM.Collect$$rtentry$$00000000) refers (Special) to __rtentry2.o(.ARM.Collect$$rtentry$$0000000A) for __rt_entry_li
+    __rtentry.o(.ARM.Collect$$rtentry$$00000000) refers (Special) to __rtentry2.o(.ARM.Collect$$rtentry$$0000000D) for __rt_entry_main
+    __rtentry.o(.ARM.Collect$$rtentry$$00000000) refers (Special) to __rtentry2.o(.ARM.Collect$$rtentry$$0000000C) for __rt_entry_postli_1
+    __rtentry.o(.ARM.Collect$$rtentry$$00000000) refers (Special) to __rtentry2.o(.ARM.Collect$$rtentry$$00000009) for __rt_entry_postsh_1
+    __rtentry.o(.ARM.Collect$$rtentry$$00000000) refers (Special) to __rtentry2.o(.ARM.Collect$$rtentry$$00000002) for __rt_entry_presh_1
+    __rtentry.o(.ARM.Collect$$rtentry$$00000000) refers (Special) to __rtentry4.o(.ARM.Collect$$rtentry$$00000004) for __rt_entry_sh
+    __rtentry2.o(.ARM.Collect$$rtentry$$00000008) refers to boardinit2.o(.text) for _platform_post_stackheap_init
+    __rtentry2.o(.ARM.Collect$$rtentry$$0000000A) refers to libinit.o(.ARM.Collect$$libinit$$00000000) for __rt_lib_init
+    __rtentry2.o(.ARM.Collect$$rtentry$$0000000B) refers to boardinit3.o(.text) for _platform_post_lib_init
+    __rtentry2.o(.ARM.Collect$$rtentry$$0000000D) refers to main.o(.text) for main
+    __rtentry2.o(.ARM.Collect$$rtentry$$0000000D) refers to exit.o(.text) for exit
+    __rtentry2.o(.ARM.exidx) refers to __rtentry2.o(.ARM.Collect$$rtentry$$00000001) for .ARM.Collect$$rtentry$$00000001
+    __rtentry2.o(.ARM.exidx) refers to __rtentry2.o(.ARM.Collect$$rtentry$$00000008) for .ARM.Collect$$rtentry$$00000008
+    __rtentry2.o(.ARM.exidx) refers to __rtentry2.o(.ARM.Collect$$rtentry$$0000000A) for .ARM.Collect$$rtentry$$0000000A
+    __rtentry2.o(.ARM.exidx) refers to __rtentry2.o(.ARM.Collect$$rtentry$$0000000B) for .ARM.Collect$$rtentry$$0000000B
+    __rtentry2.o(.ARM.exidx) refers to __rtentry2.o(.ARM.Collect$$rtentry$$0000000D) for .ARM.Collect$$rtentry$$0000000D
+    __rtentry4.o(.ARM.Collect$$rtentry$$00000004) refers to sys_stackheap_outer.o(.text) for __user_setup_stackheap
+    __rtentry4.o(.ARM.exidx) refers to __rtentry4.o(.ARM.Collect$$rtentry$$00000004) for .ARM.Collect$$rtentry$$00000004
+    sys_stackheap_outer.o(.text) refers to libspace.o(.text) for __user_perproc_libspace
+    sys_stackheap_outer.o(.text) refers to startup_1986be9x.o(.text) for __user_initial_stackheap
+    exit.o(.text) refers to rtexit.o(.ARM.Collect$$rtexit$$00000000) for __rt_exit
+    libinit.o(.ARM.Collect$$libinit$$00000000) refers (Special) to libinit2.o(.ARM.Collect$$libinit$$0000002E) for __rt_lib_init_alloca_1
+    libinit.o(.ARM.Collect$$libinit$$00000000) refers (Special) to libinit2.o(.ARM.Collect$$libinit$$0000002C) for __rt_lib_init_argv_1
+    libinit.o(.ARM.Collect$$libinit$$00000000) refers (Special) to libinit2.o(.ARM.Collect$$libinit$$0000001B) for __rt_lib_init_atexit_1
+    libinit.o(.ARM.Collect$$libinit$$00000000) refers (Special) to libinit2.o(.ARM.Collect$$libinit$$00000021) for __rt_lib_init_clock_1
+    libinit.o(.ARM.Collect$$libinit$$00000000) refers (Special) to libinit2.o(.ARM.Collect$$libinit$$00000032) for __rt_lib_init_cpp_1
+    libinit.o(.ARM.Collect$$libinit$$00000000) refers (Special) to libinit2.o(.ARM.Collect$$libinit$$00000030) for __rt_lib_init_exceptions_1
+    libinit.o(.ARM.Collect$$libinit$$00000000) refers (Special) to libinit2.o(.ARM.Collect$$libinit$$00000002) for __rt_lib_init_fp_1
+    libinit.o(.ARM.Collect$$libinit$$00000000) refers (Special) to libinit2.o(.ARM.Collect$$libinit$$0000001F) for __rt_lib_init_fp_trap_1
+    libinit.o(.ARM.Collect$$libinit$$00000000) refers (Special) to libinit2.o(.ARM.Collect$$libinit$$00000023) for __rt_lib_init_getenv_1
+    libinit.o(.ARM.Collect$$libinit$$00000000) refers (Special) to libinit2.o(.ARM.Collect$$libinit$$0000000A) for __rt_lib_init_heap_1
+    libinit.o(.ARM.Collect$$libinit$$00000000) refers (Special) to libinit2.o(.ARM.Collect$$libinit$$00000011) for __rt_lib_init_lc_collate_1
+    libinit.o(.ARM.Collect$$libinit$$00000000) refers (Special) to libinit2.o(.ARM.Collect$$libinit$$00000013) for __rt_lib_init_lc_ctype_1
+    libinit.o(.ARM.Collect$$libinit$$00000000) refers (Special) to libinit2.o(.ARM.Collect$$libinit$$00000015) for __rt_lib_init_lc_monetary_1
+    libinit.o(.ARM.Collect$$libinit$$00000000) refers (Special) to libinit2.o(.ARM.Collect$$libinit$$00000017) for __rt_lib_init_lc_numeric_1
+    libinit.o(.ARM.Collect$$libinit$$00000000) refers (Special) to libinit2.o(.ARM.Collect$$libinit$$00000019) for __rt_lib_init_lc_time_1
+    libinit.o(.ARM.Collect$$libinit$$00000000) refers (Special) to libinit2.o(.ARM.Collect$$libinit$$00000004) for __rt_lib_init_preinit_1
+    libinit.o(.ARM.Collect$$libinit$$00000000) refers (Special) to libinit2.o(.ARM.Collect$$libinit$$0000000E) for __rt_lib_init_rand_1
+    libinit.o(.ARM.Collect$$libinit$$00000000) refers (Special) to libinit2.o(.ARM.Collect$$libinit$$00000033) for __rt_lib_init_return
+    libinit.o(.ARM.Collect$$libinit$$00000000) refers (Special) to libinit2.o(.ARM.Collect$$libinit$$0000001D) for __rt_lib_init_signal_1
+    libinit.o(.ARM.Collect$$libinit$$00000000) refers (Special) to libinit2.o(.ARM.Collect$$libinit$$00000025) for __rt_lib_init_stdio_1
+    libinit.o(.ARM.Collect$$libinit$$00000000) refers (Special) to libinit2.o(.ARM.Collect$$libinit$$0000000C) for __rt_lib_init_user_alloc_1
+    libspace.o(.text) refers to libspace.o(.bss) for __libspace_start
+    rtexit.o(.ARM.Collect$$rtexit$$00000000) refers (Special) to rtexit2.o(.ARM.Collect$$rtexit$$00000004) for __rt_exit_exit
+    rtexit.o(.ARM.Collect$$rtexit$$00000000) refers (Special) to rtexit2.o(.ARM.Collect$$rtexit$$00000003) for __rt_exit_ls
+    rtexit.o(.ARM.Collect$$rtexit$$00000000) refers (Special) to rtexit2.o(.ARM.Collect$$rtexit$$00000002) for __rt_exit_prels_1
+    rtexit.o(.ARM.exidx) refers (Special) to rtexit2.o(.ARM.Collect$$rtexit$$00000004) for __rt_exit_exit
+    rtexit.o(.ARM.exidx) refers (Special) to rtexit2.o(.ARM.Collect$$rtexit$$00000003) for __rt_exit_ls
+    rtexit.o(.ARM.exidx) refers (Special) to rtexit2.o(.ARM.Collect$$rtexit$$00000002) for __rt_exit_prels_1
+    rtexit.o(.ARM.exidx) refers to rtexit.o(.ARM.Collect$$rtexit$$00000000) for .ARM.Collect$$rtexit$$00000000
+    libinit2.o(.ARM.Collect$$libinit$$00000010) refers to libinit2.o(.ARM.Collect$$libinit$$0000000F) for .ARM.Collect$$libinit$$0000000F
+    libinit2.o(.ARM.Collect$$libinit$$00000012) refers to libinit2.o(.ARM.Collect$$libinit$$0000000F) for .ARM.Collect$$libinit$$0000000F
+    libinit2.o(.ARM.Collect$$libinit$$00000014) refers to libinit2.o(.ARM.Collect$$libinit$$0000000F) for .ARM.Collect$$libinit$$0000000F
+    libinit2.o(.ARM.Collect$$libinit$$00000016) refers to libinit2.o(.ARM.Collect$$libinit$$0000000F) for .ARM.Collect$$libinit$$0000000F
+    libinit2.o(.ARM.Collect$$libinit$$00000018) refers to libinit2.o(.ARM.Collect$$libinit$$0000000F) for .ARM.Collect$$libinit$$0000000F
+    libinit2.o(.ARM.Collect$$libinit$$00000026) refers to argv_veneer.o(.emb_text) for __ARM_argv_veneer
+    libinit2.o(.ARM.Collect$$libinit$$00000027) refers to argv_veneer.o(.emb_text) for __ARM_argv_veneer
+    rtexit2.o(.ARM.Collect$$rtexit$$00000003) refers to libshutdown.o(.ARM.Collect$$libshutdown$$00000000) for __rt_lib_shutdown
+    rtexit2.o(.ARM.Collect$$rtexit$$00000004) refers to sys_exit.o(.text) for _sys_exit
+    rtexit2.o(.ARM.exidx) refers to rtexit2.o(.ARM.Collect$$rtexit$$00000001) for .ARM.Collect$$rtexit$$00000001
+    rtexit2.o(.ARM.exidx) refers to rtexit2.o(.ARM.Collect$$rtexit$$00000003) for .ARM.Collect$$rtexit$$00000003
+    rtexit2.o(.ARM.exidx) refers to rtexit2.o(.ARM.Collect$$rtexit$$00000004) for .ARM.Collect$$rtexit$$00000004
+    argv_veneer.o(.emb_text) refers to no_argv.o(.text) for __ARM_get_argv
+    sys_exit.o(.text) refers (Special) to use_no_semi.o(.text) for __I$use$semihosting
+    sys_exit.o(.text) refers (Special) to indicate_semi.o(.text) for __semihosting_library_function
+    _get_argv_nomalloc.o(.text) refers (Special) to hrguard.o(.text) for __heap_region$guard
+    _get_argv_nomalloc.o(.text) refers to defsig_rtmem_outer.o(.text) for __rt_SIGRTMEM
+    _get_argv_nomalloc.o(.text) refers to sys_command.o(.text) for _sys_command_string
+    libshutdown.o(.ARM.Collect$$libshutdown$$00000000) refers (Special) to libshutdown2.o(.ARM.Collect$$libshutdown$$00000002) for __rt_lib_shutdown_cpp_1
+    libshutdown.o(.ARM.Collect$$libshutdown$$00000000) refers (Special) to libshutdown2.o(.ARM.Collect$$libshutdown$$00000007) for __rt_lib_shutdown_fp_trap_1
+    libshutdown.o(.ARM.Collect$$libshutdown$$00000000) refers (Special) to libshutdown2.o(.ARM.Collect$$libshutdown$$0000000F) for __rt_lib_shutdown_heap_1
+    libshutdown.o(.ARM.Collect$$libshutdown$$00000000) refers (Special) to libshutdown2.o(.ARM.Collect$$libshutdown$$00000010) for __rt_lib_shutdown_return
+    libshutdown.o(.ARM.Collect$$libshutdown$$00000000) refers (Special) to libshutdown2.o(.ARM.Collect$$libshutdown$$0000000A) for __rt_lib_shutdown_signal_1
+    libshutdown.o(.ARM.Collect$$libshutdown$$00000000) refers (Special) to libshutdown2.o(.ARM.Collect$$libshutdown$$00000004) for __rt_lib_shutdown_stdio_1
+    libshutdown.o(.ARM.Collect$$libshutdown$$00000000) refers (Special) to libshutdown2.o(.ARM.Collect$$libshutdown$$0000000C) for __rt_lib_shutdown_user_alloc_1
+    sys_command.o(.text) refers (Special) to use_no_semi.o(.text) for __I$use$semihosting
+    sys_command.o(.text) refers (Special) to indicate_semi.o(.text) for __semihosting_library_function
+    defsig_rtmem_outer.o(.text) refers to defsig_rtmem_inner.o(.text) for __rt_SIGRTMEM_inner
+    defsig_rtmem_outer.o(.text) refers to defsig_exit.o(.text) for __sig_exit
+    defsig_rtmem_formal.o(.text) refers to rt_raise.o(.text) for __rt_raise
+    rt_raise.o(.text) refers to __raise.o(.text) for __raise
+    rt_raise.o(.text) refers to sys_exit.o(.text) for _sys_exit
+    defsig_exit.o(.text) refers to sys_exit.o(.text) for _sys_exit
+    defsig_rtmem_inner.o(.text) refers to defsig_general.o(.text) for __default_signal_display
+    __raise.o(.text) refers to defsig.o(CL$$defsig) for __default_signal_handler
+    defsig_general.o(.text) refers to sys_wrch.o(.text) for _ttywrch
+    sys_wrch.o(.text) refers (Special) to use_no_semi.o(.text) for __I$use$semihosting
+    sys_wrch.o(.text) refers (Special) to indicate_semi.o(.text) for __semihosting_library_function
+    defsig.o(CL$$defsig) refers to defsig_rtmem_inner.o(.text) for __rt_SIGRTMEM_inner
+    defsig_abrt_inner.o(.text) refers to defsig_general.o(.text) for __default_signal_display
+    defsig_fpe_inner.o(.text) refers to defsig_general.o(.text) for __default_signal_display
+    defsig_rtred_inner.o(.text) refers to defsig_general.o(.text) for __default_signal_display
+    defsig_stak_inner.o(.text) refers to defsig_general.o(.text) for __default_signal_display
+    defsig_pvfn_inner.o(.text) refers to defsig_general.o(.text) for __default_signal_display
+    defsig_cppl_inner.o(.text) refers to defsig_general.o(.text) for __default_signal_display
+    defsig_segv_inner.o(.text) refers to defsig_general.o(.text) for __default_signal_display
+    defsig_other.o(.text) refers to defsig_general.o(.text) for __default_signal_display
+
+
+==============================================================================
+
+Removing Unused input sections from the image.
+
+    Removing 1986be9x_wwdg.o(.text), (116 bytes).
+    Removing 1986be9x_can.o(.text), (828 bytes).
+    Removing 1986be9x_comp.o(.text), (276 bytes).
+    Removing 1986be9x_dac.o(.text), (128 bytes).
+    Removing 1986be9x_dma.o(.text), (536 bytes).
+    Removing 1986be9x_dma.o(.bss), (1024 bytes).
+    Removing 1986be9x_eeprom.o(.text), (660 bytes).
+    Removing 1986be9x_i2c.o(.text), (236 bytes).
+    Removing 1986be9x_iwdg.o(.text), (72 bytes).
+    Removing 1986be9x_ssp.o(.text), (248 bytes).
+    Removing 1986be9x_timer.o(.text), (1104 bytes).
+
+11 unused section(s) (total 5228 bytes) removed from the image.
+
+==============================================================================
+
+Image Symbol Table
+
+    Local Symbols
+
+    Symbol Name                              Value     Ov Type        Size  Object(Section)
+
+    ../clib/angel/boardlib.s                 0x00000000   Number         0  boardshut.o ABSOLUTE
+    ../clib/angel/boardlib.s                 0x00000000   Number         0  boardinit2.o ABSOLUTE
+    ../clib/angel/boardlib.s                 0x00000000   Number         0  boardinit3.o ABSOLUTE
+    ../clib/angel/boardlib.s                 0x00000000   Number         0  boardinit1.o ABSOLUTE
+    ../clib/angel/dczerorl2.s                0x00000000   Number         0  __dczerorl2.o ABSOLUTE
+    ../clib/angel/handlers.s                 0x00000000   Number         0  __scatter_zi.o ABSOLUTE
+    ../clib/angel/kernel.s                   0x00000000   Number         0  __rtentry2.o ABSOLUTE
+    ../clib/angel/kernel.s                   0x00000000   Number         0  __rtentry4.o ABSOLUTE
+    ../clib/angel/kernel.s                   0x00000000   Number         0  __rtentry.o ABSOLUTE
+    ../clib/angel/kernel.s                   0x00000000   Number         0  rtexit.o ABSOLUTE
+    ../clib/angel/kernel.s                   0x00000000   Number         0  rtexit2.o ABSOLUTE
+    ../clib/angel/rt.s                       0x00000000   Number         0  rt_raise.o ABSOLUTE
+    ../clib/angel/scatter.s                  0x00000000   Number         0  __scatter.o ABSOLUTE
+    ../clib/angel/startup.s                  0x00000000   Number         0  __main.o ABSOLUTE
+    ../clib/angel/sys.s                      0x00000000   Number         0  libspace.o ABSOLUTE
+    ../clib/angel/sys.s                      0x00000000   Number         0  sys_stackheap_outer.o ABSOLUTE
+    ../clib/angel/sys.s                      0x00000000   Number         0  indicate_semi.o ABSOLUTE
+    ../clib/angel/sys.s                      0x00000000   Number         0  use_no_semi.o ABSOLUTE
+    ../clib/angel/sysapp.c                   0x00000000   Number         0  sys_exit.o ABSOLUTE
+    ../clib/angel/sysapp.c                   0x00000000   Number         0  sys_wrch.o ABSOLUTE
+    ../clib/angel/sysapp.c                   0x00000000   Number         0  sys_command.o ABSOLUTE
+    ../clib/armsys.c                         0x00000000   Number         0  no_argv.o ABSOLUTE
+    ../clib/armsys.c                         0x00000000   Number         0  _get_argv_nomalloc.o ABSOLUTE
+    ../clib/armsys.c                         0x00000000   Number         0  argv_veneer.o ABSOLUTE
+    ../clib/armsys.c                         0x00000000   Number         0  argv_veneer.o ABSOLUTE
+    ../clib/heapalloc.c                      0x00000000   Number         0  hrguard.o ABSOLUTE
+    ../clib/heapaux.c                        0x00000000   Number         0  heapauxi.o ABSOLUTE
+    ../clib/libinit.s                        0x00000000   Number         0  libshutdown.o ABSOLUTE
+    ../clib/libinit.s                        0x00000000   Number         0  libinit.o ABSOLUTE
+    ../clib/libinit.s                        0x00000000   Number         0  libshutdown2.o ABSOLUTE
+    ../clib/libinit.s                        0x00000000   Number         0  libinit2.o ABSOLUTE
+    ../clib/signal.c                         0x00000000   Number         0  defsig_fpe_inner.o ABSOLUTE
+    ../clib/signal.c                         0x00000000   Number         0  defsig_rtred_inner.o ABSOLUTE
+    ../clib/signal.c                         0x00000000   Number         0  defsig_stak_inner.o ABSOLUTE
+    ../clib/signal.c                         0x00000000   Number         0  defsig_pvfn_inner.o ABSOLUTE
+    ../clib/signal.c                         0x00000000   Number         0  defsig_cppl_inner.o ABSOLUTE
+    ../clib/signal.c                         0x00000000   Number         0  defsig_segv_inner.o ABSOLUTE
+    ../clib/signal.c                         0x00000000   Number         0  defsig_other.o ABSOLUTE
+    ../clib/signal.c                         0x00000000   Number         0  defsig_general.o ABSOLUTE
+    ../clib/signal.c                         0x00000000   Number         0  __raise.o ABSOLUTE
+    ../clib/signal.c                         0x00000000   Number         0  defsig_exit.o ABSOLUTE
+    ../clib/signal.c                         0x00000000   Number         0  defsig_rtmem_outer.o ABSOLUTE
+    ../clib/signal.c                         0x00000000   Number         0  defsig_rtmem_inner.o ABSOLUTE
+    ../clib/signal.c                         0x00000000   Number         0  defsig_abrt_inner.o ABSOLUTE
+    ../clib/signal.c                         0x00000000   Number         0  defsig_rtmem_formal.o ABSOLUTE
+    ../clib/signal.s                         0x00000000   Number         0  defsig.o ABSOLUTE
+    ../clib/stdlib.c                         0x00000000   Number         0  exit.o ABSOLUTE
+    ../clib/string.c                         0x00000000   Number         0  strlen.o ABSOLUTE
+    ../fplib/fpinit.s                        0x00000000   Number         0  fpinit.o ABSOLUTE
+    ..\..\..\Library\Libraries\1986BE9x_StdPeriph_Driver\src\1986be9x_adc.c 0x00000000   Number         0  1986be9x_adc.o ABSOLUTE
+    ..\..\..\Library\Libraries\1986BE9x_StdPeriph_Driver\src\1986be9x_bkp.c 0x00000000   Number         0  1986be9x_bkp.o ABSOLUTE
+    ..\..\..\Library\Libraries\1986BE9x_StdPeriph_Driver\src\1986be9x_can.c 0x00000000   Number         0  1986be9x_can.o ABSOLUTE
+    ..\..\..\Library\Libraries\1986BE9x_StdPeriph_Driver\src\1986be9x_comp.c 0x00000000   Number         0  1986be9x_comp.o ABSOLUTE
+    ..\..\..\Library\Libraries\1986BE9x_StdPeriph_Driver\src\1986be9x_dac.c 0x00000000   Number         0  1986be9x_dac.o ABSOLUTE
+    ..\..\..\Library\Libraries\1986BE9x_StdPeriph_Driver\src\1986be9x_dma.c 0x00000000   Number         0  1986be9x_dma.o ABSOLUTE
+    ..\..\..\Library\Libraries\1986BE9x_StdPeriph_Driver\src\1986be9x_eeprom.c 0x00000000   Number         0  1986be9x_eeprom.o ABSOLUTE
+    ..\..\..\Library\Libraries\1986BE9x_StdPeriph_Driver\src\1986be9x_ext_bus.c 0x00000000   Number         0  1986be9x_ext_bus.o ABSOLUTE
+    ..\..\..\Library\Libraries\1986BE9x_StdPeriph_Driver\src\1986be9x_i2c.c 0x00000000   Number         0  1986be9x_i2c.o ABSOLUTE
+    ..\..\..\Library\Libraries\1986BE9x_StdPeriph_Driver\src\1986be9x_iwdg.c 0x00000000   Number         0  1986be9x_iwdg.o ABSOLUTE
+    ..\..\..\Library\Libraries\1986BE9x_StdPeriph_Driver\src\1986be9x_port.c 0x00000000   Number         0  1986be9x_port.o ABSOLUTE
+    ..\..\..\Library\Libraries\1986BE9x_StdPeriph_Driver\src\1986be9x_power.c 0x00000000   Number         0  1986be9x_power.o ABSOLUTE
+    ..\..\..\Library\Libraries\1986BE9x_StdPeriph_Driver\src\1986be9x_rst_clk.c 0x00000000   Number         0  1986be9x_rst_clk.o ABSOLUTE
+    ..\..\..\Library\Libraries\1986BE9x_StdPeriph_Driver\src\1986be9x_ssp.c 0x00000000   Number         0  1986be9x_ssp.o ABSOLUTE
+    ..\..\..\Library\Libraries\1986BE9x_StdPeriph_Driver\src\1986be9x_timer.c 0x00000000   Number         0  1986be9x_timer.o ABSOLUTE
+    ..\..\..\Library\Libraries\1986BE9x_StdPeriph_Driver\src\1986be9x_uart.c 0x00000000   Number         0  1986be9x_uart.o ABSOLUTE
+    ..\..\..\Library\Libraries\1986BE9x_StdPeriph_Driver\src\1986be9x_usb.c 0x00000000   Number         0  1986be9x_usb.o ABSOLUTE
+    ..\..\..\Library\Libraries\1986BE9x_StdPeriph_Driver\src\1986be9x_wwdg.c 0x00000000   Number         0  1986be9x_wwdg.o ABSOLUTE
+    ..\..\..\Library\Libraries\1986BE9x_StdPeriph_Driver\src\USB_Library\1986BE9x_usb_CDC.c 0x00000000   Number         0  1986be9x_usb_cdc.o ABSOLUTE
+    ..\..\..\Library\Libraries\1986BE9x_StdPeriph_Driver\src\USB_Library\1986BE9x_usb_device.c 0x00000000   Number         0  1986be9x_usb_device.o ABSOLUTE
+    ..\..\..\Library\Libraries\CMSIS\CM3\DeviceSupport\1986BE9x\startup\arm\startup_1986be9x.s 0x00000000   Number         0  startup_1986be9x.o ABSOLUTE
+    ..\..\..\Library\Libraries\CMSIS\CM3\DeviceSupport\1986BE9x\startup\arm\system_1986BE9x.c 0x00000000   Number         0  system_1986be9x.o ABSOLUTE
+    ..\..\fonts\Font_12x16.c                 0x00000000   Number         0  font_12x16.o ABSOLUTE
+    ..\..\fonts\Font_6x8.c                   0x00000000   Number         0  font_6x8.o ABSOLUTE
+    ..\..\fonts\Font_7x10_bold.c             0x00000000   Number         0  font_7x10_bold.o ABSOLUTE
+    ..\..\fonts\Font_7x10_thin.c             0x00000000   Number         0  font_7x10_thin.o ABSOLUTE
+    ..\..\src\1986BE9x_it.c                  0x00000000   Number         0  1986be9x_it.o ABSOLUTE
+    ..\..\src\Demo_Init_1986BE91.c           0x00000000   Number         0  demo_init_1986be91.o ABSOLUTE
+    ..\..\src\Demo_Init_1986BE9x.c           0x00000000   Number         0  demo_init_1986be9x.o ABSOLUTE
+    ..\..\src\Main.c                         0x00000000   Number         0  main.o ABSOLUTE
+    ..\..\src\Menu.c                         0x00000000   Number         0  menu.o ABSOLUTE
+    ..\..\src\Menu_VCOM.c                    0x00000000   Number         0  menu_vcom.o ABSOLUTE
+    ..\..\src\Menu_gl.c                      0x00000000   Number         0  menu_gl.o ABSOLUTE
+    ..\..\src\Menu_leds.c                    0x00000000   Number         0  menu_leds.o ABSOLUTE
+    ..\..\src\Menu_lowpower.c                0x00000000   Number         0  menu_lowpower.o ABSOLUTE
+    ..\..\src\Menu_text.c                    0x00000000   Number         0  menu_text.o ABSOLUTE
+    ..\..\src\Menu_time.c                    0x00000000   Number         0  menu_time.o ABSOLUTE
+    ..\..\src\Menu_tsensor.c                 0x00000000   Number         0  menu_tsensor.o ABSOLUTE
+    ..\..\src\Menu_uart.c                    0x00000000   Number         0  menu_uart.o ABSOLUTE
+    ..\..\src\adc.c                          0x00000000   Number         0  adc.o ABSOLUTE
+    ..\..\src\gl.c                           0x00000000   Number         0  gl.o ABSOLUTE
+    ..\..\src\joystick.c                     0x00000000   Number         0  joystick.o ABSOLUTE
+    ..\..\src\lcd_1986BE91.c                 0x00000000   Number         0  lcd_1986be91.o ABSOLUTE
+    ..\..\src\lcd_1986BE9x.c                 0x00000000   Number         0  lcd_1986be9x.o ABSOLUTE
+    ..\..\src\leds.c                         0x00000000   Number         0  leds.o ABSOLUTE
+    ..\..\src\systick.c                      0x00000000   Number         0  systick.o ABSOLUTE
+    ..\..\src\text.c                         0x00000000   Number         0  text.o ABSOLUTE
+    dc.s                                     0x00000000   Number         0  dc.o ABSOLUTE
+    RESET                                    0x08000000   Section      192  startup_1986be9x.o(RESET)
+    !!!main                                  0x080000c0   Section        8  __main.o(!!!main)
+    !!!scatter                               0x080000c8   Section       52  __scatter.o(!!!scatter)
+    !!dczerorl2                              0x080000fc   Section       90  __dczerorl2.o(!!dczerorl2)
+    !!handler_zi                             0x08000158   Section       28  __scatter_zi.o(!!handler_zi)
+    .ARM.Collect$$libinit$$00000000          0x08000174   Section        2  libinit.o(.ARM.Collect$$libinit$$00000000)
+    .ARM.Collect$$libinit$$00000002          0x08000176   Section        0  libinit2.o(.ARM.Collect$$libinit$$00000002)
+    .ARM.Collect$$libinit$$00000004          0x08000176   Section        0  libinit2.o(.ARM.Collect$$libinit$$00000004)
+    .ARM.Collect$$libinit$$0000000A          0x08000176   Section        0  libinit2.o(.ARM.Collect$$libinit$$0000000A)
+    .ARM.Collect$$libinit$$0000000C          0x08000176   Section        0  libinit2.o(.ARM.Collect$$libinit$$0000000C)
+    .ARM.Collect$$libinit$$0000000E          0x08000176   Section        0  libinit2.o(.ARM.Collect$$libinit$$0000000E)
+    .ARM.Collect$$libinit$$00000011          0x08000176   Section        0  libinit2.o(.ARM.Collect$$libinit$$00000011)
+    .ARM.Collect$$libinit$$00000013          0x08000176   Section        0  libinit2.o(.ARM.Collect$$libinit$$00000013)
+    .ARM.Collect$$libinit$$00000015          0x08000176   Section        0  libinit2.o(.ARM.Collect$$libinit$$00000015)
+    .ARM.Collect$$libinit$$00000017          0x08000176   Section        0  libinit2.o(.ARM.Collect$$libinit$$00000017)
+    .ARM.Collect$$libinit$$00000019          0x08000176   Section        0  libinit2.o(.ARM.Collect$$libinit$$00000019)
+    .ARM.Collect$$libinit$$0000001B          0x08000176   Section        0  libinit2.o(.ARM.Collect$$libinit$$0000001B)
+    .ARM.Collect$$libinit$$0000001D          0x08000176   Section        0  libinit2.o(.ARM.Collect$$libinit$$0000001D)
+    .ARM.Collect$$libinit$$0000001F          0x08000176   Section        0  libinit2.o(.ARM.Collect$$libinit$$0000001F)
+    .ARM.Collect$$libinit$$00000021          0x08000176   Section        0  libinit2.o(.ARM.Collect$$libinit$$00000021)
+    .ARM.Collect$$libinit$$00000023          0x08000176   Section        0  libinit2.o(.ARM.Collect$$libinit$$00000023)
+    .ARM.Collect$$libinit$$00000025          0x08000176   Section        0  libinit2.o(.ARM.Collect$$libinit$$00000025)
+    .ARM.Collect$$libinit$$0000002C          0x08000176   Section        0  libinit2.o(.ARM.Collect$$libinit$$0000002C)
+    .ARM.Collect$$libinit$$0000002E          0x08000176   Section        0  libinit2.o(.ARM.Collect$$libinit$$0000002E)
+    .ARM.Collect$$libinit$$00000030          0x08000176   Section        0  libinit2.o(.ARM.Collect$$libinit$$00000030)
+    .ARM.Collect$$libinit$$00000032          0x08000176   Section        0  libinit2.o(.ARM.Collect$$libinit$$00000032)
+    .ARM.Collect$$libinit$$00000033          0x08000176   Section        2  libinit2.o(.ARM.Collect$$libinit$$00000033)
+    .ARM.Collect$$libshutdown$$00000000      0x08000178   Section        2  libshutdown.o(.ARM.Collect$$libshutdown$$00000000)
+    .ARM.Collect$$libshutdown$$00000002      0x0800017a   Section        0  libshutdown2.o(.ARM.Collect$$libshutdown$$00000002)
+    .ARM.Collect$$libshutdown$$00000004      0x0800017a   Section        0  libshutdown2.o(.ARM.Collect$$libshutdown$$00000004)
+    .ARM.Collect$$libshutdown$$00000007      0x0800017a   Section        0  libshutdown2.o(.ARM.Collect$$libshutdown$$00000007)
+    .ARM.Collect$$libshutdown$$0000000A      0x0800017a   Section        0  libshutdown2.o(.ARM.Collect$$libshutdown$$0000000A)
+    .ARM.Collect$$libshutdown$$0000000C      0x0800017a   Section        0  libshutdown2.o(.ARM.Collect$$libshutdown$$0000000C)
+    .ARM.Collect$$libshutdown$$0000000F      0x0800017a   Section        0  libshutdown2.o(.ARM.Collect$$libshutdown$$0000000F)
+    .ARM.Collect$$libshutdown$$00000010      0x0800017a   Section        2  libshutdown2.o(.ARM.Collect$$libshutdown$$00000010)
+    .ARM.Collect$$rtentry$$00000000          0x0800017c   Section        0  __rtentry.o(.ARM.Collect$$rtentry$$00000000)
+    .ARM.Collect$$rtentry$$00000002          0x0800017c   Section        0  __rtentry2.o(.ARM.Collect$$rtentry$$00000002)
+    .ARM.Collect$$rtentry$$00000004          0x0800017c   Section        6  __rtentry4.o(.ARM.Collect$$rtentry$$00000004)
+    .ARM.Collect$$rtentry$$00000009          0x08000182   Section        0  __rtentry2.o(.ARM.Collect$$rtentry$$00000009)
+    .ARM.Collect$$rtentry$$0000000A          0x08000182   Section        4  __rtentry2.o(.ARM.Collect$$rtentry$$0000000A)
+    .ARM.Collect$$rtentry$$0000000C          0x08000186   Section        0  __rtentry2.o(.ARM.Collect$$rtentry$$0000000C)
+    .ARM.Collect$$rtentry$$0000000D          0x08000186   Section        8  __rtentry2.o(.ARM.Collect$$rtentry$$0000000D)
+    .ARM.Collect$$rtexit$$00000000           0x0800018e   Section        2  rtexit.o(.ARM.Collect$$rtexit$$00000000)
+    .ARM.Collect$$rtexit$$00000002           0x08000190   Section        0  rtexit2.o(.ARM.Collect$$rtexit$$00000002)
+    .ARM.Collect$$rtexit$$00000003           0x08000190   Section        4  rtexit2.o(.ARM.Collect$$rtexit$$00000003)
+    .ARM.Collect$$rtexit$$00000004           0x08000194   Section        6  rtexit2.o(.ARM.Collect$$rtexit$$00000004)
+    .text                                    0x0800019c   Section        0  1986be9x_adc.o(.text)
+    .text                                    0x080004d4   Section        0  1986be9x_bkp.o(.text)
+    .text                                    0x080005a8   Section        0  1986be9x_ext_bus.o(.text)
+    .text                                    0x08000684   Section        0  1986be9x_port.o(.text)
+    .text                                    0x08000894   Section        0  1986be9x_power.o(.text)
+    .text                                    0x08000998   Section        0  1986be9x_rst_clk.o(.text)
+    .text                                    0x08000e00   Section        0  1986be9x_uart.o(.text)
+    .text                                    0x08000fc8   Section        0  1986be9x_usb.o(.text)
+    .text                                    0x08001270   Section        0  1986be9x_usb_device.o(.text)
+    USB_EP_sendInDataPortion                 0x08001329   Thumb Code   102  1986be9x_usb_device.o(.text)
+    USB_Device_setAddressWork                0x08001601   Thumb Code    28  1986be9x_usb_device.o(.text)
+    USB_EP_SetReady                          0x080018c3   Thumb Code    44  1986be9x_usb_device.o(.text)
+    .text                                    0x080018fc   Section        0  1986be9x_usb_cdc.o(.text)
+    USB_CDC_OnDataReceive                    0x08001923   Thumb Code    42  1986be9x_usb_cdc.o(.text)
+    USB_CDC_OnDataSent                       0x0800196f   Thumb Code     8  1986be9x_usb_cdc.o(.text)
+    USB_CDC_DoDataOut                        0x08001a1b   Thumb Code    42  1986be9x_usb_cdc.o(.text)
+    .text                                    0x08001ae0   Section        0  system_1986be9x.o(.text)
+    .text                                    0x08001b7c   Section       64  startup_1986be9x.o(.text)
+    .text                                    0x08001bbc   Section        0  text.o(.text)
+    .text                                    0x08001e6c   Section        0  1986be9x_it.o(.text)
+    UARTx_HandlerWork                        0x08001e7d   Thumb Code    60  1986be9x_it.o(.text)
+    .text                                    0x08001fdc   Section        0  adc.o(.text)
+    .text                                    0x08002068   Section        0  demo_init_1986be91.o(.text)
+    .text                                    0x08002160   Section        0  gl.o(.text)
+    .text                                    0x080022f8   Section        0  joystick.o(.text)
+    .text                                    0x08002328   Section        0  lcd_1986be91.o(.text)
+    WhileStatus                              0x0800244b   Thumb Code    16  lcd_1986be91.o(.text)
+    .text                                    0x0800246c   Section        0  leds.o(.text)
+    .text                                    0x080024a0   Section        0  main.o(.text)
+    .text                                    0x080024c0   Section        0  menu.o(.text)
+    DisplayMenuItemString                    0x080024c1   Thumb Code    50  menu.o(.text)
+    IdleFunc                                 0x080024f3   Thumb Code     2  menu.o(.text)
+    UpFunc                                   0x080025b7   Thumb Code   106  menu.o(.text)
+    DownFunc                                 0x08002621   Thumb Code   108  menu.o(.text)
+    ReturnFunc                               0x0800268d   Thumb Code    36  menu.o(.text)
+    SelFunc                                  0x0800270d   Thumb Code    50  menu.o(.text)
+    .text                                    0x08002780   Section        0  menu_gl.o(.text)
+    .text                                    0x08002abc   Section        0  menu_leds.o(.text)
+    .text                                    0x08002b78   Section        0  menu_text.o(.text)
+    .text                                    0x08002f20   Section        0  menu_time.o(.text)
+    IsLeapYear                               0x08003309   Thumb Code    38  menu_time.o(.text)
+    .text                                    0x08003c00   Section        0  menu_tsensor.o(.text)
+    .text                                    0x08003e6c   Section        0  menu_uart.o(.text)
+    .text                                    0x08004410   Section        0  menu_vcom.o(.text)
+    SenderFunc                               0x08004411   Thumb Code    48  menu_vcom.o(.text)
+    ReceiverFunc                             0x08004551   Thumb Code    66  menu_vcom.o(.text)
+    LineStateFunc                            0x08004593   Thumb Code    68  menu_vcom.o(.text)
+    NVIC_EnableIRQ                           0x08004739   Thumb Code    22  menu_vcom.o(.text)
+    .text                                    0x080047b0   Section        0  menu_lowpower.o(.text)
+    PORT_SaveConfig                          0x080047b9   Thumb Code   250  menu_lowpower.o(.text)
+    PORT_RestoreConfig                       0x080048b3   Thumb Code   204  menu_lowpower.o(.text)
+    .text                                    0x08004dd0   Section        0  systick.o(.text)
+    .text                                    0x08004e0c   Section        0  strlen.o(.text)
+    .text                                    0x08004e4a   Section        0  heapauxi.o(.text)
+    .text                                    0x08004e50   Section       74  sys_stackheap_outer.o(.text)
+    .text                                    0x08004e9a   Section        0  exit.o(.text)
+    .text                                    0x08004eac   Section        8  libspace.o(.text)
+    .text                                    0x08004eb4   Section        0  sys_exit.o(.text)
+    .text                                    0x08004ec0   Section        2  use_no_semi.o(.text)
+    .constdata                               0x08004ec2   Section     6144  font_12x16.o(.constdata)
+    .text                                    0x08004ec2   Section        0  indicate_semi.o(.text)
+    Font_12x16_Data                          0x08004ec2   Data        6144  font_12x16.o(.constdata)
+    .constdata                               0x080066c2   Section     1536  font_6x8.o(.constdata)
+    Font_6x8_Data                            0x080066c2   Data        1536  font_6x8.o(.constdata)
+    .constdata                               0x08006cc2   Section     3584  font_7x10_bold.o(.constdata)
+    Font_7x10_bold_Data                      0x08006cc2   Data        3584  font_7x10_bold.o(.constdata)
+    .constdata                               0x08007ac2   Section     3584  font_7x10_thin.o(.constdata)
+    Font_7x10_thin_Data                      0x08007ac2   Data        3584  font_7x10_thin.o(.constdata)
+    .constdata                               0x080088c4   Section       16  lcd_1986be91.o(.constdata)
+    .conststring                             0x080088d4   Section       36  menu.o(.conststring)
+    .conststring                             0x080088f8   Section       21  menu.o(.conststring)
+    .conststring                             0x08008910   Section        5  menu.o(.conststring)
+    .conststring                             0x08008918   Section        5  menu.o(.conststring)
+    .conststring                             0x08008920   Section       18  menu.o(.conststring)
+    .conststring                             0x08008934   Section       10  menu.o(.conststring)
+    .conststring                             0x08008940   Section       15  menu.o(.conststring)
+    .conststring                             0x08008950   Section       13  menu.o(.conststring)
+    .conststring                             0x08008960   Section       25  menu.o(.conststring)
+    .conststring                             0x0800897c   Section        5  menu.o(.conststring)
+    .conststring                             0x08008984   Section       16  menu.o(.conststring)
+    .conststring                             0x08008994   Section       16  menu.o(.conststring)
+    .conststring                             0x080089a4   Section       15  menu.o(.conststring)
+    .conststring                             0x080089b4   Section       21  menu.o(.conststring)
+    .conststring                             0x080089cc   Section        5  menu.o(.conststring)
+    .conststring                             0x080089d4   Section       21  menu.o(.conststring)
+    .conststring                             0x080089ec   Section        9  menu.o(.conststring)
+    .conststring                             0x080089f8   Section        3  menu.o(.conststring)
+    .conststring                             0x080089fc   Section        5  menu.o(.conststring)
+    .conststring                             0x08008a04   Section       17  menu.o(.conststring)
+    .conststring                             0x08008a18   Section       14  menu.o(.conststring)
+    .conststring                             0x08008a28   Section       22  menu.o(.conststring)
+    .conststring                             0x08008a40   Section       14  menu.o(.conststring)
+    .conststring                             0x08008a50   Section        6  menu.o(.conststring)
+    .conststring                             0x08008a58   Section      127  menu_uart.o(.conststring)
+    .data                                    0x20000000   Section       16  1986be9x_usb_device.o(.data)
+    SetupPacketData                          0x20000000   Data           2  1986be9x_usb_device.o(.data)
+    bHandling                                0x20000004   Data           4  1986be9x_usb_device.o(.data)
+    .data                                    0x20000010   Section      104  1986be9x_usb_cdc.o(.data)
+    CDC_ClassPacketData                      0x20000010   Data           8  1986be9x_usb_cdc.o(.data)
+    Usb_CDC_Device_Descriptor                0x20000018   Data          18  1986be9x_usb_cdc.o(.data)
+    Usb_CDC_Configuration_Descriptor         0x2000002a   Data          67  1986be9x_usb_cdc.o(.data)
+    CDC_StateReportPacket                    0x2000006e   Data          10  1986be9x_usb_cdc.o(.data)
+    .data                                    0x20000078   Section       16  font_12x16.o(.data)
+    .data                                    0x20000088   Section       16  font_6x8.o(.data)
+    .data                                    0x20000098   Section       16  font_7x10_bold.o(.data)
+    .data                                    0x200000a8   Section       16  font_7x10_thin.o(.data)
+    .data                                    0x200000b8   Section        4  system_1986be9x.o(.data)
+    .data                                    0x200000bc   Section        4  text.o(.data)
+    .data                                    0x200000c0   Section       28  1986be9x_it.o(.data)
+    .data                                    0x200000dc   Section       40  joystick.o(.data)
+    JoystickKeys                             0x200000dc   Data          40  joystick.o(.data)
+    .data                                    0x20000104   Section        1  lcd_1986be91.o(.data)
+    .data                                    0x20000105   Section        1  lcd_1986be91.o(.data)
+    .data                                    0x20000108   Section        4  leds.o(.data)
+    .data                                    0x2000010c   Section       68  menu.o(.data)
+    MenuItemIndex                            0x2000010c   Data           4  menu.o(.data)
+    nMenuLevel                               0x20000110   Data           4  menu.o(.data)
+    psMenuItem                               0x20000114   Data           4  menu.o(.data)
+    psCurrentMenuItem                        0x20000118   Data           4  menu.o(.data)
+    psCurrentMenu                            0x2000011c   Data           4  menu.o(.data)
+    .data                                    0x20000150   Section       36  menu.o(.data)
+    .data                                    0x20000174   Section       12  menu.o(.data)
+    .data                                    0x20000180   Section       36  menu.o(.data)
+    .data                                    0x200001a4   Section       12  menu.o(.data)
+    .data                                    0x200001b0   Section       36  menu.o(.data)
+    .data                                    0x200001d4   Section       12  menu.o(.data)
+    .data                                    0x200001e0   Section       24  menu.o(.data)
+    .data                                    0x200001f8   Section       12  menu.o(.data)
+    .data                                    0x20000204   Section       36  menu.o(.data)
+    .data                                    0x20000228   Section       12  menu.o(.data)
+    .data                                    0x20000234   Section       36  menu.o(.data)
+    .data                                    0x20000258   Section       12  menu.o(.data)
+    .data                                    0x20000264   Section       48  menu.o(.data)
+    .data                                    0x20000294   Section       12  menu.o(.data)
+    .data                                    0x200002a0   Section       36  menu.o(.data)
+    .data                                    0x200002c4   Section       12  menu.o(.data)
+    .data                                    0x200002d0   Section       48  menu.o(.data)
+    .data                                    0x20000300   Section       12  menu.o(.data)
+    .data                                    0x2000030c   Section       36  menu.o(.data)
+    .data                                    0x20000330   Section       12  menu.o(.data)
+    .data                                    0x2000033c   Section       24  menu.o(.data)
+    .data                                    0x20000354   Section       12  menu.o(.data)
+    .data                                    0x20000360   Section       36  menu.o(.data)
+    .data                                    0x20000384   Section       12  menu.o(.data)
+    .data                                    0x20000390   Section       48  menu.o(.data)
+    .data                                    0x200003c0   Section       12  menu.o(.data)
+    .data                                    0x200003cc   Section       48  menu.o(.data)
+    .data                                    0x200003fc   Section       12  menu.o(.data)
+    .data                                    0x20000408   Section       36  menu.o(.data)
+    .data                                    0x2000042c   Section       12  menu.o(.data)
+    .data                                    0x20000438   Section      352  menu_text.o(.data)
+    Book                                     0x20000438   Data         352  menu_text.o(.data)
+    .data                                    0x20000598   Section       16  menu_time.o(.data)
+    sDate                                    0x20000598   Data           4  menu_time.o(.data)
+    sTime                                    0x2000059c   Data           6  menu_time.o(.data)
+    sAlarm                                   0x200005a2   Data           6  menu_time.o(.data)
+    .data                                    0x200005a8   Section       34  menu_tsensor.o(.data)
+    Temp_Decimal                             0x200005a8   Data           4  menu_tsensor.o(.data)
+    TempCelsius_Value                        0x200005ac   Data           4  menu_tsensor.o(.data)
+    Temp_Value_Fahrenheit                    0x200005b0   Data           4  menu_tsensor.o(.data)
+    TempCelsius_Display                      0x200005b4   Data          11  menu_tsensor.o(.data)
+    TempFahrenheit_Display                   0x200005bf   Data          11  menu_tsensor.o(.data)
+    .data                                    0x200005cc   Section       44  menu_uart.o(.data)
+    send_buffer_pos                          0x200005cc   Data           4  menu_uart.o(.data)
+    receive_buffer_pos                       0x200005d0   Data           4  menu_uart.o(.data)
+    error_flag                               0x200005d4   Data           4  menu_uart.o(.data)
+    SendData                                 0x200005d8   Data          16  menu_uart.o(.data)
+    ErrorMessage                             0x200005e8   Data          16  menu_uart.o(.data)
+    .data                                    0x200005f8   Section       36  menu_vcom.o(.data)
+    send_data_length                         0x200005f8   Data           4  menu_vcom.o(.data)
+    send_data_pos                            0x200005fc   Data           4  menu_vcom.o(.data)
+    receive_data_length                      0x20000600   Data           4  menu_vcom.o(.data)
+    temp_CPU_CLOCK                           0x20000604   Data           4  menu_vcom.o(.data)
+    temp_PLL_CONTROL                         0x20000608   Data           4  menu_vcom.o(.data)
+    LineCoding                               0x20000614   Data           8  menu_vcom.o(.data)
+    .bss                                     0x2000061c   Section      188  1986be9x_usb_device.o(.bss)
+    .bss                                     0x200006d8   Section       12  1986be9x_usb_cdc.o(.bss)
+    USB_CDCContext                           0x200006d8   Data          12  1986be9x_usb_cdc.o(.bss)
+    .bss                                     0x200006e4   Section       72  adc.o(.bss)
+    .bss                                     0x2000072c   Section       12  demo_init_1986be91.o(.bss)
+    PortInitStructure                        0x2000072c   Data          12  demo_init_1986be91.o(.bss)
+    .bss                                     0x20000738   Section       16  menu.o(.bss)
+    psPrevMenu                               0x20000738   Data          16  menu.o(.bss)
+    .bss                                     0x20000748   Section      408  menu_uart.o(.bss)
+    SendBuffer                               0x20000748   Data         196  menu_uart.o(.bss)
+    ReceiveBuffer                            0x2000080c   Data         196  menu_uart.o(.bss)
+    UARTInitStructure                        0x200008d0   Data          16  menu_uart.o(.bss)
+    .bss                                     0x200008e0   Section      240  menu_vcom.o(.bss)
+    PortInitStructure                        0x200008e0   Data          12  menu_vcom.o(.bss)
+    SendBuffer                               0x200008ec   Data         100  menu_vcom.o(.bss)
+    ReceiveBuffer                            0x20000950   Data         100  menu_vcom.o(.bss)
+    UARTInitStructure                        0x200009c0   Data          16  menu_vcom.o(.bss)
+    .bss                                     0x200009d0   Section      184  menu_lowpower.o(.bss)
+    PORTA_Data                               0x200009d0   Data          28  menu_lowpower.o(.bss)
+    PORTB_Data                               0x200009ec   Data          28  menu_lowpower.o(.bss)
+    PORTC_Data                               0x20000a08   Data          28  menu_lowpower.o(.bss)
+    PORTD_Data                               0x20000a24   Data          28  menu_lowpower.o(.bss)
+    PORTE_Data                               0x20000a40   Data          28  menu_lowpower.o(.bss)
+    PORTF_Data                               0x20000a5c   Data          28  menu_lowpower.o(.bss)
+    ClockData                                0x20000a78   Data          16  menu_lowpower.o(.bss)
+    .bss                                     0x20000a88   Section       96  libspace.o(.bss)
+    HEAP                                     0x20000ae8   Section      512  startup_1986be9x.o(HEAP)
+    Heap_Mem                                 0x20000ae8   Data         512  startup_1986be9x.o(HEAP)
+    STACK                                    0x20000ce8   Section     1024  startup_1986be9x.o(STACK)
+    Stack_Mem                                0x20000ce8   Data        1024  startup_1986be9x.o(STACK)
+    __initial_sp                             0x200010e8   Data           0  startup_1986be9x.o(STACK)
+
+    Global Symbols
+
+    Symbol Name                              Value     Ov Type        Size  Object(Section)
+
+    BuildAttributes$$THM_ISAv4$P$D$K$B$S$PE$A:L22UL41UL21$X:L11$S22US41US21$IEEE1$IW$USESV6$~STKCKD$USESV7$~SHL$OSPACE$ROPI$EBA8$UX$STANDARDLIB$REQ8$PRES8$EABIv2 0x00000000   Number         0  anon$$obj.o ABSOLUTE
+    __ARM_use_no_argv                        0x00000000   Number         0  main.o ABSOLUTE
+    __ARM_exceptions_init                     - Undefined Weak Reference
+    __alloca_initialize                       - Undefined Weak Reference
+    __arm_preinit_                            - Undefined Weak Reference
+    __cpp_initialize__aeabi_                  - Undefined Weak Reference
+    __cxa_finalize                            - Undefined Weak Reference
+    __rt_locale                               - Undefined Weak Reference
+    __sigvec_lookup                           - Undefined Weak Reference
+    _atexit_init                              - Undefined Weak Reference
+    _call_atexit_fns                          - Undefined Weak Reference
+    _clock_init                               - Undefined Weak Reference
+    _fp_trap_init                             - Undefined Weak Reference
+    _fp_trap_shutdown                         - Undefined Weak Reference
+    _get_lc_collate                           - Undefined Weak Reference
+    _get_lc_ctype                             - Undefined Weak Reference
+    _get_lc_monetary                          - Undefined Weak Reference
+    _get_lc_numeric                           - Undefined Weak Reference
+    _get_lc_time                              - Undefined Weak Reference
+    _getenv_init                              - Undefined Weak Reference
+    _handle_redirection                       - Undefined Weak Reference
+    _init_alloc                               - Undefined Weak Reference
+    _init_user_alloc                          - Undefined Weak Reference
+    _initio                                   - Undefined Weak Reference
+    _rand_init                                - Undefined Weak Reference
+    _signal_finish                            - Undefined Weak Reference
+    _signal_init                              - Undefined Weak Reference
+    _terminate_alloc                          - Undefined Weak Reference
+    _terminate_user_alloc                     - Undefined Weak Reference
+    _terminateio                              - Undefined Weak Reference
+    __Vectors_Size                           0x000000c0   Number         0  startup_1986be9x.o ABSOLUTE
+    __Vectors                                0x08000000   Data           4  startup_1986be9x.o(RESET)
+    __Vectors_End                            0x080000c0   Data           0  startup_1986be9x.o(RESET)
+    __main                                   0x080000c1   Thumb Code     8  __main.o(!!!main)
+    __scatterload                            0x080000c9   Thumb Code     0  __scatter.o(!!!scatter)
+    __scatterload_rt2                        0x080000c9   Thumb Code    44  __scatter.o(!!!scatter)
+    __scatterload_rt2_thumb_only             0x080000c9   Thumb Code     0  __scatter.o(!!!scatter)
+    __scatterload_null                       0x080000d7   Thumb Code     0  __scatter.o(!!!scatter)
+    __decompress                             0x080000fd   Thumb Code    90  __dczerorl2.o(!!dczerorl2)
+    __decompress1                            0x080000fd   Thumb Code     0  __dczerorl2.o(!!dczerorl2)
+    __scatterload_zeroinit                   0x08000159   Thumb Code    28  __scatter_zi.o(!!handler_zi)
+    __rt_lib_init                            0x08000175   Thumb Code     0  libinit.o(.ARM.Collect$$libinit$$00000000)
+    __rt_lib_init_alloca_1                   0x08000177   Thumb Code     0  libinit2.o(.ARM.Collect$$libinit$$0000002E)
+    __rt_lib_init_argv_1                     0x08000177   Thumb Code     0  libinit2.o(.ARM.Collect$$libinit$$0000002C)
+    __rt_lib_init_atexit_1                   0x08000177   Thumb Code     0  libinit2.o(.ARM.Collect$$libinit$$0000001B)
+    __rt_lib_init_clock_1                    0x08000177   Thumb Code     0  libinit2.o(.ARM.Collect$$libinit$$00000021)
+    __rt_lib_init_cpp_1                      0x08000177   Thumb Code     0  libinit2.o(.ARM.Collect$$libinit$$00000032)
+    __rt_lib_init_exceptions_1               0x08000177   Thumb Code     0  libinit2.o(.ARM.Collect$$libinit$$00000030)
+    __rt_lib_init_fp_1                       0x08000177   Thumb Code     0  libinit2.o(.ARM.Collect$$libinit$$00000002)
+    __rt_lib_init_fp_trap_1                  0x08000177   Thumb Code     0  libinit2.o(.ARM.Collect$$libinit$$0000001F)
+    __rt_lib_init_getenv_1                   0x08000177   Thumb Code     0  libinit2.o(.ARM.Collect$$libinit$$00000023)
+    __rt_lib_init_heap_1                     0x08000177   Thumb Code     0  libinit2.o(.ARM.Collect$$libinit$$0000000A)
+    __rt_lib_init_lc_collate_1               0x08000177   Thumb Code     0  libinit2.o(.ARM.Collect$$libinit$$00000011)
+    __rt_lib_init_lc_ctype_1                 0x08000177   Thumb Code     0  libinit2.o(.ARM.Collect$$libinit$$00000013)
+    __rt_lib_init_lc_monetary_1              0x08000177   Thumb Code     0  libinit2.o(.ARM.Collect$$libinit$$00000015)
+    __rt_lib_init_lc_numeric_1               0x08000177   Thumb Code     0  libinit2.o(.ARM.Collect$$libinit$$00000017)
+    __rt_lib_init_lc_time_1                  0x08000177   Thumb Code     0  libinit2.o(.ARM.Collect$$libinit$$00000019)
+    __rt_lib_init_preinit_1                  0x08000177   Thumb Code     0  libinit2.o(.ARM.Collect$$libinit$$00000004)
+    __rt_lib_init_rand_1                     0x08000177   Thumb Code     0  libinit2.o(.ARM.Collect$$libinit$$0000000E)
+    __rt_lib_init_return                     0x08000177   Thumb Code     0  libinit2.o(.ARM.Collect$$libinit$$00000033)
+    __rt_lib_init_signal_1                   0x08000177   Thumb Code     0  libinit2.o(.ARM.Collect$$libinit$$0000001D)
+    __rt_lib_init_stdio_1                    0x08000177   Thumb Code     0  libinit2.o(.ARM.Collect$$libinit$$00000025)
+    __rt_lib_init_user_alloc_1               0x08000177   Thumb Code     0  libinit2.o(.ARM.Collect$$libinit$$0000000C)
+    __rt_lib_shutdown                        0x08000179   Thumb Code     0  libshutdown.o(.ARM.Collect$$libshutdown$$00000000)
+    __rt_lib_shutdown_cpp_1                  0x0800017b   Thumb Code     0  libshutdown2.o(.ARM.Collect$$libshutdown$$00000002)
+    __rt_lib_shutdown_fp_trap_1              0x0800017b   Thumb Code     0  libshutdown2.o(.ARM.Collect$$libshutdown$$00000007)
+    __rt_lib_shutdown_heap_1                 0x0800017b   Thumb Code     0  libshutdown2.o(.ARM.Collect$$libshutdown$$0000000F)
+    __rt_lib_shutdown_return                 0x0800017b   Thumb Code     0  libshutdown2.o(.ARM.Collect$$libshutdown$$00000010)
+    __rt_lib_shutdown_signal_1               0x0800017b   Thumb Code     0  libshutdown2.o(.ARM.Collect$$libshutdown$$0000000A)
+    __rt_lib_shutdown_stdio_1                0x0800017b   Thumb Code     0  libshutdown2.o(.ARM.Collect$$libshutdown$$00000004)
+    __rt_lib_shutdown_user_alloc_1           0x0800017b   Thumb Code     0  libshutdown2.o(.ARM.Collect$$libshutdown$$0000000C)
+    __rt_entry                               0x0800017d   Thumb Code     0  __rtentry.o(.ARM.Collect$$rtentry$$00000000)
+    __rt_entry_presh_1                       0x0800017d   Thumb Code     0  __rtentry2.o(.ARM.Collect$$rtentry$$00000002)
+    __rt_entry_sh                            0x0800017d   Thumb Code     0  __rtentry4.o(.ARM.Collect$$rtentry$$00000004)
+    __rt_entry_li                            0x08000183   Thumb Code     0  __rtentry2.o(.ARM.Collect$$rtentry$$0000000A)
+    __rt_entry_postsh_1                      0x08000183   Thumb Code     0  __rtentry2.o(.ARM.Collect$$rtentry$$00000009)
+    __rt_entry_main                          0x08000187   Thumb Code     0  __rtentry2.o(.ARM.Collect$$rtentry$$0000000D)
+    __rt_entry_postli_1                      0x08000187   Thumb Code     0  __rtentry2.o(.ARM.Collect$$rtentry$$0000000C)
+    __rt_exit                                0x0800018f   Thumb Code     0  rtexit.o(.ARM.Collect$$rtexit$$00000000)
+    __rt_exit_ls                             0x08000191   Thumb Code     0  rtexit2.o(.ARM.Collect$$rtexit$$00000003)
+    __rt_exit_prels_1                        0x08000191   Thumb Code     0  rtexit2.o(.ARM.Collect$$rtexit$$00000002)
+    __rt_exit_exit                           0x08000195   Thumb Code     0  rtexit2.o(.ARM.Collect$$rtexit$$00000004)
+    ADC_DeInit                               0x0800019d   Thumb Code    30  1986be9x_adc.o(.text)
+    ADC_Init                                 0x080001bb   Thumb Code    44  1986be9x_adc.o(.text)
+    ADC_StructInit                           0x080001e7   Thumb Code    18  1986be9x_adc.o(.text)
+    ADC_SetTrim                              0x080001f9   Thumb Code    16  1986be9x_adc.o(.text)
+    ADC1_Init                                0x08000209   Thumb Code    80  1986be9x_adc.o(.text)
+    ADC2_Init                                0x08000259   Thumb Code    70  1986be9x_adc.o(.text)
+    ADCx_StructInit                          0x0800029f   Thumb Code    28  1986be9x_adc.o(.text)
+    ADC1_Cmd                                 0x080002bb   Thumb Code    20  1986be9x_adc.o(.text)
+    ADC2_Cmd                                 0x080002cf   Thumb Code    20  1986be9x_adc.o(.text)
+    ADC1_SetChannel                          0x080002e3   Thumb Code    16  1986be9x_adc.o(.text)
+    ADC2_SetChannel                          0x080002f3   Thumb Code    16  1986be9x_adc.o(.text)
+    ADC1_SetChannels                         0x08000303   Thumb Code     6  1986be9x_adc.o(.text)
+    ADC2_SetChannels                         0x08000309   Thumb Code     6  1986be9x_adc.o(.text)
+    ADC1_OperationModeConfig                 0x0800030f   Thumb Code    16  1986be9x_adc.o(.text)
+    ADC2_OperationModeConfig                 0x0800031f   Thumb Code    16  1986be9x_adc.o(.text)
+    ADC1_SamplingModeConfig                  0x0800032f   Thumb Code    14  1986be9x_adc.o(.text)
+    ADC2_SamplingModeConfig                  0x0800033d   Thumb Code    14  1986be9x_adc.o(.text)
+    ADC1_ChannelSwithingConfig               0x0800034b   Thumb Code    14  1986be9x_adc.o(.text)
+    ADC2_ChannelSwithingConfig               0x08000359   Thumb Code    14  1986be9x_adc.o(.text)
+    ADC1_LevelsConfig                        0x08000367   Thumb Code    20  1986be9x_adc.o(.text)
+    ADC2_LevelsConfig                        0x0800037b   Thumb Code    20  1986be9x_adc.o(.text)
+    ADC1_SetLowLevel                         0x0800038f   Thumb Code     6  1986be9x_adc.o(.text)
+    ADC2_SetLowLevel                         0x08000395   Thumb Code     6  1986be9x_adc.o(.text)
+    ADC1_SetHighLevel                        0x0800039b   Thumb Code     6  1986be9x_adc.o(.text)
+    ADC2_SetHighLevel                        0x080003a1   Thumb Code     6  1986be9x_adc.o(.text)
+    ADC1_Start                               0x080003a7   Thumb Code    12  1986be9x_adc.o(.text)
+    ADC2_Start                               0x080003b3   Thumb Code    12  1986be9x_adc.o(.text)
+    ADC1_GetResult                           0x080003bf   Thumb Code     6  1986be9x_adc.o(.text)
+    ADC2_GetResult                           0x080003c5   Thumb Code     6  1986be9x_adc.o(.text)
+    ADC_GetStatus                            0x080003cb   Thumb Code    12  1986be9x_adc.o(.text)
+    ADC1_GetStatus                           0x080003d7   Thumb Code     6  1986be9x_adc.o(.text)
+    ADC2_GetStatus                           0x080003dd   Thumb Code     6  1986be9x_adc.o(.text)
+    ADC_GetFlagStatus                        0x080003e3   Thumb Code    16  1986be9x_adc.o(.text)
+    ADC1_GetFlagStatus                       0x080003f3   Thumb Code    16  1986be9x_adc.o(.text)
+    ADC2_GetFlagStatus                       0x08000403   Thumb Code    16  1986be9x_adc.o(.text)
+    ADC1_ClearOverwriteFlag                  0x08000413   Thumb Code    12  1986be9x_adc.o(.text)
+    ADC2_ClearOverwriteFlag                  0x0800041f   Thumb Code    12  1986be9x_adc.o(.text)
+    ADC1_ClearOutOfRangeFlag                 0x0800042b   Thumb Code    12  1986be9x_adc.o(.text)
+    ADC2_ClearOutOfRangeFlag                 0x08000437   Thumb Code    12  1986be9x_adc.o(.text)
+    ADC_ITConfig                             0x08000443   Thumb Code    38  1986be9x_adc.o(.text)
+    ADC1_ITConfig                            0x08000469   Thumb Code    20  1986be9x_adc.o(.text)
+    ADC2_ITConfig                            0x0800047d   Thumb Code    20  1986be9x_adc.o(.text)
+    ADC_GetITStatus                          0x08000491   Thumb Code    24  1986be9x_adc.o(.text)
+    ADC1_GetITStatus                         0x080004a9   Thumb Code    16  1986be9x_adc.o(.text)
+    ADC2_GetITStatus                         0x080004b9   Thumb Code    16  1986be9x_adc.o(.text)
+    BKP_DeInit                               0x080004d5   Thumb Code    54  1986be9x_bkp.o(.text)
+    BKP_JTAGA_Enable                         0x0800050b   Thumb Code     6  1986be9x_bkp.o(.text)
+    BKP_JTAGB_Enable                         0x08000511   Thumb Code     8  1986be9x_bkp.o(.text)
+    BKP_RTCclkSource                         0x08000519   Thumb Code    18  1986be9x_bkp.o(.text)
+    BKP_RTC_Enable                           0x0800052b   Thumb Code     8  1986be9x_bkp.o(.text)
+    BKP_RTC_Calibration                      0x08000533   Thumb Code    18  1986be9x_bkp.o(.text)
+    BKP_RTC_Reset                            0x08000545   Thumb Code     8  1986be9x_bkp.o(.text)
+    BKP_RTC_ITConfig                         0x0800054d   Thumb Code    18  1986be9x_bkp.o(.text)
+    BKP_RTC_GetCounter                       0x0800055f   Thumb Code     6  1986be9x_bkp.o(.text)
+    BKP_RTC_SetCounter                       0x08000565   Thumb Code     6  1986be9x_bkp.o(.text)
+    BKP_RTC_SetAlarm                         0x0800056b   Thumb Code     6  1986be9x_bkp.o(.text)
+    BKP_RTC_GetDivider                       0x08000571   Thumb Code     6  1986be9x_bkp.o(.text)
+    BKP_RTC_SetPrescaler                     0x08000577   Thumb Code     6  1986be9x_bkp.o(.text)
+    BKP_RTC_WaitForUpdate                    0x0800057d   Thumb Code    10  1986be9x_bkp.o(.text)
+    BKP_RTC_GetFlagStatus                    0x08000587   Thumb Code    16  1986be9x_bkp.o(.text)
+    EXT_BUS_DeInit                           0x080005a9   Thumb Code    10  1986be9x_ext_bus.o(.text)
+    EXT_BUS_Init                             0x080005b3   Thumb Code    60  1986be9x_ext_bus.o(.text)
+    EXT_BUS_StructInit                       0x080005ef   Thumb Code    24  1986be9x_ext_bus.o(.text)
+    EXT_BUS_CalcWaitStates                   0x08000607   Thumb Code    50  1986be9x_ext_bus.o(.text)
+    EXT_BUS_CalcNandCycles                   0x08000639   Thumb Code    44  1986be9x_ext_bus.o(.text)
+    EXT_BUS_GetBusyStatus                    0x08000665   Thumb Code    16  1986be9x_ext_bus.o(.text)
+    PORT_DeInit                              0x08000685   Thumb Code    20  1986be9x_port.o(.text)
+    PORT_Init                                0x08000699   Thumb Code   368  1986be9x_port.o(.text)
+    PORT_StructInit                          0x08000809   Thumb Code    28  1986be9x_port.o(.text)
+    PORT_ReadInputDataBit                    0x08000825   Thumb Code    10  1986be9x_port.o(.text)
+    PORT_ReadInputData                       0x0800082f   Thumb Code     4  1986be9x_port.o(.text)
+    PORT_SetBits                             0x08000833   Thumb Code    22  1986be9x_port.o(.text)
+    PORT_ResetBits                           0x08000849   Thumb Code    22  1986be9x_port.o(.text)
+    PORT_WriteBit                            0x0800085f   Thumb Code    30  1986be9x_port.o(.text)
+    PORT_Write                               0x0800087d   Thumb Code    18  1986be9x_port.o(.text)
+    POWER_DeInit                             0x08000895   Thumb Code     8  1986be9x_power.o(.text)
+    POWER_DUccMode                           0x0800089d   Thumb Code    18  1986be9x_power.o(.text)
+    POWER_DUccTrim                           0x080008af   Thumb Code    18  1986be9x_power.o(.text)
+    POWER_DUccStandby                        0x080008c1   Thumb Code     8  1986be9x_power.o(.text)
+    POWER_PVDlevelConfig                     0x080008c9   Thumb Code    18  1986be9x_power.o(.text)
+    POWER_PVBDlevelConfig                    0x080008db   Thumb Code    18  1986be9x_power.o(.text)
+    POWER_SetFlagPOR                         0x080008ed   Thumb Code    10  1986be9x_power.o(.text)
+    POWER_FlagPORstatus                      0x080008f7   Thumb Code    16  1986be9x_power.o(.text)
+    POWER_PVDenable                          0x08000907   Thumb Code     6  1986be9x_power.o(.text)
+    POWER_GetFlagStatus                      0x0800090d   Thumb Code    16  1986be9x_power.o(.text)
+    POWER_ClearFlag                          0x0800091d   Thumb Code    10  1986be9x_power.o(.text)
+    POWER_PVD_ITconfig                       0x08000927   Thumb Code    18  1986be9x_power.o(.text)
+    POWER_PVD_INVconfig                      0x08000939   Thumb Code    18  1986be9x_power.o(.text)
+    POWER_EnterSTOPMode                      0x0800094b   Thumb Code    36  1986be9x_power.o(.text)
+    POWER_EnterSTANDBYMode                   0x0800096f   Thumb Code    22  1986be9x_power.o(.text)
+    RST_CLK_PCLKcmd                          0x08000999   Thumb Code    18  1986be9x_rst_clk.o(.text)
+    RST_CLK_CPUclkSelection                  0x080009ab   Thumb Code    14  1986be9x_rst_clk.o(.text)
+    RST_CLK_GetFlagStatus                    0x080009b9   Thumb Code    34  1986be9x_rst_clk.o(.text)
+    RST_CLK_HSIstatus                        0x080009db   Thumb Code    44  1986be9x_rst_clk.o(.text)
+    RST_CLK_HSIcmd                           0x08000a07   Thumb Code     6  1986be9x_rst_clk.o(.text)
+    RST_CLK_WarmDeInit                       0x08000a0d   Thumb Code    52  1986be9x_rst_clk.o(.text)
+    RST_CLK_DeInit                           0x08000a41   Thumb Code    34  1986be9x_rst_clk.o(.text)
+    RST_CLK_HSEconfig                        0x08000a63   Thumb Code    36  1986be9x_rst_clk.o(.text)
+    RST_CLK_HSEstatus                        0x08000a87   Thumb Code    44  1986be9x_rst_clk.o(.text)
+    RST_CLK_LSEconfig                        0x08000ab3   Thumb Code    36  1986be9x_rst_clk.o(.text)
+    RST_CLK_LSEstatus                        0x08000ad7   Thumb Code    44  1986be9x_rst_clk.o(.text)
+    RST_CLK_HSIadjust                        0x08000b03   Thumb Code    16  1986be9x_rst_clk.o(.text)
+    RST_CLK_LSIcmd                           0x08000b13   Thumb Code     8  1986be9x_rst_clk.o(.text)
+    RST_CLK_LSIadjust                        0x08000b1b   Thumb Code    16  1986be9x_rst_clk.o(.text)
+    RST_CLK_LSIstatus                        0x08000b2b   Thumb Code    44  1986be9x_rst_clk.o(.text)
+    RST_CLK_CPU_PLLconfig                    0x08000b57   Thumb Code    42  1986be9x_rst_clk.o(.text)
+    RST_CLK_CPU_PLLuse                       0x08000b81   Thumb Code     8  1986be9x_rst_clk.o(.text)
+    RST_CLK_CPU_PLLcmd                       0x08000b89   Thumb Code     8  1986be9x_rst_clk.o(.text)
+    RST_CLK_CPU_PLLstatus                    0x08000b91   Thumb Code    44  1986be9x_rst_clk.o(.text)
+    RST_CLK_CPUclkPrescaler                  0x08000bbd   Thumb Code    16  1986be9x_rst_clk.o(.text)
+    RST_CLK_USB_PLLconfig                    0x08000bcd   Thumb Code    42  1986be9x_rst_clk.o(.text)
+    RST_CLK_USB_PLLuse                       0x08000bf7   Thumb Code     8  1986be9x_rst_clk.o(.text)
+    RST_CLK_USB_PLLcmd                       0x08000bff   Thumb Code     8  1986be9x_rst_clk.o(.text)
+    RST_CLK_USB_PLLstatus                    0x08000c07   Thumb Code    44  1986be9x_rst_clk.o(.text)
+    RST_CLK_USBclkPrescaler                  0x08000c33   Thumb Code     8  1986be9x_rst_clk.o(.text)
+    RST_CLK_USBclkEnable                     0x08000c3b   Thumb Code     8  1986be9x_rst_clk.o(.text)
+    RST_CLK_ADCclkSelection                  0x08000c43   Thumb Code    14  1986be9x_rst_clk.o(.text)
+    RST_CLK_ADCclkPrescaler                  0x08000c51   Thumb Code    16  1986be9x_rst_clk.o(.text)
+    RST_CLK_ADCclkEnable                     0x08000c61   Thumb Code     8  1986be9x_rst_clk.o(.text)
+    RST_CLK_HSIclkPrescaler                  0x08000c69   Thumb Code    16  1986be9x_rst_clk.o(.text)
+    RST_CLK_RTC_HSIclkEnable                 0x08000c79   Thumb Code     8  1986be9x_rst_clk.o(.text)
+    RST_CLK_HSEclkPrescaler                  0x08000c81   Thumb Code    14  1986be9x_rst_clk.o(.text)
+    RST_CLK_RTC_HSEclkEnable                 0x08000c8f   Thumb Code     8  1986be9x_rst_clk.o(.text)
+    RST_CLK_GetClocksFreq                    0x08000c97   Thumb Code   362  1986be9x_rst_clk.o(.text)
+    UART_DeInit                              0x08000e01   Thumb Code    34  1986be9x_uart.o(.text)
+    UART_Init                                0x08000e23   Thumb Code   134  1986be9x_uart.o(.text)
+    UART_StructInit                          0x08000ea9   Thumb Code    24  1986be9x_uart.o(.text)
+    UART_Cmd                                 0x08000ec1   Thumb Code    22  1986be9x_uart.o(.text)
+    UART_ITConfig                            0x08000ed7   Thumb Code    16  1986be9x_uart.o(.text)
+    UART_GetITStatus                         0x08000ee7   Thumb Code    14  1986be9x_uart.o(.text)
+    UART_GetITStatusMasked                   0x08000ef5   Thumb Code    10  1986be9x_uart.o(.text)
+    UART_ClearITPendingBit                   0x08000eff   Thumb Code     8  1986be9x_uart.o(.text)
+    UART_DMAConfig                           0x08000f07   Thumb Code     8  1986be9x_uart.o(.text)
+    UART_DMACmd                              0x08000f0f   Thumb Code    20  1986be9x_uart.o(.text)
+    UART_SendData                            0x08000f23   Thumb Code     8  1986be9x_uart.o(.text)
+    UART_ReceiveData                         0x08000f2b   Thumb Code     6  1986be9x_uart.o(.text)
+    UART_BreakLine                           0x08000f31   Thumb Code    22  1986be9x_uart.o(.text)
+    UART_IrDAConfig                          0x08000f47   Thumb Code    40  1986be9x_uart.o(.text)
+    UART_IrDACmd                             0x08000f6f   Thumb Code    22  1986be9x_uart.o(.text)
+    UART_GetFlagStatus                       0x08000f85   Thumb Code    10  1986be9x_uart.o(.text)
+    UART_BRGInit                             0x08000f8f   Thumb Code    46  1986be9x_uart.o(.text)
+    USB_BRGInit                              0x08000fc9   Thumb Code    40  1986be9x_usb.o(.text)
+    USB_SetHSCR                              0x08000ff1   Thumb Code    20  1986be9x_usb.o(.text)
+    USB_Reset                                0x08001005   Thumb Code    30  1986be9x_usb.o(.text)
+    USB_GetHSCR                              0x08001023   Thumb Code     8  1986be9x_usb.o(.text)
+    USB_GetHSVR                              0x0800102b   Thumb Code    30  1986be9x_usb.o(.text)
+    USB_GetHTXC                              0x08001049   Thumb Code     6  1986be9x_usb.o(.text)
+    USB_SetHTXC                              0x0800104f   Thumb Code    16  1986be9x_usb.o(.text)
+    USB_GetHTXT                              0x0800105f   Thumb Code     6  1986be9x_usb.o(.text)
+    USB_SetHTXT                              0x08001065   Thumb Code     6  1986be9x_usb.o(.text)
+    USB_GetHTXLC                             0x0800106b   Thumb Code     6  1986be9x_usb.o(.text)
+    USB_SetHTXLC                             0x08001071   Thumb Code    16  1986be9x_usb.o(.text)
+    USB_GetHTXSE                             0x08001081   Thumb Code     6  1986be9x_usb.o(.text)
+    USB_SetHTXSE                             0x08001087   Thumb Code    16  1986be9x_usb.o(.text)
+    USB_GetHTXA                              0x08001097   Thumb Code     6  1986be9x_usb.o(.text)
+    USB_SetHTXA                              0x0800109d   Thumb Code     6  1986be9x_usb.o(.text)
+    USB_GetHTXE                              0x080010a3   Thumb Code     6  1986be9x_usb.o(.text)
+    USB_SetHTXE                              0x080010a9   Thumb Code     6  1986be9x_usb.o(.text)
+    USB_GetHFN                               0x080010af   Thumb Code     6  1986be9x_usb.o(.text)
+    USB_GetHIS                               0x080010b5   Thumb Code     6  1986be9x_usb.o(.text)
+    USB_SetHIS                               0x080010bb   Thumb Code    16  1986be9x_usb.o(.text)
+    USB_GetHIM                               0x080010cb   Thumb Code     6  1986be9x_usb.o(.text)
+    USB_SetHIM                               0x080010d1   Thumb Code    16  1986be9x_usb.o(.text)
+    USB_GetHRXS                              0x080010e1   Thumb Code     6  1986be9x_usb.o(.text)
+    USB_GetHRXP                              0x080010e7   Thumb Code     6  1986be9x_usb.o(.text)
+    USB_GetHRXA                              0x080010ed   Thumb Code     6  1986be9x_usb.o(.text)
+    USB_GetHRXE                              0x080010f3   Thumb Code     6  1986be9x_usb.o(.text)
+    USB_GetHRXCS                             0x080010f9   Thumb Code     6  1986be9x_usb.o(.text)
+    USB_GetHSTM                              0x080010ff   Thumb Code     6  1986be9x_usb.o(.text)
+    USB_GetHRXFD                             0x08001105   Thumb Code     8  1986be9x_usb.o(.text)
+    USB_GetHRXFDC                            0x0800110d   Thumb Code     8  1986be9x_usb.o(.text)
+    USB_GetHRXFC                             0x08001115   Thumb Code     8  1986be9x_usb.o(.text)
+    USB_SetHRXFC                             0x0800111d   Thumb Code     8  1986be9x_usb.o(.text)
+    USB_GetHTXFD                             0x08001125   Thumb Code     8  1986be9x_usb.o(.text)
+    USB_SetHTXFD                             0x0800112d   Thumb Code     8  1986be9x_usb.o(.text)
+    USB_GetHTXFC                             0x08001135   Thumb Code     8  1986be9x_usb.o(.text)
+    USB_SetHTXFC                             0x0800113d   Thumb Code     8  1986be9x_usb.o(.text)
+    USB_GetSEPxCTRL                          0x08001145   Thumb Code    12  1986be9x_usb.o(.text)
+    USB_SetSEPxCTRL                          0x08001151   Thumb Code    24  1986be9x_usb.o(.text)
+    USB_GetSEPxSTS                           0x08001169   Thumb Code    12  1986be9x_usb.o(.text)
+    USB_GetSEPxTS                            0x08001175   Thumb Code    12  1986be9x_usb.o(.text)
+    USB_GetSEPxNTS                           0x08001181   Thumb Code    12  1986be9x_usb.o(.text)
+    USB_GetSC                                0x0800118d   Thumb Code     8  1986be9x_usb.o(.text)
+    USB_SetSC                                0x08001195   Thumb Code    20  1986be9x_usb.o(.text)
+    USB_GetSLS                               0x080011a9   Thumb Code     8  1986be9x_usb.o(.text)
+    USB_GetSIS                               0x080011b1   Thumb Code     8  1986be9x_usb.o(.text)
+    USB_SetSIS                               0x080011b9   Thumb Code     8  1986be9x_usb.o(.text)
+    USB_GetSIM                               0x080011c1   Thumb Code     8  1986be9x_usb.o(.text)
+    USB_SetSIM                               0x080011c9   Thumb Code    20  1986be9x_usb.o(.text)
+    USB_GetSA                                0x080011dd   Thumb Code     8  1986be9x_usb.o(.text)
+    USB_SetSA                                0x080011e5   Thumb Code     8  1986be9x_usb.o(.text)
+    USB_GetSFN                               0x080011ed   Thumb Code     8  1986be9x_usb.o(.text)
+    USB_GetSEPxRXFD                          0x080011f5   Thumb Code    12  1986be9x_usb.o(.text)
+    USB_GetSEPxRXFDC                         0x08001201   Thumb Code    12  1986be9x_usb.o(.text)
+    USB_GetSEPxRXFC                          0x0800120d   Thumb Code    12  1986be9x_usb.o(.text)
+    USB_SetSEPxRXFC                          0x08001219   Thumb Code    12  1986be9x_usb.o(.text)
+    USB_GetSEPxTXFD                          0x08001225   Thumb Code    12  1986be9x_usb.o(.text)
+    USB_SetSEPxTXFD                          0x08001231   Thumb Code    12  1986be9x_usb.o(.text)
+    USB_GetSEPxTXFDC                         0x0800123d   Thumb Code    12  1986be9x_usb.o(.text)
+    USB_SetSEPxTXFDC                         0x08001249   Thumb Code    12  1986be9x_usb.o(.text)
+    USB_SEPxToggleEPDATASEQ                  0x08001255   Thumb Code    20  1986be9x_usb.o(.text)
+    USB_EP_Init                              0x08001271   Thumb Code    50  1986be9x_usb_device.o(.text)
+    USB_EP_Reset                             0x080012a3   Thumb Code    32  1986be9x_usb_device.o(.text)
+    USB_EP_Idle                              0x080012c3   Thumb Code    50  1986be9x_usb_device.o(.text)
+    USB_EP_Stall                             0x080012f5   Thumb Code    52  1986be9x_usb_device.o(.text)
+    USB_EP_doDataIn                          0x0800138f   Thumb Code    54  1986be9x_usb_device.o(.text)
+    USB_EP_doDataOut                         0x080013c5   Thumb Code    40  1986be9x_usb_device.o(.text)
+    USB_EP_setSetupHandler                   0x080013ed   Thumb Code    46  1986be9x_usb_device.o(.text)
+    USB_EP_dispatchEvent                     0x0800141b   Thumb Code   486  1986be9x_usb_device.o(.text)
+    USB_DeviceSetFeature                     0x0800161d   Thumb Code    16  1986be9x_usb_device.o(.text)
+    USB_DeviceClearFeature                   0x0800162d   Thumb Code    14  1986be9x_usb_device.o(.text)
+    USB_DeviceSetupPacket                    0x0800163b   Thumb Code   372  1986be9x_usb_device.o(.text)
+    USB_DeviceInit                           0x080017af   Thumb Code    76  1986be9x_usb_device.o(.text)
+    USB_DevicePowerOn                        0x080017fb   Thumb Code    18  1986be9x_usb_device.o(.text)
+    USB_DevicePowerOff                       0x0800180d   Thumb Code    18  1986be9x_usb_device.o(.text)
+    USB_DeviceReset                          0x0800181f   Thumb Code    10  1986be9x_usb_device.o(.text)
+    USB_DeviceSuspend                        0x08001829   Thumb Code     4  1986be9x_usb_device.o(.text)
+    USB_DeviceResume                         0x0800182d   Thumb Code     4  1986be9x_usb_device.o(.text)
+    USB_DeviceDoStatusInAck                  0x08001831   Thumb Code     4  1986be9x_usb_device.o(.text)
+    USB_DeviceDoStatusOutAck                 0x08001835   Thumb Code     8  1986be9x_usb_device.o(.text)
+    USB_DeviceDispatchEvent                  0x0800183d   Thumb Code    84  1986be9x_usb_device.o(.text)
+    USB_IRQHandler                           0x08001891   Thumb Code     2  1986be9x_usb_device.o(.text)
+    USB_DeviceDummyGetStatus                 0x08001893   Thumb Code     4  1986be9x_usb_device.o(.text)
+    USB_DeviceDummySetAddress                0x08001897   Thumb Code     4  1986be9x_usb_device.o(.text)
+    USB_DeviceDummyGetDescriptor             0x0800189b   Thumb Code     4  1986be9x_usb_device.o(.text)
+    USB_DeviceDummySetDescriptor             0x0800189f   Thumb Code     4  1986be9x_usb_device.o(.text)
+    USB_DeviceDummyGetConfiguration          0x080018a3   Thumb Code     4  1986be9x_usb_device.o(.text)
+    USB_DeviceDummySetConfiguration          0x080018a7   Thumb Code     4  1986be9x_usb_device.o(.text)
+    USB_DeviceDummyGetInterface              0x080018ab   Thumb Code     4  1986be9x_usb_device.o(.text)
+    USB_DeviceDummySetInterface              0x080018af   Thumb Code     4  1986be9x_usb_device.o(.text)
+    USB_DeviceDummySyncFrame                 0x080018b3   Thumb Code     4  1986be9x_usb_device.o(.text)
+    USB_DeviceDummyClassRequest              0x080018b7   Thumb Code     4  1986be9x_usb_device.o(.text)
+    USB_DeviceDummyVendorRequest             0x080018bb   Thumb Code     4  1986be9x_usb_device.o(.text)
+    USB_DeviceDummyDataError                 0x080018bf   Thumb Code     4  1986be9x_usb_device.o(.text)
+    USB_CDC_SetReceiveBuffer                 0x080018fd   Thumb Code    10  1986be9x_usb_cdc.o(.text)
+    USB_CDC_Init                             0x08001907   Thumb Code    28  1986be9x_usb_cdc.o(.text)
+    USB_CDC_ReceiveStart                     0x0800194d   Thumb Code    18  1986be9x_usb_cdc.o(.text)
+    USB_CDC_ReceiveStop                      0x0800195f   Thumb Code    16  1986be9x_usb_cdc.o(.text)
+    USB_CDC_SendData                         0x08001977   Thumb Code    36  1986be9x_usb_cdc.o(.text)
+    USB_CDC_ReportState                      0x0800199b   Thumb Code    14  1986be9x_usb_cdc.o(.text)
+    USB_CDC_Reset                            0x080019a9   Thumb Code    64  1986be9x_usb_cdc.o(.text)
+    USB_CDC_GetDescriptor                    0x080019e9   Thumb Code    50  1986be9x_usb_cdc.o(.text)
+    USB_CDC_ClassRequest                     0x08001a45   Thumb Code   112  1986be9x_usb_cdc.o(.text)
+    USB_CDC_DummyDataReceive                 0x08001ab5   Thumb Code     4  1986be9x_usb_cdc.o(.text)
+    USB_CDC_DummyDataSent                    0x08001ab9   Thumb Code     4  1986be9x_usb_cdc.o(.text)
+    USB_CDC_DummyGetLineCoding               0x08001abd   Thumb Code     4  1986be9x_usb_cdc.o(.text)
+    USB_CDC_DummySetLineCoding               0x08001ac1   Thumb Code     4  1986be9x_usb_cdc.o(.text)
+    SystemCoreClockUpdate                    0x08001ae1   Thumb Code    84  system_1986be9x.o(.text)
+    SystemInit                               0x08001b35   Thumb Code    52  system_1986be9x.o(.text)
+    Reset_Handler                            0x08001b7d   Thumb Code     8  startup_1986be9x.o(.text)
+    NMI_Handler                              0x08001b85   Thumb Code     2  startup_1986be9x.o(.text)
+    HardFault_Handler                        0x08001b87   Thumb Code     2  startup_1986be9x.o(.text)
+    MemManage_Handler                        0x08001b89   Thumb Code     2  startup_1986be9x.o(.text)
+    BusFault_Handler                         0x08001b8b   Thumb Code     2  startup_1986be9x.o(.text)
+    UsageFault_Handler                       0x08001b8d   Thumb Code     2  startup_1986be9x.o(.text)
+    SVC_Handler                              0x08001b8f   Thumb Code     2  startup_1986be9x.o(.text)
+    DebugMon_Handler                         0x08001b91   Thumb Code     2  startup_1986be9x.o(.text)
+    PendSV_Handler                           0x08001b93   Thumb Code     2  startup_1986be9x.o(.text)
+    CAN1_IRQHandler                          0x08001b97   Thumb Code     0  startup_1986be9x.o(.text)
+    CAN2_IRQHandler                          0x08001b97   Thumb Code     0  startup_1986be9x.o(.text)
+    COMPARATOR_IRQHandler                    0x08001b97   Thumb Code     0  startup_1986be9x.o(.text)
+    DMA_IRQHandler                           0x08001b97   Thumb Code     0  startup_1986be9x.o(.text)
+    EXT_INT1_IRQHandler                      0x08001b97   Thumb Code     0  startup_1986be9x.o(.text)
+    EXT_INT2_IRQHandler                      0x08001b97   Thumb Code     0  startup_1986be9x.o(.text)
+    EXT_INT3_IRQHandler                      0x08001b97   Thumb Code     0  startup_1986be9x.o(.text)
+    EXT_INT4_IRQHandler                      0x08001b97   Thumb Code     0  startup_1986be9x.o(.text)
+    I2C_IRQHandler                           0x08001b97   Thumb Code     0  startup_1986be9x.o(.text)
+    POWER_IRQHandler                         0x08001b97   Thumb Code     0  startup_1986be9x.o(.text)
+    SSP1_IRQHandler                          0x08001b97   Thumb Code     0  startup_1986be9x.o(.text)
+    SSP2_IRQHandler                          0x08001b97   Thumb Code     0  startup_1986be9x.o(.text)
+    Timer1_IRQHandler                        0x08001b97   Thumb Code     0  startup_1986be9x.o(.text)
+    Timer2_IRQHandler                        0x08001b97   Thumb Code     0  startup_1986be9x.o(.text)
+    Timer3_IRQHandler                        0x08001b97   Thumb Code     0  startup_1986be9x.o(.text)
+    WWDG_IRQHandler                          0x08001b97   Thumb Code     0  startup_1986be9x.o(.text)
+    __user_initial_stackheap                 0x08001b99   Thumb Code     0  startup_1986be9x.o(.text)
+    LCD_PUT_BYTE                             0x08001bbd   Thumb Code   288  text.o(.text)
+    LCD_PUTC                                 0x08001cdd   Thumb Code   112  text.o(.text)
+    LCD_PUTS                                 0x08001d4d   Thumb Code    44  text.o(.text)
+    LCD_PUTS_Ex                              0x08001d79   Thumb Code   236  text.o(.text)
+    SysTick_Handler                          0x08001e6d   Thumb Code    16  1986be9x_it.o(.text)
+    UART1_IRQHandler                         0x08001eb9   Thumb Code     4  1986be9x_it.o(.text)
+    UART2_IRQHandler                         0x08001ebd   Thumb Code     4  1986be9x_it.o(.text)
+    ADC_IRQHandler                           0x08001ec1   Thumb Code    48  1986be9x_it.o(.text)
+    BACKUP_IRQHandler                        0x08001ef1   Thumb Code   206  1986be9x_it.o(.text)
+    ADC_Config                               0x08001fdd   Thumb Code    62  adc.o(.text)
+    ADC_Temp_Sensor_Config                   0x0800201b   Thumb Code    74  adc.o(.text)
+    ExtBus_Setup                             0x08002069   Thumb Code    34  demo_init_1986be91.o(.text)
+    ClockConfigure                           0x0800208b   Thumb Code    22  demo_init_1986be91.o(.text)
+    Demo_Init                                0x080020a1   Thumb Code   168  demo_init_1986be91.o(.text)
+    LCD_PutPixel                             0x08002161   Thumb Code   120  gl.o(.text)
+    LCD_Line                                 0x080021d9   Thumb Code   142  gl.o(.text)
+    LCD_Circle                               0x08002267   Thumb Code   140  gl.o(.text)
+    GetKey                                   0x080022f9   Thumb Code    44  joystick.o(.text)
+    ReadLCD_Cmd                              0x08002329   Thumb Code    16  lcd_1986be91.o(.text)
+    ResetLCD                                 0x08002339   Thumb Code    52  lcd_1986be91.o(.text)
+    SetCrystal                               0x0800236d   Thumb Code    26  lcd_1986be91.o(.text)
+    WriteLCD_Cmd                             0x08002387   Thumb Code    20  lcd_1986be91.o(.text)
+    WriteLCD_Data                            0x0800239b   Thumb Code    18  lcd_1986be91.o(.text)
+    ReadLCD_Data                             0x080023ad   Thumb Code    38  lcd_1986be91.o(.text)
+    LCD_INIT                                 0x080023d3   Thumb Code    46  lcd_1986be91.o(.text)
+    LCD_CLS                                  0x08002401   Thumb Code    74  lcd_1986be91.o(.text)
+    ShiftLights                              0x0800246d   Thumb Code    42  leds.o(.text)
+    main                                     0x080024a1   Thumb Code    30  main.o(.text)
+    DisplayMenuTitle                         0x080024f5   Thumb Code    76  menu.o(.text)
+    DisplayMenu                              0x08002541   Thumb Code   118  menu.o(.text)
+    BackToMenuOnSel                          0x080026b1   Thumb Code    18  menu.o(.text)
+    ReadKey                                  0x080026c3   Thumb Code    46  menu.o(.text)
+    Menu_Init                                0x080026f1   Thumb Code    28  menu.o(.text)
+    DisplayFillingCircle                     0x08002781   Thumb Code    34  menu_gl.o(.text)
+    DisplayRectangle                         0x080027a3   Thumb Code    62  menu_gl.o(.text)
+    DisplayFillingRectangle                  0x080027e1   Thumb Code    36  menu_gl.o(.text)
+    ElementsFunc                             0x08002805   Thumb Code   156  menu_gl.o(.text)
+    IndicatorsFunc                           0x080028a1   Thumb Code   382  menu_gl.o(.text)
+    LightsOnFunc                             0x08002abd   Thumb Code   122  menu_leds.o(.text)
+    FontFunc                                 0x08002b79   Thumb Code    98  menu_text.o(.text)
+    StyleFunc                                0x08002bdb   Thumb Code   178  menu_text.o(.text)
+    BookFunc                                 0x08002c8d   Thumb Code   128  menu_text.o(.text)
+    AboutFunc                                0x08002d0d   Thumb Code   152  menu_text.o(.text)
+    RTC_Configuration                        0x08002f21   Thumb Code    66  menu_time.o(.text)
+    ShowSelDigit                             0x08002f63   Thumb Code    46  menu_time.o(.text)
+    ReadDigit                                0x08002f91   Thumb Code   146  menu_time.o(.text)
+    Time_Display                             0x08003023   Thumb Code   236  menu_time.o(.text)
+    Time_Regulate                            0x0800310f   Thumb Code   158  menu_time.o(.text)
+    RTCHelp                                  0x080031ad   Thumb Code    50  menu_time.o(.text)
+    TimePreAdjustFunc                        0x080031df   Thumb Code   172  menu_time.o(.text)
+    TimeAdjustFunc                           0x0800328b   Thumb Code    14  menu_time.o(.text)
+    TimeShowFunc                             0x08003299   Thumb Code   112  menu_time.o(.text)
+    Date_Update                              0x0800332f   Thumb Code   338  menu_time.o(.text)
+    IsValidDate                              0x08003481   Thumb Code    92  menu_time.o(.text)
+    Date_Display                             0x080034dd   Thumb Code   220  menu_time.o(.text)
+    Date_Regulate                            0x080035b9   Thumb Code   318  menu_time.o(.text)
+    DatePreAdjustFunc                        0x080036f7   Thumb Code    88  menu_time.o(.text)
+    DateAdjustFunc                           0x0800374f   Thumb Code    14  menu_time.o(.text)
+    DateShowFunc                             0x0800375d   Thumb Code   112  menu_time.o(.text)
+    Alarm_Display                            0x080037cd   Thumb Code   380  menu_time.o(.text)
+    Alarm_Regulate                           0x08003949   Thumb Code   162  menu_time.o(.text)
+    AlarmAdjustFunc                          0x080039eb   Thumb Code   132  menu_time.o(.text)
+    AlarmShowFunc                            0x08003a6f   Thumb Code   106  menu_time.o(.text)
+    Calendar_Init                            0x08003ad9   Thumb Code   154  menu_time.o(.text)
+    TSENSORFunc                              0x08003c01   Thumb Code   586  menu_tsensor.o(.text)
+    UARTConfiguration                        0x08003e6d   Thumb Code    48  menu_uart.o(.text)
+    UARTHelp                                 0x08003e9d   Thumb Code   126  menu_uart.o(.text)
+    UARTDisplayError                         0x08003f1b   Thumb Code    78  menu_uart.o(.text)
+    SenderFuncFIFODemo                       0x08003f69   Thumb Code    54  menu_uart.o(.text)
+    ReceiverFuncFIFODemo                     0x08003f9f   Thumb Code    80  menu_uart.o(.text)
+    UARTwFIFOFunc                            0x08003fef   Thumb Code   566  menu_uart.o(.text)
+    UARTFunc                                 0x08004225   Thumb Code   488  menu_uart.o(.text)
+    USB_CDC_RecieveData                      0x08004441   Thumb Code    18  menu_vcom.o(.text)
+    USB_CDC_GetLineCoding                    0x08004453   Thumb Code    20  menu_vcom.o(.text)
+    USB_CDC_SetLineCoding                    0x08004467   Thumb Code   166  menu_vcom.o(.text)
+    VCOMHelp                                 0x0800450d   Thumb Code    68  menu_vcom.o(.text)
+    VCOMFunc                                 0x080045d7   Thumb Code   354  menu_vcom.o(.text)
+    LowPower_Init                            0x080047b1   Thumb Code     8  menu_lowpower.o(.text)
+    Clock_SaveConfig                         0x0800497f   Thumb Code    28  menu_lowpower.o(.text)
+    Clock_RestoreConfig                      0x0800499b   Thumb Code    28  menu_lowpower.o(.text)
+    STANDBYMode_WAKEUP                       0x080049b7   Thumb Code    92  menu_lowpower.o(.text)
+    STANDBYMode_RTCAlarm                     0x08004a13   Thumb Code   188  menu_lowpower.o(.text)
+    STOPMode_RTCAlarm                        0x08004acf   Thumb Code   770  menu_lowpower.o(.text)
+    SysTickStart                             0x08004dd1   Thumb Code    12  systick.o(.text)
+    SysTickStop                              0x08004ddd   Thumb Code    14  systick.o(.text)
+    SysTickDelay                             0x08004deb   Thumb Code    28  systick.o(.text)
+    strlen                                   0x08004e0d   Thumb Code    62  strlen.o(.text)
+    __use_two_region_memory                  0x08004e4b   Thumb Code     2  heapauxi.o(.text)
+    __rt_heap_escrow$2region                 0x08004e4d   Thumb Code     2  heapauxi.o(.text)
+    __rt_heap_expand$2region                 0x08004e4f   Thumb Code     2  heapauxi.o(.text)
+    __user_setup_stackheap                   0x08004e51   Thumb Code    74  sys_stackheap_outer.o(.text)
+    exit                                     0x08004e9b   Thumb Code    18  exit.o(.text)
+    __user_libspace                          0x08004ead   Thumb Code     8  libspace.o(.text)
+    __user_perproc_libspace                  0x08004ead   Thumb Code     0  libspace.o(.text)
+    __user_perthread_libspace                0x08004ead   Thumb Code     0  libspace.o(.text)
+    _sys_exit                                0x08004eb5   Thumb Code     8  sys_exit.o(.text)
+    __I$use$semihosting                      0x08004ec1   Thumb Code     0  use_no_semi.o(.text)
+    __use_no_semihosting_swi                 0x08004ec1   Thumb Code     2  use_no_semi.o(.text)
+    __semihosting_library_function           0x08004ec3   Thumb Code     0  indicate_semi.o(.text)
+    CrystalPorts                             0x080088c4   Data          16  lcd_1986be91.o(.constdata)
+    Region$$Table$$Base                      0x08008ad8   Number         0  anon$$obj.o(Region$$Table)
+    Region$$Table$$Limit                     0x08008af8   Number         0  anon$$obj.o(Region$$Table)
+    USB_CurrentSetupPacket                   0x20000008   Data           8  1986be9x_usb_device.o(.data)
+    Font_12x16                               0x20000078   Data          16  font_12x16.o(.data)
+    Font_6x8                                 0x20000088   Data          16  font_6x8.o(.data)
+    Font_7x10_bold                           0x20000098   Data          16  font_7x10_bold.o(.data)
+    Font_7x10_thin                           0x200000a8   Data          16  font_7x10_thin.o(.data)
+    SystemCoreClock                          0x200000b8   Data           4  system_1986be9x.o(.data)
+    CurrentFont                              0x200000bc   Data           4  text.o(.data)
+    TimerCounter                             0x200000c0   Data           4  1986be9x_it.o(.data)
+    ADC1_Value                               0x200000c4   Data           4  1986be9x_it.o(.data)
+    pfUARTSenderFunc                         0x200000c8   Data           4  1986be9x_it.o(.data)
+    pfUARTReceiverFunc                       0x200000cc   Data           4  1986be9x_it.o(.data)
+    pfUARTLineStateFunc                      0x200000d0   Data           4  1986be9x_it.o(.data)
+    STOPModeStatus                           0x200000d4   Data           4  1986be9x_it.o(.data)
+    AlarmSetStatus                           0x200000d8   Data           4  1986be9x_it.o(.data)
+    CurrentCrystal                           0x20000104   Data           1  lcd_1986be91.o(.data)
+    CurrentMethod                            0x20000105   Data           1  lcd_1986be91.o(.data)
+    CurrentLights                            0x20000108   Data           4  leds.o(.data)
+    MainMenuItems                            0x20000120   Data          36  menu.o(.data)
+    MainMenu                                 0x20000144   Data          12  menu.o(.data)
+    TimeMenuItems                            0x20000150   Data          36  menu.o(.data)
+    TimeMenu                                 0x20000174   Data          12  menu.o(.data)
+    DateMenuItems                            0x20000180   Data          36  menu.o(.data)
+    DateMenu                                 0x200001a4   Data          12  menu.o(.data)
+    AlarmMenuItems                           0x200001b0   Data          36  menu.o(.data)
+    AlarmMenu                                0x200001d4   Data          12  menu.o(.data)
+    STOPMenuItems                            0x200001e0   Data          24  menu.o(.data)
+    STOPMenu                                 0x200001f8   Data          12  menu.o(.data)
+    STANDBYMenuItems                         0x20000204   Data          36  menu.o(.data)
+    STANDBYMenu                              0x20000228   Data          12  menu.o(.data)
+    UARTMenuItems                            0x20000234   Data          36  menu.o(.data)
+    UARTMenu                                 0x20000258   Data          12  menu.o(.data)
+    RTCMenuItems                             0x20000264   Data          48  menu.o(.data)
+    RTCMenu                                  0x20000294   Data          12  menu.o(.data)
+    LowPowerMenuItems                        0x200002a0   Data          36  menu.o(.data)
+    LowPowerMenu                             0x200002c4   Data          12  menu.o(.data)
+    TextMenuItems                            0x200002d0   Data          48  menu.o(.data)
+    TextMenu                                 0x20000300   Data          12  menu.o(.data)
+    GraphicMenuItems                         0x2000030c   Data          36  menu.o(.data)
+    GraphicMenu                              0x20000330   Data          12  menu.o(.data)
+    LEDsMenuItems                            0x2000033c   Data          24  menu.o(.data)
+    LEDsMenu                                 0x20000354   Data          12  menu.o(.data)
+    CommMenuItems                            0x20000360   Data          36  menu.o(.data)
+    CommMenu                                 0x20000384   Data          12  menu.o(.data)
+    OtherMenuItems                           0x20000390   Data          48  menu.o(.data)
+    OtherMenu                                0x200003c0   Data          12  menu.o(.data)
+    LCDMenuItems                             0x200003cc   Data          48  menu.o(.data)
+    LCDMenu                                  0x200003fc   Data          12  menu.o(.data)
+    DevMenuItems                             0x20000408   Data          36  menu.o(.data)
+    DevMenu                                  0x2000042c   Data          12  menu.o(.data)
+    USB_Clock_InitStruct                     0x2000060c   Data           8  menu_vcom.o(.data)
+    USB_EPContext                            0x2000061c   Data         176  1986be9x_usb_device.o(.bss)
+    USB_DeviceContext                        0x200006cc   Data          12  1986be9x_usb_device.o(.bss)
+    ADC_InitStructure                        0x200006e4   Data          28  adc.o(.bss)
+    ADCx_InitStructure                       0x20000700   Data          44  adc.o(.bss)
+    USB_DeviceBUSParam                       0x200009b4   Data          12  menu_vcom.o(.bss)
+    __libspace_start                         0x20000a88   Data          96  libspace.o(.bss)
+    __temporary_stack_top$libspace           0x20000ae8   Data           0  libspace.o(.bss)
+
+
+
+==============================================================================
+
+Memory Map of the image
+
+  Image Entry point : 0x080000c1
+
+  Load Region LR_IROM1 (Base: 0x08000000, Size: 0x00009114, Max: 0x00080000, ABSOLUTE, COMPRESSED[0x00008e14])
+
+    Execution Region ER_IROM1 (Exec base: 0x08000000, Load base: 0x08000000, Size: 0x00008af8, Max: 0x00080000, ABSOLUTE)
+
+    Exec Addr    Load Addr    Size         Type   Attr      Idx    E Section Name        Object
+
+    0x08000000   0x08000000   0x000000c0   Data   RO          486    RESET               startup_1986be9x.o
+    0x080000c0   0x080000c0   0x00000008   Code   RO         1248  * !!!main             c_w.l(__main.o)
+    0x080000c8   0x080000c8   0x00000034   Code   RO         1407    !!!scatter          c_w.l(__scatter.o)
+    0x080000fc   0x080000fc   0x0000005a   Code   RO         1405    !!dczerorl2         c_w.l(__dczerorl2.o)
+    0x08000156   0x08000156   0x00000002   PAD
+    0x08000158   0x08000158   0x0000001c   Code   RO         1409    !!handler_zi        c_w.l(__scatter_zi.o)
+    0x08000174   0x08000174   0x00000002   Code   RO         1275    .ARM.Collect$$libinit$$00000000  c_w.l(libinit.o)
+    0x08000176   0x08000176   0x00000000   Code   RO         1282    .ARM.Collect$$libinit$$00000002  c_w.l(libinit2.o)
+    0x08000176   0x08000176   0x00000000   Code   RO         1284    .ARM.Collect$$libinit$$00000004  c_w.l(libinit2.o)
+    0x08000176   0x08000176   0x00000000   Code   RO         1287    .ARM.Collect$$libinit$$0000000A  c_w.l(libinit2.o)
+    0x08000176   0x08000176   0x00000000   Code   RO         1289    .ARM.Collect$$libinit$$0000000C  c_w.l(libinit2.o)
+    0x08000176   0x08000176   0x00000000   Code   RO         1291    .ARM.Collect$$libinit$$0000000E  c_w.l(libinit2.o)
+    0x08000176   0x08000176   0x00000000   Code   RO         1294    .ARM.Collect$$libinit$$00000011  c_w.l(libinit2.o)
+    0x08000176   0x08000176   0x00000000   Code   RO         1296    .ARM.Collect$$libinit$$00000013  c_w.l(libinit2.o)
+    0x08000176   0x08000176   0x00000000   Code   RO         1298    .ARM.Collect$$libinit$$00000015  c_w.l(libinit2.o)
+    0x08000176   0x08000176   0x00000000   Code   RO         1300    .ARM.Collect$$libinit$$00000017  c_w.l(libinit2.o)
+    0x08000176   0x08000176   0x00000000   Code   RO         1302    .ARM.Collect$$libinit$$00000019  c_w.l(libinit2.o)
+    0x08000176   0x08000176   0x00000000   Code   RO         1304    .ARM.Collect$$libinit$$0000001B  c_w.l(libinit2.o)
+    0x08000176   0x08000176   0x00000000   Code   RO         1306    .ARM.Collect$$libinit$$0000001D  c_w.l(libinit2.o)
+    0x08000176   0x08000176   0x00000000   Code   RO         1308    .ARM.Collect$$libinit$$0000001F  c_w.l(libinit2.o)
+    0x08000176   0x08000176   0x00000000   Code   RO         1310    .ARM.Collect$$libinit$$00000021  c_w.l(libinit2.o)
+    0x08000176   0x08000176   0x00000000   Code   RO         1312    .ARM.Collect$$libinit$$00000023  c_w.l(libinit2.o)
+    0x08000176   0x08000176   0x00000000   Code   RO         1314    .ARM.Collect$$libinit$$00000025  c_w.l(libinit2.o)
+    0x08000176   0x08000176   0x00000000   Code   RO         1318    .ARM.Collect$$libinit$$0000002C  c_w.l(libinit2.o)
+    0x08000176   0x08000176   0x00000000   Code   RO         1320    .ARM.Collect$$libinit$$0000002E  c_w.l(libinit2.o)
+    0x08000176   0x08000176   0x00000000   Code   RO         1322    .ARM.Collect$$libinit$$00000030  c_w.l(libinit2.o)
+    0x08000176   0x08000176   0x00000000   Code   RO         1324    .ARM.Collect$$libinit$$00000032  c_w.l(libinit2.o)
+    0x08000176   0x08000176   0x00000002   Code   RO         1325    .ARM.Collect$$libinit$$00000033  c_w.l(libinit2.o)
+    0x08000178   0x08000178   0x00000002   Code   RO         1345    .ARM.Collect$$libshutdown$$00000000  c_w.l(libshutdown.o)
+    0x0800017a   0x0800017a   0x00000000   Code   RO         1358    .ARM.Collect$$libshutdown$$00000002  c_w.l(libshutdown2.o)
+    0x0800017a   0x0800017a   0x00000000   Code   RO         1360    .ARM.Collect$$libshutdown$$00000004  c_w.l(libshutdown2.o)
+    0x0800017a   0x0800017a   0x00000000   Code   RO         1363    .ARM.Collect$$libshutdown$$00000007  c_w.l(libshutdown2.o)
+    0x0800017a   0x0800017a   0x00000000   Code   RO         1366    .ARM.Collect$$libshutdown$$0000000A  c_w.l(libshutdown2.o)
+    0x0800017a   0x0800017a   0x00000000   Code   RO         1368    .ARM.Collect$$libshutdown$$0000000C  c_w.l(libshutdown2.o)
+    0x0800017a   0x0800017a   0x00000000   Code   RO         1371    .ARM.Collect$$libshutdown$$0000000F  c_w.l(libshutdown2.o)
+    0x0800017a   0x0800017a   0x00000002   Code   RO         1372    .ARM.Collect$$libshutdown$$00000010  c_w.l(libshutdown2.o)
+    0x0800017c   0x0800017c   0x00000000   Code   RO         1250    .ARM.Collect$$rtentry$$00000000  c_w.l(__rtentry.o)
+    0x0800017c   0x0800017c   0x00000000   Code   RO         1252    .ARM.Collect$$rtentry$$00000002  c_w.l(__rtentry2.o)
+    0x0800017c   0x0800017c   0x00000006   Code   RO         1264    .ARM.Collect$$rtentry$$00000004  c_w.l(__rtentry4.o)
+    0x08000182   0x08000182   0x00000000   Code   RO         1254    .ARM.Collect$$rtentry$$00000009  c_w.l(__rtentry2.o)
+    0x08000182   0x08000182   0x00000004   Code   RO         1255    .ARM.Collect$$rtentry$$0000000A  c_w.l(__rtentry2.o)
+    0x08000186   0x08000186   0x00000000   Code   RO         1257    .ARM.Collect$$rtentry$$0000000C  c_w.l(__rtentry2.o)
+    0x08000186   0x08000186   0x00000008   Code   RO         1258    .ARM.Collect$$rtentry$$0000000D  c_w.l(__rtentry2.o)
+    0x0800018e   0x0800018e   0x00000002   Code   RO         1279    .ARM.Collect$$rtexit$$00000000  c_w.l(rtexit.o)
+    0x08000190   0x08000190   0x00000000   Code   RO         1327    .ARM.Collect$$rtexit$$00000002  c_w.l(rtexit2.o)
+    0x08000190   0x08000190   0x00000004   Code   RO         1328    .ARM.Collect$$rtexit$$00000003  c_w.l(rtexit2.o)
+    0x08000194   0x08000194   0x00000006   Code   RO         1329    .ARM.Collect$$rtexit$$00000004  c_w.l(rtexit2.o)
+    0x0800019a   0x0800019a   0x00000002   PAD
+    0x0800019c   0x0800019c   0x00000338   Code   RO           94    .text               1986be9x_adc.o
+    0x080004d4   0x080004d4   0x000000d4   Code   RO          110    .text               1986be9x_bkp.o
+    0x080005a8   0x080005a8   0x000000dc   Code   RO          207    .text               1986be9x_ext_bus.o
+    0x08000684   0x08000684   0x00000210   Code   RO          253    .text               1986be9x_port.o
+    0x08000894   0x08000894   0x00000104   Code   RO          268    .text               1986be9x_power.o
+    0x08000998   0x08000998   0x00000468   Code   RO          283    .text               1986be9x_rst_clk.o
+    0x08000e00   0x08000e00   0x000001c8   Code   RO          326    .text               1986be9x_uart.o
+    0x08000fc8   0x08000fc8   0x000002a8   Code   RO          341    .text               1986be9x_usb.o
+    0x08001270   0x08001270   0x0000068c   Code   RO          357    .text               1986be9x_usb_device.o
+    0x080018fc   0x080018fc   0x000001e4   Code   RO          390    .text               1986be9x_usb_cdc.o
+    0x08001ae0   0x08001ae0   0x0000009c   Code   RO          469    .text               system_1986be9x.o
+    0x08001b7c   0x08001b7c   0x00000040   Code   RO          487    .text               startup_1986be9x.o
+    0x08001bbc   0x08001bbc   0x000002b0   Code   RO          492    .text               text.o
+    0x08001e6c   0x08001e6c   0x00000170   Code   RO          550    .text               1986be9x_it.o
+    0x08001fdc   0x08001fdc   0x0000008c   Code   RO          584    .text               adc.o
+    0x08002068   0x08002068   0x000000f8   Code   RO          711    .text               demo_init_1986be91.o
+    0x08002160   0x08002160   0x00000198   Code   RO          732    .text               gl.o
+    0x080022f8   0x080022f8   0x00000030   Code   RO          754    .text               joystick.o
+    0x08002328   0x08002328   0x00000144   Code   RO          774    .text               lcd_1986be91.o
+    0x0800246c   0x0800246c   0x00000034   Code   RO          798    .text               leds.o
+    0x080024a0   0x080024a0   0x0000001e   Code   RO          816    .text               main.o
+    0x080024be   0x080024be   0x00000002   PAD
+    0x080024c0   0x080024c0   0x000002c0   Code   RO          873    .text               menu.o
+    0x08002780   0x08002780   0x0000033c   Code   RO          974    .text               menu_gl.o
+    0x08002abc   0x08002abc   0x000000bc   Code   RO         1011    .text               menu_leds.o
+    0x08002b78   0x08002b78   0x000003a8   Code   RO         1023    .text               menu_text.o
+    0x08002f20   0x08002f20   0x00000ce0   Code   RO         1050    .text               menu_time.o
+    0x08003c00   0x08003c00   0x0000026c   Code   RO         1080    .text               menu_tsensor.o
+    0x08003e6c   0x08003e6c   0x000005a4   Code   RO         1101    .text               menu_uart.o
+    0x08004410   0x08004410   0x000003a0   Code   RO         1117    .text               menu_vcom.o
+    0x080047b0   0x080047b0   0x00000620   Code   RO         1149    .text               menu_lowpower.o
+    0x08004dd0   0x08004dd0   0x0000003c   Code   RO         1167    .text               systick.o
+    0x08004e0c   0x08004e0c   0x0000003e   Code   RO         1244    .text               c_w.l(strlen.o)
+    0x08004e4a   0x08004e4a   0x00000006   Code   RO         1246    .text               c_w.l(heapauxi.o)
+    0x08004e50   0x08004e50   0x0000004a   Code   RO         1266    .text               c_w.l(sys_stackheap_outer.o)
+    0x08004e9a   0x08004e9a   0x00000012   Code   RO         1268    .text               c_w.l(exit.o)
+    0x08004eac   0x08004eac   0x00000008   Code   RO         1276    .text               c_w.l(libspace.o)
+    0x08004eb4   0x08004eb4   0x0000000c   Code   RO         1337    .text               c_w.l(sys_exit.o)
+    0x08004ec0   0x08004ec0   0x00000002   Code   RO         1348    .text               c_w.l(use_no_semi.o)
+    0x08004ec2   0x08004ec2   0x00000000   Code   RO         1350    .text               c_w.l(indicate_semi.o)
+    0x08004ec2   0x08004ec2   0x00001800   Data   RO          410    .constdata          font_12x16.o
+    0x080066c2   0x080066c2   0x00000600   Data   RO          427    .constdata          font_6x8.o
+    0x08006cc2   0x08006cc2   0x00000e00   Data   RO          441    .constdata          font_7x10_bold.o
+    0x08007ac2   0x08007ac2   0x00000e00   Data   RO          455    .constdata          font_7x10_thin.o
+    0x080088c2   0x080088c2   0x00000002   PAD
+    0x080088c4   0x080088c4   0x00000010   Data   RO          775    .constdata          lcd_1986be91.o
+    0x080088d4   0x080088d4   0x00000024   Data   RO          875    .conststring        menu.o
+    0x080088f8   0x080088f8   0x00000015   Data   RO          876    .conststring        menu.o
+    0x0800890d   0x0800890d   0x00000003   PAD
+    0x08008910   0x08008910   0x00000005   Data   RO          877    .conststring        menu.o
+    0x08008915   0x08008915   0x00000003   PAD
+    0x08008918   0x08008918   0x00000005   Data   RO          879    .conststring        menu.o
+    0x0800891d   0x0800891d   0x00000003   PAD
+    0x08008920   0x08008920   0x00000012   Data   RO          882    .conststring        menu.o
+    0x08008932   0x08008932   0x00000002   PAD
+    0x08008934   0x08008934   0x0000000a   Data   RO          883    .conststring        menu.o
+    0x0800893e   0x0800893e   0x00000002   PAD
+    0x08008940   0x08008940   0x0000000f   Data   RO          884    .conststring        menu.o
+    0x0800894f   0x0800894f   0x00000001   PAD
+    0x08008950   0x08008950   0x0000000d   Data   RO          885    .conststring        menu.o
+    0x0800895d   0x0800895d   0x00000003   PAD
+    0x08008960   0x08008960   0x00000019   Data   RO          886    .conststring        menu.o
+    0x08008979   0x08008979   0x00000003   PAD
+    0x0800897c   0x0800897c   0x00000005   Data   RO          887    .conststring        menu.o
+    0x08008981   0x08008981   0x00000003   PAD
+    0x08008984   0x08008984   0x00000010   Data   RO          889    .conststring        menu.o
+    0x08008994   0x08008994   0x00000010   Data   RO          890    .conststring        menu.o
+    0x080089a4   0x080089a4   0x0000000f   Data   RO          891    .conststring        menu.o
+    0x080089b3   0x080089b3   0x00000001   PAD
+    0x080089b4   0x080089b4   0x00000015   Data   RO          892    .conststring        menu.o
+    0x080089c9   0x080089c9   0x00000003   PAD
+    0x080089cc   0x080089cc   0x00000005   Data   RO          893    .conststring        menu.o
+    0x080089d1   0x080089d1   0x00000003   PAD
+    0x080089d4   0x080089d4   0x00000015   Data   RO          894    .conststring        menu.o
+    0x080089e9   0x080089e9   0x00000003   PAD
+    0x080089ec   0x080089ec   0x00000009   Data   RO          895    .conststring        menu.o
+    0x080089f5   0x080089f5   0x00000003   PAD
+    0x080089f8   0x080089f8   0x00000003   Data   RO          896    .conststring        menu.o
+    0x080089fb   0x080089fb   0x00000001   PAD
+    0x080089fc   0x080089fc   0x00000005   Data   RO          897    .conststring        menu.o
+    0x08008a01   0x08008a01   0x00000003   PAD
+    0x08008a04   0x08008a04   0x00000011   Data   RO          898    .conststring        menu.o
+    0x08008a15   0x08008a15   0x00000003   PAD
+    0x08008a18   0x08008a18   0x0000000e   Data   RO          899    .conststring        menu.o
+    0x08008a26   0x08008a26   0x00000002   PAD
+    0x08008a28   0x08008a28   0x00000016   Data   RO          900    .conststring        menu.o
+    0x08008a3e   0x08008a3e   0x00000002   PAD
+    0x08008a40   0x08008a40   0x0000000e   Data   RO          901    .conststring        menu.o
+    0x08008a4e   0x08008a4e   0x00000002   PAD
+    0x08008a50   0x08008a50   0x00000006   Data   RO          904    .conststring        menu.o
+    0x08008a56   0x08008a56   0x00000002   PAD
+    0x08008a58   0x08008a58   0x0000007f   Data   RO         1103    .conststring        menu_uart.o
+    0x08008ad7   0x08008ad7   0x00000001   PAD
+    0x08008ad8   0x08008ad8   0x00000020   Data   RO         1403    Region$$Table       anon$$obj.o
+
+
+    Execution Region RW_IRAM1 (Exec base: 0x20000000, Load base: 0x08008af8, Size: 0x000010e8, Max: 0x00010000, ABSOLUTE, COMPRESSED[0x0000031c])
+
+    Exec Addr    Load Addr    Size         Type   Attr      Idx    E Section Name        Object
+
+    0x20000000   COMPRESSED   0x00000010   Data   RW          359    .data               1986be9x_usb_device.o
+    0x20000010   COMPRESSED   0x00000068   Data   RW          392    .data               1986be9x_usb_cdc.o
+    0x20000078   COMPRESSED   0x00000010   Data   RW          411    .data               font_12x16.o
+    0x20000088   COMPRESSED   0x00000010   Data   RW          428    .data               font_6x8.o
+    0x20000098   COMPRESSED   0x00000010   Data   RW          442    .data               font_7x10_bold.o
+    0x200000a8   COMPRESSED   0x00000010   Data   RW          456    .data               font_7x10_thin.o
+    0x200000b8   COMPRESSED   0x00000004   Data   RW          470    .data               system_1986be9x.o
+    0x200000bc   COMPRESSED   0x00000004   Data   RW          493    .data               text.o
+    0x200000c0   COMPRESSED   0x0000001c   Data   RW          551    .data               1986be9x_it.o
+    0x200000dc   COMPRESSED   0x00000028   Data   RW          755    .data               joystick.o
+    0x20000104   COMPRESSED   0x00000001   Data   RW          776    .data               lcd_1986be91.o
+    0x20000105   COMPRESSED   0x00000001   Data   RW          777    .data               lcd_1986be91.o
+    0x20000106   COMPRESSED   0x00000002   PAD
+    0x20000108   COMPRESSED   0x00000004   Data   RW          799    .data               leds.o
+    0x2000010c   COMPRESSED   0x00000044   Data   RW          906    .data               menu.o
+    0x20000150   COMPRESSED   0x00000024   Data   RW          907    .data               menu.o
+    0x20000174   COMPRESSED   0x0000000c   Data   RW          908    .data               menu.o
+    0x20000180   COMPRESSED   0x00000024   Data   RW          909    .data               menu.o
+    0x200001a4   COMPRESSED   0x0000000c   Data   RW          910    .data               menu.o
+    0x200001b0   COMPRESSED   0x00000024   Data   RW          911    .data               menu.o
+    0x200001d4   COMPRESSED   0x0000000c   Data   RW          912    .data               menu.o
+    0x200001e0   COMPRESSED   0x00000018   Data   RW          913    .data               menu.o
+    0x200001f8   COMPRESSED   0x0000000c   Data   RW          914    .data               menu.o
+    0x20000204   COMPRESSED   0x00000024   Data   RW          915    .data               menu.o
+    0x20000228   COMPRESSED   0x0000000c   Data   RW          916    .data               menu.o
+    0x20000234   COMPRESSED   0x00000024   Data   RW          917    .data               menu.o
+    0x20000258   COMPRESSED   0x0000000c   Data   RW          918    .data               menu.o
+    0x20000264   COMPRESSED   0x00000030   Data   RW          919    .data               menu.o
+    0x20000294   COMPRESSED   0x0000000c   Data   RW          920    .data               menu.o
+    0x200002a0   COMPRESSED   0x00000024   Data   RW          921    .data               menu.o
+    0x200002c4   COMPRESSED   0x0000000c   Data   RW          922    .data               menu.o
+    0x200002d0   COMPRESSED   0x00000030   Data   RW          923    .data               menu.o
+    0x20000300   COMPRESSED   0x0000000c   Data   RW          924    .data               menu.o
+    0x2000030c   COMPRESSED   0x00000024   Data   RW          925    .data               menu.o
+    0x20000330   COMPRESSED   0x0000000c   Data   RW          926    .data               menu.o
+    0x2000033c   COMPRESSED   0x00000018   Data   RW          927    .data               menu.o
+    0x20000354   COMPRESSED   0x0000000c   Data   RW          928    .data               menu.o
+    0x20000360   COMPRESSED   0x00000024   Data   RW          929    .data               menu.o
+    0x20000384   COMPRESSED   0x0000000c   Data   RW          930    .data               menu.o
+    0x20000390   COMPRESSED   0x00000030   Data   RW          931    .data               menu.o
+    0x200003c0   COMPRESSED   0x0000000c   Data   RW          932    .data               menu.o
+    0x200003cc   COMPRESSED   0x00000030   Data   RW          933    .data               menu.o
+    0x200003fc   COMPRESSED   0x0000000c   Data   RW          934    .data               menu.o
+    0x20000408   COMPRESSED   0x00000024   Data   RW          935    .data               menu.o
+    0x2000042c   COMPRESSED   0x0000000c   Data   RW          936    .data               menu.o
+    0x20000438   COMPRESSED   0x00000160   Data   RW         1024    .data               menu_text.o
+    0x20000598   COMPRESSED   0x00000010   Data   RW         1051    .data               menu_time.o
+    0x200005a8   COMPRESSED   0x00000022   Data   RW         1081    .data               menu_tsensor.o
+    0x200005ca   COMPRESSED   0x00000002   PAD
+    0x200005cc   COMPRESSED   0x0000002c   Data   RW         1104    .data               menu_uart.o
+    0x200005f8   COMPRESSED   0x00000024   Data   RW         1119    .data               menu_vcom.o
+    0x2000061c        -       0x000000bc   Zero   RW          358    .bss                1986be9x_usb_device.o
+    0x200006d8        -       0x0000000c   Zero   RW          391    .bss                1986be9x_usb_cdc.o
+    0x200006e4        -       0x00000048   Zero   RW          585    .bss                adc.o
+    0x2000072c        -       0x0000000c   Zero   RW          712    .bss                demo_init_1986be91.o
+    0x20000738        -       0x00000010   Zero   RW          874    .bss                menu.o
+    0x20000748        -       0x00000198   Zero   RW         1102    .bss                menu_uart.o
+    0x200008e0        -       0x000000f0   Zero   RW         1118    .bss                menu_vcom.o
+    0x200009d0        -       0x000000b8   Zero   RW         1150    .bss                menu_lowpower.o
+    0x20000a88        -       0x00000060   Zero   RW         1277    .bss                c_w.l(libspace.o)
+    0x20000ae8        -       0x00000200   Zero   RW          485    HEAP                startup_1986be9x.o
+    0x20000ce8        -       0x00000400   Zero   RW          484    STACK               startup_1986be9x.o
+
