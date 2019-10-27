@@ -2,7 +2,7 @@
 .\obj\opora_rst_clk.o: .\inc\opora_rst_clk.h
 .\obj\opora_rst_clk.o: .\inc\opora.h
 .\obj\opora_rst_clk.o: .\inc\core_cm1.h
-.\obj\opora_rst_clk.o: C:\Keil4\ARM\RV31\INC\stdint.h
+.\obj\opora_rst_clk.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
 .\obj\opora_rst_clk.o: .\inc\opora_can_defs.h
 .\obj\opora_rst_clk.o: .\inc\opora_usb_defs.h
 .\obj\opora_rst_clk.o: .\inc\opora_eeprom_defs.h

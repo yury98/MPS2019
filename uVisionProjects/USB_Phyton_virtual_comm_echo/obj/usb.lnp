@@ -1,4 +1,11 @@
---cpu Cortex-M1 ".\obj\main.o" ".\obj\startup.o" ".\obj\opora_rst_clk.o" ".\obj\1986be9x_usb.o" ".\obj\1986be9x_usb_device.o" ".\obj\1986be9x_usb_cdc.o" --strict --scatter ".\obj\usb.sct" 
---autoat --summary_stderr --info summarysizes --map --xref --callgraph --symbols 
---info sizes --info totals --info unused --info veneers 
- --list ".\lst\usb.map" -o ".\obj\usb.axf"
+--cpu Cortex-M3
+".\obj\main.o"
+".\obj\startup.o"
+".\obj\opora_rst_clk.o"
+".\obj\1986be9x_usb.o"
+".\obj\1986be9x_usb_device.o"
+".\obj\1986be9x_usb_cdc.o"
+--strict --scatter ".\obj\usb.sct"
+--summary_stderr --info summarysizes --map --load_addr_map_info --xref --callgraph --symbols
+--info sizes --info totals --info unused --info veneers
+--list ".\lst\usb.map" -o .\obj\usb.axf

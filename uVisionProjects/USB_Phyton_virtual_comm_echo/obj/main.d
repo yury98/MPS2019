@@ -1,7 +1,7 @@
 .\obj\main.o: src\main.c
 .\obj\main.o: .\inc\opora.h
 .\obj\main.o: .\inc\core_cm1.h
-.\obj\main.o: C:\Keil4\ARM\RV31\INC\stdint.h
+.\obj\main.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
 .\obj\main.o: .\inc\opora_can_defs.h
 .\obj\main.o: .\inc\opora_usb_defs.h
 .\obj\main.o: .\inc\opora_eeprom_defs.h

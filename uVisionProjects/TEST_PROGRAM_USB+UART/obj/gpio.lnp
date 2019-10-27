@@ -1,0 +1,10 @@
+--cpu Cortex-M3
+".\obj\startup.o"
+".\obj\main.o"
+".\obj\uart.o"
+".\obj\usb_func.o"
+".\obj\core_cm1.o"
+--strict --scatter ".\obj\gpio.sct"
+--summary_stderr --info summarysizes --map --load_addr_map_info --xref --callgraph --symbols
+--info sizes --info totals --info unused --info veneers
+--list ".\gpio.map" -o .\obj\gpio.axf

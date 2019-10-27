@@ -194,7 +194,7 @@ typedef enum {ERROR = 0, SUCCESS = !ERROR} ErrorStatus;
 
 
 
-#line 1 "C:\\Keil4\\ARM\\RV31\\INC\\stdint.h"
+#line 1 "C:\\Keil_v5\\ARM\\ARMCC\\Bin\\..\\include\\stdint.h"
  
  
 
@@ -212,9 +212,21 @@ typedef enum {ERROR = 0, SUCCESS = !ERROR} ErrorStatus;
 
 
 
-#line 25 "C:\\Keil4\\ARM\\RV31\\INC\\stdint.h"
+     
+#line 27 "C:\\Keil_v5\\ARM\\ARMCC\\Bin\\..\\include\\stdint.h"
+     
 
 
+
+
+
+
+
+
+
+
+
+#line 46 "C:\\Keil_v5\\ARM\\ARMCC\\Bin\\..\\include\\stdint.h"
 
 
 
@@ -266,32 +278,17 @@ typedef unsigned           int uint_fast32_t;
 typedef unsigned       __int64 uint_fast64_t;
 
      
+
+
+
+
 typedef   signed           int intptr_t;
 typedef unsigned           int uintptr_t;
 
-     
-typedef   signed       __int64 intmax_t;
-typedef unsigned       __int64 uintmax_t;
-
-
-
 
      
-
-     
-
-
-
-
-
-     
-
-
-
-
-
-     
-
+typedef   signed     long long intmax_t;
+typedef unsigned     long long uintmax_t;
 
 
 
@@ -341,6 +338,46 @@ typedef unsigned       __int64 uintmax_t;
      
 
 
+
+
+
+     
+
+
+
+
+
+     
+
+
+
+
+
+     
+
+     
+
+
+
+
+
+
+     
+
+
+
+
+
+
+     
+
+
+
+
+
+
+     
+
      
 
 
@@ -349,16 +386,11 @@ typedef unsigned       __int64 uintmax_t;
 
      
 
-     
-
 
      
 
-
      
-
-
-     
+#line 216 "C:\\Keil_v5\\ARM\\ARMCC\\Bin\\..\\include\\stdint.h"
 
      
 
@@ -368,7 +400,7 @@ typedef unsigned       __int64 uintmax_t;
 
 
 
-     
+
 
 
      
@@ -377,7 +409,7 @@ typedef unsigned       __int64 uintmax_t;
 
 
 
-#line 196 "C:\\Keil4\\ARM\\RV31\\INC\\stdint.h"
+#line 241 "C:\\Keil_v5\\ARM\\ARMCC\\Bin\\..\\include\\stdint.h"
 
      
 
@@ -410,13 +442,14 @@ typedef unsigned       __int64 uintmax_t;
 
 
 
-#line 260 "C:\\Keil4\\ARM\\RV31\\INC\\stdint.h"
+#line 305 "C:\\Keil_v5\\ARM\\ARMCC\\Bin\\..\\include\\stdint.h"
+
+
+
 
 
 
  
-
-
 #line 91 ".\\inc\\core_cm1.h"
 
 

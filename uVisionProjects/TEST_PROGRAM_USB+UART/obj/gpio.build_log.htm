@@ -1,0 +1,105 @@
+<html>
+<body>
+<pre>
+<h1>µVision Build Log</h1>
+<h2>Tool Versions:</h2>
+IDE-Version: µVision V5.28.0.0
+Copyright (C) 2019 ARM Ltd and ARM Germany GmbH. All rights reserved.
+License Information: 1 1, 1, LIC=----
+ 
+Tool Versions:
+Toolchain:       MDK-Lite  Version: 5.28.0.0
+Toolchain Path:  C:\Keil_v5\ARM\ARMCC\Bin
+C Compiler:      Armcc.exe V5.06 update 6 (build 750)
+Assembler:       Armasm.exe V5.06 update 6 (build 750)
+Linker/Locator:  ArmLink.exe V5.06 update 6 (build 750)
+Library Manager: ArmAr.exe V5.06 update 6 (build 750)
+Hex Converter:   FromElf.exe V5.06 update 6 (build 750)
+CPU DLL:         SARMCM3.DLL V5.28.0.0
+Dialog DLL:      DCM.DLL V1.17.3.0
+Target DLL:      Segger\JL2CM3.dll V2.99.36.0
+Dialog DLL:      TCM.DLL V1.36.2.0
+ 
+<h2>Project:</h2>
+C:\Users\Yurez\Desktop\MPS2019\uVisionProjects\TEST_PROGRAM_USB+UART\gpio.uvprojx
+Project File Date:  10/27/2019
+
+<h2>Output:</h2>
+*** Using Compiler 'V5.06 update 6 (build 750)', folder: 'C:\Keil_v5\ARM\ARMCC\Bin'
+Rebuild target 'gpio'
+assembling Startup.s...
+compiling uart.c...
+src\uart.c(154): warning:  #1-D: last line of file ends without a newline
+  }
+src\uart.c(8): warning:  #177-D: variable "IDN"  was declared but never referenced
+  static char IDN[]="Dmitry_Lipanov\r\n";
+src\uart.c: 2 warnings, 0 errors
+compiling usb_func.c...
+usb_func.c(21): warning:  #223-D: function "putstr" declared implicitly
+  						putstr("ACKrxed"); // получили ответ - отправим в терминал
+usb_func.c(219): warning:  #940-D: missing return statement at end of non-void function "EP_Get_count" 
+  }
+usb_func.c(210): warning:  #550-D: variable "out"  was set but never used
+  	char out;
+usb_func.c(283): warning:  #1-D: last line of file ends without a newline
+  		
+usb_func.c: 4 warnings, 0 errors
+compiling main.c...
+src\main.c(226): warning:  #223-D: function "putchar" declared implicitly
+  		putchar(TS);
+src\main.c(339): warning:  #223-D: function "USBsendDataEP" declared implicitly
+  											USBsendDataEP(EP0,&Buffer, 2); // отправка статуса ( то что наше устройство питается от собственного источника питания и wakeup не поддерживается)
+src\main.c(352): warning:  #223-D: function "SEND_ZERO_LENGTH_DATA_EPn" declared implicitly
+  												SEND_ZERO_LENGTH_DATA_EPn(EP0);
+src\main.c(397): warning:  #223-D: function "USBsendDataEP" declared implicitly
+  												USBsendDataEP(EP0,&Buffer, 2); // отправка статуса
+src\main.c(405): warning:  #223-D: function "SEND_ZERO_LENGTH_DATA_EPn" declared implicitly
+                              SEND_ZERO_LENGTH_DATA_EPn(EP0);    
+src\main.c(446): warning:  #223-D: function "USBsendDataEP" declared implicitly
+  																						USBsendDataEP(EP1, &Buffer, 1);
+src\main.c(474): warning:  #223-D: function "SEND_ZERO_LENGTH_DATA_EPn" declared implicitly
+                              SEND_ZERO_LENGTH_DATA_EPn(EP0);
+src\main.c(522): warning:  #223-D: function "USBsendDataEP" declared implicitly
+                          USBsendDataEP(EP0, Buffer, 2);
+src\main.c(549): warning:  #9-D: nested comment is not allowed
+                          /* Wait Acquistion time of Sample and Hold */
+src\main.c(315): warning:  #177-D: variable "a"  was declared but never referenced
+      unsigned long a;
+src\main.c(641): warning:  #223-D: function "SEND_ZERO_LENGTH_DATA_EPn" declared implicitly
+           SEND_ZERO_LENGTH_DATA_EPn(EP0);
+src\main.c(643): warning:  #223-D: function "USBsendDataEP" declared implicitly
+  				USBsendDataEP(EP, pSendBuffer, 8);
+src\main.c(647): warning:  #223-D: function "USBsendDataEP" declared implicitly
+          USBsendDataEP(EP, pSendBuffer, BytesToSend);
+src\main.c: 13 warnings, 0 errors
+compiling core_cm1.c...
+linking...
+Program Size: Code=4754 RO-data=278 RW-data=56 ZI-data=8480  
+FromELF: creating hex file...
+".\obj\gpio.axf" - 0 Error(s), 19 Warning(s).
+
+<h2>Software Packages used:</h2>
+
+Package Vendor: ARM
+                http://www.keil.com/pack/ARM.CMSIS.5.5.1.pack
+                ARM.CMSIS.5.5.1
+                CMSIS (Cortex Microcontroller Software Interface Standard)
+   * Component: CORE Version: 5.2.0
+
+Package Vendor: Keil
+                http://www.keil.com/pack/Keil.MDR1986BExx.1.5.3.pack
+                Keil.MDR1986BExx.1.5.3
+                Milandr MDR1986BExx Series Device Support, Drivers and Examples
+
+<h2>Collection of Component include folders:</h2>
+  .\RTE\_gpio
+  C:\Users\Yurez\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\Core\Include
+  C:\Users\Yurez\AppData\Local\Arm\Packs\Keil\MDR1986BExx\1.5.3\Libraries\CMSIS\CM3\DeviceSupport\MDR32F9Qx\inc
+
+<h2>Collection of Component Files used:</h2>
+
+   * Component: ARM::CMSIS:CORE:5.2.0
+Build Time Elapsed:  00:00:01
+</pre>
+</body>
+</html>

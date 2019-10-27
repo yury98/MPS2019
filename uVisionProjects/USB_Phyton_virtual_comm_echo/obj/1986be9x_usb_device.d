@@ -1,7 +1,7 @@
 .\obj\1986be9x_usb_device.o: src\1986BE9x_usb_device.c
 .\obj\1986be9x_usb_device.o: .\inc\opora.h
 .\obj\1986be9x_usb_device.o: .\inc\core_cm1.h
-.\obj\1986be9x_usb_device.o: C:\Keil4\ARM\RV31\INC\stdint.h
+.\obj\1986be9x_usb_device.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
 .\obj\1986be9x_usb_device.o: .\inc\opora_can_defs.h
 .\obj\1986be9x_usb_device.o: .\inc\opora_usb_defs.h
 .\obj\1986be9x_usb_device.o: .\inc\opora_eeprom_defs.h

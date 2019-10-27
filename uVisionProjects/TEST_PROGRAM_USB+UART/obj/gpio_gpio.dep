@@ -1,0 +1,112 @@
+Dependencies for Project 'gpio', Target 'gpio': (DO NOT MODIFY !)
+F (.\src\Startup.s)(0x4EBA4B5E)(--cpu Cortex-M3 --pd "__EVAL SETA 1" -g --apcs=interwork -I.\RTE\_gpio-IC:\Users\Yurez\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\Core\Include-IC:\Users\Yurez\AppData\Local\Arm\Packs\Keil\MDR1986BExx\1.5.3\Libraries\CMSIS\CM3\DeviceSupport\MDR32F9Qx\inc--pd "__UVISION_VERSION SETA 528" --pd "_RTE_ SETA 1" --pd "USE_MDR32F9Q2_Rev1 SETA 1"--list .\startup.lst --xref -o .\obj\startup.o --depend .\obj\startup.d)
+F (.\src\main.c)(0x55E5991A)(-c --cpu Cortex-M3 -D__EVAL -g -O0 --apcs=interwork -I .\inc -I .\src-I.\RTE\_gpio-IC:\Users\Yurez\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\Core\Include-IC:\Users\Yurez\AppData\Local\Arm\Packs\Keil\MDR1986BExx\1.5.3\Libraries\CMSIS\CM3\DeviceSupport\MDR32F9Qx\inc-D__UVISION_VERSION="528" -D_RTE_ -DUSE_MDR32F9Q2_Rev1-o .\obj\main.o --omf_browse .\obj\main.crf --depend .\obj\main.d)
+I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x5CEBC032)
+I (.\inc\opora.h)(0x4EBA497A)
+I (.\inc\core_cm1.h)(0x4E522A84)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5CEBC032)
+I (.\inc\opora_can_defs.h)(0x4C7FA2CC)
+I (.\inc\opora_usb_defs.h)(0x4C7FA2CC)
+I (.\inc\opora_eeprom_defs.h)(0x4C7FA2CC)
+I (.\inc\opora_rst_clk_defs.h)(0x4D4814E2)
+I (.\inc\opora_dma_defs.h)(0x4C7FA2CC)
+I (.\inc\opora_uart_defs.h)(0x4C7FA2CC)
+I (.\inc\opora_spi_defs.h)(0x4C7FA2CC)
+I (.\inc\opora_mil_std_1553_defs.h)(0x4C7FA2CC)
+I (.\inc\opora_power_defs.h)(0x4C7FA2CC)
+I (.\inc\opora_wwdg_defs.h)(0x4C7FA2CC)
+I (.\inc\opora_iwdg_defs.h)(0x4C7FA2CC)
+I (.\inc\opora_timer_defs.h)(0x4C7FA2CC)
+I (.\inc\opora_adc_defs.h)(0x4C7FA2CC)
+I (.\inc\opora_dac_defs.h)(0x4C7FA2CC)
+I (.\inc\opora_port_defs.h)(0x4EA9543C)
+I (.\inc\opora_arinc429r_defs.h)(0x4FDA146C)
+I (.\inc\opora_bkp_defs.h)(0x4C7FA2CC)
+I (.\inc\opora_arinc429t_defs.h)(0x4FDA148A)
+I (.\inc\opora_ext_bus_cntrl_defs.h)(0x4FEB0A56)
+I (.\inc\opora_ethernet_defs.h)(0x4EA9541E)
+I (.\inc\opora_sys_defs.h)(0x4C7FA2CC)
+I (.\inc\usb_func.h)(0x55E58A36)
+I (.\inc\uart.h)(0x53FCBF7A)
+F (.\src\uart.c)(0x55E04594)(-c --cpu Cortex-M3 -D__EVAL -g -O0 --apcs=interwork -I .\inc -I .\src-I.\RTE\_gpio-IC:\Users\Yurez\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\Core\Include-IC:\Users\Yurez\AppData\Local\Arm\Packs\Keil\MDR1986BExx\1.5.3\Libraries\CMSIS\CM3\DeviceSupport\MDR32F9Qx\inc-D__UVISION_VERSION="528" -D_RTE_ -DUSE_MDR32F9Q2_Rev1-o .\obj\uart.o --omf_browse .\obj\uart.crf --depend .\obj\uart.d)
+I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x5CEBC032)
+I (.\inc\opora.h)(0x4EBA497A)
+I (.\inc\core_cm1.h)(0x4E522A84)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5CEBC032)
+I (.\inc\opora_can_defs.h)(0x4C7FA2CC)
+I (.\inc\opora_usb_defs.h)(0x4C7FA2CC)
+I (.\inc\opora_eeprom_defs.h)(0x4C7FA2CC)
+I (.\inc\opora_rst_clk_defs.h)(0x4D4814E2)
+I (.\inc\opora_dma_defs.h)(0x4C7FA2CC)
+I (.\inc\opora_uart_defs.h)(0x4C7FA2CC)
+I (.\inc\opora_spi_defs.h)(0x4C7FA2CC)
+I (.\inc\opora_mil_std_1553_defs.h)(0x4C7FA2CC)
+I (.\inc\opora_power_defs.h)(0x4C7FA2CC)
+I (.\inc\opora_wwdg_defs.h)(0x4C7FA2CC)
+I (.\inc\opora_iwdg_defs.h)(0x4C7FA2CC)
+I (.\inc\opora_timer_defs.h)(0x4C7FA2CC)
+I (.\inc\opora_adc_defs.h)(0x4C7FA2CC)
+I (.\inc\opora_dac_defs.h)(0x4C7FA2CC)
+I (.\inc\opora_port_defs.h)(0x4EA9543C)
+I (.\inc\opora_arinc429r_defs.h)(0x4FDA146C)
+I (.\inc\opora_bkp_defs.h)(0x4C7FA2CC)
+I (.\inc\opora_arinc429t_defs.h)(0x4FDA148A)
+I (.\inc\opora_ext_bus_cntrl_defs.h)(0x4FEB0A56)
+I (.\inc\opora_ethernet_defs.h)(0x4EA9541E)
+I (.\inc\opora_sys_defs.h)(0x4C7FA2CC)
+F (.\usb_func.c)(0x55E59290)(-c --cpu Cortex-M3 -D__EVAL -g -O0 --apcs=interwork -I .\inc -I .\src-I.\RTE\_gpio-IC:\Users\Yurez\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\Core\Include-IC:\Users\Yurez\AppData\Local\Arm\Packs\Keil\MDR1986BExx\1.5.3\Libraries\CMSIS\CM3\DeviceSupport\MDR32F9Qx\inc-D__UVISION_VERSION="528" -D_RTE_ -DUSE_MDR32F9Q2_Rev1-o .\obj\usb_func.o --omf_browse .\obj\usb_func.crf --depend .\obj\usb_func.d)
+I (.\inc\opora.h)(0x4EBA497A)
+I (.\inc\core_cm1.h)(0x4E522A84)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5CEBC032)
+I (.\inc\opora_can_defs.h)(0x4C7FA2CC)
+I (.\inc\opora_usb_defs.h)(0x4C7FA2CC)
+I (.\inc\opora_eeprom_defs.h)(0x4C7FA2CC)
+I (.\inc\opora_rst_clk_defs.h)(0x4D4814E2)
+I (.\inc\opora_dma_defs.h)(0x4C7FA2CC)
+I (.\inc\opora_uart_defs.h)(0x4C7FA2CC)
+I (.\inc\opora_spi_defs.h)(0x4C7FA2CC)
+I (.\inc\opora_mil_std_1553_defs.h)(0x4C7FA2CC)
+I (.\inc\opora_power_defs.h)(0x4C7FA2CC)
+I (.\inc\opora_wwdg_defs.h)(0x4C7FA2CC)
+I (.\inc\opora_iwdg_defs.h)(0x4C7FA2CC)
+I (.\inc\opora_timer_defs.h)(0x4C7FA2CC)
+I (.\inc\opora_adc_defs.h)(0x4C7FA2CC)
+I (.\inc\opora_dac_defs.h)(0x4C7FA2CC)
+I (.\inc\opora_port_defs.h)(0x4EA9543C)
+I (.\inc\opora_arinc429r_defs.h)(0x4FDA146C)
+I (.\inc\opora_bkp_defs.h)(0x4C7FA2CC)
+I (.\inc\opora_arinc429t_defs.h)(0x4FDA148A)
+I (.\inc\opora_ext_bus_cntrl_defs.h)(0x4FEB0A56)
+I (.\inc\opora_ethernet_defs.h)(0x4EA9541E)
+I (.\inc\opora_sys_defs.h)(0x4C7FA2CC)
+I (.\inc\usb_func.h)(0x55E58A36)
+F (.\inc\core_cm1.c)(0x4E522A5E)(-c --cpu Cortex-M3 -D__EVAL -g -O0 --apcs=interwork -I .\inc -I .\src-I.\RTE\_gpio-IC:\Users\Yurez\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\Core\Include-IC:\Users\Yurez\AppData\Local\Arm\Packs\Keil\MDR1986BExx\1.5.3\Libraries\CMSIS\CM3\DeviceSupport\MDR32F9Qx\inc-D__UVISION_VERSION="528" -D_RTE_ -DUSE_MDR32F9Q2_Rev1-o .\obj\core_cm1.o --omf_browse .\obj\core_cm1.crf --depend .\obj\core_cm1.d)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5CEBC032)
+F (.\inc\core_cm1.h)(0x4E522A84)()
+F (.\inc\opora.h)(0x4EBA497A)()
+F (.\inc\opora_adc_defs.h)(0x4C7FA2CC)()
+F (.\inc\opora_arinc429r_defs.h)(0x4FDA146C)()
+F (.\inc\opora_arinc429t_defs.h)(0x4FDA148A)()
+F (.\inc\opora_bkp_defs.h)(0x4C7FA2CC)()
+F (.\inc\opora_can_defs.h)(0x4C7FA2CC)()
+F (.\inc\opora_dac_defs.h)(0x4C7FA2CC)()
+F (.\inc\opora_dma_defs.h)(0x4C7FA2CC)()
+F (.\inc\opora_eeprom_defs.h)(0x4C7FA2CC)()
+F (.\inc\opora_ethernet_defs.h)(0x4EA9541E)()
+F (.\inc\opora_ext_bus_cntrl_defs.h)(0x4FEB0A56)()
+F (.\inc\opora_iwdg_defs.h)(0x4C7FA2CC)()
+F (.\inc\opora_mil_std_1553_defs.h)(0x4C7FA2CC)()
+F (.\inc\opora_port_defs.h)(0x4EA9543C)()
+F (.\inc\opora_power_defs.h)(0x4C7FA2CC)()
+F (.\inc\opora_rst_clk_defs.h)(0x4D4814E2)()
+F (.\inc\opora_spi_defs.h)(0x4C7FA2CC)()
+F (.\inc\opora_sys_defs.h)(0x4C7FA2CC)()
+F (.\inc\opora_timer_defs.h)(0x4C7FA2CC)()
+F (.\inc\opora_uart_defs.h)(0x4C7FA2CC)()
+F (.\inc\opora_usb_defs.h)(0x4C7FA2CC)()
+F (.\inc\opora_wwdg_defs.h)(0x4C7FA2CC)()
+F (.\inc\stdint.h)(0x4CC18768)()
+F (.\inc\misc.h)(0x540F1176)()
+F (.\inc\button.h)(0x540F111A)()
+F (.\inc\itmr.h)(0x53FA17EE)()
+F (.\usb_func.h)(0x55E014E4)()
