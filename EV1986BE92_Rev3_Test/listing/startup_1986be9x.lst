@@ -341,11 +341,14 @@ ARM Macro Assembler    Page 6
               00000000 
               00000000 
 Command Line: --debug --xref --diag_suppress=9931 --cpu=Cortex-M3 --apcs=interw
-ork --depend=.\output\startup_1986be9x.d -o.\output\startup_1986be9x.o -IC:\Kei
-l_v5\ARM\RV31\INC -IC:\Keil_v5\ARM\CMSIS\Include -IC:\Keil_v5\ARM\INC\Milandr\M
-DR32F9x --predefine="__EVAL SETA 1" --predefine="__MICROLIB SETA 1" --predefine
-="__UVISION_VERSION SETA 528" --list=.\listing\startup_1986be9x.lst Libraries\C
-MSIS\CM3\DeviceSupport\1986BE9x\startup\arm\startup_1986be9x.s
+ork --depend=.\output\startup_1986be9x.d -o.\output\startup_1986be9x.o -I.\RTE\
+_Target_1 -IC:\Users\Yurez\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\Core\I
+nclude -IC:\Users\Yurez\AppData\Local\Arm\Packs\Keil\MDR1986BExx\1.5.3\Librarie
+s\CMSIS\CM3\DeviceSupport\MDR32F9Qx\inc --predefine="__EVAL SETA 1" --predefine
+="__MICROLIB SETA 1" --predefine="__UVISION_VERSION SETA 528" --predefine="_RTE
+_ SETA 1" --predefine="USE_MDR32F9Q2_Rev1 SETA 1" --list=.\listing\startup_1986
+be9x.lst Libraries\CMSIS\CM3\DeviceSupport\1986BE9x\startup\arm\startup_1986be9
+x.s
 
 
 
@@ -965,4 +968,4 @@ m\startup_1986be9x.s
 m\startup_1986be9x.s
 Comment: __main used once
 2 symbols
-383 symbols in table
+385 symbols in table

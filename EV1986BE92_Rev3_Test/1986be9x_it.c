@@ -19,26 +19,19 @@ int count_main = 0;
 
 uint8_t* main_string[]  = 
 {
-	 cyr_O,  cyr_t,  cyr_l,  cyr_a,  cyr_d,  cyr_o, cyr_ch,  cyr_n,  cyr_y, cyr_jj,
-	sym_sp,  cyr_k,  cyr_o,  cyr_m,  cyr_p,  cyr_l,  cyr_e,  cyr_k,  cyr_t, sym_sp,
-	 cyr_m,  cyr_i,  cyr_k,  cyr_r,  cyr_o,  cyr_k,  cyr_o,  cyr_n,  cyr_t,  cyr_r,
-	 cyr_o,  cyr_l,  cyr_l,  cyr_e,  cyr_r,  cyr_o,  cyr_v, sym_sp,  dig_1,  dig_9,
-	 dig_8,  dig_6,  cyr_V,  cyr_E,	 dig_9,  dig_1,  cyr_T,  dig_1, sym_pt, sym_sp,
-	 cyr_Z,  cyr_A,  cyr_O, sym_sp,  cyr_P,  cyr_K,  cyr_K, sym_sp,  cyr_M,  cyr_i,
-	 cyr_l,  cyr_a,  cyr_n,  cyr_d,	 cyr_r, sym_pt, sym_sp, lat_w,	 lat_w,	 lat_w,
-	sym_pt,  lat_m,  lat_i,  lat_l,  lat_a,  lat_n,  lat_d,  lat_r, sym_pt,	 lat_r,
-	 lat_u
+	 cyr_K,  cyr_u,  cyr_r,  cyr_s,  cyr_o,  cyr_v, cyr_a,  cyr_ya, sym_sp,
+	 cyr_r,  cyr_a,  cyr_b,  cyr_o,  cyr_t,  cyr_a,  sym_sp, cyr_p, cyr_o,  sym_sp,
+	 cyr_k,  cyr_u,  cyr_r,  cyr_s,  cyr_u,  sym_sp,  cyr_M,  cyr_i,  cyr_k,  cyr_r,  cyr_o,
+	 cyr_p,  cyr_r,  cyr_o,  cyr_c,  cyr_e,  cyr_s,  cyr_s,  cyr_o,  cyr_r,  cyr_n,
+	 cyr_y,  cyr_e,  sym_sp,  cyr_s,  cyr_i,  cyr_s,  cyr_t,  cyr_e,  cyr_m,  cyr_y
 };
 
 uint8_t* menu_string[] =
 {
-sym_sp,sym_sp,sym_sp,sym_sp,sym_sp,sym_sp,lat_L,lat_E,lat_D,lat_S,sym_sp,sym_sp,sym_sp,sym_sp,sym_sp,sym_sp,
-sym_sp,sym_sp,sym_sp,sym_sp,sym_sp,sym_sp,lat_U,lat_A,lat_R,lat_T,sym_sp,sym_sp,sym_sp,sym_sp,sym_sp,sym_sp,
-sym_sp,sym_sp,sym_sp,sym_sp,lat_C,lat_A,lat_N,sym_sp,dig_1,dig_2,dig_5,sym_sp,sym_sp,sym_sp,sym_sp,sym_sp,
-sym_sp,sym_sp,sym_sp,sym_sp,lat_C,lat_A,lat_N,sym_sp,dig_5,dig_0,dig_0,sym_sp,sym_sp,sym_sp,sym_sp,sym_sp,
-sym_sp,sym_sp,sym_sp,sym_sp,sym_sp,lat_F,lat_L,lat_A,lat_S,lat_H,sym_sp,sym_sp,sym_sp,sym_sp,sym_sp,sym_sp,
-sym_sp,sym_sp,sym_sp,sym_sp,sym_sp,sym_sp,lat_R,lat_A,lat_M,sym_sp,sym_sp,sym_sp,sym_sp,sym_sp,sym_sp,sym_sp,
-sym_sp,sym_sp,sym_sp,sym_sp,lat_E,lat_T,lat_H,lat_E,lat_R,lat_N,lat_E,lat_T,sym_sp,sym_sp,sym_sp,sym_sp
+sym_sp,sym_sp,sym_sp,sym_sp,sym_sp,sym_sp,lat_C,lat_A,lat_N,sym_sp,sym_sp,sym_sp,sym_sp,sym_sp,sym_sp,sym_sp,
+sym_sp,sym_sp,sym_sp,sym_sp,sym_sp,sym_sp,lat_S,lat_S,lat_P,sym_sp,sym_sp,sym_sp,sym_sp,sym_sp,sym_sp,sym_sp,
+sym_sp,sym_sp,sym_sp,sym_sp,sym_sp,sym_sp,lat_U,lat_S,lat_B,sym_sp,sym_sp,sym_sp,sym_sp,sym_sp,sym_sp,sym_sp,
+sym_sp,sym_sp,sym_sp,sym_sp,sym_sp,sym_sp,lat_U,lat_A,lat_R,lat_T,sym_sp,sym_sp,sym_sp,sym_sp,sym_sp,sym_sp
 };
 uint8_t* uart_string[]  =
 {
@@ -315,18 +308,22 @@ int i;
 	if (count_title == 0)
 	{
 		count_title = 1;
+
+		LcdPutChar (cyr_SH, 0, 0);  LcdPutChar (cyr_a, 1, 0);  LcdPutChar (cyr_sh, 2, 0);
+		LcdPutChar (cyr_k, 3, 0); LcdPutChar (cyr_i, 4, 0); LcdPutChar (cyr_n, 5, 0);
 		
-		LcdPutImage (icon_mil, 0, 0,1, 1);
-
-		LcdPutChar (cyr_M, 8, 0);  LcdPutChar (cyr_i, 9, 0);  LcdPutChar (cyr_l, 10, 0);
-		LcdPutChar (cyr_a, 11, 0); LcdPutChar (cyr_n, 12, 0); LcdPutChar (cyr_d, 13, 0);
-		LcdPutChar (cyr_r, 14, 0);
-  	}
-
+		LcdPutChar (cyr_I, 10, 0); LcdPutChar (cyr_U, 11, 0); LcdPutChar (dig_6, 12, 0);
+		LcdPutChar (sym_def, 13, 0); LcdPutChar (dig_7, 14, 0); LcdPutChar (dig_3, 15, 0);
+		//LcdPutChar (cyr_r, 14, 0);
+  }
+	
+	LcdPutChar (lat_m, 10, 1); LcdPutChar (lat_a, 11, 1); LcdPutChar (lat_s, 12, 1);
+	LcdPutChar (lat_t, 13, 1); LcdPutChar (lat_e, 14, 1); LcdPutChar (lat_r, 15, 1);
+		
 	//scroll main string
-	while (!LcdScrollString (main_string,7,81,count_main));
+	while (!LcdScrollString (main_string,7,50,count_main));
 	count_main++;
-	if (count_main == 97) count_main = 0;
+	if (count_main == 55) count_main = 0;
 	//
 	if (UartFlag == 1)
 	{

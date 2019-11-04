@@ -3,7 +3,7 @@
 <title>Static Call Graph - [.\output\EV1986Test.axf]</title></head>
 <body><HR>
 <H1>Static Call Graph for image .\output\EV1986Test.axf</H1><HR>
-<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060750: Last Updated: Tue Oct 01 17:52:33 2019
+<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060750: Last Updated: Mon Nov 04 15:13:58 2019
 <BR><P>
 <H3>Maximum Stack Usage =        168 bytes + Unknown(Cycles, Untraceable Function Pointers)</H3><H3>
 Call chain for Maximum Stack Depth:</H3>
@@ -11,7 +11,7 @@ Timer1_IRQHandler &rArr; LcdScrollString &rArr; LcdPutString &rArr; WriteData
 <P>
 <H3>
 Mutually Recursive functions
-</H3> <LI><a href="#[5b]">MltDelay</a>&nbsp;&nbsp;&nbsp;&rArr;&nbsp;&nbsp;&nbsp;<a href="#[5b]">MltDelay</a><BR>
+</H3> <LI><a href="#[5a]">MltDelay</a>&nbsp;&nbsp;&nbsp;&rArr;&nbsp;&nbsp;&nbsp;<a href="#[5a]">MltDelay</a><BR>
  <LI><a href="#[2]">HardFault_Handler</a>&nbsp;&nbsp;&nbsp;&rArr;&nbsp;&nbsp;&nbsp;<a href="#[2]">HardFault_Handler</a><BR>
  <LI><a href="#[3]">MemManage_Handler</a>&nbsp;&nbsp;&nbsp;&rArr;&nbsp;&nbsp;&nbsp;<a href="#[3]">MemManage_Handler</a><BR>
  <LI><a href="#[4]">BusFault_Handler</a>&nbsp;&nbsp;&nbsp;&rArr;&nbsp;&nbsp;&nbsp;<a href="#[4]">BusFault_Handler</a><BR>
@@ -345,11 +345,11 @@ Global Symbols
 <P><STRONG><a name="[76]"></a>PORT_ReadInputData</STRONG> (Thumb, 4 bytes, Stack size 0 bytes, 1986be9x_port.o(.text), UNUSED)
 
 <P><STRONG><a name="[25]"></a>PORT_SetBits</STRONG> (Thumb, 28 bytes, Stack size 0 bytes, 1986be9x_port.o(.text))
-<BR><BR>[Called By]<UL><LI><a href="#[61]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ReadData
-<LI><a href="#[60]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;WriteData
-<LI><a href="#[5f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SetAdress
-<LI><a href="#[5e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SetPage
-<LI><a href="#[5d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DispOff
+<BR><BR>[Called By]<UL><LI><a href="#[60]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ReadData
+<LI><a href="#[5f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;WriteData
+<LI><a href="#[5e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SetAdress
+<LI><a href="#[5d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SetPage
+<LI><a href="#[5c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DispOff
 <LI><a href="#[4c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ReadStatus
 <LI><a href="#[4b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LcdInit
 <LI><a href="#[4d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DispOn
@@ -357,11 +357,11 @@ Global Symbols
 </UL>
 
 <P><STRONG><a name="[27]"></a>PORT_ResetBits</STRONG> (Thumb, 28 bytes, Stack size 0 bytes, 1986be9x_port.o(.text))
-<BR><BR>[Called By]<UL><LI><a href="#[61]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ReadData
-<LI><a href="#[60]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;WriteData
-<LI><a href="#[5f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SetAdress
-<LI><a href="#[5e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SetPage
-<LI><a href="#[5d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DispOff
+<BR><BR>[Called By]<UL><LI><a href="#[60]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ReadData
+<LI><a href="#[5f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;WriteData
+<LI><a href="#[5e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SetAdress
+<LI><a href="#[5d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SetPage
+<LI><a href="#[5c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DispOff
 <LI><a href="#[4c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ReadStatus
 <LI><a href="#[4b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LcdInit
 <LI><a href="#[4d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DispOn
@@ -590,13 +590,12 @@ Global Symbols
 <P><STRONG><a name="[13]"></a>WWDG_IRQHandler</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, 1986be9x_it.o(.text))
 <BR>[Address Reference Count : 1]<UL><LI> startup_1986be9x.o(RESET)
 </UL>
-<P><STRONG><a name="[14]"></a>Timer1_IRQHandler</STRONG> (Thumb, 730 bytes, Stack size 24 bytes, 1986be9x_it.o(.text))
+<P><STRONG><a name="[14]"></a>Timer1_IRQHandler</STRONG> (Thumb, 830 bytes, Stack size 24 bytes, 1986be9x_it.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 168<LI>Call Chain = Timer1_IRQHandler &rArr; LcdScrollString &rArr; LcdPutString &rArr; WriteData
 </UL>
-<BR>[Calls]<UL><LI><a href="#[59]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LcdScrollString
-<LI><a href="#[5a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LcdPutString
-<LI><a href="#[57]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LcdPutImage
-<LI><a href="#[58]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LcdPutChar
+<BR>[Calls]<UL><LI><a href="#[58]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LcdScrollString
+<LI><a href="#[59]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LcdPutString
+<LI><a href="#[57]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LcdPutChar
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> startup_1986be9x.o(RESET)
 </UL>
@@ -630,24 +629,24 @@ Global Symbols
 <P><STRONG><a name="[1e]"></a>EXT_INT4_IRQHandler</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, 1986be9x_it.o(.text))
 <BR>[Address Reference Count : 1]<UL><LI> startup_1986be9x.o(RESET)
 </UL>
-<P><STRONG><a name="[5c]"></a>SetDataBits</STRONG> (Thumb, 48 bytes, Stack size 0 bytes, mlt_lcd.o(.text))
-<BR><BR>[Called By]<UL><LI><a href="#[61]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ReadData
-<LI><a href="#[60]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;WriteData
-<LI><a href="#[5f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SetAdress
-<LI><a href="#[5e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SetPage
-<LI><a href="#[5d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DispOff
+<P><STRONG><a name="[5b]"></a>SetDataBits</STRONG> (Thumb, 48 bytes, Stack size 0 bytes, mlt_lcd.o(.text))
+<BR><BR>[Called By]<UL><LI><a href="#[60]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ReadData
+<LI><a href="#[5f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;WriteData
+<LI><a href="#[5e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SetAdress
+<LI><a href="#[5d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SetPage
+<LI><a href="#[5c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DispOff
 <LI><a href="#[4d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DispOn
 </UL>
 
-<P><STRONG><a name="[5b]"></a>MltDelay</STRONG> (Thumb, 6 bytes, Stack size 0 bytes, mlt_lcd.o(.text))
-<BR><BR>[Calls]<UL><LI><a href="#[5b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;MltDelay
+<P><STRONG><a name="[5a]"></a>MltDelay</STRONG> (Thumb, 6 bytes, Stack size 0 bytes, mlt_lcd.o(.text))
+<BR><BR>[Calls]<UL><LI><a href="#[5a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;MltDelay
 </UL>
-<BR>[Called By]<UL><LI><a href="#[61]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ReadData
-<LI><a href="#[60]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;WriteData
-<LI><a href="#[5f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SetAdress
-<LI><a href="#[5e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SetPage
-<LI><a href="#[5d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DispOff
-<LI><a href="#[5b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;MltDelay
+<BR>[Called By]<UL><LI><a href="#[60]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ReadData
+<LI><a href="#[5f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;WriteData
+<LI><a href="#[5e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SetAdress
+<LI><a href="#[5d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SetPage
+<LI><a href="#[5c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DispOff
+<LI><a href="#[5a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;MltDelay
 <LI><a href="#[4c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ReadStatus
 <LI><a href="#[4b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LcdInit
 <LI><a href="#[4d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DispOn
@@ -656,14 +655,14 @@ Global Symbols
 <P><STRONG><a name="[4c]"></a>ReadStatus</STRONG> (Thumb, 182 bytes, Stack size 24 bytes, mlt_lcd.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 24<LI>Call Chain = ReadStatus
 </UL>
-<BR>[Calls]<UL><LI><a href="#[5b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;MltDelay
+<BR>[Calls]<UL><LI><a href="#[5a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;MltDelay
 <LI><a href="#[25]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;PORT_SetBits
 <LI><a href="#[27]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;PORT_ResetBits
 </UL>
-<BR>[Called By]<UL><LI><a href="#[62]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LcdClearPage
-<LI><a href="#[5a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LcdPutString
-<LI><a href="#[57]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LcdPutImage
-<LI><a href="#[58]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LcdPutChar
+<BR>[Called By]<UL><LI><a href="#[62]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LcdPutImage
+<LI><a href="#[61]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LcdClearPage
+<LI><a href="#[59]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LcdPutString
+<LI><a href="#[57]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LcdPutChar
 <LI><a href="#[4b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LcdInit
 <LI><a href="#[1f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
@@ -671,66 +670,66 @@ Global Symbols
 <P><STRONG><a name="[4d]"></a>DispOn</STRONG> (Thumb, 182 bytes, Stack size 24 bytes, mlt_lcd.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 24<LI>Call Chain = DispOn
 </UL>
-<BR>[Calls]<UL><LI><a href="#[5b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;MltDelay
-<LI><a href="#[5c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SetDataBits
+<BR>[Calls]<UL><LI><a href="#[5a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;MltDelay
+<LI><a href="#[5b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SetDataBits
 <LI><a href="#[25]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;PORT_SetBits
 <LI><a href="#[27]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;PORT_ResetBits
 </UL>
 <BR>[Called By]<UL><LI><a href="#[1f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
-<P><STRONG><a name="[5d]"></a>DispOff</STRONG> (Thumb, 182 bytes, Stack size 24 bytes, mlt_lcd.o(.text), UNUSED)
-<BR><BR>[Calls]<UL><LI><a href="#[5b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;MltDelay
-<LI><a href="#[5c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SetDataBits
+<P><STRONG><a name="[5c]"></a>DispOff</STRONG> (Thumb, 182 bytes, Stack size 24 bytes, mlt_lcd.o(.text), UNUSED)
+<BR><BR>[Calls]<UL><LI><a href="#[5a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;MltDelay
+<LI><a href="#[5b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SetDataBits
 <LI><a href="#[25]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;PORT_SetBits
 <LI><a href="#[27]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;PORT_ResetBits
 </UL>
 
-<P><STRONG><a name="[5e]"></a>SetPage</STRONG> (Thumb, 190 bytes, Stack size 32 bytes, mlt_lcd.o(.text))
+<P><STRONG><a name="[5d]"></a>SetPage</STRONG> (Thumb, 190 bytes, Stack size 32 bytes, mlt_lcd.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 32<LI>Call Chain = SetPage
 </UL>
-<BR>[Calls]<UL><LI><a href="#[5b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;MltDelay
-<LI><a href="#[5c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SetDataBits
+<BR>[Calls]<UL><LI><a href="#[5a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;MltDelay
+<LI><a href="#[5b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SetDataBits
 <LI><a href="#[25]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;PORT_SetBits
 <LI><a href="#[27]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;PORT_ResetBits
 </UL>
-<BR>[Called By]<UL><LI><a href="#[62]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LcdClearPage
-<LI><a href="#[5a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LcdPutString
-<LI><a href="#[57]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LcdPutImage
-<LI><a href="#[58]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LcdPutChar
+<BR>[Called By]<UL><LI><a href="#[62]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LcdPutImage
+<LI><a href="#[61]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LcdClearPage
+<LI><a href="#[59]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LcdPutString
+<LI><a href="#[57]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LcdPutChar
 </UL>
 
-<P><STRONG><a name="[5f]"></a>SetAdress</STRONG> (Thumb, 190 bytes, Stack size 32 bytes, mlt_lcd.o(.text))
+<P><STRONG><a name="[5e]"></a>SetAdress</STRONG> (Thumb, 190 bytes, Stack size 32 bytes, mlt_lcd.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 32<LI>Call Chain = SetAdress
 </UL>
-<BR>[Calls]<UL><LI><a href="#[5b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;MltDelay
-<LI><a href="#[5c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SetDataBits
+<BR>[Calls]<UL><LI><a href="#[5a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;MltDelay
+<LI><a href="#[5b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SetDataBits
 <LI><a href="#[25]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;PORT_SetBits
 <LI><a href="#[27]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;PORT_ResetBits
 </UL>
-<BR>[Called By]<UL><LI><a href="#[62]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LcdClearPage
-<LI><a href="#[5a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LcdPutString
-<LI><a href="#[57]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LcdPutImage
-<LI><a href="#[58]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LcdPutChar
+<BR>[Called By]<UL><LI><a href="#[62]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LcdPutImage
+<LI><a href="#[61]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LcdClearPage
+<LI><a href="#[59]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LcdPutString
+<LI><a href="#[57]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LcdPutChar
 </UL>
 
-<P><STRONG><a name="[60]"></a>WriteData</STRONG> (Thumb, 202 bytes, Stack size 32 bytes, mlt_lcd.o(.text))
+<P><STRONG><a name="[5f]"></a>WriteData</STRONG> (Thumb, 202 bytes, Stack size 32 bytes, mlt_lcd.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 32<LI>Call Chain = WriteData
 </UL>
-<BR>[Calls]<UL><LI><a href="#[5b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;MltDelay
-<LI><a href="#[5c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SetDataBits
+<BR>[Calls]<UL><LI><a href="#[5a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;MltDelay
+<LI><a href="#[5b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SetDataBits
 <LI><a href="#[25]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;PORT_SetBits
 <LI><a href="#[27]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;PORT_ResetBits
 </UL>
-<BR>[Called By]<UL><LI><a href="#[62]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LcdClearPage
-<LI><a href="#[5a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LcdPutString
-<LI><a href="#[57]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LcdPutImage
-<LI><a href="#[58]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LcdPutChar
+<BR>[Called By]<UL><LI><a href="#[62]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LcdPutImage
+<LI><a href="#[61]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LcdClearPage
+<LI><a href="#[59]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LcdPutString
+<LI><a href="#[57]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LcdPutChar
 </UL>
 
-<P><STRONG><a name="[61]"></a>ReadData</STRONG> (Thumb, 190 bytes, Stack size 24 bytes, mlt_lcd.o(.text), UNUSED)
-<BR><BR>[Calls]<UL><LI><a href="#[5b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;MltDelay
-<LI><a href="#[5c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SetDataBits
+<P><STRONG><a name="[60]"></a>ReadData</STRONG> (Thumb, 190 bytes, Stack size 24 bytes, mlt_lcd.o(.text), UNUSED)
+<BR><BR>[Calls]<UL><LI><a href="#[5a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;MltDelay
+<LI><a href="#[5b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SetDataBits
 <LI><a href="#[25]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;PORT_SetBits
 <LI><a href="#[27]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;PORT_ResetBits
 </UL>
@@ -738,7 +737,7 @@ Global Symbols
 <P><STRONG><a name="[4b]"></a>LcdInit</STRONG> (Thumb, 58 bytes, Stack size 8 bytes, mlt_lcd.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 32<LI>Call Chain = LcdInit &rArr; ReadStatus
 </UL>
-<BR>[Calls]<UL><LI><a href="#[5b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;MltDelay
+<BR>[Calls]<UL><LI><a href="#[5a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;MltDelay
 <LI><a href="#[4c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ReadStatus
 <LI><a href="#[25]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;PORT_SetBits
 <LI><a href="#[27]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;PORT_ResetBits
@@ -746,12 +745,12 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[1f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
-<P><STRONG><a name="[62]"></a>LcdClearPage</STRONG> (Thumb, 48 bytes, Stack size 16 bytes, mlt_lcd.o(.text))
+<P><STRONG><a name="[61]"></a>LcdClearPage</STRONG> (Thumb, 48 bytes, Stack size 16 bytes, mlt_lcd.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 48<LI>Call Chain = LcdClearPage &rArr; WriteData
 </UL>
-<BR>[Calls]<UL><LI><a href="#[60]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;WriteData
-<LI><a href="#[5f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SetAdress
-<LI><a href="#[5e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SetPage
+<BR>[Calls]<UL><LI><a href="#[5f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;WriteData
+<LI><a href="#[5e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SetAdress
+<LI><a href="#[5d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SetPage
 <LI><a href="#[4c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ReadStatus
 </UL>
 <BR>[Called By]<UL><LI><a href="#[4e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LcdClearChip
@@ -760,51 +759,47 @@ Global Symbols
 <P><STRONG><a name="[4e]"></a>LcdClearChip</STRONG> (Thumb, 22 bytes, Stack size 16 bytes, mlt_lcd.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 64<LI>Call Chain = LcdClearChip &rArr; LcdClearPage &rArr; WriteData
 </UL>
-<BR>[Calls]<UL><LI><a href="#[62]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LcdClearPage
+<BR>[Calls]<UL><LI><a href="#[61]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LcdClearPage
 </UL>
 <BR>[Called By]<UL><LI><a href="#[1f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
-<P><STRONG><a name="[58]"></a>LcdPutChar</STRONG> (Thumb, 70 bytes, Stack size 16 bytes, mlt_lcd.o(.text))
+<P><STRONG><a name="[57]"></a>LcdPutChar</STRONG> (Thumb, 70 bytes, Stack size 16 bytes, mlt_lcd.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 48<LI>Call Chain = LcdPutChar &rArr; WriteData
 </UL>
-<BR>[Calls]<UL><LI><a href="#[60]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;WriteData
-<LI><a href="#[5f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SetAdress
-<LI><a href="#[5e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SetPage
+<BR>[Calls]<UL><LI><a href="#[5f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;WriteData
+<LI><a href="#[5e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SetAdress
+<LI><a href="#[5d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SetPage
 <LI><a href="#[4c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ReadStatus
 </UL>
 <BR>[Called By]<UL><LI><a href="#[14]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Timer1_IRQHandler
 </UL>
 
-<P><STRONG><a name="[5a]"></a>LcdPutString</STRONG> (Thumb, 128 bytes, Stack size 24 bytes, mlt_lcd.o(.text))
+<P><STRONG><a name="[59]"></a>LcdPutString</STRONG> (Thumb, 128 bytes, Stack size 24 bytes, mlt_lcd.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 56<LI>Call Chain = LcdPutString &rArr; WriteData
 </UL>
-<BR>[Calls]<UL><LI><a href="#[60]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;WriteData
-<LI><a href="#[5f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SetAdress
-<LI><a href="#[5e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SetPage
+<BR>[Calls]<UL><LI><a href="#[5f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;WriteData
+<LI><a href="#[5e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SetAdress
+<LI><a href="#[5d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SetPage
 <LI><a href="#[4c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ReadStatus
 </UL>
-<BR>[Called By]<UL><LI><a href="#[59]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LcdScrollString
+<BR>[Called By]<UL><LI><a href="#[58]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LcdScrollString
 <LI><a href="#[14]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Timer1_IRQHandler
 </UL>
 
-<P><STRONG><a name="[59]"></a>LcdScrollString</STRONG> (Thumb, 128 bytes, Stack size 88 bytes, mlt_lcd.o(.text))
+<P><STRONG><a name="[58]"></a>LcdScrollString</STRONG> (Thumb, 128 bytes, Stack size 88 bytes, mlt_lcd.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 144<LI>Call Chain = LcdScrollString &rArr; LcdPutString &rArr; WriteData
 </UL>
-<BR>[Calls]<UL><LI><a href="#[5a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LcdPutString
+<BR>[Calls]<UL><LI><a href="#[59]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LcdPutString
 </UL>
 <BR>[Called By]<UL><LI><a href="#[14]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Timer1_IRQHandler
 </UL>
 
-<P><STRONG><a name="[57]"></a>LcdPutImage</STRONG> (Thumb, 118 bytes, Stack size 56 bytes, mlt_lcd.o(.text))
-<BR><BR>[Stack]<UL><LI>Max Depth = 88<LI>Call Chain = LcdPutImage &rArr; WriteData
-</UL>
-<BR>[Calls]<UL><LI><a href="#[60]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;WriteData
-<LI><a href="#[5f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SetAdress
-<LI><a href="#[5e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SetPage
+<P><STRONG><a name="[62]"></a>LcdPutImage</STRONG> (Thumb, 118 bytes, Stack size 56 bytes, mlt_lcd.o(.text), UNUSED)
+<BR><BR>[Calls]<UL><LI><a href="#[5f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;WriteData
+<LI><a href="#[5e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SetAdress
+<LI><a href="#[5d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SetPage
 <LI><a href="#[4c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ReadStatus
-</UL>
-<BR>[Called By]<UL><LI><a href="#[14]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Timer1_IRQHandler
 </UL>
 
 <P><STRONG><a name="[23]"></a>__scatterload</STRONG> (Thumb, 28 bytes, Stack size 0 bytes, init.o(.text))

@@ -1,0 +1,260 @@
+<html>
+<body>
+<pre>
+<h1>µVision Build Log</h1>
+<h2>Tool Versions:</h2>
+IDE-Version: µVision V5.28.0.0
+Copyright (C) 2019 ARM Ltd and ARM Germany GmbH. All rights reserved.
+License Information: 1 1, 1, LIC=----
+ 
+Tool Versions:
+Toolchain:       MDK-Lite  Version: 5.28.0.0
+Toolchain Path:  C:\Keil_v5\ARM\ARMCC\Bin
+C Compiler:      Armcc.exe V5.06 update 6 (build 750)
+Assembler:       Armasm.exe V5.06 update 6 (build 750)
+Linker/Locator:  ArmLink.exe V5.06 update 6 (build 750)
+Library Manager: ArmAr.exe V5.06 update 6 (build 750)
+Hex Converter:   FromElf.exe V5.06 update 6 (build 750)
+CPU DLL:         SARMCM3.DLL V5.28.0.0
+Dialog DLL:      DCM.DLL V1.17.3.0
+Target DLL:      Segger\JL2CM3.dll V2.99.36.0
+Dialog DLL:      TCM.DLL V1.36.2.0
+ 
+<h2>Project:</h2>
+C:\Users\Yurez\Desktop\MPS2019\ôèíàëüíûå ïðîãðàììû\master\EV1986BE2Test.uvprojx
+Project File Date:  11/04/2019
+
+<h2>Output:</h2>
+*** Using Compiler 'V5.06 update 6 (build 750)', folder: 'C:\Keil_v5\ARM\ARMCC\Bin'
+Rebuild target 'Target 1'
+assembling startup_1986be9x.s...
+compiling system_1986BE9x.c...
+compiling 1986be9x_dma.c...
+compiling 1986be9x_eeprom.c...
+compiling 1986be9x_port.c...
+compiling 1986be9x_uart.c...
+compiling main.c...
+compiling MDR32F9Qx_usb.c...
+.\Libraries\CMSIS\CM3\CoreSupport\stdint.h(39): warning:  #47-D: incompatible redefinition of macro "INT8_MIN"  (declared at line 115 of "C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h")
+     #define INT8_MIN           (-127-1)
+.\Libraries\CMSIS\CM3\CoreSupport\stdint.h(40): warning:  #47-D: incompatible redefinition of macro "INT16_MIN"  (declared at line 116 of "C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h")
+     #define INT16_MIN          (-32767-1)
+.\Libraries\CMSIS\CM3\CoreSupport\stdint.h(41): warning:  #47-D: incompatible redefinition of macro "INT32_MIN"  (declared at line 117 of "C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h")
+     #define INT32_MIN          (-2147483647-1)
+.\Libraries\CMSIS\CM3\CoreSupport\stdint.h(43): warning:  #47-D: incompatible redefinition of macro "INT8_MAX"  (declared at line 121 of "C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h")
+     #define INT8_MAX           +127
+.\Libraries\CMSIS\CM3\CoreSupport\stdint.h(44): warning:  #47-D: incompatible redefinition of macro "INT16_MAX"  (declared at line 122 of "C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h")
+     #define INT16_MAX          +32767
+.\Libraries\CMSIS\CM3\CoreSupport\stdint.h(45): warning:  #47-D: incompatible redefinition of macro "INT32_MAX"  (declared at line 123 of "C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h")
+     #define INT32_MAX          +2147483647
+.\Libraries\CMSIS\CM3\CoreSupport\stdint.h(48): warning:  #47-D: incompatible redefinition of macro "UINT16_MAX"  (declared at line 128 of "C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h")
+     #define UINT16_MAX         65535U
+.\Libraries\CMSIS\CM3\CoreSupport\stdint.h(49): warning:  #47-D: incompatible redefinition of macro "UINT32_MAX"  (declared at line 129 of "C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h")
+     #define UINT32_MAX         4294967295U
+.\Libraries\CMSIS\CM3\CoreSupport\stdint.h(51): warning:  #47-D: incompatible redefinition of macro "INT_LEAST8_MIN"  (declared at line 135 of "C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h")
+     #define INT_LEAST8_MIN     (-127-1)           
+.\Libraries\CMSIS\CM3\CoreSupport\stdint.h(52): warning:  #47-D: incompatible redefinition of macro "INT_LEAST16_MIN"  (declared at line 136 of "C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h")
+     #define INT_LEAST16_MIN    (-32767-1)         
+.\Libraries\CMSIS\CM3\CoreSupport\stdint.h(53): warning:  #47-D: incompatible redefinition of macro "INT_LEAST32_MIN"  (declared at line 137 of "C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h")
+     #define INT_LEAST32_MIN    (-2147483647-1)    
+.\Libraries\CMSIS\CM3\CoreSupport\stdint.h(55): warning:  #47-D: incompatible redefinition of macro "INT_LEAST8_MAX"  (declared at line 141 of "C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h")
+     #define INT_LEAST8_MAX     +127                 
+.\Libraries\CMSIS\CM3\CoreSupport\stdint.h(56): warning:  #47-D: incompatible redefinition of macro "INT_LEAST16_MAX"  (declared at line 142 of "C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h")
+     #define INT_LEAST16_MAX    +32767               
+.\Libraries\CMSIS\CM3\CoreSupport\stdint.h(57): warning:  #47-D: incompatible redefinition of macro "INT_LEAST32_MAX"  (declared at line 143 of "C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h")
+     #define INT_LEAST32_MAX    +2147483647          
+.\Libraries\CMSIS\CM3\CoreSupport\stdint.h(60): warning:  #47-D: incompatible redefinition of macro "UINT_LEAST16_MAX"  (declared at line 148 of "C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h")
+     #define UINT_LEAST16_MAX   65535U       
+.\Libraries\CMSIS\CM3\CoreSupport\stdint.h(61): warning:  #47-D: incompatible redefinition of macro "UINT_LEAST32_MAX"  (declared at line 149 of "C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h")
+     #define UINT_LEAST32_MAX   4294967295U
+.\Libraries\CMSIS\CM3\CoreSupport\stdint.h(64): warning:  #47-D: incompatible redefinition of macro "INT_FAST8_MIN"  (declared at line 155 of "C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h")
+     #define INT_FAST8_MIN      INT32_MIN
+.\Libraries\CMSIS\CM3\CoreSupport\stdint.h(65): warning:  #47-D: incompatible redefinition of macro "INT_FAST16_MIN"  (declared at line 156 of "C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h")
+     #define INT_FAST16_MIN     INT32_MIN
+.\Libraries\CMSIS\CM3\CoreSupport\stdint.h(66): warning:  #47-D: incompatible redefinition of macro "INT_FAST32_MIN"  (declared at line 157 of "C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h")
+     #define INT_FAST32_MIN     INT32_MIN
+.\Libraries\CMSIS\CM3\CoreSupport\stdint.h(68): warning:  #47-D: incompatible redefinition of macro "INT_FAST8_MAX"  (declared at line 161 of "C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h")
+     #define INT_FAST8_MAX      INT32_MAX       
+.\Libraries\CMSIS\CM3\CoreSupport\stdint.h(69): warning:  #47-D: incompatible redefinition of macro "INT_FAST16_MAX"  (declared at line 162 of "C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h")
+     #define INT_FAST16_MAX     INT32_MAX       
+.\Libraries\CMSIS\CM3\CoreSupport\stdint.h(70): warning:  #47-D: incompatible redefinition of macro "INT_FAST32_MAX"  (declared at line 163 of "C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h")
+     #define INT_FAST32_MAX     INT32_MAX       
+.\Libraries\CMSIS\CM3\CoreSupport\stdint.h(72): warning:  #47-D: incompatible redefinition of macro "UINT_FAST8_MAX"  (declared at line 167 of "C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h")
+     #define UINT_FAST8_MAX     UINT32_MAX       
+.\Libraries\CMSIS\CM3\CoreSupport\stdint.h(73): warning:  #47-D: incompatible redefinition of macro "UINT_FAST16_MAX"  (declared at line 168 of "C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h")
+     #define UINT_FAST16_MAX    UINT32_MAX       
+.\Libraries\CMSIS\CM3\CoreSupport\stdint.h(74): warning:  #47-D: incompatible redefinition of macro "UINT_FAST32_MAX"  (declared at line 169 of "C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h")
+     #define UINT_FAST32_MAX    UINT32_MAX       
+.\Libraries\CMSIS\CM3\CoreSupport\stdint.h(83): warning:  #47-D: incompatible redefinition of macro "SIG_ATOMIC_MIN"  (declared at line 218 of "C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h")
+     #define SIG_ATOMIC_MIN     INT32_MIN
+.\Libraries\CMSIS\CM3\CoreSupport\stdint.h(84): warning:  #47-D: incompatible redefinition of macro "SIG_ATOMIC_MAX"  (declared at line 219 of "C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h")
+     #define SIG_ATOMIC_MAX     INT32_MAX
+.\Libraries\CMSIS\CM3\CoreSupport\stdint.h(89): warning:  #47-D: incompatible redefinition of macro "WCHAR_MAX"  (declared at line 239 of "C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h")
+     #define WCHAR_MAX          UINT16_MAX
+.\Libraries\CMSIS\CM3\CoreSupport\stdint.h(91): warning:  #47-D: incompatible redefinition of macro "WINT_MIN"  (declared at line 243 of "C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h")
+     #define WINT_MIN           INT32_MIN
+.\Libraries\CMSIS\CM3\CoreSupport\stdint.h(92): warning:  #47-D: incompatible redefinition of macro "WINT_MAX"  (declared at line 244 of "C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h")
+     #define WINT_MAX           INT32_MAX
+C:\Users\Yurez\AppData\Local\Arm\Packs\Keil\MDR1986BExx\1.5.3\Libraries\CMSIS\CM3\DeviceSupport\MDR32F9Qx\inc\MDR32Fx.h(80): error:  #5: cannot open source input file "system_MDR32F9Qx.h": No such file or directory
+  #include "system_MDR32F9Qx.h"
+USB\MDR32F9Qx_usb.c: 30 warnings, 1 error
+compiling MDR32F9Qx_usb_CDC.c...
+.\Libraries\CMSIS\CM3\CoreSupport\stdint.h(39): warning:  #47-D: incompatible redefinition of macro "INT8_MIN"  (declared at line 115 of "C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h")
+     #define INT8_MIN           (-127-1)
+.\Libraries\CMSIS\CM3\CoreSupport\stdint.h(40): warning:  #47-D: incompatible redefinition of macro "INT16_MIN"  (declared at line 116 of "C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h")
+     #define INT16_MIN          (-32767-1)
+.\Libraries\CMSIS\CM3\CoreSupport\stdint.h(41): warning:  #47-D: incompatible redefinition of macro "INT32_MIN"  (declared at line 117 of "C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h")
+     #define INT32_MIN          (-2147483647-1)
+.\Libraries\CMSIS\CM3\CoreSupport\stdint.h(43): warning:  #47-D: incompatible redefinition of macro "INT8_MAX"  (declared at line 121 of "C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h")
+     #define INT8_MAX           +127
+.\Libraries\CMSIS\CM3\CoreSupport\stdint.h(44): warning:  #47-D: incompatible redefinition of macro "INT16_MAX"  (declared at line 122 of "C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h")
+     #define INT16_MAX          +32767
+.\Libraries\CMSIS\CM3\CoreSupport\stdint.h(45): warning:  #47-D: incompatible redefinition of macro "INT32_MAX"  (declared at line 123 of "C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h")
+     #define INT32_MAX          +2147483647
+.\Libraries\CMSIS\CM3\CoreSupport\stdint.h(48): warning:  #47-D: incompatible redefinition of macro "UINT16_MAX"  (declared at line 128 of "C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h")
+     #define UINT16_MAX         65535U
+.\Libraries\CMSIS\CM3\CoreSupport\stdint.h(49): warning:  #47-D: incompatible redefinition of macro "UINT32_MAX"  (declared at line 129 of "C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h")
+     #define UINT32_MAX         4294967295U
+.\Libraries\CMSIS\CM3\CoreSupport\stdint.h(51): warning:  #47-D: incompatible redefinition of macro "INT_LEAST8_MIN"  (declared at line 135 of "C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h")
+     #define INT_LEAST8_MIN     (-127-1)           
+.\Libraries\CMSIS\CM3\CoreSupport\stdint.h(52): warning:  #47-D: incompatible redefinition of macro "INT_LEAST16_MIN"  (declared at line 136 of "C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h")
+     #define INT_LEAST16_MIN    (-32767-1)         
+.\Libraries\CMSIS\CM3\CoreSupport\stdint.h(53): warning:  #47-D: incompatible redefinition of macro "INT_LEAST32_MIN"  (declared at line 137 of "C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h")
+     #define INT_LEAST32_MIN    (-2147483647-1)    
+.\Libraries\CMSIS\CM3\CoreSupport\stdint.h(55): warning:  #47-D: incompatible redefinition of macro "INT_LEAST8_MAX"  (declared at line 141 of "C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h")
+     #define INT_LEAST8_MAX     +127                 
+.\Libraries\CMSIS\CM3\CoreSupport\stdint.h(56): warning:  #47-D: incompatible redefinition of macro "INT_LEAST16_MAX"  (declared at line 142 of "C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h")
+     #define INT_LEAST16_MAX    +32767               
+.\Libraries\CMSIS\CM3\CoreSupport\stdint.h(57): warning:  #47-D: incompatible redefinition of macro "INT_LEAST32_MAX"  (declared at line 143 of "C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h")
+     #define INT_LEAST32_MAX    +2147483647          
+.\Libraries\CMSIS\CM3\CoreSupport\stdint.h(60): warning:  #47-D: incompatible redefinition of macro "UINT_LEAST16_MAX"  (declared at line 148 of "C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h")
+     #define UINT_LEAST16_MAX   65535U       
+.\Libraries\CMSIS\CM3\CoreSupport\stdint.h(61): warning:  #47-D: incompatible redefinition of macro "UINT_LEAST32_MAX"  (declared at line 149 of "C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h")
+     #define UINT_LEAST32_MAX   4294967295U
+.\Libraries\CMSIS\CM3\CoreSupport\stdint.h(64): warning:  #47-D: incompatible redefinition of macro "INT_FAST8_MIN"  (declared at line 155 of "C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h")
+     #define INT_FAST8_MIN      INT32_MIN
+.\Libraries\CMSIS\CM3\CoreSupport\stdint.h(65): warning:  #47-D: incompatible redefinition of macro "INT_FAST16_MIN"  (declared at line 156 of "C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h")
+     #define INT_FAST16_MIN     INT32_MIN
+.\Libraries\CMSIS\CM3\CoreSupport\stdint.h(66): warning:  #47-D: incompatible redefinition of macro "INT_FAST32_MIN"  (declared at line 157 of "C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h")
+     #define INT_FAST32_MIN     INT32_MIN
+.\Libraries\CMSIS\CM3\CoreSupport\stdint.h(68): warning:  #47-D: incompatible redefinition of macro "INT_FAST8_MAX"  (declared at line 161 of "C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h")
+     #define INT_FAST8_MAX      INT32_MAX       
+.\Libraries\CMSIS\CM3\CoreSupport\stdint.h(69): warning:  #47-D: incompatible redefinition of macro "INT_FAST16_MAX"  (declared at line 162 of "C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h")
+     #define INT_FAST16_MAX     INT32_MAX       
+.\Libraries\CMSIS\CM3\CoreSupport\stdint.h(70): warning:  #47-D: incompatible redefinition of macro "INT_FAST32_MAX"  (declared at line 163 of "C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h")
+     #define INT_FAST32_MAX     INT32_MAX       
+.\Libraries\CMSIS\CM3\CoreSupport\stdint.h(72): warning:  #47-D: incompatible redefinition of macro "UINT_FAST8_MAX"  (declared at line 167 of "C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h")
+     #define UINT_FAST8_MAX     UINT32_MAX       
+.\Libraries\CMSIS\CM3\CoreSupport\stdint.h(73): warning:  #47-D: incompatible redefinition of macro "UINT_FAST16_MAX"  (declared at line 168 of "C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h")
+     #define UINT_FAST16_MAX    UINT32_MAX       
+.\Libraries\CMSIS\CM3\CoreSupport\stdint.h(74): warning:  #47-D: incompatible redefinition of macro "UINT_FAST32_MAX"  (declared at line 169 of "C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h")
+     #define UINT_FAST32_MAX    UINT32_MAX       
+.\Libraries\CMSIS\CM3\CoreSupport\stdint.h(83): warning:  #47-D: incompatible redefinition of macro "SIG_ATOMIC_MIN"  (declared at line 218 of "C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h")
+     #define SIG_ATOMIC_MIN     INT32_MIN
+.\Libraries\CMSIS\CM3\CoreSupport\stdint.h(84): warning:  #47-D: incompatible redefinition of macro "SIG_ATOMIC_MAX"  (declared at line 219 of "C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h")
+     #define SIG_ATOMIC_MAX     INT32_MAX
+.\Libraries\CMSIS\CM3\CoreSupport\stdint.h(89): warning:  #47-D: incompatible redefinition of macro "WCHAR_MAX"  (declared at line 239 of "C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h")
+     #define WCHAR_MAX          UINT16_MAX
+.\Libraries\CMSIS\CM3\CoreSupport\stdint.h(91): warning:  #47-D: incompatible redefinition of macro "WINT_MIN"  (declared at line 243 of "C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h")
+     #define WINT_MIN           INT32_MIN
+.\Libraries\CMSIS\CM3\CoreSupport\stdint.h(92): warning:  #47-D: incompatible redefinition of macro "WINT_MAX"  (declared at line 244 of "C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h")
+     #define WINT_MAX           INT32_MAX
+C:\Users\Yurez\AppData\Local\Arm\Packs\Keil\MDR1986BExx\1.5.3\Libraries\CMSIS\CM3\DeviceSupport\MDR32F9Qx\inc\MDR32Fx.h(80): error:  #5: cannot open source input file "system_MDR32F9Qx.h": No such file or directory
+  #include "system_MDR32F9Qx.h"
+USB\MDR32F9Qx_usb_CDC.c: 30 warnings, 1 error
+compiling 1986be9x_rst_clk.c...
+compiling MDR32F9Qx_usb_device.c...
+.\Libraries\CMSIS\CM3\CoreSupport\stdint.h(39): warning:  #47-D: incompatible redefinition of macro "INT8_MIN"  (declared at line 115 of "C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h")
+     #define INT8_MIN           (-127-1)
+.\Libraries\CMSIS\CM3\CoreSupport\stdint.h(40): warning:  #47-D: incompatible redefinition of macro "INT16_MIN"  (declared at line 116 of "C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h")
+     #define INT16_MIN          (-32767-1)
+.\Libraries\CMSIS\CM3\CoreSupport\stdint.h(41): warning:  #47-D: incompatible redefinition of macro "INT32_MIN"  (declared at line 117 of "C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h")
+     #define INT32_MIN          (-2147483647-1)
+.\Libraries\CMSIS\CM3\CoreSupport\stdint.h(43): warning:  #47-D: incompatible redefinition of macro "INT8_MAX"  (declared at line 121 of "C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h")
+     #define INT8_MAX           +127
+.\Libraries\CMSIS\CM3\CoreSupport\stdint.h(44): warning:  #47-D: incompatible redefinition of macro "INT16_MAX"  (declared at line 122 of "C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h")
+     #define INT16_MAX          +32767
+.\Libraries\CMSIS\CM3\CoreSupport\stdint.h(45): warning:  #47-D: incompatible redefinition of macro "INT32_MAX"  (declared at line 123 of "C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h")
+     #define INT32_MAX          +2147483647
+.\Libraries\CMSIS\CM3\CoreSupport\stdint.h(48): warning:  #47-D: incompatible redefinition of macro "UINT16_MAX"  (declared at line 128 of "C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h")
+     #define UINT16_MAX         65535U
+.\Libraries\CMSIS\CM3\CoreSupport\stdint.h(49): warning:  #47-D: incompatible redefinition of macro "UINT32_MAX"  (declared at line 129 of "C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h")
+     #define UINT32_MAX         4294967295U
+.\Libraries\CMSIS\CM3\CoreSupport\stdint.h(51): warning:  #47-D: incompatible redefinition of macro "INT_LEAST8_MIN"  (declared at line 135 of "C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h")
+     #define INT_LEAST8_MIN     (-127-1)           
+.\Libraries\CMSIS\CM3\CoreSupport\stdint.h(52): warning:  #47-D: incompatible redefinition of macro "INT_LEAST16_MIN"  (declared at line 136 of "C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h")
+     #define INT_LEAST16_MIN    (-32767-1)         
+.\Libraries\CMSIS\CM3\CoreSupport\stdint.h(53): warning:  #47-D: incompatible redefinition of macro "INT_LEAST32_MIN"  (declared at line 137 of "C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h")
+     #define INT_LEAST32_MIN    (-2147483647-1)    
+.\Libraries\CMSIS\CM3\CoreSupport\stdint.h(55): warning:  #47-D: incompatible redefinition of macro "INT_LEAST8_MAX"  (declared at line 141 of "C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h")
+     #define INT_LEAST8_MAX     +127                 
+.\Libraries\CMSIS\CM3\CoreSupport\stdint.h(56): warning:  #47-D: incompatible redefinition of macro "INT_LEAST16_MAX"  (declared at line 142 of "C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h")
+     #define INT_LEAST16_MAX    +32767               
+.\Libraries\CMSIS\CM3\CoreSupport\stdint.h(57): warning:  #47-D: incompatible redefinition of macro "INT_LEAST32_MAX"  (declared at line 143 of "C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h")
+     #define INT_LEAST32_MAX    +2147483647          
+.\Libraries\CMSIS\CM3\CoreSupport\stdint.h(60): warning:  #47-D: incompatible redefinition of macro "UINT_LEAST16_MAX"  (declared at line 148 of "C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h")
+     #define UINT_LEAST16_MAX   65535U       
+.\Libraries\CMSIS\CM3\CoreSupport\stdint.h(61): warning:  #47-D: incompatible redefinition of macro "UINT_LEAST32_MAX"  (declared at line 149 of "C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h")
+     #define UINT_LEAST32_MAX   4294967295U
+.\Libraries\CMSIS\CM3\CoreSupport\stdint.h(64): warning:  #47-D: incompatible redefinition of macro "INT_FAST8_MIN"  (declared at line 155 of "C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h")
+     #define INT_FAST8_MIN      INT32_MIN
+.\Libraries\CMSIS\CM3\CoreSupport\stdint.h(65): warning:  #47-D: incompatible redefinition of macro "INT_FAST16_MIN"  (declared at line 156 of "C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h")
+     #define INT_FAST16_MIN     INT32_MIN
+.\Libraries\CMSIS\CM3\CoreSupport\stdint.h(66): warning:  #47-D: incompatible redefinition of macro "INT_FAST32_MIN"  (declared at line 157 of "C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h")
+     #define INT_FAST32_MIN     INT32_MIN
+.\Libraries\CMSIS\CM3\CoreSupport\stdint.h(68): warning:  #47-D: incompatible redefinition of macro "INT_FAST8_MAX"  (declared at line 161 of "C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h")
+     #define INT_FAST8_MAX      INT32_MAX       
+.\Libraries\CMSIS\CM3\CoreSupport\stdint.h(69): warning:  #47-D: incompatible redefinition of macro "INT_FAST16_MAX"  (declared at line 162 of "C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h")
+     #define INT_FAST16_MAX     INT32_MAX       
+.\Libraries\CMSIS\CM3\CoreSupport\stdint.h(70): warning:  #47-D: incompatible redefinition of macro "INT_FAST32_MAX"  (declared at line 163 of "C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h")
+     #define INT_FAST32_MAX     INT32_MAX       
+.\Libraries\CMSIS\CM3\CoreSupport\stdint.h(72): warning:  #47-D: incompatible redefinition of macro "UINT_FAST8_MAX"  (declared at line 167 of "C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h")
+     #define UINT_FAST8_MAX     UINT32_MAX       
+.\Libraries\CMSIS\CM3\CoreSupport\stdint.h(73): warning:  #47-D: incompatible redefinition of macro "UINT_FAST16_MAX"  (declared at line 168 of "C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h")
+     #define UINT_FAST16_MAX    UINT32_MAX       
+.\Libraries\CMSIS\CM3\CoreSupport\stdint.h(74): warning:  #47-D: incompatible redefinition of macro "UINT_FAST32_MAX"  (declared at line 169 of "C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h")
+     #define UINT_FAST32_MAX    UINT32_MAX       
+.\Libraries\CMSIS\CM3\CoreSupport\stdint.h(83): warning:  #47-D: incompatible redefinition of macro "SIG_ATOMIC_MIN"  (declared at line 218 of "C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h")
+     #define SIG_ATOMIC_MIN     INT32_MIN
+.\Libraries\CMSIS\CM3\CoreSupport\stdint.h(84): warning:  #47-D: incompatible redefinition of macro "SIG_ATOMIC_MAX"  (declared at line 219 of "C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h")
+     #define SIG_ATOMIC_MAX     INT32_MAX
+.\Libraries\CMSIS\CM3\CoreSupport\stdint.h(89): warning:  #47-D: incompatible redefinition of macro "WCHAR_MAX"  (declared at line 239 of "C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h")
+     #define WCHAR_MAX          UINT16_MAX
+.\Libraries\CMSIS\CM3\CoreSupport\stdint.h(91): warning:  #47-D: incompatible redefinition of macro "WINT_MIN"  (declared at line 243 of "C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h")
+     #define WINT_MIN           INT32_MIN
+.\Libraries\CMSIS\CM3\CoreSupport\stdint.h(92): warning:  #47-D: incompatible redefinition of macro "WINT_MAX"  (declared at line 244 of "C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h")
+     #define WINT_MAX           INT32_MAX
+C:\Users\Yurez\AppData\Local\Arm\Packs\Keil\MDR1986BExx\1.5.3\Libraries\CMSIS\CM3\DeviceSupport\MDR32F9Qx\inc\MDR32Fx.h(80): error:  #5: cannot open source input file "system_MDR32F9Qx.h": No such file or directory
+  #include "system_MDR32F9Qx.h"
+USB\MDR32F9Qx_usb_device.c: 30 warnings, 1 error
+compiling 1986be9x_it.c...
+compiling MilFlash.c...
+compiling mlt_lcd.c...
+".\output\EV1986Test.axf" - 3 Error(s), 90 Warning(s).
+
+<h2>Software Packages used:</h2>
+
+Package Vendor: ARM
+                http://www.keil.com/pack/ARM.CMSIS.5.5.1.pack
+                ARM.CMSIS.5.5.1
+                CMSIS (Cortex Microcontroller Software Interface Standard)
+   * Component: CORE Version: 5.2.0
+
+Package Vendor: Keil
+                http://www.keil.com/pack/Keil.MDR1986BExx.1.5.3.pack
+                Keil.MDR1986BExx.1.5.3
+                Milandr MDR1986BExx Series Device Support, Drivers and Examples
+
+<h2>Collection of Component include folders:</h2>
+  .\RTE\_Target_1
+  C:\Users\Yurez\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\Core\Include
+  C:\Users\Yurez\AppData\Local\Arm\Packs\Keil\MDR1986BExx\1.5.3\Libraries\CMSIS\CM3\DeviceSupport\MDR32F9Qx\inc
+
+<h2>Collection of Component Files used:</h2>
+
+   * Component: ARM::CMSIS:CORE:5.2.0
+Target not created.
+Build Time Elapsed:  00:00:01
+</pre>
+</body>
+</html>

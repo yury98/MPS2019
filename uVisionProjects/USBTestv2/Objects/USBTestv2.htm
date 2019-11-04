@@ -3,7 +3,7 @@
 <title>Static Call Graph - [.\Objects\USBTestv2.axf]</title></head>
 <body><HR>
 <H1>Static Call Graph for image .\Objects\USBTestv2.axf</H1><HR>
-<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060750: Last Updated: Sun Oct 27 19:26:26 2019
+<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060750: Last Updated: Mon Nov 04 15:40:38 2019
 <BR><P>
 <H3>Maximum Stack Usage =        160 bytes + Unknown(Functions without stacksize, Cycles, Untraceable Function Pointers)</H3><H3>
 Call chain for Maximum Stack Depth:</H3>
@@ -462,9 +462,9 @@ Global Symbols
 <P><STRONG><a name="[4f]"></a>USB_CDC_ClassRequest</STRONG> (Thumb, 142 bytes, Stack size 24 bytes, mdr32f9qx_usb_cdc.o(i.USB_CDC_ClassRequest))
 <BR><BR>[Stack]<UL><LI>Max Depth = 104<LI>Call Chain = USB_CDC_ClassRequest &rArr; USB_EP_doDataIn &rArr; USB_EP_sendInDataPortion &rArr; USB_EP_SetReady &rArr; USB_SetSEPxCTRL
 </UL>
-<BR>[Calls]<UL><LI><a href="#[50]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USB_EP_doDataOut
+<BR>[Calls]<UL><LI><a href="#[51]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USB_CDC_GetLineCoding
+<LI><a href="#[50]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USB_EP_doDataOut
 <LI><a href="#[52]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USB_EP_doDataIn
-<LI><a href="#[51]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USB_CDC_GetLineCoding
 </UL>
 <BR>[Called By]<UL><LI><a href="#[28]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USB_DeviceSetupPacket
 </UL>
@@ -536,11 +536,11 @@ Global Symbols
 <P><STRONG><a name="[5d]"></a>USB_DeviceDispatchEvent</STRONG> (Thumb, 120 bytes, Stack size 16 bytes, mdr32f9qx_usb_device.o(i.USB_DeviceDispatchEvent))
 <BR><BR>[Stack]<UL><LI>Max Depth = 112<LI>Call Chain = USB_DeviceDispatchEvent &rArr; USB_EP_dispatchEvent &rArr; USB_EP_sendInDataPortion &rArr; USB_EP_SetReady &rArr; USB_SetSEPxCTRL
 </UL>
-<BR>[Calls]<UL><LI><a href="#[59]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USB_DeviceReset
-<LI><a href="#[61]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USB_SetSIS
+<BR>[Calls]<UL><LI><a href="#[61]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USB_SetSIS
 <LI><a href="#[5f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USB_SetSA
 <LI><a href="#[5e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USB_GetSIS
 <LI><a href="#[60]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USB_EP_dispatchEvent
+<LI><a href="#[59]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USB_DeviceReset
 </UL>
 <BR>[Called By]<UL><LI><a href="#[f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USB_IRQHandler
 </UL>
@@ -557,12 +557,12 @@ Global Symbols
 <P><STRONG><a name="[4a]"></a>USB_DeviceInit</STRONG> (Thumb, 74 bytes, Stack size 16 bytes, mdr32f9qx_usb_device.o(i.USB_DeviceInit))
 <BR><BR>[Stack]<UL><LI>Max Depth = 80<LI>Call Chain = USB_DeviceInit &rArr; USB_EP_setSetupHandler &rArr; USB_EP_Idle &rArr; USB_EP_SetReady &rArr; USB_SetSEPxCTRL
 </UL>
-<BR>[Calls]<UL><LI><a href="#[5a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USB_EP_Init
-<LI><a href="#[65]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USB_SetSC
+<BR>[Calls]<UL><LI><a href="#[65]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USB_SetSC
 <LI><a href="#[64]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USB_SetHSCR
 <LI><a href="#[63]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USB_Reset
 <LI><a href="#[62]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USB_BRGInit
 <LI><a href="#[66]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USB_EP_setSetupHandler
+<LI><a href="#[5a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USB_EP_Init
 </UL>
 <BR>[Called By]<UL><LI><a href="#[48]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Setup_USB
 </UL>
@@ -591,12 +591,12 @@ Global Symbols
 <P><STRONG><a name="[28]"></a>USB_DeviceSetupPacket</STRONG> (Thumb, 596 bytes, Stack size 48 bytes, mdr32f9qx_usb_device.o(i.USB_DeviceSetupPacket))
 <BR><BR>[Stack]<UL><LI>Max Depth = 160<LI>Call Chain = USB_DeviceSetupPacket &rArr; USB_CDC_GetDescriptor &rArr; USB_EP_doDataIn &rArr; USB_EP_sendInDataPortion &rArr; USB_EP_SetReady &rArr; USB_SetSEPxCTRL
 </UL>
-<BR>[Calls]<UL><LI><a href="#[50]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USB_EP_doDataOut
+<BR>[Calls]<UL><LI><a href="#[67]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USB_DeviceSetFeature
+<LI><a href="#[5b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USB_DeviceClearFeature
+<LI><a href="#[50]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USB_EP_doDataOut
 <LI><a href="#[52]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USB_EP_doDataIn
 <LI><a href="#[54]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USB_CDC_GetDescriptor
 <LI><a href="#[4f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USB_CDC_ClassRequest
-<LI><a href="#[67]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USB_DeviceSetFeature
-<LI><a href="#[5b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USB_DeviceClearFeature
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> mdr32f9qx_usb_device.o(i.USB_DeviceInit)
 </UL>
@@ -605,10 +605,10 @@ Global Symbols
 </UL>
 <BR>[Calls]<UL><LI><a href="#[69]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USB_EP_SetReady
 </UL>
-<BR>[Called By]<UL><LI><a href="#[50]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USB_EP_doDataOut
-<LI><a href="#[66]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USB_EP_setSetupHandler
+<BR>[Called By]<UL><LI><a href="#[66]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USB_EP_setSetupHandler
 <LI><a href="#[60]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USB_EP_dispatchEvent
 <LI><a href="#[5b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USB_DeviceClearFeature
+<LI><a href="#[50]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USB_EP_doDataOut
 </UL>
 
 <P><STRONG><a name="[5a]"></a>USB_EP_Init</STRONG> (Thumb, 66 bytes, Stack size 24 bytes, mdr32f9qx_usb_device.o(i.USB_EP_Init))
@@ -632,16 +632,16 @@ Global Symbols
 <P><STRONG><a name="[60]"></a>USB_EP_dispatchEvent</STRONG> (Thumb, 586 bytes, Stack size 48 bytes, mdr32f9qx_usb_device.o(i.USB_EP_dispatchEvent))
 <BR><BR>[Stack]<UL><LI>Max Depth = 96<LI>Call Chain = USB_EP_dispatchEvent &rArr; USB_EP_sendInDataPortion &rArr; USB_EP_SetReady &rArr; USB_SetSEPxCTRL
 </UL>
-<BR>[Calls]<UL><LI><a href="#[6e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USB_EP_sendInDataPortion
-<LI><a href="#[69]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USB_EP_SetReady
-<LI><a href="#[68]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USB_EP_Stall
-<LI><a href="#[71]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USB_SetSEPxRXFC
+<BR>[Calls]<UL><LI><a href="#[71]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USB_SetSEPxRXFC
 <LI><a href="#[6c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USB_GetSEPxTS
 <LI><a href="#[6b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USB_GetSEPxSTS
 <LI><a href="#[6f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USB_GetSEPxRXFDC
 <LI><a href="#[70]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USB_GetSEPxRXFD
 <LI><a href="#[6d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USB_GetSEPxCTRL
 <LI><a href="#[5c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USB_EP_Idle
+<LI><a href="#[6e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USB_EP_sendInDataPortion
+<LI><a href="#[69]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USB_EP_SetReady
+<LI><a href="#[68]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USB_EP_Stall
 </UL>
 <BR>[Called By]<UL><LI><a href="#[5d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USB_DeviceDispatchEvent
 </UL>
@@ -651,11 +651,11 @@ Global Symbols
 </UL>
 <BR>[Calls]<UL><LI><a href="#[6e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USB_EP_sendInDataPortion
 </UL>
-<BR>[Called By]<UL><LI><a href="#[54]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USB_CDC_GetDescriptor
-<LI><a href="#[4f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USB_CDC_ClassRequest
-<LI><a href="#[24]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USB_CDC_DoDataOut
+<BR>[Called By]<UL><LI><a href="#[24]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USB_CDC_DoDataOut
 <LI><a href="#[58]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USB_CDC_SendData
 <LI><a href="#[28]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USB_DeviceSetupPacket
+<LI><a href="#[54]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USB_CDC_GetDescriptor
+<LI><a href="#[4f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USB_CDC_ClassRequest
 </UL>
 
 <P><STRONG><a name="[50]"></a>USB_EP_doDataOut</STRONG> (Thumb, 56 bytes, Stack size 24 bytes, mdr32f9qx_usb_device.o(i.USB_EP_doDataOut))
@@ -663,11 +663,11 @@ Global Symbols
 </UL>
 <BR>[Calls]<UL><LI><a href="#[5c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USB_EP_Idle
 </UL>
-<BR>[Called By]<UL><LI><a href="#[25]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USB_DeviceDoStatusOutAck
-<LI><a href="#[4f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USB_CDC_ClassRequest
-<LI><a href="#[26]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USB_CDC_OnDataReceive
+<BR>[Called By]<UL><LI><a href="#[26]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USB_CDC_OnDataReceive
 <LI><a href="#[4d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USB_CDC_Reset
 <LI><a href="#[28]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USB_DeviceSetupPacket
+<LI><a href="#[25]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USB_DeviceDoStatusOutAck
+<LI><a href="#[4f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USB_CDC_ClassRequest
 </UL>
 
 <P><STRONG><a name="[66]"></a>USB_EP_setSetupHandler</STRONG> (Thumb, 58 bytes, Stack size 24 bytes, mdr32f9qx_usb_device.o(i.USB_EP_setSetupHandler))
@@ -728,8 +728,8 @@ Global Symbols
 </UL>
 
 <P><STRONG><a name="[5f]"></a>USB_SetSA</STRONG> (Thumb, 6 bytes, Stack size 0 bytes, mdr32f9qx_usb.o(i.USB_SetSA))
-<BR><BR>[Called By]<UL><LI><a href="#[29]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USB_Device_setAddressWork
-<LI><a href="#[5d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USB_DeviceDispatchEvent
+<BR><BR>[Called By]<UL><LI><a href="#[5d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USB_DeviceDispatchEvent
+<LI><a href="#[29]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USB_Device_setAddressWork
 </UL>
 
 <P><STRONG><a name="[65]"></a>USB_SetSC</STRONG> (Thumb, 24 bytes, Stack size 0 bytes, mdr32f9qx_usb.o(i.USB_SetSC))
@@ -761,8 +761,8 @@ Global Symbols
 </UL>
 
 <P><STRONG><a name="[61]"></a>USB_SetSIS</STRONG> (Thumb, 6 bytes, Stack size 0 bytes, mdr32f9qx_usb.o(i.USB_SetSIS))
-<BR><BR>[Called By]<UL><LI><a href="#[69]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USB_EP_SetReady
-<LI><a href="#[5d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USB_DeviceDispatchEvent
+<BR><BR>[Called By]<UL><LI><a href="#[5d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USB_DeviceDispatchEvent
+<LI><a href="#[69]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USB_EP_SetReady
 </UL>
 
 <P><STRONG><a name="[36]"></a>main</STRONG> (Thumb, 26 bytes, Stack size 0 bytes, main.o(i.main))
@@ -813,16 +813,16 @@ Local Symbols
 <P><STRONG><a name="[24]"></a>USB_CDC_DoDataOut</STRONG> (Thumb, 60 bytes, Stack size 24 bytes, mdr32f9qx_usb_cdc.o(i.USB_CDC_DoDataOut))
 <BR><BR>[Stack]<UL><LI>Max Depth = 104<LI>Call Chain = USB_CDC_DoDataOut &rArr; USB_EP_doDataIn &rArr; USB_EP_sendInDataPortion &rArr; USB_EP_SetReady &rArr; USB_SetSEPxCTRL
 </UL>
-<BR>[Calls]<UL><LI><a href="#[52]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USB_EP_doDataIn
-<LI><a href="#[53]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USB_CDC_SetLineCoding
+<BR>[Calls]<UL><LI><a href="#[53]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USB_CDC_SetLineCoding
+<LI><a href="#[52]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USB_EP_doDataIn
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> mdr32f9qx_usb_cdc.o(i.USB_CDC_ClassRequest)
 </UL>
 <P><STRONG><a name="[26]"></a>USB_CDC_OnDataReceive</STRONG> (Thumb, 58 bytes, Stack size 24 bytes, mdr32f9qx_usb_cdc.o(i.USB_CDC_OnDataReceive))
 <BR><BR>[Stack]<UL><LI>Max Depth = 136<LI>Call Chain = USB_CDC_OnDataReceive &rArr; USB_CDC_RecieveData &rArr; USB_CDC_SendData &rArr; USB_EP_doDataIn &rArr; USB_EP_sendInDataPortion &rArr; USB_EP_SetReady &rArr; USB_SetSEPxCTRL
 </UL>
-<BR>[Calls]<UL><LI><a href="#[50]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USB_EP_doDataOut
-<LI><a href="#[57]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USB_CDC_RecieveData
+<BR>[Calls]<UL><LI><a href="#[57]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USB_CDC_RecieveData
+<LI><a href="#[50]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USB_EP_doDataOut
 </UL>
 <BR>[Address Reference Count : 2]<UL><LI> mdr32f9qx_usb_cdc.o(i.USB_CDC_OnDataReceive)
 <LI> mdr32f9qx_usb_cdc.o(i.USB_CDC_Reset)
@@ -845,23 +845,23 @@ Local Symbols
 <BR>[Calls]<UL><LI><a href="#[61]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USB_SetSIS
 <LI><a href="#[6a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USB_SetSEPxCTRL
 </UL>
-<BR>[Called By]<UL><LI><a href="#[6e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USB_EP_sendInDataPortion
-<LI><a href="#[68]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USB_EP_Stall
-<LI><a href="#[60]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USB_EP_dispatchEvent
+<BR>[Called By]<UL><LI><a href="#[60]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USB_EP_dispatchEvent
 <LI><a href="#[5c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USB_EP_Idle
+<LI><a href="#[6e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USB_EP_sendInDataPortion
+<LI><a href="#[68]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USB_EP_Stall
 </UL>
 
 <P><STRONG><a name="[6e]"></a>USB_EP_sendInDataPortion</STRONG> (Thumb, 120 bytes, Stack size 24 bytes, mdr32f9qx_usb_device.o(i.USB_EP_sendInDataPortion))
 <BR><BR>[Stack]<UL><LI>Max Depth = 48<LI>Call Chain = USB_EP_sendInDataPortion &rArr; USB_EP_SetReady &rArr; USB_SetSEPxCTRL
 </UL>
-<BR>[Calls]<UL><LI><a href="#[69]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USB_EP_SetReady
-<LI><a href="#[72]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USB_SetSEPxTXFDC
+<BR>[Calls]<UL><LI><a href="#[72]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USB_SetSEPxTXFDC
 <LI><a href="#[74]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USB_SetSEPxTXFD
 <LI><a href="#[6a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USB_SetSEPxCTRL
 <LI><a href="#[73]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USB_SEPxToggleEPDATASEQ
+<LI><a href="#[69]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USB_EP_SetReady
 </UL>
-<BR>[Called By]<UL><LI><a href="#[52]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USB_EP_doDataIn
-<LI><a href="#[60]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USB_EP_dispatchEvent
+<BR>[Called By]<UL><LI><a href="#[60]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USB_EP_dispatchEvent
+<LI><a href="#[52]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USB_EP_doDataIn
 </UL>
 <P>
 <H3>
