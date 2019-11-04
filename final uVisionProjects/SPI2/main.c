@@ -65,7 +65,7 @@ void SSP2StructInit(void) {
 }
 
 void SSP2Test(void) {
-		uint16_t Src2 = 0x0002;
+		uint16_t Src2 = 0x0003;
 		uint16_t Dst2 = 0x0000;
 		PortsSSP2Init();
 		SSP2StructInit();
@@ -109,22 +109,7 @@ RST_CLK_LSEconfig(RST_CLK_LSE_ON);
 		  /* Enable peripheral clocks --------------------------------------------------*/
 		RST_CLK_PCLKcmd((RST_CLK_PCLK_RST_CLK | RST_CLK_PCLK_SSP1 | RST_CLK_PCLK_SSP2),ENABLE);
 			
-    /* Init NVIC */
-  SCB->AIRCR = 0x05FA0000 | ((uint32_t)0x500);
-  SCB->VTOR = 0x08000000;
-  /* Disable all interrupt */
-  NVIC->ICPR[0] = 0xFFFFFFFF;
-  NVIC->ICER[0] = 0xFFFFFFFF;
 
-  /* Disable all DMA request */
-  MDR_DMA->CHNL_REQ_MASK_CLR = 0xFFFFFFFF;
-  MDR_DMA->CHNL_USEBURST_CLR = 0xFFFFFFFF;
-
-  /* Reset PORTD settings */
-  PORT_DeInit(MDR_PORTD);
-  /* Reset PORTF settings */
-  PORT_DeInit(MDR_PORTF);
-	
 	
 	PORT_ResetBits(MDR_PORTC, PORT_Pin_0);
     SetupPortsForDiods();

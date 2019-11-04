@@ -88,8 +88,10 @@ void CAN_ports_ini(void) //????????????? ?????? CAN1
 uint32_t main(void)
 {
   RST_CLK_DeInit();
+	RST_CLK_HSEconfig(RST_CLK_HSE_ON);
+    while (RST_CLK_HSEstatus() != SUCCESS);
   /* Select HSI/2 as CPU_CLK source*/
-  RST_CLK_CPU_PLLconfig (RST_CLK_CPU_PLLsrcHSIdiv2,0);
+  RST_CLK_CPU_PLLconfig (RST_CLK_CPU_PLLsrcHSEdiv2,0);
   /* Periph clocks enable */
   RST_CLK_PCLKcmd((RST_CLK_PCLK_RST_CLK | RST_CLK_PCLK_CAN1),ENABLE);
   RST_CLK_PCLKcmd(RST_CLK_PCLK_PORTC,ENABLE);
@@ -160,7 +162,7 @@ TestStatus CAN_Interrupt(void)
   NVIC_EnableIRQ(CAN1_IRQn);
 
   /* Enable CAN1 GLB_INT and RX_INT interrupts */
-  CAN_ITConfig( MDR_CAN1, CAN_IT_GLBINTEN | CAN_IT_RXINTEN, ENABLE);
+  CAN_ITConfig( MDR_CAN1, CAN_IT_GLBINTEN | CAN_IT_RXINTEN, DISABLE);
 
   /* Enable CAN1 interrupt from receive buffer */
   CAN_RxITConfig( MDR_CAN1 ,(1<<rx_buf), ENABLE);
@@ -178,7 +180,7 @@ TestStatus CAN_Interrupt(void)
   TxMsg.Data[1] = 0;
   TxMsg.Data[0] = 0x12345678;
 
-  /*CAN_Transmit(MDR_CAN1, tx_buf, &TxMsg);*/
+  CAN_Transmit(MDR_CAN1, tx_buf, &TxMsg);
 
   /* initialize the value that will be returned */
   ret = 0xFF;

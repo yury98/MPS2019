@@ -12,8 +12,9 @@ int extern MenuMainItem;
 int extern CursorPosItem;
 char extern UartFlag;
 char extern CanFlag;
-char extern Can2Flag;
+char extern SSPFlag;
 char extern TestUartDone;
+char extern TestSSPDone;
 char extern TestCanDone;
 char extern LedFlag;
 
@@ -51,7 +52,10 @@ uint8_t* can_string[]  =
 {
 	sym_sp,sym_sp,sym_sp,sym_sp,cyr_T,cyr_e,cyr_s,cyr_t,sym_sp,lat_C,lat_A,lat_N,sym_sp,sym_sp,sym_sp,sym_sp
 };
-
+uint8_t* ssp_string[]  =
+{
+	sym_sp,sym_sp,sym_sp,sym_sp,cyr_T,cyr_e,cyr_s,cyr_t,sym_sp,lat_S,lat_S,lat_P,sym_sp,sym_sp,sym_sp,sym_sp
+};
 uint8_t* pass_string[]  =
 {
 	cyr_D,cyr_a,cyr_n,cyr_n,cyr_y,cyr_e,sym_sp,cyr_p,cyr_e,cyr_r,cyr_e,cyr_d,cyr_a,cyr_n,cyr_y,sym_sp
@@ -65,21 +69,11 @@ uint8_t* fail_string[]  =
 	sym_sp,sym_sp,sym_sp,cyr_N,cyr_e,sym_sp,cyr_p,cyr_r,cyr_o,cyr_sh,cyr_e,cyr_l,sym_sp,sym_sp,sym_sp,sym_sp
 };
 
-
-uint8_t* led_string[]  =
-{
-	cyr_T,cyr_e,cyr_s,cyr_t,sym_sp,cyr_I,cyr_n,cyr_d,cyr_i,cyr_k,cyr_a,cyr_t,cyr_o,cyr_r,cyr_o,cyr_v
-};
 uint8_t* empty_string[]  =
 {
 	sym_sp,sym_sp,sym_sp,sym_sp,sym_sp,sym_sp,sym_sp,sym_sp,sym_sp,sym_sp,sym_sp,sym_sp,sym_sp,sym_sp,sym_sp,sym_sp
 };
 
-
-uint8_t* finish_string[]  =
-{
-	sym_sp,sym_sp,sym_sp,sym_sp,sym_sp,cyr_G,cyr_o,cyr_t,cyr_o,cyr_v,cyr_o,sym_sp,sym_sp,sym_sp,sym_sp,sym_sp
-};
 
 /* Private function prototypes -----------------------------------------------*/
 /* Private functions ---------------------------------------------------------*/
@@ -199,21 +193,6 @@ void SysTick_Handler(void)
 *******************************************************************************/
 void CAN1_IRQHandler(void)
 {
-	 /*CAN_RxMsgTypeDef RxMessage;
-
-  CAN_GetRawReceivedData(MDR_CAN1, rx_buf, &RxMessage);
-
-  if((RxMessage.Rx_Header.ID==0x15555556) && (RxMessage.Rx_Header.IDE==CAN_ID_EXT)
-     && (RxMessage.Rx_Header.DLC==4) && (RxMessage.Data[0]==0x12345678))
-  {
-    ret = 1;
-		LEDOn(LED1);
-  }
-  else
-  {
-    ret = 0;
-  }
-  CAN_ITClearRxTxPendingBit(MDR_CAN1, rx_buf, CAN_STATUS_RX_READY);*/
 }
 /*******************************************************************************
 * Function Name  : CAN2_IRQHandler
@@ -352,11 +331,18 @@ int i;
 		} 
 		
 	}
-	else if (Can2Flag == 1)
+	else if (SSPFlag == 1)
 	{
-		LcdPutString (empty_string, 3); LcdPutChar (sym_sp, 15, 3);
-		LcdPutString (can_string, 4); LcdPutChar (sym_sp, 15, 4);
-		LcdPutString (empty_string, 5); LcdPutChar (sym_sp, 15, 5);
+		LcdPutString (ssp_string, 3);
+		LcdPutString (empty_string, 4);
+		if (TestSSPDone == 1) 
+		{
+			LcdPutString (pass_string, 5);
+		}
+		else 
+		{
+			LcdPutString (empty_string, 5);
+		} 
 	}
 	else if (USBFlag == 1)
 	{

@@ -1,4 +1,5 @@
 /* Includes ------------------------------------------------------------------*/
+#include "MDR32F9Qx_ssp.h"              // Keil::Drivers:SSP
 #include "MDR32F9Qx_config.h"           // Keil::Device:Startup
 #include "MDR32Fx.h"
 #include "MDR32F9Qx_uart.h"
@@ -36,7 +37,8 @@ char UartFlag = 0;
 char Can1Flag = 0;
 char Can2Flag = 0;
 char LedFlag = 0;
-
+char SSPFlag = 0;
+char TestSSPDone = 0;
 char USBFlag = 0;
 char TestUartDone = 0;
 char TestCanDone = 0;
@@ -77,24 +79,7 @@ void BlinkLED1(uint32_t num, uint32_t del,uint32_t LED_Num)
   }
 }
 
-void Can2PinCfg(void)
-{
-	/* Fill PortInit structure*/
-    /*PortInit.PORT_PULL_UP = PORT_PULL_UP_OFF;
-    PortInit.PORT_PULL_DOWN = PORT_PULL_DOWN_OFF;
-    PortInit.PORT_PD_SHM = PORT_PD_SHM_OFF;
-    PortInit.PORT_PD = PORT_PD_DRIVER;
-    PortInit.PORT_GFEN = PORT_GFEN_OFF;
-    PortInit.PORT_FUNC = PORT_FUNC_ALTER;
-    PortInit.PORT_SPEED = PORT_SPEED_MAXFAST;
-    PortInit.PORT_MODE = PORT_MODE_DIGITAL;
-    PortInit.PORT_OE = PORT_OE_IN;
-    PortInit.PORT_Pin = PORT_Pin_7;
-    PORT_Init(PORTA, &PortInit);
-    PortInit.PORT_OE = PORT_OE_OUT;
-    PortInit.PORT_Pin = PORT_Pin_6;
-    PORT_Init(PORTA, &PortInit);	*/
-}
+
 void MltPinCfg (void)
 {
 	/* Fill PortInit structure*/
@@ -158,33 +143,6 @@ void ButtonPinGfg (void)
 	PORT_Init(MDR_PORTE, &PortInit);
 }
 	
-void Can2Setup(int rate)
-{
-   /*
-	RST_CLK_CPU_PLLconfig (RST_CLK_CPU_PLLsrcHSEdiv1,RST_CLK_CPU_PLLmul4);
-    RST_CLK_CPUclkPrescaler(RST_CLK_CPUclkDIV1);
-    RST_CLK_CPU_PLLcmd(ENABLE);
-    while (RST_CLK_CPU_PLLstatus() == 0)//wait ready PLL
-	RST_CLK_CPU_PLLuse(ENABLE);
-    RST_CLK_CPUclkSelection(RST_CLK_CPUclkCPU_C3);   	
-
-	RST_CLK_PCLKcmd(RST_CLK_PCLK_CAN1, ENABLE);
-
-	RST_CLK->CAN_CLOCK = 0x01000000;
-	if (rate == 1) CAN1->BITTMNG = 1 << 27 | (3 << 25) | ((5 - 1) << 22) | ((5 - 1) << 19) | ((2 - 1) << 16) | 4; //125
-	if (rate == 2) CAN1->BITTMNG = 1 << 27 | ((2-1)<<25) | ((2-1)<<22) | ((3-1)<<19) | ((2-1)<<16) | (2-1); //500
-  	CAN1->BUF_01_CON    = 0x00000000;
-	CAN1->BUF_01_MASK   = 0x00000000;
-	CAN1->BUF_01_FILTER = 0x00000000;	
-  	CAN1->BUF_02_CON    = 0x00000003;
-	CAN1->BUF_02_ID     = 0x00000000;
-	CAN1->BUF_02_DLC    = 0x00000000;
-	CAN1->BUF_02_DATAL  = 0x00000000;
-	CAN1->BUF_02_DATAH  = 0x00000000;
-	CAN1->BUF_02_MASK   = 0x00000000;
-	CAN1->BUF_02_FILTER = 0x00000000;
-	CAN1->CONTROL = 0x00000001;*/
-}
 void Tim1Setup(void)
 {
 //	vu16 TIMx_ARR, TIMx_CNT, TIMx_PSG, TIMx_CNTRL; 
@@ -199,7 +157,7 @@ void Tim1Setup(void)
 
 	MDR_TIMER1->CNT = 0x00000000;	//start count value
 	MDR_TIMER1->PSG = 0x0000003F;	//div main clk
-	MDR_TIMER1->ARR = 0x0000FFFF;	//end count value
+	MDR_TIMER1->ARR = 0x0000AFFF;	//end count value
 
 	MDR_TIMER1->CH1_CNTRL = 0x00000000;
 	MDR_TIMER1->CH2_CNTRL = 0x00000000;
@@ -214,135 +172,6 @@ void Tim1Setup(void)
 	MDR_TIMER1->STATUS = 0x00000000;
 	MDR_TIMER1->IE  = 0x00000002;
 	MDR_TIMER1->CNTRL  |= 0x00000001;
-}
-
-void Can1Test (void)
-{
-/*uint32_t DataL,DataH;
-
-DataL = 0x55555555;
-DataH = 0x55555555;
-
-	Can2PinCfg();
-	Can2Setup(1);
-   	 
-	while(1)
-	{
-		do
-		{
-			if (PORT_ReadInputDataBit(PORTE,PORT_Pin_3) == 0)
-			{
-				goto exitC1;
-			}
-		} while ((CAN1->BUF_02_DLC & 0x00000008) != 0x00000008);
-		DataL = CAN1->BUF_02_DATAL;
-		DataH = CAN1->BUF_02_DATAH;
-	    //clear RX buf
-	  	CAN1->BUF_02_CON    = 0x00000000;
-		CAN1->BUF_02_ID     = 0x00000000;
-		CAN1->BUF_02_DLC    = 0x00000000;
-		CAN1->BUF_02_DATAL  = 0x00000000;
-		CAN1->BUF_02_DATAH  = 0x00000000;
-		//send packet
-		CAN1->BUF_01_ID     = 0x15AA0067;
-		CAN1->BUF_01_DLC    = 0x8 | (1<<9) | (1<<11) | (1<<12);
-		CAN1->BUF_01_DATAL  = DataL;
-		CAN1->BUF_01_DATAH  = DataH;
-		CAN1->BUF_01_CON    = 0x1 | (1<<5);
-		while ((CAN1->BUF_01_CON & 0x00000020) != 0x00000000);
-		CAN1->BUF_01_CON    = 0x00000000;//disable TX buffer
-		CAN1->BUF_02_CON    = 0x00000003;//disable RX buffer
-	}
-exitC1: 	
-	RST_CLK_HSIcmd(ENABLE);
-	RST_CLK_HSIstatus();
-	RST_CLK_CPUclkSelection(RST_CLK_CPUclkHSI);
-	
-	
-	RST_CLK->CPU_CLOCK   &= (uint32_t)0x00000000;
-	
-
-	RST_CLK->PLL_CONTROL &= (uint32_t)0x00000000;
-	
-
-	RST_CLK->HS_CONTROL  &= (uint32_t)0x00000000;
-*/
-}
-
-void Can2Test (void)
-{
-/*uint32_t DataL,DataH;
-
-	Can2PinCfg();
-	Can2Setup(2);
-
-	while(1)
-	{
-		do
-		{
-			if (PORT_ReadInputDataBit(PORTE,PORT_Pin_3) == 0)
-			{
-				goto exitC2;
-			}
-		} while ((CAN1->BUF_02_DLC & 0x00000008) != 0x00000008);
-		DataL = CAN1->BUF_02_DATAL;
-		DataH = CAN1->BUF_02_DATAH;
-	    //clear RX buf
-	  	CAN1->BUF_02_CON    = 0x00000000;
-		CAN1->BUF_02_ID     = 0x00000000;
-		CAN1->BUF_02_DLC    = 0x00000000;
-		CAN1->BUF_02_DATAL  = 0x00000000;
-		CAN1->BUF_02_DATAH  = 0x00000000;
-		//send packet
-		CAN1->BUF_01_ID     = 0x15AA0067;
-		CAN1->BUF_01_DLC    = 0x8 | (1<<9) | (1<<11) | (1<<12);
-		CAN1->BUF_01_DATAL  = DataL;
-		CAN1->BUF_01_DATAH  = DataH;
-		CAN1->BUF_01_CON    = 0x1 | (1<<5);
-		while ((CAN1->BUF_01_CON & 0x00000020) != 0x00000000);
-		CAN1->BUF_01_CON    = 0x00000000;//disable TX buffer
-		CAN1->BUF_02_CON    = 0x00000003;//disable RX buffer
-	}
-exitC2: 	
-
-	RST_CLK_HSIcmd(ENABLE);
-	RST_CLK_HSIstatus();
-	RST_CLK_CPUclkSelection(RST_CLK_CPUclkHSI);
-	
-
-	RST_CLK->CPU_CLOCK   &= (uint32_t)0x00000000;
-	
-	
-	RST_CLK->PLL_CONTROL &= (uint32_t)0x00000000;
-	
-	RST_CLK->HS_CONTROL  &= (uint32_t)0x00000000;
-*/
-}
-
-int LedTest (void)
-{
-/*int i;
-
-LedStart:
-	TestLedDone = 0;
-	
-	for (i=0;i<1000000;i++){}
-	NVIC->ICER[0] = 0x00004000;
-
-	BlinkLED1(5,100000,LED1);
-	BlinkLED1(5,100000,LED2);
-
-    TestLedDone = 1;
-	
-	NVIC->ISER[0] = 0x00004000;
-	for (;;)
-	{
-		if (PORT_ReadInputDataBit(PORTC,PORT_Pin_2) == 0) goto LedStart;
-	    if (PORT_ReadInputDataBit(PORTE,PORT_Pin_3) == 0) goto LedExit;
-	}
-LedExit:
-	TestLedDone = 0;
-	return 0;*/
 }
 
 int CanTest (void)
@@ -387,6 +216,39 @@ uint8_t DataByte;
 exit: return 0;
 }
 
+void SSPTest(void) {
+	uint16_t Src2 = 0x0002;
+	uint16_t Dst2 = 0x0000;
+
+
+	PortsSSP2Init();
+	SSP2StructInit();
+	do
+	{
+		if (PORT_ReadInputDataBit(MDR_PORTE,PORT_Pin_3) == 0)
+		{
+			goto exit;
+		}
+	}while (SSP_GetFlagStatus(MDR_SSP2, SSP_FLAG_RNE) == RESET);
+   /* Read SPI2 received data */
+   Dst2 = SSP_ReceiveData(MDR_SSP2);
+	 if (Dst2 == Src2) {
+	TestSSPDone = 1;
+	} else {
+		TestSSPDone = 2;
+	}
+	do
+	{
+		if (PORT_ReadInputDataBit(MDR_PORTE,PORT_Pin_3) == 0)
+		{
+			goto exit;
+		}
+	} while (1);
+exit: 
+	NVIC->ISER[0] = 0x00004000;	
+	return 0;
+		
+}
 
 void USBTest (void)
 {
@@ -415,7 +277,22 @@ char s1;
     
 	RST_CLK_HSEconfig(RST_CLK_HSE_ON);
     while (RST_CLK_HSEstatus() != SUCCESS);
+	  RST_CLK_CPU_PLLconfig(RST_CLK_CPU_PLLsrcHSIdiv2, RST_CLK_CPU_PLLmul1);
+  RST_CLK_CPU_PLLcmd(ENABLE);
+  if (RST_CLK_CPU_PLLstatus() != SUCCESS)
+  {
+    /* Trap */
+    while (1)
+    {
+    }
+  }
 
+  /* CPU_C3_SEL = CPU_C2_SEL */
+  RST_CLK_CPUclkPrescaler(RST_CLK_CPUclkDIV1);
+  /* CPU_C2_SEL = PLL */
+  RST_CLK_CPU_PLLuse(ENABLE);
+  /* HCLK_SEL = CPU_C3_SEL */
+  RST_CLK_CPUclkSelection(RST_CLK_CPUclkCPU_C3);
 	/* Enables the clock on PORTA */
 	RST_CLK_PCLKcmd(RST_CLK_PCLK_PORTA, ENABLE);
 	/* Enables the clock on PORTB */
@@ -471,9 +348,10 @@ char s1;
 			}
 			if (MenuMainItem == 1)
 			{
-				UartFlag = 1;
-				UartTest();
-				UartFlag = 0;
+				SSPFlag = 1;
+				SSPTest();
+				SSPFlag = 0;
+				TestSSPDone = 0;
 			}
 			if (MenuMainItem == 2)
 			{

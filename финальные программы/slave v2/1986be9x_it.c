@@ -11,15 +11,12 @@ int extern count_title;
 int extern MenuMainItem;
 int extern CursorPosItem;
 char extern UartFlag;
-char extern Can1Flag;
-char extern Can2Flag;
-char extern TestLedDone;
-char extern LedFlag;
 char extern TestCanDone;
 char extern CanFlag;
 char extern TestUartDone;
 char extern USBFlag;
-
+char extern SSPFlag;
+char extern TestSSPDone;
 int count_main = 0;
 
 __IO uint32_t extern rx_buf;
@@ -58,7 +55,10 @@ uint8_t* uart_string[]  =
 {
 	sym_sp,sym_sp,sym_sp,cyr_T,cyr_e,cyr_s,cyr_t,sym_sp,lat_U,lat_A,lat_R,lat_T,sym_sp,sym_sp,sym_sp,sym_sp
 };
-
+uint8_t* ssp_string[]  =
+{
+	sym_sp,sym_sp,sym_sp,sym_sp,cyr_T,cyr_e,cyr_s,cyr_t,sym_sp,lat_S,lat_S,lat_P,sym_sp,sym_sp,sym_sp,sym_sp
+};
 uint8_t* pass_string[]  =
 {
 	cyr_D,cyr_a,cyr_n,cyr_n,cyr_y,cyr_e,sym_sp,cyr_p,cyr_e,cyr_r,cyr_e,cyr_d,cyr_a,cyr_n,cyr_y,sym_sp
@@ -84,19 +84,12 @@ uint8_t* can_string[]  =
 	sym_sp,sym_sp,sym_sp,sym_sp,cyr_T,cyr_e,cyr_s,cyr_t,sym_sp,lat_C,lat_A,lat_N,sym_sp,sym_sp,sym_sp,sym_sp
 };
 
-uint8_t* led_string[]  =
-{
-	cyr_T,cyr_e,cyr_s,cyr_t,sym_sp,cyr_I,cyr_n,cyr_d,cyr_i,cyr_k,cyr_a,cyr_t,cyr_o,cyr_r,cyr_o,cyr_v
-};
+
 uint8_t* empty_string[]  =
 {
 	sym_sp,sym_sp,sym_sp,sym_sp,sym_sp,sym_sp,sym_sp,sym_sp,sym_sp,sym_sp,sym_sp,sym_sp,sym_sp,sym_sp,sym_sp,sym_sp
 };
 
-uint8_t* finish_string[]  =
-{
-	sym_sp,sym_sp,sym_sp,sym_sp,sym_sp,cyr_G,cyr_o,cyr_t,cyr_o,cyr_v,cyr_o,sym_sp,sym_sp,sym_sp,sym_sp,sym_sp
-};
 
 /* Private function prototypes -----------------------------------------------*/
 /* Private functions ---------------------------------------------------------*/
@@ -371,11 +364,22 @@ int i;
 			LcdPutString (fail_string, 5);
 		} 
 	}
-	else if (Can1Flag == 1)
+	else if (SSPFlag == 1)
 	{
-		LcdPutString (empty_string, 3); LcdPutChar (sym_sp, 15, 3);
-		LcdPutString (can_string, 4); LcdPutChar (sym_sp, 15, 4);
-		LcdPutString (empty_string, 5); LcdPutChar (sym_sp, 15, 5);
+		LcdPutString (ssp_string, 3);
+		LcdPutString (empty_string, 4);
+		if (TestSSPDone == 1) 
+		{
+			LcdPutString (get_string, 5);
+		}
+		else if (TestSSPDone == 0) 
+		{
+			LcdPutString (wait_string, 5);
+		} 
+		else if (TestSSPDone == 2) 
+		{
+			LcdPutString (fail_string, 5);
+		} 
 	}
 	else if (USBFlag == 1)
 	{

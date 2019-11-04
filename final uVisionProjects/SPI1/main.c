@@ -30,7 +30,7 @@ void PortsSSP1Init(void) {
 	  /* Configure SSP1 pins: FSS, CLK, RXD, TXD */
 
   /* Configure PORTF pins 0, 1, 2, 3 */
-	PORT_InitStructure.PORT_FUNC  = PORT_FUNC_ALTER;
+	/*PORT_InitStructure.PORT_FUNC  = PORT_FUNC_ALTER;
   PORT_InitStructure.PORT_MODE  = PORT_MODE_DIGITAL;
   PORT_InitStructure.PORT_SPEED = PORT_SPEED_FAST;
   PORT_InitStructure.PORT_Pin   = (PORT_Pin_3);
@@ -38,14 +38,24 @@ void PortsSSP1Init(void) {
   PORT_Init(MDR_PORTF, &PORT_InitStructure);
   PORT_InitStructure.PORT_Pin   = (PORT_Pin_0 | PORT_Pin_1 | PORT_Pin_2);
   PORT_InitStructure.PORT_OE    = PORT_OE_OUT;
-  PORT_Init(MDR_PORTF, &PORT_InitStructure);
+  PORT_Init(MDR_PORTF, &PORT_InitStructure);*/
+	  /* Configure PORTD pins 2, 3, 5, 6 */
+  PORT_InitStructure.PORT_Pin   = (PORT_Pin_2);
+  PORT_InitStructure.PORT_OE    = PORT_OE_IN;
+  PORT_InitStructure.PORT_FUNC  = PORT_FUNC_ALTER;
+  PORT_InitStructure.PORT_MODE  = PORT_MODE_DIGITAL;
+  PORT_InitStructure.PORT_SPEED = PORT_SPEED_FAST;
+  PORT_Init(MDR_PORTD, &PORT_InitStructure);
+  PORT_InitStructure.PORT_OE    = PORT_OE_OUT;
+  PORT_InitStructure.PORT_Pin   = (PORT_Pin_6 | PORT_Pin_3 | PORT_Pin_5);
+  PORT_Init(MDR_PORTD, &PORT_InitStructure);
 }
 	
 void SSP1StructInit(void) {
 	  /* Reset all SSP settings */
-  SSP_DeInit(MDR_SSP1);
+  SSP_DeInit(MDR_SSP2);
 
-  SSP_BRGInit(MDR_SSP1,SSP_HCLKdiv16);
+  SSP_BRGInit(MDR_SSP2,SSP_HCLKdiv16);
 	
 	 /* SSP1 MASTER configuration ------------------------------------------------*/
   SSP_StructInit (&sSSP);
@@ -58,10 +68,10 @@ void SSP1StructInit(void) {
   sSSP.SSP_SPO = SSP_SPO_Low;
   sSSP.SSP_FRF = SSP_FRF_SPI_Motorola;
   sSSP.SSP_HardwareFlowControl = SSP_HardwareFlowControl_SSE;
-  SSP_Init (MDR_SSP1,&sSSP);
+  SSP_Init (MDR_SSP2,&sSSP);
 	
 	  /* Enable SSP1 */
-  SSP_Cmd(MDR_SSP1, ENABLE);
+  SSP_Cmd(MDR_SSP2, ENABLE);
 }
 
 void SSP1Test(void) {
@@ -69,11 +79,11 @@ void SSP1Test(void) {
 		uint16_t Dst1 = 0x0000;
 		PortsSSP1Init();
 		SSP1StructInit();
-	  while (SSP_GetFlagStatus(MDR_SSP1, SSP_FLAG_TFE) == RESET)
+	  while (SSP_GetFlagStatus(MDR_SSP2, SSP_FLAG_TFE) == RESET)
     {
     }
     /* Send SPI1 data */
-    SSP_SendData(MDR_SSP1, Src1);
+    SSP_SendData(MDR_SSP2, Src1);
 }
 
 
@@ -106,11 +116,10 @@ RST_CLK_LSEconfig(RST_CLK_LSE_ON);
 		RST_CLK_PCLKcmd((RST_CLK_PCLK_RST_CLK | RST_CLK_PCLK_SSP1 | RST_CLK_PCLK_SSP2),ENABLE);
 			
     /* Init NVIC */
-  SCB->AIRCR = 0x05FA0000 | ((uint32_t)0x500);
+  /*SCB->AIRCR = 0x05FA0000 | ((uint32_t)0x500);
   SCB->VTOR = 0x08000000;
-  /* Disable all interrupt */
   NVIC->ICPR[0] = 0xFFFFFFFF;
-  NVIC->ICER[0] = 0xFFFFFFFF;
+  NVIC->ICER[0] = 0xFFFFFFFF;*/
 
   /* Disable all DMA request */
   MDR_DMA->CHNL_REQ_MASK_CLR = 0xFFFFFFFF;
@@ -124,10 +133,10 @@ RST_CLK_LSEconfig(RST_CLK_LSE_ON);
 	
 	PORT_ResetBits(MDR_PORTC, PORT_Pin_0);
     SetupPortsForDiods();
-    
+    SSP1Test();
 	while (1)
 	{
-    SSP1Test();
+    
 		DELAY(1000000);
 	}
 }

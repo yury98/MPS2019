@@ -83,12 +83,35 @@ int USB_main(void)
 
   /* CDC layer initialization */
   USB_CDC_Init(Buffer, 1, SET);
-
+Setup_CPU_Clock();
   //Setup_CPU_Clock();
   Setup_USB();
 
   /* Main loop */
 	return 0;
+}
+
+void Setup_CPU_Clock(void)
+{
+
+
+  /* CPU_C1_SEL = HSE */
+  RST_CLK_CPU_PLLconfig(RST_CLK_CPU_PLLsrcHSEdiv1, RST_CLK_CPU_PLLmul10);
+  RST_CLK_CPU_PLLcmd(ENABLE);
+  if (RST_CLK_CPU_PLLstatus() != SUCCESS)
+  {
+    /* Trap */
+    while (1)
+    {
+    }
+  }
+
+  /* CPU_C3_SEL = CPU_C2_SEL */
+  RST_CLK_CPUclkPrescaler(RST_CLK_CPUclkDIV1);
+  /* CPU_C2_SEL = PLL */
+  RST_CLK_CPU_PLLuse(ENABLE);
+  /* HCLK_SEL = CPU_C3_SEL */
+  RST_CLK_CPUclkSelection(RST_CLK_CPUclkCPU_C3);
 }
 
 /* USB Device layer setup and powering on */
@@ -125,7 +148,7 @@ void Setup_USB(void)
 static void VCom_Configuration(void)
 {
 #ifdef USB_CDC_LINE_CODING_SUPPORTED
-  LineCoding.dwDTERate = 115200;
+  LineCoding.dwDTERate = 9600;
   LineCoding.bCharFormat = 0;
   LineCoding.bParityType = 0;
   LineCoding.bDataBits = 8;

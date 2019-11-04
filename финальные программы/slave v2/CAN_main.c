@@ -49,7 +49,9 @@ void CAN_ports_ini(void) //????????????? ?????? CAN1
 void CAN_Setup(void)
 {
   CAN_InitTypeDef  sCAN;
-  
+  //RST_CLK_DeInit();
+  /* Select HSI/2 as CPU_CLK source*/
+  RST_CLK_CPU_PLLconfig (RST_CLK_CPU_PLLsrcHSIdiv2,0);
   uint32_t i = 0;
   RST_CLK_PCLKcmd((RST_CLK_PCLK_RST_CLK | RST_CLK_PCLK_CAN1),ENABLE);
   /* Set the HCLK division factor = 1 for CAN1*/
