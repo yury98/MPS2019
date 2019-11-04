@@ -1,4 +1,5 @@
 /* Includes ------------------------------------------------------------------*/
+#include "MDR32F9Qx_can.h"              // Keil::Drivers:CAN
 #include "1986BE9x_it.h"
 #include "mlt_lcd.h"
 #include "font.h"
@@ -10,9 +11,10 @@ int extern count_title;
 int extern MenuMainItem;
 int extern CursorPosItem;
 char extern UartFlag;
-char extern Can1Flag;
+char extern CanFlag;
 char extern Can2Flag;
 char extern TestUartDone;
+char extern TestCanDone;
 char extern LedFlag;
 
 char extern USBFlag;
@@ -47,7 +49,7 @@ uint8_t* uart_string[]  =
 };
 uint8_t* can_string[]  =
 {
-	sym_sp,cyr_T,cyr_e,cyr_s,cyr_t,sym_sp,lat_C,lat_A,lat_N,sym_sp,cyr_p,cyr_o,cyr_r,lat_t,cyr_a,sym_sp
+	sym_sp,sym_sp,sym_sp,sym_sp,cyr_T,cyr_e,cyr_s,cyr_t,sym_sp,lat_C,lat_A,lat_N,sym_sp,sym_sp,sym_sp,sym_sp
 };
 
 uint8_t* pass_string[]  =
@@ -79,10 +81,6 @@ uint8_t* finish_string[]  =
 	sym_sp,sym_sp,sym_sp,sym_sp,sym_sp,cyr_G,cyr_o,cyr_t,cyr_o,cyr_v,cyr_o,sym_sp,sym_sp,sym_sp,sym_sp,sym_sp
 };
 
-uint8_t* bottom_string[]  =
-{
-	cyr_M,  cyr_i,	 cyr_l,  cyr_a,  cyr_n,  cyr_d,	 cyr_r
-};
 /* Private function prototypes -----------------------------------------------*/
 /* Private functions ---------------------------------------------------------*/
 
@@ -201,6 +199,21 @@ void SysTick_Handler(void)
 *******************************************************************************/
 void CAN1_IRQHandler(void)
 {
+	 /*CAN_RxMsgTypeDef RxMessage;
+
+  CAN_GetRawReceivedData(MDR_CAN1, rx_buf, &RxMessage);
+
+  if((RxMessage.Rx_Header.ID==0x15555556) && (RxMessage.Rx_Header.IDE==CAN_ID_EXT)
+     && (RxMessage.Rx_Header.DLC==4) && (RxMessage.Data[0]==0x12345678))
+  {
+    ret = 1;
+		LEDOn(LED1);
+  }
+  else
+  {
+    ret = 0;
+  }
+  CAN_ITClearRxTxPendingBit(MDR_CAN1, rx_buf, CAN_STATUS_RX_READY);*/
 }
 /*******************************************************************************
 * Function Name  : CAN2_IRQHandler
@@ -325,14 +338,21 @@ int i;
 	count_main++;
 	if (count_main == 55) count_main = 0;
 	//
-	if (UartFlag == 2)
+	if (CanFlag == 1)
 	{
-		LcdPutString (empty_string, 3); LcdPutChar (sym_sp, 15, 3);
-		LcdPutString (uart_string, 4); LcdPutChar (sym_sp, 15, 4);
-		LcdPutString (empty_string, 5); LcdPutChar (sym_sp, 15, 5);
+		LcdPutString (can_string, 3);
+		LcdPutString (empty_string, 4);
+		if (TestCanDone == 1) 
+		{
+			LcdPutString (pass_string, 5);
+		}
+		else 
+		{
+			LcdPutString (empty_string, 5);
+		} 
 		
 	}
-	else if (Can1Flag == 1)
+	else if (Can2Flag == 1)
 	{
 		LcdPutString (empty_string, 3); LcdPutChar (sym_sp, 15, 3);
 		LcdPutString (can_string, 4); LcdPutChar (sym_sp, 15, 4);

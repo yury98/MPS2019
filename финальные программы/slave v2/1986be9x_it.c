@@ -1,4 +1,5 @@
 /* Includes ------------------------------------------------------------------*/
+#include "MDR32F9Qx_can.h"              // Keil::Drivers:CAN
 #include "1986BE9x_it.h"
 #include "mlt_lcd.h"
 #include "font.h"
@@ -14,11 +15,14 @@ char extern Can1Flag;
 char extern Can2Flag;
 char extern TestLedDone;
 char extern LedFlag;
-
+char extern TestCanDone;
+char extern CanFlag;
 char extern TestUartDone;
 char extern USBFlag;
 
 int count_main = 0;
+
+__IO uint32_t extern rx_buf;
 
 uint8_t* main_string[]  = 
 {
@@ -69,7 +73,7 @@ uint8_t* wait_string[]  =
 };
 uint8_t* fail_string[]  =
 {
-	sym_sp,sym_sp,sym_sp,cyr_N,cyr_e,sym_sp,cyr_p,cyr_r,cyr_o,cyr_sh,cyr_e,cyr_l,sym_sp,sym_sp,sym_sp,sym_sp
+	cyr_D,cyr_a,cyr_n,cyr_n,cyr_y,cyr_e,sym_sp,cyr_o,cyr_sh,cyr_i,cyr_b,cyr_o,cyr_ch,cyr_n,cyr_y,sym_sp
 };
 
 
@@ -77,7 +81,7 @@ uint8_t* fail_string[]  =
 
 uint8_t* can_string[]  =
 {
-	sym_sp,cyr_T,cyr_e,cyr_s,cyr_t,sym_sp,lat_C,lat_A,lat_N,sym_sp,cyr_p,cyr_o,cyr_r,lat_t,cyr_a,sym_sp
+	sym_sp,sym_sp,sym_sp,sym_sp,cyr_T,cyr_e,cyr_s,cyr_t,sym_sp,lat_C,lat_A,lat_N,sym_sp,sym_sp,sym_sp,sym_sp
 };
 
 uint8_t* led_string[]  =
@@ -94,10 +98,6 @@ uint8_t* finish_string[]  =
 	sym_sp,sym_sp,sym_sp,sym_sp,sym_sp,cyr_G,cyr_o,cyr_t,cyr_o,cyr_v,cyr_o,sym_sp,sym_sp,sym_sp,sym_sp,sym_sp
 };
 
-uint8_t* bottom_string[]  =
-{
-	cyr_M,  cyr_i,	 cyr_l,  cyr_a,  cyr_n,  cyr_d,	 cyr_r
-};
 /* Private function prototypes -----------------------------------------------*/
 /* Private functions ---------------------------------------------------------*/
 
@@ -216,6 +216,20 @@ void SysTick_Handler(void)
 *******************************************************************************/
 void CAN1_IRQHandler(void)
 {
+	CAN_RxMsgTypeDef RxMessage;
+
+  CAN_GetRawReceivedData(MDR_CAN1, rx_buf, &RxMessage);
+
+  if((RxMessage.Rx_Header.ID==0x15555555) && (RxMessage.Rx_Header.IDE==CAN_ID_EXT)
+     && (RxMessage.Rx_Header.DLC==4) && (RxMessage.Data[0]==0x12345678))
+  {
+    TestCanDone = 1;
+  }
+  else
+  {
+    TestCanDone = 2;
+  }
+  CAN_ITClearRxTxPendingBit(MDR_CAN1, rx_buf, CAN_STATUS_RX_READY);
 }
 /*******************************************************************************
 * Function Name  : CAN2_IRQHandler
@@ -340,12 +354,22 @@ int i;
 	count_main++;
 	if (count_main == 55) count_main = 0;
 	//
-	if (UartFlag == 2)
+	if (CanFlag == 1)
 	{
-		LcdPutString (empty_string, 3); LcdPutChar (sym_sp, 15, 3);
-		LcdPutString (uart_string, 4); LcdPutChar (sym_sp, 15, 4);
-		LcdPutString (empty_string, 5); LcdPutChar (sym_sp, 15, 5);
-		
+		LcdPutString (can_string, 3);
+		LcdPutString (empty_string, 4);
+		if (TestCanDone == 1) 
+		{
+			LcdPutString (get_string, 5);
+		}
+		else if (TestCanDone == 0) 
+		{
+			LcdPutString (wait_string, 5);
+		} 
+		else if (TestCanDone == 2) 
+		{
+			LcdPutString (fail_string, 5);
+		} 
 	}
 	else if (Can1Flag == 1)
 	{

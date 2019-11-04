@@ -174,7 +174,7 @@ TestStatus CAN_Interrupt(void)
   TxMsg.IDE     = CAN_ID_EXT;
   TxMsg.DLC     = 0x04;
   TxMsg.PRIOR_0 = DISABLE;
-  TxMsg.ID      = 0x15555555;
+  TxMsg.ID      = 0x15555556;
   TxMsg.Data[1] = 0;
   TxMsg.Data[0] = 0x12345678;
 
@@ -184,7 +184,7 @@ TestStatus CAN_Interrupt(void)
   ret = 0xFF;
 
   /* receive message with interrupt handling */
-  i=0;
+  /*i=0;
   while((ret == 0xFF) && (i < 0xFFF))
   {
     i++;
@@ -193,7 +193,7 @@ TestStatus CAN_Interrupt(void)
   if (i == 0xFFF)
   {
     ret=0;
-  }
+  }*/
 while (1);
   /* disable interrupt handling */
   CAN_ITConfig(MDR_CAN1, CAN_IT_GLBINTEN | CAN_IT_RXINTEN, DISABLE);

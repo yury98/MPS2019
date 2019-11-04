@@ -795,62 +795,62 @@ Memory Map of the image
     Exec Addr    Load Addr    Size         Type   Attr      Idx    E Section Name        Object
 
     0x08000000   0x08000000   0x000000c0   Data   RO          108    RESET               startup_mdr32f9qx.o
-    0x080000c0   0x080000c0   0x00000008   Code   RO         1096  * !!!main             c_w.l(__main.o)
-    0x080000c8   0x080000c8   0x00000034   Code   RO         1253    !!!scatter          c_w.l(__scatter.o)
-    0x080000fc   0x080000fc   0x0000001a   Code   RO         1255    !!handler_copy      c_w.l(__scatter_copy.o)
+    0x080000c0   0x080000c0   0x00000008   Code   RO         1099  * !!!main             c_w.l(__main.o)
+    0x080000c8   0x080000c8   0x00000034   Code   RO         1256    !!!scatter          c_w.l(__scatter.o)
+    0x080000fc   0x080000fc   0x0000001a   Code   RO         1258    !!handler_copy      c_w.l(__scatter_copy.o)
     0x08000116   0x08000116   0x00000002   PAD
-    0x08000118   0x08000118   0x0000001c   Code   RO         1257    !!handler_zi        c_w.l(__scatter_zi.o)
-    0x08000134   0x08000134   0x00000002   Code   RO         1123    .ARM.Collect$$libinit$$00000000  c_w.l(libinit.o)
-    0x08000136   0x08000136   0x00000000   Code   RO         1130    .ARM.Collect$$libinit$$00000002  c_w.l(libinit2.o)
-    0x08000136   0x08000136   0x00000000   Code   RO         1132    .ARM.Collect$$libinit$$00000004  c_w.l(libinit2.o)
-    0x08000136   0x08000136   0x00000000   Code   RO         1135    .ARM.Collect$$libinit$$0000000A  c_w.l(libinit2.o)
-    0x08000136   0x08000136   0x00000000   Code   RO         1137    .ARM.Collect$$libinit$$0000000C  c_w.l(libinit2.o)
-    0x08000136   0x08000136   0x00000000   Code   RO         1139    .ARM.Collect$$libinit$$0000000E  c_w.l(libinit2.o)
-    0x08000136   0x08000136   0x00000000   Code   RO         1142    .ARM.Collect$$libinit$$00000011  c_w.l(libinit2.o)
-    0x08000136   0x08000136   0x00000000   Code   RO         1144    .ARM.Collect$$libinit$$00000013  c_w.l(libinit2.o)
-    0x08000136   0x08000136   0x00000000   Code   RO         1146    .ARM.Collect$$libinit$$00000015  c_w.l(libinit2.o)
-    0x08000136   0x08000136   0x00000000   Code   RO         1148    .ARM.Collect$$libinit$$00000017  c_w.l(libinit2.o)
-    0x08000136   0x08000136   0x00000000   Code   RO         1150    .ARM.Collect$$libinit$$00000019  c_w.l(libinit2.o)
-    0x08000136   0x08000136   0x00000000   Code   RO         1152    .ARM.Collect$$libinit$$0000001B  c_w.l(libinit2.o)
-    0x08000136   0x08000136   0x00000000   Code   RO         1154    .ARM.Collect$$libinit$$0000001D  c_w.l(libinit2.o)
-    0x08000136   0x08000136   0x00000000   Code   RO         1156    .ARM.Collect$$libinit$$0000001F  c_w.l(libinit2.o)
-    0x08000136   0x08000136   0x00000000   Code   RO         1158    .ARM.Collect$$libinit$$00000021  c_w.l(libinit2.o)
-    0x08000136   0x08000136   0x00000000   Code   RO         1160    .ARM.Collect$$libinit$$00000023  c_w.l(libinit2.o)
-    0x08000136   0x08000136   0x00000000   Code   RO         1162    .ARM.Collect$$libinit$$00000025  c_w.l(libinit2.o)
-    0x08000136   0x08000136   0x00000000   Code   RO         1166    .ARM.Collect$$libinit$$0000002C  c_w.l(libinit2.o)
-    0x08000136   0x08000136   0x00000000   Code   RO         1168    .ARM.Collect$$libinit$$0000002E  c_w.l(libinit2.o)
-    0x08000136   0x08000136   0x00000000   Code   RO         1170    .ARM.Collect$$libinit$$00000030  c_w.l(libinit2.o)
-    0x08000136   0x08000136   0x00000000   Code   RO         1172    .ARM.Collect$$libinit$$00000032  c_w.l(libinit2.o)
-    0x08000136   0x08000136   0x00000002   Code   RO         1173    .ARM.Collect$$libinit$$00000033  c_w.l(libinit2.o)
-    0x08000138   0x08000138   0x00000002   Code   RO         1193    .ARM.Collect$$libshutdown$$00000000  c_w.l(libshutdown.o)
-    0x0800013a   0x0800013a   0x00000000   Code   RO         1206    .ARM.Collect$$libshutdown$$00000002  c_w.l(libshutdown2.o)
-    0x0800013a   0x0800013a   0x00000000   Code   RO         1208    .ARM.Collect$$libshutdown$$00000004  c_w.l(libshutdown2.o)
-    0x0800013a   0x0800013a   0x00000000   Code   RO         1211    .ARM.Collect$$libshutdown$$00000007  c_w.l(libshutdown2.o)
-    0x0800013a   0x0800013a   0x00000000   Code   RO         1214    .ARM.Collect$$libshutdown$$0000000A  c_w.l(libshutdown2.o)
-    0x0800013a   0x0800013a   0x00000000   Code   RO         1216    .ARM.Collect$$libshutdown$$0000000C  c_w.l(libshutdown2.o)
-    0x0800013a   0x0800013a   0x00000000   Code   RO         1219    .ARM.Collect$$libshutdown$$0000000F  c_w.l(libshutdown2.o)
-    0x0800013a   0x0800013a   0x00000002   Code   RO         1220    .ARM.Collect$$libshutdown$$00000010  c_w.l(libshutdown2.o)
-    0x0800013c   0x0800013c   0x00000000   Code   RO         1098    .ARM.Collect$$rtentry$$00000000  c_w.l(__rtentry.o)
-    0x0800013c   0x0800013c   0x00000000   Code   RO         1100    .ARM.Collect$$rtentry$$00000002  c_w.l(__rtentry2.o)
-    0x0800013c   0x0800013c   0x00000006   Code   RO         1112    .ARM.Collect$$rtentry$$00000004  c_w.l(__rtentry4.o)
-    0x08000142   0x08000142   0x00000000   Code   RO         1102    .ARM.Collect$$rtentry$$00000009  c_w.l(__rtentry2.o)
-    0x08000142   0x08000142   0x00000004   Code   RO         1103    .ARM.Collect$$rtentry$$0000000A  c_w.l(__rtentry2.o)
-    0x08000146   0x08000146   0x00000000   Code   RO         1105    .ARM.Collect$$rtentry$$0000000C  c_w.l(__rtentry2.o)
-    0x08000146   0x08000146   0x00000008   Code   RO         1106    .ARM.Collect$$rtentry$$0000000D  c_w.l(__rtentry2.o)
-    0x0800014e   0x0800014e   0x00000002   Code   RO         1127    .ARM.Collect$$rtexit$$00000000  c_w.l(rtexit.o)
-    0x08000150   0x08000150   0x00000000   Code   RO         1175    .ARM.Collect$$rtexit$$00000002  c_w.l(rtexit2.o)
-    0x08000150   0x08000150   0x00000004   Code   RO         1176    .ARM.Collect$$rtexit$$00000003  c_w.l(rtexit2.o)
-    0x08000154   0x08000154   0x00000006   Code   RO         1177    .ARM.Collect$$rtexit$$00000004  c_w.l(rtexit2.o)
+    0x08000118   0x08000118   0x0000001c   Code   RO         1260    !!handler_zi        c_w.l(__scatter_zi.o)
+    0x08000134   0x08000134   0x00000002   Code   RO         1126    .ARM.Collect$$libinit$$00000000  c_w.l(libinit.o)
+    0x08000136   0x08000136   0x00000000   Code   RO         1133    .ARM.Collect$$libinit$$00000002  c_w.l(libinit2.o)
+    0x08000136   0x08000136   0x00000000   Code   RO         1135    .ARM.Collect$$libinit$$00000004  c_w.l(libinit2.o)
+    0x08000136   0x08000136   0x00000000   Code   RO         1138    .ARM.Collect$$libinit$$0000000A  c_w.l(libinit2.o)
+    0x08000136   0x08000136   0x00000000   Code   RO         1140    .ARM.Collect$$libinit$$0000000C  c_w.l(libinit2.o)
+    0x08000136   0x08000136   0x00000000   Code   RO         1142    .ARM.Collect$$libinit$$0000000E  c_w.l(libinit2.o)
+    0x08000136   0x08000136   0x00000000   Code   RO         1145    .ARM.Collect$$libinit$$00000011  c_w.l(libinit2.o)
+    0x08000136   0x08000136   0x00000000   Code   RO         1147    .ARM.Collect$$libinit$$00000013  c_w.l(libinit2.o)
+    0x08000136   0x08000136   0x00000000   Code   RO         1149    .ARM.Collect$$libinit$$00000015  c_w.l(libinit2.o)
+    0x08000136   0x08000136   0x00000000   Code   RO         1151    .ARM.Collect$$libinit$$00000017  c_w.l(libinit2.o)
+    0x08000136   0x08000136   0x00000000   Code   RO         1153    .ARM.Collect$$libinit$$00000019  c_w.l(libinit2.o)
+    0x08000136   0x08000136   0x00000000   Code   RO         1155    .ARM.Collect$$libinit$$0000001B  c_w.l(libinit2.o)
+    0x08000136   0x08000136   0x00000000   Code   RO         1157    .ARM.Collect$$libinit$$0000001D  c_w.l(libinit2.o)
+    0x08000136   0x08000136   0x00000000   Code   RO         1159    .ARM.Collect$$libinit$$0000001F  c_w.l(libinit2.o)
+    0x08000136   0x08000136   0x00000000   Code   RO         1161    .ARM.Collect$$libinit$$00000021  c_w.l(libinit2.o)
+    0x08000136   0x08000136   0x00000000   Code   RO         1163    .ARM.Collect$$libinit$$00000023  c_w.l(libinit2.o)
+    0x08000136   0x08000136   0x00000000   Code   RO         1165    .ARM.Collect$$libinit$$00000025  c_w.l(libinit2.o)
+    0x08000136   0x08000136   0x00000000   Code   RO         1169    .ARM.Collect$$libinit$$0000002C  c_w.l(libinit2.o)
+    0x08000136   0x08000136   0x00000000   Code   RO         1171    .ARM.Collect$$libinit$$0000002E  c_w.l(libinit2.o)
+    0x08000136   0x08000136   0x00000000   Code   RO         1173    .ARM.Collect$$libinit$$00000030  c_w.l(libinit2.o)
+    0x08000136   0x08000136   0x00000000   Code   RO         1175    .ARM.Collect$$libinit$$00000032  c_w.l(libinit2.o)
+    0x08000136   0x08000136   0x00000002   Code   RO         1176    .ARM.Collect$$libinit$$00000033  c_w.l(libinit2.o)
+    0x08000138   0x08000138   0x00000002   Code   RO         1196    .ARM.Collect$$libshutdown$$00000000  c_w.l(libshutdown.o)
+    0x0800013a   0x0800013a   0x00000000   Code   RO         1209    .ARM.Collect$$libshutdown$$00000002  c_w.l(libshutdown2.o)
+    0x0800013a   0x0800013a   0x00000000   Code   RO         1211    .ARM.Collect$$libshutdown$$00000004  c_w.l(libshutdown2.o)
+    0x0800013a   0x0800013a   0x00000000   Code   RO         1214    .ARM.Collect$$libshutdown$$00000007  c_w.l(libshutdown2.o)
+    0x0800013a   0x0800013a   0x00000000   Code   RO         1217    .ARM.Collect$$libshutdown$$0000000A  c_w.l(libshutdown2.o)
+    0x0800013a   0x0800013a   0x00000000   Code   RO         1219    .ARM.Collect$$libshutdown$$0000000C  c_w.l(libshutdown2.o)
+    0x0800013a   0x0800013a   0x00000000   Code   RO         1222    .ARM.Collect$$libshutdown$$0000000F  c_w.l(libshutdown2.o)
+    0x0800013a   0x0800013a   0x00000002   Code   RO         1223    .ARM.Collect$$libshutdown$$00000010  c_w.l(libshutdown2.o)
+    0x0800013c   0x0800013c   0x00000000   Code   RO         1101    .ARM.Collect$$rtentry$$00000000  c_w.l(__rtentry.o)
+    0x0800013c   0x0800013c   0x00000000   Code   RO         1103    .ARM.Collect$$rtentry$$00000002  c_w.l(__rtentry2.o)
+    0x0800013c   0x0800013c   0x00000006   Code   RO         1115    .ARM.Collect$$rtentry$$00000004  c_w.l(__rtentry4.o)
+    0x08000142   0x08000142   0x00000000   Code   RO         1105    .ARM.Collect$$rtentry$$00000009  c_w.l(__rtentry2.o)
+    0x08000142   0x08000142   0x00000004   Code   RO         1106    .ARM.Collect$$rtentry$$0000000A  c_w.l(__rtentry2.o)
+    0x08000146   0x08000146   0x00000000   Code   RO         1108    .ARM.Collect$$rtentry$$0000000C  c_w.l(__rtentry2.o)
+    0x08000146   0x08000146   0x00000008   Code   RO         1109    .ARM.Collect$$rtentry$$0000000D  c_w.l(__rtentry2.o)
+    0x0800014e   0x0800014e   0x00000002   Code   RO         1130    .ARM.Collect$$rtexit$$00000000  c_w.l(rtexit.o)
+    0x08000150   0x08000150   0x00000000   Code   RO         1178    .ARM.Collect$$rtexit$$00000002  c_w.l(rtexit2.o)
+    0x08000150   0x08000150   0x00000004   Code   RO         1179    .ARM.Collect$$rtexit$$00000003  c_w.l(rtexit2.o)
+    0x08000154   0x08000154   0x00000006   Code   RO         1180    .ARM.Collect$$rtexit$$00000004  c_w.l(rtexit2.o)
     0x0800015a   0x0800015a   0x00000002   PAD
     0x0800015c   0x0800015c   0x00000040   Code   RO          109  * .text               startup_mdr32f9qx.o
-    0x0800019c   0x0800019c   0x00000006   Code   RO         1094    .text               c_w.l(heapauxi.o)
-    0x080001a2   0x080001a2   0x0000004a   Code   RO         1114    .text               c_w.l(sys_stackheap_outer.o)
-    0x080001ec   0x080001ec   0x00000012   Code   RO         1116    .text               c_w.l(exit.o)
+    0x0800019c   0x0800019c   0x00000006   Code   RO         1097    .text               c_w.l(heapauxi.o)
+    0x080001a2   0x080001a2   0x0000004a   Code   RO         1117    .text               c_w.l(sys_stackheap_outer.o)
+    0x080001ec   0x080001ec   0x00000012   Code   RO         1119    .text               c_w.l(exit.o)
     0x080001fe   0x080001fe   0x00000002   PAD
-    0x08000200   0x08000200   0x00000008   Code   RO         1124    .text               c_w.l(libspace.o)
-    0x08000208   0x08000208   0x0000000c   Code   RO         1185    .text               c_w.l(sys_exit.o)
-    0x08000214   0x08000214   0x00000002   Code   RO         1196    .text               c_w.l(use_no_semi.o)
-    0x08000216   0x08000216   0x00000000   Code   RO         1198    .text               c_w.l(indicate_semi.o)
+    0x08000200   0x08000200   0x00000008   Code   RO         1127    .text               c_w.l(libspace.o)
+    0x08000208   0x08000208   0x0000000c   Code   RO         1188    .text               c_w.l(sys_exit.o)
+    0x08000214   0x08000214   0x00000002   Code   RO         1199    .text               c_w.l(use_no_semi.o)
+    0x08000216   0x08000216   0x00000000   Code   RO         1201    .text               c_w.l(indicate_semi.o)
     0x08000216   0x08000216   0x00000002   PAD
     0x08000218   0x08000218   0x0000000c   Code   RO          157    i.RST_CLK_CPU_PLLcmd  mdr32f9qx_rst_clk.o
     0x08000224   0x08000224   0x00000040   Code   RO          158    i.RST_CLK_CPU_PLLconfig  mdr32f9qx_rst_clk.o
@@ -867,45 +867,45 @@ Memory Map of the image
     0x0800042c   0x0800042c   0x00000090   Code   RO          115    i.SystemCoreClockUpdate  system_mdr32f9qx.o
     0x080004bc   0x080004bc   0x00000040   Code   RO          116    i.SystemInit        system_mdr32f9qx.o
     0x080004fc   0x080004fc   0x0000003c   Code   RO          372    i.USB_BRGInit       mdr32f9qx_usb.o
-    0x08000538   0x08000538   0x000000a0   Code   RO          746    i.USB_CDC_ClassRequest  mdr32f9qx_usb_cdc.o
-    0x080005d8   0x080005d8   0x00000040   Code   RO          747    i.USB_CDC_DoDataOut  mdr32f9qx_usb_cdc.o
-    0x08000618   0x08000618   0x00000064   Code   RO          752    i.USB_CDC_GetDescriptor  mdr32f9qx_usb_cdc.o
+    0x08000538   0x08000538   0x000000a0   Code   RO          749    i.USB_CDC_ClassRequest  mdr32f9qx_usb_cdc.o
+    0x080005d8   0x080005d8   0x00000040   Code   RO          750    i.USB_CDC_DoDataOut  mdr32f9qx_usb_cdc.o
+    0x08000618   0x08000618   0x00000064   Code   RO          755    i.USB_CDC_GetDescriptor  mdr32f9qx_usb_cdc.o
     0x0800067c   0x0800067c   0x00000018   Code   RO            5    i.USB_CDC_GetLineCoding  main.o
-    0x08000694   0x08000694   0x0000002c   Code   RO          753    i.USB_CDC_Init      mdr32f9qx_usb_cdc.o
-    0x080006c0   0x080006c0   0x00000044   Code   RO          754    i.USB_CDC_OnDataReceive  mdr32f9qx_usb_cdc.o
-    0x08000704   0x08000704   0x00000010   Code   RO          755    i.USB_CDC_OnDataSent  mdr32f9qx_usb_cdc.o
+    0x08000694   0x08000694   0x0000002c   Code   RO          756    i.USB_CDC_Init      mdr32f9qx_usb_cdc.o
+    0x080006c0   0x080006c0   0x00000044   Code   RO          757    i.USB_CDC_OnDataReceive  mdr32f9qx_usb_cdc.o
+    0x08000704   0x08000704   0x00000010   Code   RO          758    i.USB_CDC_OnDataSent  mdr32f9qx_usb_cdc.o
     0x08000714   0x08000714   0x00000014   Code   RO            6    i.USB_CDC_RecieveData  main.o
-    0x08000728   0x08000728   0x0000004c   Code   RO          758    i.USB_CDC_Reset     mdr32f9qx_usb_cdc.o
-    0x08000774   0x08000774   0x00000030   Code   RO          759    i.USB_CDC_SendData  mdr32f9qx_usb_cdc.o
+    0x08000728   0x08000728   0x0000004c   Code   RO          761    i.USB_CDC_Reset     mdr32f9qx_usb_cdc.o
+    0x08000774   0x08000774   0x00000030   Code   RO          762    i.USB_CDC_SendData  mdr32f9qx_usb_cdc.o
     0x080007a4   0x080007a4   0x0000001c   Code   RO            7    i.USB_CDC_SetLineCoding  main.o
-    0x080007c0   0x080007c0   0x00000010   Code   RO          760    i.USB_CDC_SetReceiveBuffer  mdr32f9qx_usb_cdc.o
-    0x080007d0   0x080007d0   0x0000001a   Code   RO          853    i.USB_DeviceClearFeature  mdr32f9qx_usb_device.o
+    0x080007c0   0x080007c0   0x00000010   Code   RO          763    i.USB_CDC_SetReceiveBuffer  mdr32f9qx_usb_cdc.o
+    0x080007d0   0x080007d0   0x0000001a   Code   RO          856    i.USB_DeviceClearFeature  mdr32f9qx_usb_device.o
     0x080007ea   0x080007ea   0x00000002   PAD
-    0x080007ec   0x080007ec   0x00000084   Code   RO          854    i.USB_DeviceDispatchEvent  mdr32f9qx_usb_device.o
-    0x08000870   0x08000870   0x00000016   Code   RO          856    i.USB_DeviceDoStatusOutAck  mdr32f9qx_usb_device.o
+    0x080007ec   0x080007ec   0x00000084   Code   RO          857    i.USB_DeviceDispatchEvent  mdr32f9qx_usb_device.o
+    0x08000870   0x08000870   0x00000016   Code   RO          859    i.USB_DeviceDoStatusOutAck  mdr32f9qx_usb_device.o
     0x08000886   0x08000886   0x00000002   PAD
-    0x08000888   0x08000888   0x00000058   Code   RO          869    i.USB_DeviceInit    mdr32f9qx_usb_device.o
-    0x080008e0   0x080008e0   0x00000018   Code   RO          871    i.USB_DevicePowerOn  mdr32f9qx_usb_device.o
-    0x080008f8   0x080008f8   0x00000010   Code   RO          872    i.USB_DeviceReset   mdr32f9qx_usb_device.o
-    0x08000908   0x08000908   0x0000001c   Code   RO          874    i.USB_DeviceSetFeature  mdr32f9qx_usb_device.o
-    0x08000924   0x08000924   0x00000268   Code   RO          875    i.USB_DeviceSetupPacket  mdr32f9qx_usb_device.o
-    0x08000b8c   0x08000b8c   0x00000028   Code   RO          877    i.USB_Device_setAddressWork  mdr32f9qx_usb_device.o
-    0x08000bb4   0x08000bb4   0x00000040   Code   RO          878    i.USB_EP_Idle       mdr32f9qx_usb_device.o
-    0x08000bf4   0x08000bf4   0x00000048   Code   RO          879    i.USB_EP_Init       mdr32f9qx_usb_device.o
-    0x08000c3c   0x08000c3c   0x0000002c   Code   RO          881    i.USB_EP_SetReady   mdr32f9qx_usb_device.o
-    0x08000c68   0x08000c68   0x00000044   Code   RO          882    i.USB_EP_Stall      mdr32f9qx_usb_device.o
-    0x08000cac   0x08000cac   0x00000250   Code   RO          883    i.USB_EP_dispatchEvent  mdr32f9qx_usb_device.o
-    0x08000efc   0x08000efc   0x0000004c   Code   RO          884    i.USB_EP_doDataIn   mdr32f9qx_usb_device.o
-    0x08000f48   0x08000f48   0x0000003c   Code   RO          885    i.USB_EP_doDataOut  mdr32f9qx_usb_device.o
-    0x08000f84   0x08000f84   0x0000007c   Code   RO          886    i.USB_EP_sendInDataPortion  mdr32f9qx_usb_device.o
-    0x08001000   0x08001000   0x00000040   Code   RO          887    i.USB_EP_setSetupHandler  mdr32f9qx_usb_device.o
+    0x08000888   0x08000888   0x00000058   Code   RO          872    i.USB_DeviceInit    mdr32f9qx_usb_device.o
+    0x080008e0   0x080008e0   0x00000018   Code   RO          874    i.USB_DevicePowerOn  mdr32f9qx_usb_device.o
+    0x080008f8   0x080008f8   0x00000010   Code   RO          875    i.USB_DeviceReset   mdr32f9qx_usb_device.o
+    0x08000908   0x08000908   0x0000001c   Code   RO          877    i.USB_DeviceSetFeature  mdr32f9qx_usb_device.o
+    0x08000924   0x08000924   0x00000268   Code   RO          878    i.USB_DeviceSetupPacket  mdr32f9qx_usb_device.o
+    0x08000b8c   0x08000b8c   0x00000028   Code   RO          880    i.USB_Device_setAddressWork  mdr32f9qx_usb_device.o
+    0x08000bb4   0x08000bb4   0x00000040   Code   RO          881    i.USB_EP_Idle       mdr32f9qx_usb_device.o
+    0x08000bf4   0x08000bf4   0x00000048   Code   RO          882    i.USB_EP_Init       mdr32f9qx_usb_device.o
+    0x08000c3c   0x08000c3c   0x0000002c   Code   RO          884    i.USB_EP_SetReady   mdr32f9qx_usb_device.o
+    0x08000c68   0x08000c68   0x00000044   Code   RO          885    i.USB_EP_Stall      mdr32f9qx_usb_device.o
+    0x08000cac   0x08000cac   0x00000250   Code   RO          886    i.USB_EP_dispatchEvent  mdr32f9qx_usb_device.o
+    0x08000efc   0x08000efc   0x0000004c   Code   RO          887    i.USB_EP_doDataIn   mdr32f9qx_usb_device.o
+    0x08000f48   0x08000f48   0x0000003c   Code   RO          888    i.USB_EP_doDataOut  mdr32f9qx_usb_device.o
+    0x08000f84   0x08000f84   0x0000007c   Code   RO          889    i.USB_EP_sendInDataPortion  mdr32f9qx_usb_device.o
+    0x08001000   0x08001000   0x00000040   Code   RO          890    i.USB_EP_setSetupHandler  mdr32f9qx_usb_device.o
     0x08001040   0x08001040   0x00000010   Code   RO          397    i.USB_GetSEPxCTRL   mdr32f9qx_usb.o
     0x08001050   0x08001050   0x00000010   Code   RO          400    i.USB_GetSEPxRXFD   mdr32f9qx_usb.o
     0x08001060   0x08001060   0x00000010   Code   RO          401    i.USB_GetSEPxRXFDC  mdr32f9qx_usb.o
     0x08001070   0x08001070   0x00000010   Code   RO          402    i.USB_GetSEPxSTS    mdr32f9qx_usb.o
     0x08001080   0x08001080   0x00000010   Code   RO          403    i.USB_GetSEPxTS     mdr32f9qx_usb.o
     0x08001090   0x08001090   0x0000000c   Code   RO          408    i.USB_GetSIS        mdr32f9qx_usb.o
-    0x0800109c   0x0800109c   0x00000008   Code   RO          888    i.USB_IRQHandler    mdr32f9qx_usb_device.o
+    0x0800109c   0x0800109c   0x00000008   Code   RO          891    i.USB_IRQHandler    mdr32f9qx_usb_device.o
     0x080010a4   0x080010a4   0x0000001e   Code   RO          410    i.USB_Reset         mdr32f9qx_usb.o
     0x080010c2   0x080010c2   0x00000002   PAD
     0x080010c4   0x080010c4   0x0000001c   Code   RO          411    i.USB_SEPxToggleEPDATASEQ  mdr32f9qx_usb.o
@@ -920,7 +920,7 @@ Memory Map of the image
     0x080011a8   0x080011a8   0x0000000c   Code   RO          431    i.USB_SetSIS        mdr32f9qx_usb.o
     0x080011b4   0x080011b4   0x00000018   Code   RO            8    i.VCom_Configuration  main.o
     0x080011cc   0x080011cc   0x00000020   Code   RO            9    i.main              main.o
-    0x080011ec   0x080011ec   0x00000020   Data   RO         1251    Region$$Table       anon$$obj.o
+    0x080011ec   0x080011ec   0x00000020   Data   RO         1254    Region$$Table       anon$$obj.o
 
 
     Execution Region ER_RW (Exec base: 0x20000000, Load base: 0x0800120c, Size: 0x00000084, Max: 0xffffffff, ABSOLUTE)
@@ -929,8 +929,8 @@ Memory Map of the image
 
     0x20000000   0x0800120c   0x00000010   Data   RW           11    .data               main.o
     0x20000010   0x0800121c   0x00000004   Data   RW          117    .data               system_mdr32f9qx.o
-    0x20000014   0x08001220   0x00000060   Data   RW          762    .data               mdr32f9qx_usb_cdc.o
-    0x20000074   0x08001280   0x00000010   Data   RW          890    .data               mdr32f9qx_usb_device.o
+    0x20000014   0x08001220   0x00000060   Data   RW          765    .data               mdr32f9qx_usb_cdc.o
+    0x20000074   0x08001280   0x00000010   Data   RW          893    .data               mdr32f9qx_usb_device.o
 
 
     Execution Region ER_ZI (Exec base: 0x20000084, Load base: 0x08001290, Size: 0x0000079c, Max: 0xffffffff, ABSOLUTE)
@@ -938,9 +938,9 @@ Memory Map of the image
     Exec Addr    Load Addr    Size         Type   Attr      Idx    E Section Name        Object
 
     0x20000084        -       0x00000070   Zero   RW           10    .bss                main.o
-    0x200000f4        -       0x0000000c   Zero   RW          761    .bss                mdr32f9qx_usb_cdc.o
-    0x20000100        -       0x000000bc   Zero   RW          889    .bss                mdr32f9qx_usb_device.o
-    0x200001bc        -       0x00000060   Zero   RW         1125    .bss                c_w.l(libspace.o)
+    0x200000f4        -       0x0000000c   Zero   RW          764    .bss                mdr32f9qx_usb_cdc.o
+    0x20000100        -       0x000000bc   Zero   RW          892    .bss                mdr32f9qx_usb_device.o
+    0x200001bc        -       0x00000060   Zero   RW         1128    .bss                c_w.l(libspace.o)
     0x2000021c   0x08001290   0x00000004   PAD
     0x20000220        -       0x00000200   Zero   RW          107    HEAP                startup_mdr32f9qx.o
     0x20000420        -       0x00000400   Zero   RW          106    STACK               startup_mdr32f9qx.o
@@ -955,14 +955,14 @@ Image component sizes
 
        280         28          0         16        112     113057   main.o
        380         52          0          0          0       9848   mdr32f9qx_rst_clk.o
-       422        102          0          0          0      12410   mdr32f9qx_usb.o
+       422        102          0          0          0      12530   mdr32f9qx_usb.o
        592         80          0         96         12       8692   mdr32f9qx_usb_cdc.o
       2164        124          0         16        188      45845   mdr32f9qx_usb_device.o
         64         26        192          0       1536        816   startup_mdr32f9qx.o
        208         24          0          4          0       1403   system_mdr32f9qx.o
 
     ----------------------------------------------------------------------
-      4116        436        224        132       1848     192071   Object Totals
+      4116        436        224        132       1848     192191   Object Totals
          0          0         32          0          0          0   (incl. Generated)
          6          0          0          0          0          0   (incl. Padding)
 
@@ -1011,8 +1011,8 @@ Image component sizes
 
       Code (inc. data)   RO Data    RW Data    ZI Data      Debug   
 
-      4396        452        224        132       1948     189323   Grand Totals
-      4396        452        224        132       1948     189323   ELF Image Totals
+      4396        452        224        132       1948     189443   Grand Totals
+      4396        452        224        132       1948     189443   ELF Image Totals
       4396        452        224        132          0          0   ROM Totals
 
 ==============================================================================

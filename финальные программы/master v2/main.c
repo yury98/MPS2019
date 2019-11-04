@@ -5,6 +5,7 @@
 #include "MDR32F9Qx_port.h"
 #include "MDR32F9Qx_rst_clk.h"
 #include "1986BE9x_it.h"
+#include "MDR32F9Qx_can.h"              // Keil::Drivers:CAN
 #include "mlt_lcd.h"
 //#include "font.h"
 //#include "MilFlash.h"
@@ -38,9 +39,11 @@ char Can1Flag = 0;
 char Can2Flag = 0;
 char LedFlag = 0;
 
+char TestCanDone = 0;
 char TestUartDone = 0;
 char USBFlag = 0;
-
+char CanFlag = 0;
+__IO uint32_t tx_buf = 1;
 static PORT_InitTypeDef PortInit;
 
 
@@ -342,6 +345,32 @@ LedExit:
 	return 0;
 }
 
+int CanTest (void)
+{
+	CAN_ports_ini();
+	CAN_Setup();
+	CAN_TxMsgTypeDef TxMsg;
+	DELAY(1000000);
+	/* transmit */
+  TxMsg.IDE     = CAN_ID_EXT;
+  TxMsg.DLC     = 0x04;
+  TxMsg.PRIOR_0 = DISABLE;
+  TxMsg.ID      = 0x15555555;
+  TxMsg.Data[1] = 0;
+  TxMsg.Data[0] = 0x12345678;
+
+  CAN_Transmit(MDR_CAN1, tx_buf, &TxMsg);
+	TestCanDone = 1;	
+		do
+		{
+			if (PORT_ReadInputDataBit(MDR_PORTE,PORT_Pin_3) == 0)
+			{
+				goto exit;
+			}
+		} while (1);
+	exit: return 0;
+}
+
 // ????????? ???????????? UART
 int UartTest (void)
 {
@@ -372,6 +401,7 @@ uint8_t DataByte = 'm';
 		} while (1);
 	exit: return 0;
 }
+
 
 int USBTest (void)
 {
@@ -449,9 +479,10 @@ char s1;
 			while ( ! PORT_ReadInputDataBit(MDR_PORTC,PORT_Pin_2) ) {};
 			if (MenuMainItem == 0)
 			{
-				LedFlag = 1;
-				LedTest();
-				LedFlag = 0;
+				CanFlag = 1;
+				CanTest();
+				CanFlag = 0;
+				TestCanDone = 0;
 			}
 			if (MenuMainItem == 1)
 			{

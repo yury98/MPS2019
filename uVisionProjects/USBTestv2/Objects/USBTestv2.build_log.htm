@@ -29,6 +29,7 @@ Project File Date:  10/27/2019
 Rebuild target 'Target 1'
 assembling startup_MDR32F9Qx.s...
 compiling system_MDR32F9Qx.c...
+compiling MDR32F9Qx_rst_clk.c...
 compiling main.c...
 main.c(181): warning:  #550-D: variable "result"  was set but never used
     USB_Result result;
@@ -37,7 +38,6 @@ compiling MDR32F9Qx_usb_CDC.c...
 C:\Users\Yurez\AppData\Local\Arm\Packs\Keil\MDR1986BExx\1.5.3\Libraries\MDR32F9Qx_StdPeriph_Driver\src\USB_Library\MDR32F9Qx_usb_CDC.c(478): warning:  #177-D: variable "wValue"  was declared but never referenced
     uint16_t wValue = USB_CurrentSetupPacket.wValue,
 C:\Users\Yurez\AppData\Local\Arm\Packs\Keil\MDR1986BExx\1.5.3\Libraries\MDR32F9Qx_StdPeriph_Driver\src\USB_Library\MDR32F9Qx_usb_CDC.c: 1 warning, 0 errors
-compiling MDR32F9Qx_rst_clk.c...
 compiling MDR32F9Qx_usb.c...
 compiling MDR32F9Qx_usb_device.c...
 linking...
@@ -66,25 +66,25 @@ Package Vendor: Keil
 <h2>Collection of Component Files used:</h2>
 
    * Component: Keil::Device:Startup:1.5
-      Include file:  Config\MDR32F9Qx_config.h
-      Include file:  Libraries\CMSIS\CM3\CoreSupport\core_cm3.h
-      Source file:   Libraries\CMSIS\CM3\DeviceSupport\MDR32F9Qx\startup\arm\startup_MDR32F9Qx.s
       Include file:  Libraries\CMSIS\CM3\DeviceSupport\MDR32F9Qx\startup\arm\system_MDR32F9Qx.h
+      Source file:   Libraries\CMSIS\CM3\DeviceSupport\MDR32F9Qx\startup\arm\startup_MDR32F9Qx.s
       Source file:   Libraries\CMSIS\CM3\DeviceSupport\MDR32F9Qx\startup\arm\system_MDR32F9Qx.c
+      Include file:  Libraries\CMSIS\CM3\CoreSupport\core_cm3.h
+      Include file:  Config\MDR32F9Qx_config.h
 
    * Component: Keil::Drivers:RST_CLK:1.5
-      Include file:  Libraries\MDR32F9Qx_StdPeriph_Driver\inc\MDR32F9Qx_rst_clk.h
       Source file:   Libraries\MDR32F9Qx_StdPeriph_Driver\src\MDR32F9Qx_rst_clk.c
+      Include file:  Libraries\MDR32F9Qx_StdPeriph_Driver\inc\MDR32F9Qx_rst_clk.h
 
    * Component: Keil::Drivers:USB Library:1.5
-      Source file:   Libraries\MDR32F9Qx_StdPeriph_Driver\src\USB_Library\MDR32F9Qx_usb_device.c
-      Include file:  Libraries\MDR32F9Qx_StdPeriph_Driver\inc\USB_Library\MDR32F9Qx_usb_device.h
       Include file:  Libraries\MDR32F9Qx_StdPeriph_Driver\inc\USB_Library\MDR32F9Qx_usb_CDC.h
       Source file:   Libraries\MDR32F9Qx_StdPeriph_Driver\src\USB_Library\MDR32F9Qx_usb_CDC.c
+      Source file:   Libraries\MDR32F9Qx_StdPeriph_Driver\src\USB_Library\MDR32F9Qx_usb_device.c
+      Include file:  Libraries\MDR32F9Qx_StdPeriph_Driver\inc\USB_Library\MDR32F9Qx_usb_device.h
 
    * Component: Keil::Drivers:USB:1.5
-      Source file:   Libraries\MDR32F9Qx_StdPeriph_Driver\src\MDR32F9Qx_usb.c
       Include file:  Libraries\MDR32F9Qx_StdPeriph_Driver\inc\MDR32F9Qx_usb.h
+      Source file:   Libraries\MDR32F9Qx_StdPeriph_Driver\src\MDR32F9Qx_usb.c
 Build Time Elapsed:  00:00:00
 </pre>
 </body>

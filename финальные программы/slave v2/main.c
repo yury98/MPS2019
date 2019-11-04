@@ -39,7 +39,10 @@ char LedFlag = 0;
 
 char USBFlag = 0;
 char TestUartDone = 0;
-
+char TestCanDone = 0;
+char CanFlag = 0;
+__IO uint32_t rx_buf = 0;
+__IO uint32_t tx_buf = 1;
 static PORT_InitTypeDef PortInit;
 static UART_InitTypeDef UART_InitStructure;
 
@@ -342,11 +345,25 @@ LedExit:
 	return 0;*/
 }
 
+int CanTest (void)
+{
+	CAN_ports_ini();
+	CAN_Setup();
+		do
+		{
+			if (PORT_ReadInputDataBit(MDR_PORTE,PORT_Pin_3) == 0)
+			{
+				goto exit;
+			}
+		} while (1);
+	exit: return 0;
+}
+
 // ????????? ???????????? UART
 int UartTest (void)
 {
 uint8_t DataByte;
-
+	if (UART_GetFlagStatus (MDR_UART2, UART_FLAG_RXFF)== SET) UART_ReceiveData (MDR_UART2);
 	Uart2PinCfg();
 	Uart2Setup();
     // ???????? ????? RXFF
@@ -446,9 +463,11 @@ char s1;
 			while ( ! PORT_ReadInputDataBit(MDR_PORTC,PORT_Pin_2) ) {};
 			if (MenuMainItem == 0)
 			{
-				LedFlag = 1;
-				LedTest();
-				LedFlag = 0;
+				TestCanDone = 0;
+				CanFlag = 1;
+				CanTest();
+				CanFlag = 0;
+				TestCanDone = 0;
 			}
 			if (MenuMainItem == 1)
 			{
@@ -464,6 +483,7 @@ char s1;
 			}
 			if (MenuMainItem == 3)
 			{
+				TestUartDone = 0;
 				UartFlag = 1;
 				UartTest();
 				UartFlag = 0;

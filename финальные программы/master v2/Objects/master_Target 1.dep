@@ -1,5 +1,5 @@
 Dependencies for Project 'master', Target 'Target 1': (DO NOT MODIFY !)
-F (.\main.c)(0x5DC046EF)(--c99 --gnu -c --cpu Cortex-M3 -D__EVAL -g -O0 --apcs=interwork --split_sections-I.\RTE\Device\MDR1986BE92-I.\RTE\_Target_1-IC:\Users\Yurez\AppData\Local\Arm\Packs\Keil\MDR1986BExx\1.5.3\Libraries\CMSIS\CM3\CoreSupport-IC:\Users\Yurez\AppData\Local\Arm\Packs\Keil\MDR1986BExx\1.5.3\Libraries\CMSIS\CM3\DeviceSupport\MDR32F9Qx\inc-IC:\Users\Yurez\AppData\Local\Arm\Packs\Keil\MDR1986BExx\1.5.3\Libraries\MDR32F9Qx_StdPeriph_Driver\inc-IC:\Users\Yurez\AppData\Local\Arm\Packs\Keil\MDR1986BExx\1.5.3\Libraries\MDR32F9Qx_StdPeriph_Driver\inc\USB_Library-IC:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="528" -D_RTE_ -DUSE_MDR32F9Q2_Rev1-o .\objects\main.o --omf_browse .\objects\main.crf --depend .\objects\main.d)
+F (.\main.c)(0x5DC06541)(--c99 --gnu -c --cpu Cortex-M3 -D__EVAL -g -O0 --apcs=interwork --split_sections-I.\RTE\Device\MDR1986BE92-I.\RTE\_Target_1-IC:\Users\Yurez\AppData\Local\Arm\Packs\Keil\MDR1986BExx\1.5.3\Libraries\CMSIS\CM3\CoreSupport-IC:\Users\Yurez\AppData\Local\Arm\Packs\Keil\MDR1986BExx\1.5.3\Libraries\CMSIS\CM3\DeviceSupport\MDR32F9Qx\inc-IC:\Users\Yurez\AppData\Local\Arm\Packs\Keil\MDR1986BExx\1.5.3\Libraries\MDR32F9Qx_StdPeriph_Driver\inc-IC:\Users\Yurez\AppData\Local\Arm\Packs\Keil\MDR1986BExx\1.5.3\Libraries\MDR32F9Qx_StdPeriph_Driver\inc\USB_Library-IC:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="528" -D_RTE_ -DUSE_MDR32F9Q2_Rev1-o .\objects\main.o --omf_browse .\objects\main.crf --depend .\objects\main.d)
 I (MDR32F9Qx_config.h)(0x5C540D10)
 I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5CEBC032)
 I (C:\Users\Yurez\AppData\Local\Arm\Packs\Keil\MDR1986BExx\1.5.3\Libraries\CMSIS\CM3\DeviceSupport\MDR32F9Qx\inc\MDR32Fx.h)(0x5B0677C2)
@@ -13,18 +13,20 @@ I (C:\Users\Yurez\AppData\Local\Arm\Packs\Keil\MDR1986BExx\1.5.3\Libraries\MDR32
 I (C:\Users\Yurez\AppData\Local\Arm\Packs\Keil\MDR1986BExx\1.5.3\Libraries\MDR32F9Qx_StdPeriph_Driver\inc\MDR32F9Qx_port.h)(0x5B067368)
 I (C:\Users\Yurez\AppData\Local\Arm\Packs\Keil\MDR1986BExx\1.5.3\Libraries\MDR32F9Qx_StdPeriph_Driver\inc\MDR32F9Qx_rst_clk.h)(0x5D491B32)
 I (1986BE9x_it.h)(0x5DC02656)
+I (C:\Users\Yurez\AppData\Local\Arm\Packs\Keil\MDR1986BExx\1.5.3\Libraries\MDR32F9Qx_StdPeriph_Driver\inc\MDR32F9Qx_can.h)(0x5D491BCE)
 I (mlt_lcd.h)(0x5DC027ED)
-F (.\1986be9x_it.c)(0x5DC04279)(--c99 --gnu -c --cpu Cortex-M3 -D__EVAL -g -O0 --apcs=interwork --split_sections-I.\RTE\Device\MDR1986BE92-I.\RTE\_Target_1-IC:\Users\Yurez\AppData\Local\Arm\Packs\Keil\MDR1986BExx\1.5.3\Libraries\CMSIS\CM3\CoreSupport-IC:\Users\Yurez\AppData\Local\Arm\Packs\Keil\MDR1986BExx\1.5.3\Libraries\CMSIS\CM3\DeviceSupport\MDR32F9Qx\inc-IC:\Users\Yurez\AppData\Local\Arm\Packs\Keil\MDR1986BExx\1.5.3\Libraries\MDR32F9Qx_StdPeriph_Driver\inc-IC:\Users\Yurez\AppData\Local\Arm\Packs\Keil\MDR1986BExx\1.5.3\Libraries\MDR32F9Qx_StdPeriph_Driver\inc\USB_Library-IC:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="528" -D_RTE_ -DUSE_MDR32F9Q2_Rev1-o .\objects\1986be9x_it.o --omf_browse .\objects\1986be9x_it.crf --depend .\objects\1986be9x_it.d)
-I (1986BE9x_it.h)(0x5DC02656)
+F (.\1986be9x_it.c)(0x5DC05510)(--c99 --gnu -c --cpu Cortex-M3 -D__EVAL -g -O0 --apcs=interwork --split_sections-I.\RTE\Device\MDR1986BE92-I.\RTE\_Target_1-IC:\Users\Yurez\AppData\Local\Arm\Packs\Keil\MDR1986BExx\1.5.3\Libraries\CMSIS\CM3\CoreSupport-IC:\Users\Yurez\AppData\Local\Arm\Packs\Keil\MDR1986BExx\1.5.3\Libraries\CMSIS\CM3\DeviceSupport\MDR32F9Qx\inc-IC:\Users\Yurez\AppData\Local\Arm\Packs\Keil\MDR1986BExx\1.5.3\Libraries\MDR32F9Qx_StdPeriph_Driver\inc-IC:\Users\Yurez\AppData\Local\Arm\Packs\Keil\MDR1986BExx\1.5.3\Libraries\MDR32F9Qx_StdPeriph_Driver\inc\USB_Library-IC:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="528" -D_RTE_ -DUSE_MDR32F9Q2_Rev1-o .\objects\1986be9x_it.o --omf_browse .\objects\1986be9x_it.crf --depend .\objects\1986be9x_it.d)
+I (C:\Users\Yurez\AppData\Local\Arm\Packs\Keil\MDR1986BExx\1.5.3\Libraries\MDR32F9Qx_StdPeriph_Driver\inc\MDR32F9Qx_can.h)(0x5D491BCE)
+I (.\RTE\Device\MDR1986BE92\MDR32F9Qx_config.h)(0x5DC035E0)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5CEBC032)
 I (C:\Users\Yurez\AppData\Local\Arm\Packs\Keil\MDR1986BExx\1.5.3\Libraries\CMSIS\CM3\DeviceSupport\MDR32F9Qx\inc\MDR32Fx.h)(0x5B0677C2)
 I (C:\Users\Yurez\AppData\Local\Arm\Packs\Keil\MDR1986BExx\1.5.3\Libraries\CMSIS\CM3\CoreSupport\core_cm3.h)(0x5AF36DC8)
-I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5CEBC032)
 I (C:\Users\Yurez\AppData\Local\Arm\Packs\Keil\MDR1986BExx\1.5.3\Libraries\CMSIS\CM3\CoreSupport\core_cmInstr.h)(0x5AF36DC8)
 I (C:\Users\Yurez\AppData\Local\Arm\Packs\Keil\MDR1986BExx\1.5.3\Libraries\CMSIS\CM3\CoreSupport\core_cmFunc.h)(0x5AF36DC8)
 I (.\RTE\Device\MDR1986BE92\system_MDR32F9Qx.h)(0x5B0677F6)
-I (C:\Users\Yurez\AppData\Local\Arm\Packs\Keil\MDR1986BExx\1.5.3\Libraries\MDR32F9Qx_StdPeriph_Driver\inc\MDR32F9Qx_uart.h)(0x5D491BB6)
-I (.\RTE\Device\MDR1986BE92\MDR32F9Qx_config.h)(0x5DC035E0)
 I (C:\Users\Yurez\AppData\Local\Arm\Packs\Keil\MDR1986BExx\1.5.3\Libraries\MDR32F9Qx_StdPeriph_Driver\inc\MDR32F9Qx_lib.h)(0x5B067348)
+I (1986BE9x_it.h)(0x5DC02656)
+I (C:\Users\Yurez\AppData\Local\Arm\Packs\Keil\MDR1986BExx\1.5.3\Libraries\MDR32F9Qx_StdPeriph_Driver\inc\MDR32F9Qx_uart.h)(0x5D491BB6)
 I (mlt_lcd.h)(0x5DC027ED)
 I (C:\Users\Yurez\AppData\Local\Arm\Packs\Keil\MDR1986BExx\1.5.3\Libraries\MDR32F9Qx_StdPeriph_Driver\inc\MDR32F9Qx_port.h)(0x5B067368)
 I (font.h)(0x5DC0046F)
@@ -56,6 +58,19 @@ I (.\RTE\Device\MDR1986BE92\MDR32F9Qx_config.h)(0x5DC035E0)
 I (C:\Users\Yurez\AppData\Local\Arm\Packs\Keil\MDR1986BExx\1.5.3\Libraries\MDR32F9Qx_StdPeriph_Driver\inc\MDR32F9Qx_lib.h)(0x5B067348)
 I (C:\Users\Yurez\AppData\Local\Arm\Packs\Keil\MDR1986BExx\1.5.3\Libraries\MDR32F9Qx_StdPeriph_Driver\inc\MDR32F9Qx_port.h)(0x5B067368)
 I (C:\Users\Yurez\AppData\Local\Arm\Packs\Keil\MDR1986BExx\1.5.3\Libraries\MDR32F9Qx_StdPeriph_Driver\inc\MDR32F9Qx_rst_clk.h)(0x5D491B32)
+F (.\CAN_main.c)(0x5DC05491)(--c99 --gnu -c --cpu Cortex-M3 -D__EVAL -g -O0 --apcs=interwork --split_sections-I.\RTE\Device\MDR1986BE92-I.\RTE\_Target_1-IC:\Users\Yurez\AppData\Local\Arm\Packs\Keil\MDR1986BExx\1.5.3\Libraries\CMSIS\CM3\CoreSupport-IC:\Users\Yurez\AppData\Local\Arm\Packs\Keil\MDR1986BExx\1.5.3\Libraries\CMSIS\CM3\DeviceSupport\MDR32F9Qx\inc-IC:\Users\Yurez\AppData\Local\Arm\Packs\Keil\MDR1986BExx\1.5.3\Libraries\MDR32F9Qx_StdPeriph_Driver\inc-IC:\Users\Yurez\AppData\Local\Arm\Packs\Keil\MDR1986BExx\1.5.3\Libraries\MDR32F9Qx_StdPeriph_Driver\inc\USB_Library-IC:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="528" -D_RTE_ -DUSE_MDR32F9Q2_Rev1-o .\objects\can_main.o --omf_browse .\objects\can_main.crf --depend .\objects\can_main.d)
+I (C:\Users\Yurez\AppData\Local\Arm\Packs\Keil\MDR1986BExx\1.5.3\Libraries\CMSIS\CM3\DeviceSupport\MDR32F9Qx\inc\MDR32Fx.h)(0x5B0677C2)
+I (C:\Users\Yurez\AppData\Local\Arm\Packs\Keil\MDR1986BExx\1.5.3\Libraries\CMSIS\CM3\CoreSupport\core_cm3.h)(0x5AF36DC8)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5CEBC032)
+I (C:\Users\Yurez\AppData\Local\Arm\Packs\Keil\MDR1986BExx\1.5.3\Libraries\CMSIS\CM3\CoreSupport\core_cmInstr.h)(0x5AF36DC8)
+I (C:\Users\Yurez\AppData\Local\Arm\Packs\Keil\MDR1986BExx\1.5.3\Libraries\CMSIS\CM3\CoreSupport\core_cmFunc.h)(0x5AF36DC8)
+I (.\RTE\Device\MDR1986BE92\system_MDR32F9Qx.h)(0x5B0677F6)
+I (MDR32F9Qx_config.h)(0x5C540D10)
+I (C:\Users\Yurez\AppData\Local\Arm\Packs\Keil\MDR1986BExx\1.5.3\Libraries\MDR32F9Qx_StdPeriph_Driver\inc\MDR32F9Qx_can.h)(0x5D491BCE)
+I (.\RTE\Device\MDR1986BE92\MDR32F9Qx_config.h)(0x5DC035E0)
+I (C:\Users\Yurez\AppData\Local\Arm\Packs\Keil\MDR1986BExx\1.5.3\Libraries\MDR32F9Qx_StdPeriph_Driver\inc\MDR32F9Qx_lib.h)(0x5B067348)
+I (C:\Users\Yurez\AppData\Local\Arm\Packs\Keil\MDR1986BExx\1.5.3\Libraries\MDR32F9Qx_StdPeriph_Driver\inc\MDR32F9Qx_rst_clk.h)(0x5D491B32)
+I (C:\Users\Yurez\AppData\Local\Arm\Packs\Keil\MDR1986BExx\1.5.3\Libraries\MDR32F9Qx_StdPeriph_Driver\inc\MDR32F9Qx_port.h)(0x5B067368)
 F (.\mlt\mlt_lcd.c)(0x5DC026C7)(--c99 --gnu -c --cpu Cortex-M3 -D__EVAL -g -O0 --apcs=interwork --split_sections-I.\RTE\Device\MDR1986BE92-I.\RTE\_Target_1-IC:\Users\Yurez\AppData\Local\Arm\Packs\Keil\MDR1986BExx\1.5.3\Libraries\CMSIS\CM3\CoreSupport-IC:\Users\Yurez\AppData\Local\Arm\Packs\Keil\MDR1986BExx\1.5.3\Libraries\CMSIS\CM3\DeviceSupport\MDR32F9Qx\inc-IC:\Users\Yurez\AppData\Local\Arm\Packs\Keil\MDR1986BExx\1.5.3\Libraries\MDR32F9Qx_StdPeriph_Driver\inc-IC:\Users\Yurez\AppData\Local\Arm\Packs\Keil\MDR1986BExx\1.5.3\Libraries\MDR32F9Qx_StdPeriph_Driver\inc\USB_Library-IC:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="528" -D_RTE_ -DUSE_MDR32F9Q2_Rev1-o .\objects\mlt_lcd.o --omf_browse .\objects\mlt_lcd.crf --depend .\objects\mlt_lcd.d)
 I (mlt\mlt_lcd.h)(0x5DC027ED)
 I (C:\Users\Yurez\AppData\Local\Arm\Packs\Keil\MDR1986BExx\1.5.3\Libraries\CMSIS\CM3\DeviceSupport\MDR32F9Qx\inc\MDR32Fx.h)(0x5B0677C2)

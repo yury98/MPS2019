@@ -22,15 +22,12 @@ Dialog DLL:      TCM.DLL V1.36.2.0
  
 <h2>Project:</h2>
 C:\Users\Yurez\Desktop\MPS2019\uVisionProjects\CanTest\Can1.uvprojx
-Project File Date:  10/23/2019
+Project File Date:  10/27/2019
 
 <h2>Output:</h2>
 *** Using Compiler 'V5.06 update 6 (build 750)', folder: 'C:\Keil_v5\ARM\ARMCC\Bin'
 Rebuild target 'Target 1'
 assembling startup_MDR32F9Qx.s...
-compiling system_MDR32F9Qx.c...
-compiling MDR32F9Qx_port.c...
-compiling MDR32F9Qx_it.c...
 compiling main.c...
 CanTestFiles\main.c(88): warning:  #951-D: return type of function "main" must be "int"
   uint32_t main(void)
@@ -38,18 +35,23 @@ CanTestFiles\main.c(199): warning:  #111-D: statement is unreachable
     CAN_ITConfig(MDR_CAN1, CAN_IT_GLBINTEN | CAN_IT_RXINTEN, DISABLE);
 CanTestFiles\main.c(133): warning:  #550-D: variable "TxMsg"  was set but never used
     CAN_TxMsgTypeDef TxMsg;
-CanTestFiles\main.c: 3 warnings, 0 errors
-compiling MDR32F9Qx_can.c...
+CanTestFiles\main.c(134): warning:  #177-D: variable "i"  was declared but never referenced
+    uint32_t i = 0;
+CanTestFiles\main.c: 4 warnings, 0 errors
+compiling MDR32F9Qx_port.c...
+compiling system_MDR32F9Qx.c...
+compiling MDR32F9Qx_it.c...
 compiling MDR32F9Qx_rst_clk.c...
+compiling MDR32F9Qx_can.c...
 linking...
-Program Size: Code=2564 RO-data=224 RW-data=20 ZI-data=1644  
-".\Objects\Can1.axf" - 0 Error(s), 3 Warning(s).
+Program Size: Code=2528 RO-data=224 RW-data=20 ZI-data=1644  
+".\Objects\Can1.axf" - 0 Error(s), 4 Warning(s).
 
 <h2>Software Packages used:</h2>
 
 Package Vendor: Keil
-                http://www.keil.com/pack/Keil.MDR1986BExx.1.5.2.pack
-                Keil.MDR1986BExx.1.5.2
+                http://www.keil.com/pack/Keil.MDR1986BExx.1.5.3.pack
+                Keil.MDR1986BExx.1.5.3
                 Milandr MDR1986BExx Series Device Support, Drivers and Examples
    * Component: Startup Version: 1.5
    * Component: CAN Version: 1.5
@@ -59,16 +61,16 @@ Package Vendor: Keil
 <h2>Collection of Component include folders:</h2>
   .\RTE\Device\MDR1986BE92
   .\RTE\_Target_1
-  C:\Users\Yurez\AppData\Local\Arm\Packs\Keil\MDR1986BExx\1.5.2\Libraries\CMSIS\CM3\CoreSupport
-  C:\Users\Yurez\AppData\Local\Arm\Packs\Keil\MDR1986BExx\1.5.2\Libraries\CMSIS\CM3\DeviceSupport\MDR32F9Qx\inc
-  C:\Users\Yurez\AppData\Local\Arm\Packs\Keil\MDR1986BExx\1.5.2\Libraries\MDR32F9Qx_StdPeriph_Driver\inc
+  C:\Users\Yurez\AppData\Local\Arm\Packs\Keil\MDR1986BExx\1.5.3\Libraries\CMSIS\CM3\CoreSupport
+  C:\Users\Yurez\AppData\Local\Arm\Packs\Keil\MDR1986BExx\1.5.3\Libraries\CMSIS\CM3\DeviceSupport\MDR32F9Qx\inc
+  C:\Users\Yurez\AppData\Local\Arm\Packs\Keil\MDR1986BExx\1.5.3\Libraries\MDR32F9Qx_StdPeriph_Driver\inc
 
 <h2>Collection of Component Files used:</h2>
 
    * Component: Keil::Device:Startup:1.5
-      Source file:   Libraries\CMSIS\CM3\DeviceSupport\MDR32F9Qx\startup\arm\system_MDR32F9Qx.c
-      Include file:  Libraries\CMSIS\CM3\DeviceSupport\MDR32F9Qx\startup\arm\system_MDR32F9Qx.h
       Include file:  Libraries\CMSIS\CM3\CoreSupport\core_cm3.h
+      Include file:  Libraries\CMSIS\CM3\DeviceSupport\MDR32F9Qx\startup\arm\system_MDR32F9Qx.h
+      Source file:   Libraries\CMSIS\CM3\DeviceSupport\MDR32F9Qx\startup\arm\system_MDR32F9Qx.c
       Source file:   Libraries\CMSIS\CM3\DeviceSupport\MDR32F9Qx\startup\arm\startup_MDR32F9Qx.s
       Include file:  Config\MDR32F9Qx_config.h
 
@@ -77,12 +79,12 @@ Package Vendor: Keil
       Source file:   Libraries\MDR32F9Qx_StdPeriph_Driver\src\MDR32F9Qx_can.c
 
    * Component: Keil::Drivers:PORT:1.5
-      Include file:  Libraries\MDR32F9Qx_StdPeriph_Driver\inc\MDR32F9Qx_port.h
       Source file:   Libraries\MDR32F9Qx_StdPeriph_Driver\src\MDR32F9Qx_port.c
+      Include file:  Libraries\MDR32F9Qx_StdPeriph_Driver\inc\MDR32F9Qx_port.h
 
    * Component: Keil::Drivers:RST_CLK:1.5
-      Include file:  Libraries\MDR32F9Qx_StdPeriph_Driver\inc\MDR32F9Qx_rst_clk.h
       Source file:   Libraries\MDR32F9Qx_StdPeriph_Driver\src\MDR32F9Qx_rst_clk.c
+      Include file:  Libraries\MDR32F9Qx_StdPeriph_Driver\inc\MDR32F9Qx_rst_clk.h
 Build Time Elapsed:  00:00:01
 </pre>
 </body>

@@ -402,6 +402,11 @@
               <FileType>1</FileType>
               <FilePath>.\UART_main.c</FilePath>
             </File>
+            <File>
+              <FileName>CAN_main.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\CAN_main.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
