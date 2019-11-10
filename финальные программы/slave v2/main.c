@@ -43,11 +43,24 @@ char USBFlag = 0;
 char TestUartDone = 0;
 char TestCanDone = 0;
 char CanFlag = 0;
+
+char FullTestFlag = 0;
+char FullTestCANFlag = 0;
+char FullTestCANGetFlag = 0;
+char FullTestUARTFlag = 0;
+char FullTestSSPFlag = 0;
+char FullTestSSPGetFlag = 0;
+char FullTestUSBSendFlag = 0;
+char FullTestUSBInfoFlag = 0;
+char FullTestUSBSendInfoFlag = 0;
+
+uint8_t USBInfo;
+
 __IO uint32_t rx_buf = 0;
 __IO uint32_t tx_buf = 1;
 static PORT_InitTypeDef PortInit;
 static UART_InitTypeDef UART_InitStructure;
-
+#define DELAY(T) for (int i = T; i > 0; i--)
 
 /* Private function prototypes -----------------------------------------------*/
 /* Private functions ---------------------------------------------------------*/
@@ -267,6 +280,76 @@ void USBTest (void)
 exit: return 0;
 }
 
+void FullTest (void)
+{
+	while(1)
+	{
+		FullTestSSPFlag = 1;
+		FullTestSSPGetFlag = 0;
+		PortsSSP2Init();
+		SSP2StructInit();
+		do
+		{
+			if (PORT_ReadInputDataBit(MDR_PORTE,PORT_Pin_3) == 0)
+			{
+				goto exit0;
+			}
+		} while (SSP_GetFlagStatus(MDR_SSP2, SSP_FLAG_RNE) == RESET);
+		 /* Read SPI2 received data */
+		USBInfo = SSP_ReceiveData(MDR_SSP2);
+		uint8_t SSPInfo = USBInfo;
+		FullTestSSPGetFlag = 1;
+		
+		do
+		{
+			if (PORT_ReadInputDataBit(MDR_PORTE,PORT_Pin_3) == 0)
+			{
+				goto exit0;
+			}
+		} while ( PORT_ReadInputDataBit(MDR_PORTC,PORT_Pin_2));
+		FullTestSSPFlag = 0;
+		FullTestSSPGetFlag = 0;
+		
+		/* UART */
+		FullTestUARTFlag = 1;
+		Uart2PinCfg();
+		Uart2Setup();
+		do
+		{
+			if (PORT_ReadInputDataBit(MDR_PORTE,PORT_Pin_3) == 0)
+			{
+				goto exit0;
+			}
+		} while (UART_GetFlagStatus (MDR_UART2, UART_FLAG_TXFE)!= SET);
+		USBInfo = USBInfo + 1;
+		// ???????? ??????
+		UART_SendData (MDR_UART2,USBInfo);
+		DELAY(1000000);
+		do
+		{
+			if (PORT_ReadInputDataBit(MDR_PORTE,PORT_Pin_3) == 0)
+			{
+				goto exit0;
+			}
+		} while ( PORT_ReadInputDataBit(MDR_PORTC,PORT_Pin_2));
+		FullTestUARTFlag = 0;
+		FullTestCANFlag = 1;
+		FullTestCANGetFlag = 0;
+		CAN_ports_ini();
+		CAN_Setup();
+		DELAY(1000000);
+		do
+		{
+			if (PORT_ReadInputDataBit(MDR_PORTE,PORT_Pin_3) == 0)
+			{
+				goto exit0;
+			}
+		} while (1);
+		
+	}
+exit0:
+	return 0;
+}
 
 int main (void)
 {
@@ -367,6 +450,14 @@ char s1;
 				UartFlag = 0;
 				TestUartDone = 0;
 			}
+			if (MenuMainItem == 4)
+			{
+				FullTestFlag = 1;
+				FullTest();
+				FullTestFlag = 0;
+				FullTestCANFlag = 0;
+				FullTestUSBInfoFlag = 0;
+			}
 		}
 		//up
 		else if (!PORT_ReadInputDataBit(MDR_PORTB,PORT_Pin_5))
@@ -381,7 +472,7 @@ char s1;
 		else if (!PORT_ReadInputDataBit(MDR_PORTE,PORT_Pin_1))
 		{
 			while ( ! PORT_ReadInputDataBit(MDR_PORTE,PORT_Pin_1) ) {};
-			if (MenuMainItem != 3) MenuMainItem++;
+			if (MenuMainItem != 4) MenuMainItem++;
 			if (CursorPosItem != 2) CursorPosItem++;
 			
 		}

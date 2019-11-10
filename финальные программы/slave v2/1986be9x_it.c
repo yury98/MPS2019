@@ -17,6 +17,13 @@ char extern TestUartDone;
 char extern USBFlag;
 char extern SSPFlag;
 char extern TestSSPDone;
+char extern FullTestFlag;
+char extern FullTestCANFlag;
+char extern FullTestCANGetFlag;
+char extern FullTestUARTFlag;
+char extern FullTestSSPFlag;
+char extern FullTestSSPGetFlag;
+uint8_t extern USBInfo;
 int count_main = 0;
 
 __IO uint32_t extern rx_buf;
@@ -32,10 +39,31 @@ uint8_t* main_string[]  =
 
 uint8_t* menu_string[] =
 {
-sym_sp,sym_sp,sym_sp,sym_sp,sym_sp,sym_sp,lat_C,lat_A,lat_N,sym_sp,sym_sp,sym_sp,sym_sp,sym_sp,sym_sp,sym_sp,
-sym_sp,sym_sp,sym_sp,sym_sp,sym_sp,sym_sp,lat_S,lat_S,lat_P,sym_sp,sym_sp,sym_sp,sym_sp,sym_sp,sym_sp,sym_sp,
-sym_sp,sym_sp,sym_sp,sym_sp,sym_sp,sym_sp,lat_U,lat_S,lat_B,sym_sp,sym_sp,sym_sp,sym_sp,sym_sp,sym_sp,sym_sp,
-sym_sp,sym_sp,sym_sp,sym_sp,sym_sp,sym_sp,lat_U,lat_A,lat_R,lat_T,sym_sp,sym_sp,sym_sp,sym_sp,sym_sp,sym_sp
+	sym_sp,sym_sp,sym_sp,sym_sp,sym_sp,sym_sp,lat_C,lat_A,lat_N,sym_sp,sym_sp,sym_sp,sym_sp,sym_sp,sym_sp,sym_sp,
+	sym_sp,sym_sp,sym_sp,sym_sp,sym_sp,sym_sp,lat_S,lat_S,lat_P,sym_sp,sym_sp,sym_sp,sym_sp,sym_sp,sym_sp,sym_sp,
+	sym_sp,sym_sp,sym_sp,sym_sp,sym_sp,sym_sp,lat_U,lat_S,lat_B,sym_sp,sym_sp,sym_sp,sym_sp,sym_sp,sym_sp,sym_sp,
+	sym_sp,sym_sp,sym_sp,sym_sp,sym_sp,sym_sp,lat_U,lat_A,lat_R,lat_T,sym_sp,sym_sp,sym_sp,sym_sp,sym_sp,sym_sp,
+	sym_sp,sym_sp,sym_sp,sym_sp,lat_F,lat_U,lat_L,lat_L,sym_sp,lat_T,lat_E,lat_S,lat_T,sym_sp,sym_sp,sym_sp
+};
+
+uint8_t* numbers_string[] =
+{
+	dig_0,dig_0,dig_0,dig_1,dig_0,dig_2,dig_0,dig_3,dig_0,dig_4,dig_0,dig_5,dig_0,dig_6,dig_0,dig_7,dig_0,dig_8,dig_0,dig_9,dig_0,lat_A,dig_0,lat_B,dig_0,lat_C,dig_0,lat_D,dig_0,lat_E,dig_0,lat_F,
+	dig_1,dig_0,dig_1,dig_1,dig_1,dig_2,dig_1,dig_3,dig_1,dig_4,dig_1,dig_5,dig_1,dig_6,dig_1,dig_7,dig_1,dig_8,dig_1,dig_9,dig_1,lat_A,dig_1,lat_B,dig_1,lat_C,dig_1,lat_D,dig_1,lat_E,dig_1,lat_F,
+	dig_2,dig_0,dig_2,dig_1,dig_2,dig_2,dig_2,dig_3,dig_2,dig_4,dig_2,dig_5,dig_2,dig_6,dig_2,dig_7,dig_2,dig_8,dig_2,dig_9,dig_2,lat_A,dig_2,lat_B,dig_2,lat_C,dig_2,lat_D,dig_2,lat_E,dig_2,lat_F,
+	dig_3,dig_0,dig_3,dig_1,dig_3,dig_2,dig_3,dig_3,dig_3,dig_4,dig_3,dig_5,dig_3,dig_6,dig_3,dig_7,dig_3,dig_8,dig_3,dig_9,dig_3,lat_A,dig_3,lat_B,dig_3,lat_C,dig_3,lat_D,dig_3,lat_E,dig_3,lat_F,
+	dig_4,dig_0,dig_4,dig_1,dig_4,dig_2,dig_4,dig_3,dig_4,dig_4,dig_4,dig_5,dig_4,dig_6,dig_4,dig_7,dig_4,dig_8,dig_4,dig_9,dig_4,lat_A,dig_4,lat_B,dig_4,lat_C,dig_4,lat_D,dig_4,lat_E,dig_4,lat_F,
+	dig_5,dig_0,dig_5,dig_1,dig_5,dig_2,dig_5,dig_3,dig_5,dig_4,dig_5,dig_5,dig_5,dig_6,dig_5,dig_7,dig_5,dig_8,dig_5,dig_9,dig_5,lat_A,dig_5,lat_B,dig_5,lat_C,dig_5,lat_D,dig_5,lat_E,dig_5,lat_F,
+	dig_6,dig_0,dig_6,dig_1,dig_6,dig_2,dig_6,dig_3,dig_6,dig_4,dig_6,dig_5,dig_6,dig_6,dig_6,dig_7,dig_6,dig_8,dig_6,dig_9,dig_6,lat_A,dig_6,lat_B,dig_6,lat_C,dig_6,lat_D,dig_6,lat_E,dig_6,lat_F,
+	dig_7,dig_0,dig_7,dig_1,dig_7,dig_2,dig_7,dig_3,dig_7,dig_4,dig_7,dig_5,dig_7,dig_6,dig_7,dig_7,dig_7,dig_8,dig_7,dig_9,dig_7,lat_A,dig_7,lat_B,dig_7,lat_C,dig_7,lat_D,dig_7,lat_E,dig_7,lat_F,
+	dig_8,dig_0,dig_8,dig_1,dig_8,dig_2,dig_8,dig_3,dig_8,dig_4,dig_8,dig_5,dig_8,dig_6,dig_8,dig_7,dig_8,dig_8,dig_8,dig_9,dig_8,lat_A,dig_8,lat_B,dig_8,lat_C,dig_8,lat_D,dig_8,lat_E,dig_8,lat_F,
+	dig_9,dig_0,dig_9,dig_1,dig_9,dig_2,dig_9,dig_3,dig_9,dig_4,dig_9,dig_5,dig_9,dig_6,dig_9,dig_7,dig_9,dig_8,dig_9,dig_9,dig_9,lat_A,dig_9,lat_B,dig_9,lat_C,dig_9,lat_D,dig_9,lat_E,dig_9,lat_F,
+	lat_A,dig_0,lat_A,dig_1,lat_A,dig_2,lat_A,dig_3,lat_A,dig_4,lat_A,dig_5,lat_A,dig_6,lat_A,dig_7,lat_A,dig_8,lat_A,dig_9,lat_A,lat_A,lat_A,lat_B,lat_A,lat_C,lat_A,lat_D,lat_A,lat_E,lat_A,lat_F,
+	lat_B,dig_0,lat_B,dig_1,lat_B,dig_2,lat_B,dig_3,lat_B,dig_4,lat_B,dig_5,lat_B,dig_6,lat_B,dig_7,lat_B,dig_8,lat_B,dig_9,lat_B,lat_A,lat_B,lat_B,lat_B,lat_C,lat_B,lat_D,lat_B,lat_E,lat_B,lat_F,
+	lat_C,dig_0,lat_C,dig_1,lat_C,dig_2,lat_C,dig_3,lat_C,dig_4,lat_C,dig_5,lat_C,dig_6,lat_C,dig_7,lat_C,dig_8,lat_C,dig_9,lat_C,lat_A,lat_C,lat_B,lat_C,lat_C,lat_C,lat_D,lat_C,lat_E,lat_C,lat_F,
+	lat_D,dig_0,lat_D,dig_1,lat_D,dig_2,lat_D,dig_3,lat_D,dig_4,lat_D,dig_5,lat_D,dig_6,lat_D,dig_7,lat_D,dig_8,lat_D,dig_9,lat_D,lat_A,lat_D,lat_B,lat_D,lat_C,lat_D,lat_D,lat_D,lat_E,lat_D,lat_F,
+	lat_E,dig_0,lat_E,dig_1,lat_E,dig_2,lat_E,dig_3,lat_E,dig_4,lat_E,dig_5,lat_E,dig_6,lat_E,dig_7,lat_E,dig_8,lat_E,dig_9,lat_E,lat_A,lat_E,lat_B,lat_E,lat_C,lat_E,lat_D,lat_E,lat_E,lat_E,lat_F,
+	lat_F,dig_0,lat_F,dig_1,lat_F,dig_2,lat_F,dig_3,lat_F,dig_4,lat_F,dig_5,lat_F,dig_6,lat_F,dig_7,lat_F,dig_8,lat_F,dig_9,lat_F,lat_A,lat_F,lat_B,lat_F,lat_C,lat_F,lat_D,lat_F,lat_E,lat_F,lat_F
 };
 
 uint8_t* usb_string1[]  =
@@ -89,6 +117,18 @@ uint8_t* empty_string[]  =
 {
 	sym_sp,sym_sp,sym_sp,sym_sp,sym_sp,sym_sp,sym_sp,sym_sp,sym_sp,sym_sp,sym_sp,sym_sp,sym_sp,sym_sp,sym_sp,sym_sp
 };
+uint8_t* info_string[]  =
+{
+	sym_sp,sym_sp,sym_sp,sym_sp,sym_sp,sym_sp,sym_sp,sym_sp,sym_sp,sym_sp,sym_sp,sym_sp,sym_sp,sym_sp,sym_sp,sym_sp
+};
+
+uint8_t* InfoString(uint8_t* RecievedData)
+{
+	int value = RecievedData;
+	info_string[7] = numbers_string[value * 2];
+	info_string[8] = numbers_string[value * 2 + 1];
+	return info_string;
+}
 
 
 /* Private function prototypes -----------------------------------------------*/
@@ -212,16 +252,24 @@ void CAN1_IRQHandler(void)
 	CAN_RxMsgTypeDef RxMessage;
 
   CAN_GetRawReceivedData(MDR_CAN1, rx_buf, &RxMessage);
-
-  if((RxMessage.Rx_Header.ID==0x15555555) && (RxMessage.Rx_Header.IDE==CAN_ID_EXT)
-     && (RxMessage.Rx_Header.DLC==4) && (RxMessage.Data[0]==0x12345678))
-  {
-    TestCanDone = 1;
-  }
-  else
-  {
-    TestCanDone = 2;
-  }
+	if (FullTestFlag == 0)
+	{
+		if((RxMessage.Rx_Header.ID==0x15555555) && (RxMessage.Rx_Header.IDE==CAN_ID_EXT)
+			 && (RxMessage.Rx_Header.DLC==4) && (RxMessage.Data[0]==0x12345678))
+		{
+			TestCanDone = 1;
+		}
+		else
+		{
+			TestCanDone = 2;
+		}
+	}
+	else 
+	{
+		USBInfo = RxMessage.Data[0];
+		FullTestCANGetFlag = 1;
+		
+	}
   CAN_ITClearRxTxPendingBit(MDR_CAN1, rx_buf, CAN_STATUS_RX_READY);
 }
 /*******************************************************************************
@@ -399,6 +447,45 @@ int i;
 		{
 			LcdPutString (wait_string, 5);
 		} 
+	}
+	else if (FullTestFlag == 1)
+	{
+		if (FullTestCANFlag == 1)
+		{
+			if (FullTestCANGetFlag == 0)
+			{
+				LcdPutString (can_string, 3);
+				LcdPutString (wait_string, 4);
+				LcdPutString (empty_string, 5);
+			}
+			else
+			{
+				LcdPutString (can_string, 3);
+				LcdPutString (get_string, 4);
+				LcdPutString (InfoString(USBInfo), 5);
+			}
+		}
+		else if (FullTestSSPFlag == 1)
+		{
+			if (FullTestSSPGetFlag == 0)
+			{
+				LcdPutString (ssp_string, 3);
+				LcdPutString (wait_string, 4);
+				LcdPutString (empty_string, 5);
+			}
+			else
+			{
+				LcdPutString (ssp_string, 3);
+				LcdPutString (get_string, 4);
+				LcdPutString (InfoString(USBInfo), 5);
+			}
+		}
+		else if (FullTestUARTFlag == 1)
+		{
+			LcdPutString (uart_string, 3);
+			LcdPutString (pass_string, 4);
+			LcdPutString (InfoString(USBInfo), 5);
+		}
 	}
 	else
 	{

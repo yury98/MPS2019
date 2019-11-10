@@ -41,6 +41,19 @@ char TestCanDone = 0;
 char TestUartDone = 0;
 char USBFlag = 0;
 char CanFlag = 0;
+
+char FullTestFlag = 0;
+char FullTestUSBGetFlag = 0;
+char FullTestCANFlag = 0;
+char FullTestUARTFlag = 0;
+char FullTestSSPFlag = 0;
+char FullTestUSBSendFlag = 0;
+char FullTestUSBInfoFlag = 0;
+char FullTestUSBSendInfoFlag = 0;
+char FullTestUARTGetFlag = 0;
+
+uint8_t USBInfo;
+uint8_t USBFinalInfo;
 __IO uint32_t tx_buf = 1;
 static PORT_InitTypeDef PortInit;
 
@@ -226,7 +239,7 @@ void SSPTest(void) {
 	exit: return 0;
 }
 
-int USBTest (void)
+void USBTest (void)
 {
 	USB_main();
 	while(1)
@@ -242,42 +255,132 @@ int USBTest (void)
 		
 	}
 exit: 
-	RST_CLK_LSEconfig(RST_CLK_LSE_ON);
-    while (RST_CLK_LSEstatus() != SUCCESS);
-    
-	RST_CLK_HSEconfig(RST_CLK_HSE_ON);
-    while (RST_CLK_HSEstatus() != SUCCESS);
-  RST_CLK_CPU_PLLconfig(RST_CLK_CPU_PLLsrcHSEdiv2, RST_CLK_CPU_PLLmul1);
-  RST_CLK_CPU_PLLcmd(ENABLE);
-  if (RST_CLK_CPU_PLLstatus() != SUCCESS)
-  {
-    /* Trap */
-    while (1)
-    {
-    }
-  }
-
-  /* CPU_C3_SEL = CPU_C2_SEL */
-  RST_CLK_CPUclkPrescaler(RST_CLK_CPUclkDIV1);
-  /* CPU_C2_SEL = PLL */
-  RST_CLK_CPU_PLLuse(ENABLE);
-  /* HCLK_SEL = CPU_C3_SEL */
-  RST_CLK_CPUclkSelection(RST_CLK_CPUclkCPU_C3);
-	/* Enables the clock on PORTA */
-	RST_CLK_PCLKcmd(RST_CLK_PCLK_PORTA, ENABLE);
-	/* Enables the clock on PORTB */
-	RST_CLK_PCLKcmd(RST_CLK_PCLK_PORTB, ENABLE);	
-    /* Enables the clock on PORTC */
-	RST_CLK_PCLKcmd(RST_CLK_PCLK_PORTC, ENABLE);
-	/* Enables the clock on PORTD */
-	RST_CLK_PCLKcmd(RST_CLK_PCLK_PORTD, ENABLE);
-	/* Enables the clock on PORTE */
-	RST_CLK_PCLKcmd(RST_CLK_PCLK_PORTE, ENABLE);
-	/* Enables the HSI clock on PORTF */
-    RST_CLK_PCLKcmd(RST_CLK_PCLK_PORTF, ENABLE);
+	USB_off();
+	NVIC_DisableIRQ(USB_IRQn);
 	return 0;
 }
 
+void FullTest (void)
+{
+	FullTestUSBGetFlag = 1;
+	USB_main();
+	while(1)
+	{
+		do
+		{
+			if (PORT_ReadInputDataBit(MDR_PORTE,PORT_Pin_3) == 0)
+			{
+				goto exit;
+			}
+		} while (FullTestUSBInfoFlag != 1);
+		USB_off();	
+		NVIC_DisableIRQ(USB_IRQn);
+		DELAY(1000000);
+		do
+		{
+			if (PORT_ReadInputDataBit(MDR_PORTE,PORT_Pin_3) == 0)
+			{
+				goto exit0;
+			}
+		} while ( PORT_ReadInputDataBit(MDR_PORTC,PORT_Pin_2));
+		FullTestUSBGetFlag = 0;
+		FullTestUSBInfoFlag = 0;
+		USBInfo = USBInfo + 1;
+		FullTestSSPFlag = 1;
+		PortsSSP2Init();
+		SSP2StructInit();
+		while (SSP_GetFlagStatus(MDR_SSP2, SSP_FLAG_TFE) == RESET)
+		{
+		}
+
+		SSP_SendData(MDR_SSP2, USBInfo);
+		DELAY(1000000);
+		do
+		{
+			if (PORT_ReadInputDataBit(MDR_PORTE,PORT_Pin_3) == 0)
+			{
+				goto exit0;
+			}
+		} while ( PORT_ReadInputDataBit(MDR_PORTC,PORT_Pin_2));
+		
+		FullTestSSPFlag = 0;
+		
+		FullTestCANFlag = 0;
+		FullTestUARTFlag = 1;
+		FullTestUARTGetFlag = 0;
+		Uart2PinCfg();
+		Uart2Setup();
+    // ???????? ????? RXFF
+    do
+    {
+        if (PORT_ReadInputDataBit(MDR_PORTE,PORT_Pin_3) == 0)
+        {
+            goto exit0;
+        }
+    } while (UART_GetFlagStatus (MDR_UART2, UART_FLAG_RXFF)!= SET);
+    // ????????? ??????
+    USBInfo = UART_ReceiveData (MDR_UART2);
+		FullTestUARTGetFlag = 1;
+		do
+		{
+			if (PORT_ReadInputDataBit(MDR_PORTE,PORT_Pin_3) == 0)
+			{
+				goto exit0;
+			}
+		} while ( PORT_ReadInputDataBit(MDR_PORTC,PORT_Pin_2));
+		FullTestUARTFlag = 0;
+		FullTestUARTGetFlag = 0;
+		FullTestUSBSendInfoFlag = 1;
+		FullTestUSBInfoFlag = 0;
+		USB_main();
+		USBFinalInfo = USBInfo + 1;
+		do
+		{
+			if (PORT_ReadInputDataBit(MDR_PORTE,PORT_Pin_3) == 0)
+			{
+				goto exit;
+			}
+		} while (FullTestUSBInfoFlag != 1);
+		USB_off();	
+		NVIC_DisableIRQ(USB_IRQn);
+		do
+		{
+			if (PORT_ReadInputDataBit(MDR_PORTE,PORT_Pin_3) == 0)
+			{
+				goto exit0;
+			}
+		} while ( PORT_ReadInputDataBit(MDR_PORTC,PORT_Pin_2));
+		FullTestUSBSendInfoFlag = 0;
+		FullTestUSBInfoFlag = 0;
+		CAN_ports_ini();
+		CAN_Setup();
+		DELAY(1000000);
+		USBInfo = USBFinalInfo + 1;
+		CAN_TxMsgTypeDef TxMsg;
+		DELAY(1000000);
+		FullTestCANFlag = 1;
+		TxMsg.IDE     = CAN_ID_EXT;
+		TxMsg.DLC     = 0x04;
+		TxMsg.PRIOR_0 = DISABLE;
+		TxMsg.ID      = 0x15555555;
+		TxMsg.Data[1] = 0;
+		TxMsg.Data[0] = USBInfo;
+		CAN_Transmit(MDR_CAN1, tx_buf, &TxMsg);
+		do
+		{
+			if (PORT_ReadInputDataBit(MDR_PORTE,PORT_Pin_3) == 0)
+			{
+				goto exit0;
+			}
+		} while (1);
+	}
+exit:
+	USB_off();	
+	NVIC_DisableIRQ(USB_IRQn);
+	return 0;
+exit0:
+	return 0;
+}
 
 int main (void)
 {
@@ -287,8 +390,8 @@ char s1;
     while (RST_CLK_LSEstatus() != SUCCESS);
     
 	RST_CLK_HSEconfig(RST_CLK_HSE_ON);
-    while (RST_CLK_HSEstatus() != SUCCESS);
-	  RST_CLK_CPU_PLLconfig(RST_CLK_CPU_PLLsrcHSIdiv2, RST_CLK_CPU_PLLmul1);
+  while (RST_CLK_HSEstatus() != SUCCESS);
+	RST_CLK_CPU_PLLconfig(RST_CLK_CPU_PLLsrcHSIdiv2, RST_CLK_CPU_PLLmul1);
   RST_CLK_CPU_PLLcmd(ENABLE);
   if (RST_CLK_CPU_PLLstatus() != SUCCESS)
   {
@@ -376,6 +479,14 @@ char s1;
 				UartFlag = 0;
 				TestUartDone = 0;
 			}
+			if (MenuMainItem == 4)
+			{
+				FullTestFlag = 1;
+				FullTest();
+				FullTestFlag = 0;
+				FullTestCANFlag = 0;
+				FullTestUSBInfoFlag = 0;
+			}
 		}
 		//up
 		else if (!PORT_ReadInputDataBit(MDR_PORTB,PORT_Pin_5))
@@ -390,7 +501,7 @@ char s1;
 		else if (!PORT_ReadInputDataBit(MDR_PORTE,PORT_Pin_1))
 		{
 			while ( ! PORT_ReadInputDataBit(MDR_PORTE,PORT_Pin_1) ) {};
-			if (MenuMainItem != 3) MenuMainItem++;
+			if (MenuMainItem != 4) MenuMainItem++;
 			if (CursorPosItem != 2) CursorPosItem++;
 			
 		}

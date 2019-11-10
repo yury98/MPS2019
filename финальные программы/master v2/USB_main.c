@@ -1,50 +1,21 @@
-/**
-  ******************************************************************************
-  * @file    Examples/MDR32F9Q2_EVAL/USB/VCOM_Echo/src/main.c
-  * @author  Milandr Application Team
-  * @version V1.2.0
-  * @date    28/06/2011
-  * @brief   Main program body.
-  ******************************************************************************
-  * <br><br>
-  *
-  * THE PRESENT FIRMWARE WHICH IS FOR GUIDANCE ONLY AIMS AT PROVIDING CUSTOMERS
-  * WITH CODING INFORMATION REGARDING THEIR PRODUCTS IN ORDER FOR THEM TO SAVE
-  * TIME. AS A RESULT, MILANDR SHALL NOT BE HELD LIABLE FOR ANY
-  * DIRECT, INDIRECT OR CONSEQUENTIAL DAMAGES WITH RESPECT TO ANY CLAIMS ARISING
-  * FROM THE CONTENT OF SUCH FIRMWARE AND/OR THE USE MADE BY CUSTOMERS OF THE
-  * CODING INFORMATION CONTAINED HEREIN IN CONNECTION WITH THEIR PRODUCTS.
-  *
-  * <h2><center>&copy; COPYRIGHT 2011 Milandr</center></h2>
-  */
-
-/* Includes ------------------------------------------------------------------*/
 #include "MDR32Fx.h"
 #include "MDR32F9Qx_usb_handlers.h"
 #include "MDR32F9Qx_rst_clk.h"
 
-/** @addtogroup __MDR32F9Qx_StdPeriph_Examples MDR32F9Qx StdPeriph Examples
-  * @{
-  */
 
-/** @addtogroup __MDR32F9Q2_EVAL MDR32F9Q2 Evaluation Board
-  * @{
-  */
-
-/** @addtogroup  USB_Virtual_COM_Port_Echo_92 USB Virtual COM Port Echo
-  * @{
-  */
-
-/* Private typedef -----------------------------------------------------------*/
-/* Private define ------------------------------------------------------------*/
 #define BUFFER_LENGTH                        100
-/* Private macro -------------------------------------------------------------*/
 
-/* Private variables ---------------------------------------------------------*/
 USB_Clock_TypeDef USB_Clock_InitStruct;
 USB_DeviceBUSParam_TypeDef USB_DeviceBUSParam;
 
 static uint8_t Buffer[BUFFER_LENGTH];
+
+char extern FullTestFlag;
+char extern FullTestUSBInfoFlag;
+char extern FullTestUSBSendInfoFlag;
+uint8_t extern USBInfo;
+uint8_t extern USBFinalInfo;
+uint8_t* Buf = 0x00000000;
 
 #ifdef USB_CDC_LINE_CODING_SUPPORTED
 static USB_CDC_LineCoding_TypeDef LineCoding;
@@ -69,7 +40,7 @@ static uint32_t SPIndex;
 static uint32_t ReceivedByteCount, SentByteCount, SkippedByteCount;
 
 #endif /* USB_DEBUG_PROTO */
-
+#define DELAY(T) for (int i = T; i > 0; i--)
 
 /* Private function prototypes -----------------------------------------------*/
 static void Setup_USB(void);
@@ -83,12 +54,50 @@ int USB_main(void)
 
   /* CDC layer initialization */
   USB_CDC_Init(Buffer, 1, SET);
-Setup_CPU_Clock();
+	Setup_CPU_Clock();
   //Setup_CPU_Clock();
   Setup_USB();
 
   /* Main loop */
 	return 0;
+}
+
+void USB_off(void)
+{
+	//USB_DEVICE_HANDLE_RESET;
+	//USB_DevicePowerOff();
+	RST_CLK_LSEconfig(RST_CLK_LSE_ON);
+    while (RST_CLK_LSEstatus() != SUCCESS);
+    
+	RST_CLK_HSEconfig(RST_CLK_HSE_ON);
+    while (RST_CLK_HSEstatus() != SUCCESS);
+  RST_CLK_CPU_PLLconfig(RST_CLK_CPU_PLLsrcHSEdiv2, RST_CLK_CPU_PLLmul1);
+  RST_CLK_CPU_PLLcmd(ENABLE);
+  if (RST_CLK_CPU_PLLstatus() != SUCCESS)
+  {
+    /* Trap */
+    while (1)
+    {
+    }
+  }
+  /* CPU_C3_SEL = CPU_C2_SEL */
+  RST_CLK_CPUclkPrescaler(RST_CLK_CPUclkDIV1);
+  /* CPU_C2_SEL = PLL */
+  RST_CLK_CPU_PLLuse(ENABLE);
+  /* HCLK_SEL = CPU_C3_SEL */
+  RST_CLK_CPUclkSelection(RST_CLK_CPUclkCPU_C3);
+	/* Enables the clock on PORTA */
+	RST_CLK_PCLKcmd(RST_CLK_PCLK_PORTA, ENABLE);
+	/* Enables the clock on PORTB */
+	RST_CLK_PCLKcmd(RST_CLK_PCLK_PORTB, ENABLE);	
+    /* Enables the clock on PORTC */
+	RST_CLK_PCLKcmd(RST_CLK_PCLK_PORTC, ENABLE);
+	/* Enables the clock on PORTD */
+	RST_CLK_PCLKcmd(RST_CLK_PCLK_PORTD, ENABLE);
+	/* Enables the clock on PORTE */
+	RST_CLK_PCLKcmd(RST_CLK_PCLK_PORTE, ENABLE);
+	/* Enables the HSI clock on PORTF */
+    RST_CLK_PCLKcmd(RST_CLK_PCLK_PORTF, ENABLE);
 }
 
 void Setup_CPU_Clock(void)
@@ -155,6 +164,13 @@ static void VCom_Configuration(void)
 #endif /* USB_CDC_LINE_CODING_SUPPORTED */
 }
 
+USB_Result SendInfo(uint8_t* Data)
+{
+	USB_Result result;
+	Buf[0] = Data;
+	USB_CDC_SendData(Buf,0x00000001);
+	return result;
+}
 
 /* USB_CDC_HANDLE_DATA_RECEIVE implementation - data echoing */
 USB_Result USB_CDC_RecieveData(uint8_t* Buffer, uint32_t Length)
@@ -164,10 +180,25 @@ USB_Result USB_CDC_RecieveData(uint8_t* Buffer, uint32_t Length)
 #ifdef USB_DEBUG_PROTO
   ReceivedByteCount += Length;
 #endif /* USB_DEBUG_PROTO */
-
-  /* Send back received data portion */
-  result = USB_CDC_SendData(Buffer, Length);
-
+	if (FullTestFlag == 1) 
+	{
+		if (FullTestUSBSendInfoFlag == 0)
+		{
+			USBInfo = Buffer[0];
+			FullTestUSBInfoFlag = 1;
+		}
+		else
+		{
+			Buffer[0] = USBFinalInfo;
+			result = USB_CDC_SendData(Buffer, Length);
+			FullTestUSBInfoFlag = 1;
+		}
+	}
+	else 
+	{
+		/* Send back received data portion */
+		result = USB_CDC_SendData(Buffer, Length);
+	}
 #ifdef USB_DEBUG_PROTO
   if (result == USB_SUCCESS)
   {

@@ -28,46 +28,78 @@ Project File Date:  11/04/2019
 *** Using Compiler 'V5.06 update 6 (build 750)', folder: 'C:\Keil_v5\ARM\ARMCC\Bin'
 Rebuild target 'Target 1'
 assembling startup_MDR32F9Qx.s...
+compiling UART_main.c...
+compiling SSP_main.c...
 compiling CAN_main.c...
 CAN_main.c(55): warning:  #177-D: variable "i"  was declared but never referenced
     uint32_t i = 0;
 CAN_main.c: 1 warning, 0 errors
-compiling main.c...
-main.c(179): warning:  #223-D: function "CAN_ports_ini" declared implicitly
-  	CAN_ports_ini();
-main.c(180): warning:  #223-D: function "CAN_Setup" declared implicitly
-  	CAN_Setup();
-main.c(196): warning:  #223-D: function "Uart2PinCfg" declared implicitly
-  	Uart2PinCfg();
-main.c(197): warning:  #223-D: function "Uart2Setup" declared implicitly
-  	Uart2Setup();
-main.c(194): warning:  #550-D: variable "DataByte"  was set but never used
-  uint8_t DataByte;
-main.c(224): warning:  #223-D: function "PortsSSP2Init" declared implicitly
-  	PortsSSP2Init();
-main.c(225): warning:  #223-D: function "SSP2StructInit" declared implicitly
-  	SSP2StructInit();
-main.c(249): warning:  #120-D: return value type does not match the function type
-  	return 0;
-main.c(267): warning:  #120-D: return value type does not match the function type
-  exit: return 0;
-main.c(49): warning:  #177-D: variable "UART_InitStructure"  was declared but never referenced
-  static UART_InitTypeDef UART_InitStructure;
-main.c: 10 warnings, 0 errors
-compiling SSP_main.c...
-compiling UART_main.c...
-compiling 1986be9x_it.c...
 compiling mlt_lcd.c...
+compiling 1986be9x_it.c...
+1986be9x_it.c(127): warning:  #144-D: a value of type "uint8_t *" cannot be used to initialize an entity of type "int"
+  	int value = RecievedData;
+1986be9x_it.c(130): warning:  #120-D: return value type does not match the function type
+  	return info_string;
+1986be9x_it.c(465): warning:  #167-D: argument of type "uint8_t" is incompatible with parameter of type "uint8_t *"
+  				LcdPutString (InfoString(USBInfo), 5);
+1986be9x_it.c(465): warning:  #167-D: argument of type "uint8_t *" is incompatible with parameter of type "uint8_t **"
+  				LcdPutString (InfoString(USBInfo), 5);
+1986be9x_it.c(480): warning:  #167-D: argument of type "uint8_t" is incompatible with parameter of type "uint8_t *"
+  				LcdPutString (InfoString(USBInfo), 5);
+1986be9x_it.c(480): warning:  #167-D: argument of type "uint8_t *" is incompatible with parameter of type "uint8_t **"
+  				LcdPutString (InfoString(USBInfo), 5);
+1986be9x_it.c(487): warning:  #167-D: argument of type "uint8_t" is incompatible with parameter of type "uint8_t *"
+  			LcdPutString (InfoString(USBInfo), 5);
+1986be9x_it.c(487): warning:  #167-D: argument of type "uint8_t *" is incompatible with parameter of type "uint8_t **"
+  			LcdPutString (InfoString(USBInfo), 5);
+compiling main.c...
+main.c(192): warning:  #223-D: function "CAN_ports_ini" declared implicitly
+  	CAN_ports_ini();
+main.c(193): warning:  #223-D: function "CAN_Setup" declared implicitly
+  	CAN_Setup();
+main.c(209): warning:  #223-D: function "Uart2PinCfg" declared implicitly
+  	Uart2PinCfg();
+main.c(210): warning:  #223-D: function "Uart2Setup" declared implicitly
+  	Uart2Setup();
+main.c(207): warning:  #550-D: variable "DataByte"  was set but never used
+  uint8_t DataByte;
+main.c(237): warning:  #223-D: function "PortsSSP2Init" declared implicitly
+  	PortsSSP2Init();
+main.c(238): warning:  #223-D: function "SSP2StructInit" declared implicitly
+  	SSP2StructInit();
+main.c(262): warning:  #120-D: return value type does not match the function type
+  	return 0;
+main.c(280): warning:  #120-D: return value type does not match the function type
+  exit: return 0;
+main.c(289): warning:  #223-D: function "PortsSSP2Init" declared implicitly
+  		PortsSSP2Init();
+main.c(290): warning:  #223-D: function "SSP2StructInit" declared implicitly
+  		SSP2StructInit();
+main.c(315): warning:  #223-D: function "Uart2PinCfg" declared implicitly
+  		Uart2PinCfg();
+main.c(316): warning:  #223-D: function "Uart2Setup" declared implicitly
+  		Uart2Setup();
+main.c(338): warning:  #223-D: function "CAN_ports_ini" declared implicitly
+  		CAN_ports_ini();
+main.c(339): warning:  #223-D: function "CAN_Setup" declared implicitly
+  		CAN_Setup();
+main.c(300): warning:  #177-D: variable "SSPInfo"  was declared but never referenced
+  		uint8_t SSPInfo = USBInfo;
+main.c(351): warning:  #120-D: return value type does not match the function type
+  	return 0;
+main.c(62): warning:  #177-D: variable "UART_InitStructure"  was declared but never referenced
+  static UART_InitTypeDef UART_InitStructure;
+main.c: 18 warnings, 0 errors
 compiling system_MDR32F9Qx.c...
-compiling MDR32F9Qx_can.c...
 compiling MDR32F9Qx_port.c...
+compiling MDR32F9Qx_can.c...
 compiling MDR32F9Qx_ssp.c...
-compiling MDR32F9Qx_uart.c...
 compiling MDR32F9Qx_rst_clk.c...
 compiling MDR32F9Qx_timer.c...
+compiling MDR32F9Qx_uart.c...
 linking...
-Program Size: Code=7748 RO-data=224 RW-data=2272 ZI-data=1720  
-".\Objects\slave.axf" - 0 Error(s), 11 Warning(s).
+Program Size: Code=8412 RO-data=224 RW-data=4460 ZI-data=1716  
+".\Objects\slave.axf" - 0 Error(s), 27 Warning(s).
 
 <h2>Software Packages used:</h2>
 
@@ -93,35 +125,35 @@ Package Vendor: Keil
 <h2>Collection of Component Files used:</h2>
 
    * Component: Keil::Device:Startup:1.5
-      Source file:   Libraries\CMSIS\CM3\DeviceSupport\MDR32F9Qx\startup\arm\system_MDR32F9Qx.c
-      Include file:  Libraries\CMSIS\CM3\CoreSupport\core_cm3.h
-      Include file:  Libraries\CMSIS\CM3\DeviceSupport\MDR32F9Qx\startup\arm\system_MDR32F9Qx.h
-      Include file:  Config\MDR32F9Qx_config.h
       Source file:   Libraries\CMSIS\CM3\DeviceSupport\MDR32F9Qx\startup\arm\startup_MDR32F9Qx.s
+      Include file:  Libraries\CMSIS\CM3\CoreSupport\core_cm3.h
+      Include file:  Config\MDR32F9Qx_config.h
+      Source file:   Libraries\CMSIS\CM3\DeviceSupport\MDR32F9Qx\startup\arm\system_MDR32F9Qx.c
+      Include file:  Libraries\CMSIS\CM3\DeviceSupport\MDR32F9Qx\startup\arm\system_MDR32F9Qx.h
 
    * Component: Keil::Drivers:CAN:1.5
       Include file:  Libraries\MDR32F9Qx_StdPeriph_Driver\inc\MDR32F9Qx_can.h
       Source file:   Libraries\MDR32F9Qx_StdPeriph_Driver\src\MDR32F9Qx_can.c
 
    * Component: Keil::Drivers:PORT:1.5
-      Include file:  Libraries\MDR32F9Qx_StdPeriph_Driver\inc\MDR32F9Qx_port.h
       Source file:   Libraries\MDR32F9Qx_StdPeriph_Driver\src\MDR32F9Qx_port.c
+      Include file:  Libraries\MDR32F9Qx_StdPeriph_Driver\inc\MDR32F9Qx_port.h
 
    * Component: Keil::Drivers:RST_CLK:1.5
       Source file:   Libraries\MDR32F9Qx_StdPeriph_Driver\src\MDR32F9Qx_rst_clk.c
       Include file:  Libraries\MDR32F9Qx_StdPeriph_Driver\inc\MDR32F9Qx_rst_clk.h
 
    * Component: Keil::Drivers:SSP:1.5
-      Include file:  Libraries\MDR32F9Qx_StdPeriph_Driver\inc\MDR32F9Qx_ssp.h
       Source file:   Libraries\MDR32F9Qx_StdPeriph_Driver\src\MDR32F9Qx_ssp.c
+      Include file:  Libraries\MDR32F9Qx_StdPeriph_Driver\inc\MDR32F9Qx_ssp.h
 
    * Component: Keil::Drivers:TIMER:1.5
       Source file:   Libraries\MDR32F9Qx_StdPeriph_Driver\src\MDR32F9Qx_timer.c
       Include file:  Libraries\MDR32F9Qx_StdPeriph_Driver\inc\MDR32F9Qx_timer.h
 
    * Component: Keil::Drivers:UART:1.5
-      Source file:   Libraries\MDR32F9Qx_StdPeriph_Driver\src\MDR32F9Qx_uart.c
       Include file:  Libraries\MDR32F9Qx_StdPeriph_Driver\inc\MDR32F9Qx_uart.h
+      Source file:   Libraries\MDR32F9Qx_StdPeriph_Driver\src\MDR32F9Qx_uart.c
 Build Time Elapsed:  00:00:01
 </pre>
 </body>
