@@ -1,0 +1,206 @@
+<html>
+<body>
+<pre>
+<h1>µVision Build Log</h1>
+<h2>Tool Versions:</h2>
+IDE-Version: µVision V5.28.0.0
+Copyright (C) 2019 ARM Ltd and ARM Germany GmbH. All rights reserved.
+License Information: 1 1, 1, LIC=----
+ 
+Tool Versions:
+Toolchain:       MDK-Lite  Version: 5.28.0.0
+Toolchain Path:  C:\Keil_v5\ARM\ARMCC\Bin
+C Compiler:      Armcc.exe V5.06 update 6 (build 750)
+Assembler:       Armasm.exe V5.06 update 6 (build 750)
+Linker/Locator:  ArmLink.exe V5.06 update 6 (build 750)
+Library Manager: ArmAr.exe V5.06 update 6 (build 750)
+Hex Converter:   FromElf.exe V5.06 update 6 (build 750)
+CPU DLL:         SARMCM3.DLL V5.28.0.0
+Dialog DLL:      DCM.DLL V1.17.3.0
+Target DLL:      Segger\JL2CM3.dll V2.99.36.0
+Dialog DLL:      TCM.DLL V1.36.2.0
+ 
+<h2>Project:</h2>
+C:\Users\Yurez\Desktop\MPS2019\Äëÿ çàïèñè íà äèñê\master v2\master.uvprojx
+Project File Date:  12/01/2019
+
+<h2>Output:</h2>
+*** Using Compiler 'V5.06 update 6 (build 750)', folder: 'C:\Keil_v5\ARM\ARMCC\Bin'
+Rebuild target 'Target 1'
+compiling UART_main.c...
+compiling mlt_lcd.c...
+compiling CAN_main.c...
+CAN_main.c(55): warning:  #177-D: variable "i"  was declared but never referenced
+    uint32_t i = 0;
+CAN_main.c: 1 warning, 0 errors
+compiling main.c...
+main.c(165): warning:  #223-D: function "CAN_ports_ini" declared implicitly
+  	CAN_ports_ini();
+main.c(166): warning:  #223-D: function "CAN_Setup" declared implicitly
+  	CAN_Setup();
+main.c(194): warning:  #223-D: function "Uart2PinCfg" declared implicitly
+  	Uart2PinCfg();
+main.c(195): warning:  #223-D: function "Uart2Setup" declared implicitly
+  	Uart2Setup();
+main.c(223): warning:  #223-D: function "PortsSSP2Init" declared implicitly
+  	PortsSSP2Init();
+main.c(224): warning:  #223-D: function "SSP2StructInit" declared implicitly
+  	SSP2StructInit();
+main.c(239): warning:  #120-D: return value type does not match the function type
+  	exit: return 0;
+main.c(222): warning:  #177-D: variable "Dst1"  was declared but never referenced
+  	uint16_t Dst1 = 0x0000;
+main.c(244): warning:  #223-D: function "USB_main" declared implicitly
+  	USB_main();
+main.c(258): warning:  #223-D: function "USB_off" declared implicitly
+  	USB_off();
+main.c(260): warning:  #120-D: return value type does not match the function type
+  	return 0;
+main.c(266): warning:  #223-D: function "USB_main" declared implicitly
+  	USB_main();
+main.c(276): warning:  #223-D: function "USB_off" declared implicitly
+  		USB_off();	
+main.c(290): warning:  #223-D: function "PortsSSP2Init" declared implicitly
+  		PortsSSP2Init();
+main.c(291): warning:  #223-D: function "SSP2StructInit" declared implicitly
+  		SSP2StructInit();
+main.c(311): warning:  #223-D: function "Uart2PinCfg" declared implicitly
+  		Uart2PinCfg();
+main.c(312): warning:  #223-D: function "Uart2Setup" declared implicitly
+  		Uart2Setup();
+main.c(355): warning:  #223-D: function "CAN_ports_ini" declared implicitly
+  		CAN_ports_ini();
+main.c(356): warning:  #223-D: function "CAN_Setup" declared implicitly
+  		CAN_Setup();
+main.c(378): warning:  #223-D: function "USB_off" declared implicitly
+  	USB_off();	
+main.c(380): warning:  #120-D: return value type does not match the function type
+  	return 0;
+main.c(382): warning:  #120-D: return value type does not match the function type
+  	return 0;
+main.c: 22 warnings, 0 errors
+compiling USB_main.c...
+USB_main.c(57): warning:  #223-D: function "Setup_CPU_Clock" declared implicitly
+  	Setup_CPU_Clock();
+USB_main.c(103): warning:  #159-D: declaration is incompatible with previous "Setup_CPU_Clock"  (declared at line 57)
+  void Setup_CPU_Clock(void)
+USB_main.c(170): warning:  #513-D: a value of type "uint8_t *" cannot be assigned to an entity of type "uint8_t"
+  	Buf[0] = Data;
+USB_main.c(178): warning:  #550-D: variable "result"  was set but never used
+    USB_Result result;
+USB_main.c: 4 warnings, 0 errors
+compiling 1986be9x_it.c...
+1986be9x_it.c(117): warning:  #144-D: a value of type "uint8_t *" cannot be used to initialize an entity of type "int"
+  	int value = RecievedData;
+1986be9x_it.c(120): warning:  #120-D: return value type does not match the function type
+  	return info_string;
+1986be9x_it.c(429): warning:  #167-D: argument of type "uint8_t" is incompatible with parameter of type "uint8_t *"
+  				LcdPutString (InfoString(USBInfo), 5);
+1986be9x_it.c(429): warning:  #167-D: argument of type "uint8_t *" is incompatible with parameter of type "uint8_t **"
+  				LcdPutString (InfoString(USBInfo), 5);
+1986be9x_it.c(436): warning:  #167-D: argument of type "uint8_t" is incompatible with parameter of type "uint8_t *"
+  			LcdPutString (InfoString(USBInfo), 5);
+1986be9x_it.c(436): warning:  #167-D: argument of type "uint8_t *" is incompatible with parameter of type "uint8_t **"
+  			LcdPutString (InfoString(USBInfo), 5);
+1986be9x_it.c(442): warning:  #167-D: argument of type "uint8_t" is incompatible with parameter of type "uint8_t *"
+  			LcdPutString (InfoString(USBInfo), 5);
+1986be9x_it.c(442): warning:  #167-D: argument of type "uint8_t *" is incompatible with parameter of type "uint8_t **"
+  			LcdPutString (InfoString(USBInfo), 5);
+1986be9x_it.c(456): warning:  #167-D: argument of type "uint8_t" is incompatible with parameter of type "uint8_t *"
+  				LcdPutString (InfoString(USBInfo), 5);
+1986be9x_it.c(456): warning:  #167-D: argument of type "uint8_t *" is incompatible with parameter of type "uint8_t **"
+  				LcdPutString (InfoString(USBInfo), 5);
+1986be9x_it.c(471): warning:  #167-D: argument of type "uint8_t" is incompatible with parameter of type "uint8_t *"
+  				LcdPutString (InfoString(USBFinalInfo), 5);
+1986be9x_it.c(471): warning:  #167-D: argument of type "uint8_t *" is incompatible with parameter of type "uint8_t **"
+  				LcdPutString (InfoString(USBFinalInfo), 5);
+compiling SSP_main.c...
+assembling startup_MDR32F9Qx.s...
+compiling system_MDR32F9Qx.c...
+compiling MDR32F9Qx_can.c...
+compiling MDR32F9Qx_port.c...
+compiling MDR32F9Qx_rst_clk.c...
+compiling MDR32F9Qx_ssp.c...
+compiling MDR32F9Qx_uart.c...
+compiling MDR32F9Qx_timer.c...
+compiling MDR32F9Qx_usb.c...
+compiling MDR32F9Qx_usb_CDC.c...
+C:\Users\Yurez\AppData\Local\Arm\Packs\Keil\MDR1986BExx\1.5.3\Libraries\MDR32F9Qx_StdPeriph_Driver\src\USB_Library\MDR32F9Qx_usb_CDC.c(478): warning:  #177-D: variable "wValue"  was declared but never referenced
+    uint16_t wValue = USB_CurrentSetupPacket.wValue,
+C:\Users\Yurez\AppData\Local\Arm\Packs\Keil\MDR1986BExx\1.5.3\Libraries\MDR32F9Qx_StdPeriph_Driver\src\USB_Library\MDR32F9Qx_usb_CDC.c: 1 warning, 0 errors
+compiling MDR32F9Qx_usb_device.c...
+linking...
+Program Size: Code=12384 RO-data=224 RW-data=4468 ZI-data=2012  
+FromELF: creating hex file...
+".\Objects\master.axf" - 0 Error(s), 40 Warning(s).
+
+<h2>Software Packages used:</h2>
+
+Package Vendor: Keil
+                http://www.keil.com/pack/Keil.MDR1986BExx.1.5.3.pack
+                Keil.MDR1986BExx.1.5.3
+                Milandr MDR1986BExx Series Device Support, Drivers and Examples
+   * Component: Startup Version: 1.5
+   * Component: CAN Version: 1.5
+   * Component: PORT Version: 1.5
+   * Component: RST_CLK Version: 1.5
+   * Component: SSP Version: 1.5
+   * Component: TIMER Version: 1.5
+   * Component: UART Version: 1.5
+   * Component: USB Library Version: 1.5
+   * Component: USB Version: 1.5
+
+<h2>Collection of Component include folders:</h2>
+  .\RTE\Device\MDR1986BE92
+  .\RTE\_Target_1
+  C:\Users\Yurez\AppData\Local\Arm\Packs\Keil\MDR1986BExx\1.5.3\Libraries\CMSIS\CM3\CoreSupport
+  C:\Users\Yurez\AppData\Local\Arm\Packs\Keil\MDR1986BExx\1.5.3\Libraries\CMSIS\CM3\DeviceSupport\MDR32F9Qx\inc
+  C:\Users\Yurez\AppData\Local\Arm\Packs\Keil\MDR1986BExx\1.5.3\Libraries\MDR32F9Qx_StdPeriph_Driver\inc
+  C:\Users\Yurez\AppData\Local\Arm\Packs\Keil\MDR1986BExx\1.5.3\Libraries\MDR32F9Qx_StdPeriph_Driver\inc\USB_Library
+
+<h2>Collection of Component Files used:</h2>
+
+   * Component: Keil::Device:Startup:1.5
+      Include file:  Libraries\CMSIS\CM3\DeviceSupport\MDR32F9Qx\startup\arm\system_MDR32F9Qx.h
+      Source file:   Libraries\CMSIS\CM3\DeviceSupport\MDR32F9Qx\startup\arm\system_MDR32F9Qx.c
+      Source file:   Libraries\CMSIS\CM3\DeviceSupport\MDR32F9Qx\startup\arm\startup_MDR32F9Qx.s
+      Include file:  Config\MDR32F9Qx_config.h
+      Include file:  Libraries\CMSIS\CM3\CoreSupport\core_cm3.h
+
+   * Component: Keil::Drivers:CAN:1.5
+      Source file:   Libraries\MDR32F9Qx_StdPeriph_Driver\src\MDR32F9Qx_can.c
+      Include file:  Libraries\MDR32F9Qx_StdPeriph_Driver\inc\MDR32F9Qx_can.h
+
+   * Component: Keil::Drivers:PORT:1.5
+      Include file:  Libraries\MDR32F9Qx_StdPeriph_Driver\inc\MDR32F9Qx_port.h
+      Source file:   Libraries\MDR32F9Qx_StdPeriph_Driver\src\MDR32F9Qx_port.c
+
+   * Component: Keil::Drivers:RST_CLK:1.5
+      Source file:   Libraries\MDR32F9Qx_StdPeriph_Driver\src\MDR32F9Qx_rst_clk.c
+      Include file:  Libraries\MDR32F9Qx_StdPeriph_Driver\inc\MDR32F9Qx_rst_clk.h
+
+   * Component: Keil::Drivers:SSP:1.5
+      Source file:   Libraries\MDR32F9Qx_StdPeriph_Driver\src\MDR32F9Qx_ssp.c
+      Include file:  Libraries\MDR32F9Qx_StdPeriph_Driver\inc\MDR32F9Qx_ssp.h
+
+   * Component: Keil::Drivers:TIMER:1.5
+      Include file:  Libraries\MDR32F9Qx_StdPeriph_Driver\inc\MDR32F9Qx_timer.h
+      Source file:   Libraries\MDR32F9Qx_StdPeriph_Driver\src\MDR32F9Qx_timer.c
+
+   * Component: Keil::Drivers:UART:1.5
+      Include file:  Libraries\MDR32F9Qx_StdPeriph_Driver\inc\MDR32F9Qx_uart.h
+      Source file:   Libraries\MDR32F9Qx_StdPeriph_Driver\src\MDR32F9Qx_uart.c
+
+   * Component: Keil::Drivers:USB Library:1.5
+      Include file:  Libraries\MDR32F9Qx_StdPeriph_Driver\inc\USB_Library\MDR32F9Qx_usb_device.h
+      Include file:  Libraries\MDR32F9Qx_StdPeriph_Driver\inc\USB_Library\MDR32F9Qx_usb_CDC.h
+      Source file:   Libraries\MDR32F9Qx_StdPeriph_Driver\src\USB_Library\MDR32F9Qx_usb_CDC.c
+      Source file:   Libraries\MDR32F9Qx_StdPeriph_Driver\src\USB_Library\MDR32F9Qx_usb_device.c
+
+   * Component: Keil::Drivers:USB:1.5
+      Source file:   Libraries\MDR32F9Qx_StdPeriph_Driver\src\MDR32F9Qx_usb.c
+      Include file:  Libraries\MDR32F9Qx_StdPeriph_Driver\inc\MDR32F9Qx_usb.h
+Build Time Elapsed:  00:00:02
+</pre>
+</body>
+</html>

@@ -1,0 +1,13 @@
+.\objects\uart_main.o: UART_main.c
+.\objects\uart_main.o: MDR32F9Qx_config.h
+.\objects\uart_main.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+.\objects\uart_main.o: C:\Users\Yurez\AppData\Local\Arm\Packs\Keil\MDR1986BExx\1.5.3\Libraries\CMSIS\CM3\DeviceSupport\MDR32F9Qx\inc\MDR32Fx.h
+.\objects\uart_main.o: C:\Users\Yurez\AppData\Local\Arm\Packs\Keil\MDR1986BExx\1.5.3\Libraries\CMSIS\CM3\CoreSupport\core_cm3.h
+.\objects\uart_main.o: C:\Users\Yurez\AppData\Local\Arm\Packs\Keil\MDR1986BExx\1.5.3\Libraries\CMSIS\CM3\CoreSupport\core_cmInstr.h
+.\objects\uart_main.o: C:\Users\Yurez\AppData\Local\Arm\Packs\Keil\MDR1986BExx\1.5.3\Libraries\CMSIS\CM3\CoreSupport\core_cmFunc.h
+.\objects\uart_main.o: .\RTE\Device\MDR1986BE92\system_MDR32F9Qx.h
+.\objects\uart_main.o: C:\Users\Yurez\AppData\Local\Arm\Packs\Keil\MDR1986BExx\1.5.3\Libraries\MDR32F9Qx_StdPeriph_Driver\inc\MDR32F9Qx_uart.h
+.\objects\uart_main.o: .\RTE\Device\MDR1986BE92\MDR32F9Qx_config.h
+.\objects\uart_main.o: C:\Users\Yurez\AppData\Local\Arm\Packs\Keil\MDR1986BExx\1.5.3\Libraries\MDR32F9Qx_StdPeriph_Driver\inc\MDR32F9Qx_lib.h
+.\objects\uart_main.o: C:\Users\Yurez\AppData\Local\Arm\Packs\Keil\MDR1986BExx\1.5.3\Libraries\MDR32F9Qx_StdPeriph_Driver\inc\MDR32F9Qx_port.h
+.\objects\uart_main.o: C:\Users\Yurez\AppData\Local\Arm\Packs\Keil\MDR1986BExx\1.5.3\Libraries\MDR32F9Qx_StdPeriph_Driver\inc\MDR32F9Qx_rst_clk.h
